@@ -1,0 +1,224 @@
+<!DOCTYPE>
+  <html>
+    <head>
+		<link rel="shortcut icon" href="./images/Majora.png" /> 
+		<link style="text/css" rel="stylesheet" href="stylesheet.css"/>
+		<title>MM Tracker</title>
+	</head>
+	<body oncontextmenu="return false;">
+	
+		<div id="row">
+			<div id="normalColumn1" class="column"></div>
+			<div id="normalColumn2" class="column"></div>	
+			<div id="normalColumn3" class="column"></div>
+			<div id="normalColumn4" class="column"></div>
+			<div id="normalColumn5" class="column"></div>
+			<div id="normalColumn6" class="column"></div>
+			<div id="normalColumn7" class="column"></div>
+				
+			<div id="itemColumn" class="itemColumn">
+				<small id="checks_remaining" class="check_text" style="color:lightblue">Remaining:</small>
+				<small id="logically_accessible" class="check_text" style="color:chartreuse">In Logic:</small><br><br>
+				
+				<img src = "./images/Ocarina of Time.png" id="ocarina_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Hero's Bow.png" id="bow1_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Fire Arrow.png" id="fire_arrow_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Ice Arrow.png" id="ice_arrow_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Light Arrow.png" id="light_arrow_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Moon's Tear.png" id="moons_tear_img" class="requirements" onmousedown="highlight(this)"></img>
+				
+				<br>
+				
+				<img src = "./images/Bomb.png" id="bomb1_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Bombchu.png" id="bombchu_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Deku Stick.png" id="stick_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Deku Nut.png" id="nut_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Magic Beans.png" id="magic_bean_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Land Title Deed.png" id="land_title_deed_img" class="requirements" onmousedown="highlight(this)"></img>
+				
+				<br>
+				
+				<img src = "./images/Powder Keg.png" id="powder_keg_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Pictograph Box.png" id="pictobox_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Lens of Truth.png" id="lens_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Hookshot.png" id="hookshot_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Great Fairy's Sword.png" id="great_fairy_sword_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Swamp Title Deed.png" id="swamp_title_deed_img" class="requirements" onmousedown="highlight(this)"></img>
+				
+				<br>
+				
+				<img src = "./images/Empty Bottle.png" id="bottle1_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Empty Bottle.png" id="bottle2_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Empty Bottle.png" id="bottle3_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Room Key.png" id="room_key_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Special Delivery to Mama.png" id="special_delivery_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Mountain Title Deed.png" id="mountain_title_deed_img" class="requirements" onmousedown="highlight(this)"></img>
+				
+				<img src = "./images/Empty Bottle.png" id="bottle4_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Empty Bottle.png" id="bottle5_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Gold Dust.png" id="bottle_gold_dust_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Letter to Kafei.png" id="letter_to_kafei_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Pendant of Memories.png" id="pendant_of_memories_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Ocean Title Deed.png" id="ocean_title_deed_img" class="requirements" onmousedown="highlight(this)"></img>
+				
+				<br><br>
+				
+				<img src = "./images/Postman's Hat.png" id="postmans_hat_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/All-Night Mask.png" id="allnight_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Blast Mask.png" id="blast_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Stone Mask.png" id="stone_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Great Fairy's Mask.png" id="greatfairy_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Deku Mask.png" id="deku_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				
+				<img src = "./images/Keaton Mask.png" id="keaton_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Bremen Mask.png" id="bremen_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Bunny Hood.png" id="bunny_hood_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Don Gero's Mask.png" id="dongero_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Mask of Scents.png" id="mask_of_scents_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Goron Mask.png" id="goron_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				
+				<img src = "./images/Romani's Mask.png" id="romani_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Circus Leader's Mask.png" id="circusleaders_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Kafei's Mask.png" id="kafei_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Couple's Mask.png" id="couples_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Mask of Truth.png" id="mask_of_truth_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Zora Mask.png" id="zora_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				
+				<img src = "./images/Kamaro's Mask.png" id="kamaro_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Gibdo Mask.png" id="gibdo_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Garo's Mask.png" id="garo_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Captain's Hat.png" id="captains_hat_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Giant's Mask.png" id="giants_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Fierce Deity's Mask.png" id="fiercedeity_mask_img" class="requirements" onmousedown="highlight(this)"></img>
+				
+				<br><br>
+				
+				<img src = "./images/Kokiri Sword.png" id="sword1_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Mirror Shield.png" id="mirror_shield_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Magic.png" id="magic1_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Adult's Wallet.png" id="wallet1_img" class="requirements" onmousedown="highlight(this)"></img>
+				
+				<br>
+				
+				<img src = "./images/Odolwa's Remains.png" id="odolwasremains_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Goht's Remains.png" id="gohtsremains_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Gyorg's Remains.png" id="gyorgsremains_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src = "./images/Twinmold's Remains.png" id="twinmoldsremains_img" class="requirements" onmousedown="highlight(this)"></img>
+				
+				<br><br>
+				
+				<img src = "./images/songs/time.png" id="song_of_time_img" class="songpics" onmousedown="highlight(this)"></img>
+				<img src = "./images/songs/healing2.png" id="song_of_healing_img" class="songpics" onmousedown="highlight(this)"></img>
+				<img src = "./images/songs/eponas.png" id="eponas_song_img" class="songpics" onmousedown="highlight(this)"></img>
+				<img src = "./images/songs/soaring.png" id="song_of_soaring_img" class="songpics" onmousedown="highlight(this)"></img>
+				<img src = "./images/songs/storms.png" id="song_of_storms_img" class="songpics" onmousedown="highlight(this)"></img>
+				
+				<br>
+				
+				<img src = "./images/songs/sonata.png" id="sonata_img" class="songpics" onmousedown="highlight(this)"></img>
+				<img src = "./images/songs/lullaby.png" id="lullaby_img" class="songpics" onmousedown="highlight(this)"></img>
+				<img src = "./images/songs/nwbn.png" id="nwbn_img" class="songpics" onmousedown="highlight(this)"></img>
+				<img src = "./images/songs/elegy.png" id="elegy_img" class="songpics" onmousedown="highlight(this)"></img>
+				<img src = "./images/songs/oath.png" id="oath_img" class="songpics" onmousedown="highlight(this)"></img>
+			
+				<br><br><textarea spellcheck="false" rows="16" cols="23" id = "notes"></textarea>
+			</div>
+		</div>
+		<div id="checkSummaryColumn1" class="checkSummaryColumn">
+			<small id="bomb1_location" class="checkSummaryText">Bomb Bag -> </small><br />
+			<small id="bomb2_location" class="checkSummaryText">Bomb Bag -> </small><br />
+			<small id="bomb3_location" class="checkSummaryText">Bomb Bag -> </small><br />
+			<small id="bottle1_location" class="checkSummaryText">Bottle -> </small><br />
+			<small id="bottle2_location" class="checkSummaryText">Bottle -> </small><br />
+			<small id="bottle3_location" class="checkSummaryText">Bottle -> </small><br />
+			<small id="bottle4_location" class="checkSummaryText">Bottle -> </small><br />
+			<small id="bottle5_location" class="checkSummaryText">Bottle -> </small><br />
+			<small id="bottle_gold_dust_location" class="checkSummaryText">Bottle Gold Dust -> </small><br />
+			<small id="bow1_location" class="checkSummaryText">Bow -> </small><br />
+			<small id="bow2_location" class="checkSummaryText">Bow -> </small><br />
+			<small id="bow3_location" class="checkSummaryText">Bow -> </small><br />
+			<small id="fire_arrow_location" class="checkSummaryText">Fire Arrow -> </small><br />
+			<small id="great_fairy_sword_location" class="checkSummaryText">GFS -> </small><br />
+			<small id="hookshot_location" class="checkSummaryText">Hookshot -> </small><br />
+
+		</div>
+
+		<div id="checkSummaryColumn2" class="checkSummaryColumn">
+			<small id="ice_arrow_location" class="checkSummaryText">Ice Arrow -> </small><br />
+			<small id="lens_location" class="checkSummaryText">Lens -> </small><br />
+			<small id="letter_to_kafei_location" class="checkSummaryText">Letter Kafei -> </small><br />
+			<small id="light_arrow_location" class="checkSummaryText">Light Arrow -> </small><br />
+			<small id="magic1_location" class="checkSummaryText">Magic -> </small><br />
+			<small id="magic2_location" class="checkSummaryText">Magic -></small><br />
+			<small id="magic_bean_location" class="checkSummaryText">Magic Bean -> </small><br />
+			<small id="mirror_shield_location" class="checkSummaryText">Mirror Shield -> </small><br />
+			<small id="pendant_of_memories_location" class="checkSummaryText">Pendant -> </small><br />
+			<small id="pictobox_location" class="checkSummaryText">Pictobox -> </small><br />
+			<small id="powder_keg_location" class="checkSummaryText">Powder Keg -> </small><br />
+			<small id="room_key_location" class="checkSummaryText">Room Key -> </small><br />
+			<small id="special_delivery_location" class="checkSummaryText">Spec Delivery -> </small><br />	
+			<small id="sword1_location" class="checkSummaryText">Sword -> </small><br />
+			<small id="sword2_location" class="checkSummaryText">Sword -> </small><br />
+
+
+		</div>
+
+		<div id="checkSummaryColumn3" class="checkSummaryColumn">
+			<small id="wallet1_location" class="checkSummaryText">Wallet -> </small><br />
+			<small id="wallet2_location" class="checkSummaryText">Wallet -> </small><br />
+			<small id="moons_tear_location" class="checkSummaryText">Moon's Tear -> </small><br />
+			<small id="land_title_deed_location" class="checkSummaryText">Land Deed -> </small><br />
+			<small id="swamp_title_deed_location" class="checkSummaryText">Swamp Deed -> </small><br />
+			<small id="mountain_title_deed_location" class="checkSummaryText">Mountain Deed -> </small><br />
+			<small id="ocean_title_deed_location" class="checkSummaryText">Ocean Deed -> </small><br />
+			<small id="allnight_mask_location" class="checkSummaryText">All-Night Mask -> </small><br />
+			<small id="blast_mask_location" class="checkSummaryText">Blast Mask -> </small><br />
+			<small id="bremen_mask_location" class="checkSummaryText">Bremen Mask -> </small><br />
+			<small id="bunny_hood_location" class="checkSummaryText">Bunny Hood -> </small><br />
+			<small id="captains_hat_location" class="checkSummaryText">Captain's Hat -> </small><br />
+			<small id="circusleaders_mask_location" class="checkSummaryText">Circus Mask -> </small><br />
+			<small id="couples_mask_location" class="checkSummaryText">Couple's Mask -> </small><br />
+			<small id="deku_mask_location" class="checkSummaryText">Deku Mask -> </small><br />
+
+
+		</div>
+		<div id="checkSummaryColumn3" class="checkSummaryColumn">
+			<small id="dongero_mask_location" class="checkSummaryText">Don Gero Mask -> </small><br />
+			<small id="fiercedeity_mask_location" class="checkSummaryText">Fierce Deity Mask -> </small><br />
+			<small id="garo_mask_location" class="checkSummaryText">Garo Mask -> </small><br />
+			<small id="giants_mask_location" class="checkSummaryText">Giant's Mask -> </small><br />
+			<small id="gibdo_mask_location" class="checkSummaryText">Gibdo Mask -> </small><br />
+			<small id="goron_mask_location" class="checkSummaryText">Goron Mask -> </small><br />
+			<small id="greatfairy_mask_location" class="checkSummaryText">Great Fairy Mask -> </small><br />
+			<small id="kafei_mask_location" class="checkSummaryText">Kafei Mask -> </small><br />
+			<small id="kamaro_mask_location" class="checkSummaryText">Kamaro Mask -> </small><br />
+			<small id="keaton_mask_location" class="checkSummaryText">Keaton Mask -> </small><br />
+			<small id="postmans_hat_location" class="checkSummaryText">Postman's Hat -> </small><br />
+			<small id="romani_mask_location" class="checkSummaryText">Romani Mask -> </small><br />
+			<small id="mask_of_scents_location" class="checkSummaryText">Scents Mask -> </small><br />
+			<small id="stone_mask_location" class="checkSummaryText">Stone Mask -> </small><br />
+			<small id="mask_of_truth_location" class="checkSummaryText"> Truth Mask -> </small><br />
+			<small id="zora_mask_location" class="checkSummaryText">Zora Mask -> </small><br />
+		</div>
+		
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p>-Input the code for an item/song in the picture text box next to a check. You can also left click on the text to mark it as junk. 
+				<br>-Capitalize the third letter of the code to "peek" or "hint" it. It will not be counted as obtained until you click the item icon, and the check summary text will be orange until then.
+				<br>-Press Ctrl+Z to undo the last item input. 
+				<br /><br />
+				Item codes: <br />
+				x - Junk<br />bow - Bow<br />fir - Fire Arrow<br />ice - Ice Arrow<br />lig - Light Arrow<br />moo - Moon's Tear<br />lan - Land Title Deed<br />swa - Swamp Title Deed<br />mou - Mountain Title Deed<br />oce - Ocean Title Deed<br />bom - Bomb Bag<br />bea - Magic Bean<br />roo - Room Key<br />spe - Special Delivery to Mama<br />pow - Powder Keg<br />pic - Pictograph Box<br />len - Lens of Truth<br />hoo - Hookshot<br />gfs - Great Fairy Sword<br />let - Letter to Kafei<br />pen - Pendant of Memories<br />bot - Bottle<br />gol - Gold Dust<br />pos - Postman's hat<br />all - All-Night Mask<br />bla - Blast Mask<br />sto - Stone Mask<br />gre - Great Fairy Mask<br />dek - Deku Mask<br />kea - Keaton Mask<br />bre - Bremen Mask<br />bun - Bunny Hood<br />don - Don Gero's Mask<br />sce - Mask of Scents<br />gor - Goron Mask<br />rom - Romani Mask<br />cir - Circus Leader's Mask<br />kaf - Kafei Mask<br />cou - Couple's Mask<br />tru - Mask of Truth<br />zor - Zora Mask<br />kam - Kamaro Mask<br />gib - Gibdo Mask<br />gar - Garo Mask<br />cap - Captain's Hat<br />gia - Giant's Mask<br />fie - Fierce Deity Mask<br />swo - Sword Upgrade<br />mir - Mirror Shield<br />mag - Magic Upgrade<br />wal - Wallet Upgrade<br />soh - Song of Healing<br />epo - Epona's Song<br />sos - Song of Storms<br />son - Sonata of Awakening<br />lul - Goron Lullaby<br />nov - New Wave Bossa Nova<br />ele - Elegy of Emptiness<br />oat - Oath to Order
+				</p>
+			</div>
+		</div>
+		
+	</body>
+	
+	<script type="text/javascript"  src="logic.js"></script>
+	<script type="text/javascript"  src="ui.js"></script>
+	<script type="text/javascript"  src="main.js"></script>
+	<script type="text/javascript"  src="initialize.js"></script>
+	
+</html>
