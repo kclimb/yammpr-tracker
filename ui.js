@@ -35,14 +35,14 @@ function process_inputs() {
 					}
 					if (!Known[Items2[j] + duplicate] && Items.indexOf(Items2[j] + duplicate) >= 0) {
 						Check[document.getElementById(key).id] = Items2[j] + duplicate; 
-						Location[Items2[j] + duplicate] = document.getElementById(key).id;
+						ItemLocation[Items2[j] + duplicate] = document.getElementById(key).id;
 						Known[Items2[j] + duplicate] = true; 
 						
 						if(!peeked)
 							Game[Items2[j] + duplicate] = true;
 						ItemLocations[Items2[j] + duplicate] = AreaNamesShort[AreaNamesIndex] + ": " + Names[i];
 						lastCheck.push(key);
-						SongItems.indexOf(key) >= 0
+						if(SongItems.indexOf(key) >= 0)
 							document.getElementById("text_"+key).innerHTML = document.getElementById("text_"+key).innerHTML + ": " + SongNames[Check[key]];
 						break;
 					}
@@ -57,6 +57,17 @@ function update_logic_info() {
 	Game.logically_accessible = 0;
 	Game.checks_remaining = 0;
 	for (var i = 0; i < Locations.length; i++) {
+		
+		if (i < AreaIndexes[AreaIndexes.length-1]) {
+			document.getElementById(Locations[i]).style.display = "none";
+			document.getElementById("text_" + Locations[i]).style.display = "none";
+			document.getElementById("br_" + Locations[i]).style.display = "none";
+		}
+		
+		if (document.getElementById("small_keys_option").value != "KEYSY" && Locations[i].startsWith("key_")) {continue;}
+		if (Locations[i] == "Fisherman Pictograph") {continue;}
+		if (Locations[i] == "Beaver Race #2") {continue;}
+		if (Locations[i] == "Frog Choir") {continue;}
 		
 		var key = Locations[i];
 		
@@ -285,6 +296,12 @@ var temp_img = document.getElementById("bomb1_img");
 	else
 		temp_img.style.opacity =.2;
 	
+	var temp_img = document.getElementById("magic_bean1_img");
+	if(Game.magic_bean)
+		temp_img.style.opacity =1;
+	else
+		temp_img.style.opacity =.2;
+	
 	var temp_img = document.getElementById("ocarina_img");
 	temp_img.style.opacity =1;
 	
@@ -293,6 +310,31 @@ var temp_img = document.getElementById("bomb1_img");
 	
 	var temp_img = document.getElementById("song_of_soaring_img");
 	temp_img.style.opacity =1;
+	
+	// boss remains
+	var temp_img = document.getElementById("odolwasremains_img");
+	if(Check["WFT_Odolwa_Heart"] != "unknown")
+		temp_img.style.opacity =1;
+	else
+		temp_img.style.opacity =.2;
+	
+	var temp_img = document.getElementById("gohtsremains_img");
+	if(Check["SHT_Goht_Heart"] != "unknown")
+		temp_img.style.opacity =1;
+	else
+		temp_img.style.opacity =.2;
+	
+	var temp_img = document.getElementById("gyorgsremains_img");
+	if(Check["GBT_Gyorg_Heart"] != "unknown")
+		temp_img.style.opacity =1;
+	else
+		temp_img.style.opacity =.2;
+	
+	var temp_img = document.getElementById("twinmoldsremains_img");
+	if(Check["STT_Twinmold_Heart"] != "unknown")
+		temp_img.style.opacity =1;
+	else
+		temp_img.style.opacity =.2;
 	
 	for(var i = 0; i < SingletonItems.length; i++) {
 		var temp_img = document.getElementById(SingletonItems[i]+"_img");
@@ -308,15 +350,21 @@ function update_summary_text() {
 		var summary_text_elem = document.getElementById(Items[i]+"_location");
 		if(Logic[Items[i]]) {
 			summary_text_elem.innerHTML = ItemNames[i]+" -> "+ItemLocations[Items[i]];
-			summary_text_elem.className = "checked_text_summary";
+
 			if (!Game[Items[i]])
-				summary_text_elem.style.color = "orange";
+				summary_text_elem.className = "checked_text_summary_not_have";
 			else
-				summary_text_elem.style.color = "chartreuse";
+				summary_text_elem.className = "checked_text_summary";
 
 		}
-		else if(Known[Items[i]] && ItemLocations[Items[i]] != undefined)
+		else if(Known[Items[i]] && ItemLocations[Items[i]] != undefined) {
+			if (!Game[Items[i]])
+				summary_text_elem.className = "checked_text_summary_ool";
+			else
+				summary_text_elem.className = "checked_text_summary_have_ool";
+			
 			summary_text_elem.innerHTML = ItemNames[i]+" -> "+ItemLocations[Items[i]];
+		}
 	}
 }
 
@@ -334,7 +382,6 @@ function Undo() {
 		else if (Check[lastCheck[lastCheck.length-1]] != "junk") {
 			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML = document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").innerHTML.split('-&gt; ')[0] + "-> ";
 			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").className = "checkSummaryText";
-			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").style.color = "black";	
 		}
 		document.getElementById(lastCheck[lastCheck.length-1]).value = "";
 	}

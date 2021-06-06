@@ -2,102 +2,106 @@ function update_item_logic() {
 	// Assumes you start with Kokiri Sword, Hero's Shield, Ocarina of Time, Song of Time, Song of Soaring
 	
 	// Progressive Swords
-	if(Known.sword1 == true) {Logic.sword1 = Location_Logic[Location.sword1];} 
-	if(Known.sword2 == true) {Logic.sword2 = Location_Logic[Location.sword2];}
+	if(Known.sword1 == true) {Logic.sword1 = Location_Logic[ItemLocation.sword1];} 
+	if(Known.sword2 == true) {Logic.sword2 = Location_Logic[ItemLocation.sword2];}
 	Logic.razor_sword = Logic.sword1 || Logic.sword2;
 	Logic.gilded_sword = Logic.sword1 && Logic.sword2;
 	
 	// Progressive Magic Upgrades
-	if(Known.magic1 == true) {Logic.magic1 = Location_Logic[Location.magic1];} 
-	if(Known.magic2 == true) {Logic.magic2 = Location_Logic[Location.magic2];}
+	if(Known.magic1 == true) {Logic.magic1 = Location_Logic[ItemLocation.magic1];} 
+	if(Known.magic2 == true) {Logic.magic2 = Location_Logic[ItemLocation.magic2];}
 	Logic.magic = Logic.magic1 || Logic.magic2;
 	Logic.double_magic = Logic.magic1 && Logic.magic2;
 	
 	// Progressive Wallets
-	if(Known.wallet1 == true) {Logic.wallet1 = Location_Logic[Location.wallet1];} 
-	if(Known.wallet2 == true) {Logic.wallet2 = Location_Logic[Location.wallet2];}
+	if(Known.wallet1 == true) {Logic.wallet1 = Location_Logic[ItemLocation.wallet1];} 
+	if(Known.wallet2 == true) {Logic.wallet2 = Location_Logic[ItemLocation.wallet2];}
 	Logic.adults_wallet = Logic.wallet1 || Logic.wallet2;
 	Logic.giants_wallet = Logic.wallet1 && Logic.wallet2;
 	
 	// Progressive Bows
-	if(Known.bow1 == true) {Logic.bow1 = Location_Logic[Location.bow1];} 
-	if(Known.bow2 == true) {Logic.bow2 = Location_Logic[Location.bow2];}
-	if(Known.bow3 == true) {Logic.bow3 = Location_Logic[Location.bow3];}
+	if(Known.bow1 == true) {Logic.bow1 = Location_Logic[ItemLocation.bow1];} 
+	if(Known.bow2 == true) {Logic.bow2 = Location_Logic[ItemLocation.bow2];}
+	if(Known.bow3 == true) {Logic.bow3 = Location_Logic[ItemLocation.bow3];}
 	Logic.bow = Logic.bow1 || Logic.bow2 || Logic.bow3;
 	
 	// Progressive Bomb Bags
-	if(Known.bomb1 == true) {Logic.bomb1 = Location_Logic[Location.bomb1];} 
-	if(Known.bomb2 == true) {Logic.bomb2 = Location_Logic[Location.bomb2];}
-	if(Known.bomb3 == true) {Logic.bomb3 = Location_Logic[Location.bomb3];}
+	if(Known.bomb1 == true) {Logic.bomb1 = Location_Logic[ItemLocation.bomb1];} 
+	if(Known.bomb2 == true) {Logic.bomb2 = Location_Logic[ItemLocation.bomb2];}
+	if(Known.bomb3 == true) {Logic.bomb3 = Location_Logic[ItemLocation.bomb3];}
 	Logic.bomb = Logic.bomb1 || Logic.bomb2 || Logic.bomb3;
 	
 	// Bottles
-	if(Known.bottle1 == true) {Logic.bottle1 = Location_Logic[Location.bottle1];}
-	if(Known.bottle2 == true) {Logic.bottle2 = Location_Logic[Location.bottle2];}
-	if(Known.bottle3 == true) {Logic.bottle3 = Location_Logic[Location.bottle3];}
-	if(Known.bottle4 == true) {Logic.bottle4 = Location_Logic[Location.bottle4];}
-	if(Known.bottle5 == true) {Logic.bottle5 = Location_Logic[Location.bottle5];}
-	if(Known.bottle_gold_dust == true) {Logic.bottle_gold_dust = Location_Logic[Location.bottle_gold_dust];} else{Logic.bottle_gold_dust = false;}
+	if(Known.bottle1 == true) {Logic.bottle1 = Location_Logic[ItemLocation.bottle1];}
+	if(Known.bottle2 == true) {Logic.bottle2 = Location_Logic[ItemLocation.bottle2];}
+	if(Known.bottle3 == true) {Logic.bottle3 = Location_Logic[ItemLocation.bottle3];}
+	if(Known.bottle4 == true) {Logic.bottle4 = Location_Logic[ItemLocation.bottle4];}
+	if(Known.bottle5 == true) {Logic.bottle5 = Location_Logic[ItemLocation.bottle5];}
+	if(Known.bottle_gold_dust == true) {Logic.bottle_gold_dust = Location_Logic[ItemLocation.bottle_gold_dust];} else{Logic.bottle_gold_dust = false;}
 	
 	Logic.any_bottle = Logic.bottle1 || Logic.bottle2 || Logic.bottle3 || Logic.bottle4 || Logic.bottle5 || Logic.bottle_gold_dust;
 	
+	// Magic beans
+	if(Known.magic_bean1 == true) {Logic.magic_bean1 = Location_Logic[ItemLocation.magic_bean1];}
+	if(Known.magic_bean2 == true) {Logic.magic_bean2 = Location_Logic[ItemLocation.magic_bean2];}
+	Logic.magic_bean = Logic.magic_bean1 || Logic.magic_bean2;
+	
 	// Singleton Items
-	if(Known.fire_arrow == true) {Logic.fire_arrow = Location_Logic[Location.fire_arrow];} else{Logic.fire_arrow = false;}
-	if(Known.ice_arrow == true) {Logic.ice_arrow = Location_Logic[Location.ice_arrow];} else{Logic.ice_arrow = false;}
-	if(Known.light_arrow == true) {Logic.light_arrow = Location_Logic[Location.light_arrow];} else{Logic.light_arrow = false;}
-	if(Known.powder_keg == true) {Logic.powder_keg = Location_Logic[Location.powder_keg];} else{Logic.powder_keg = false;}
-	if(Known.pictobox == true) {Logic.pictobox = Location_Logic[Location.pictobox];} else{Logic.pictobox = false;}
-	if(Known.lens == true) {Logic.lens = Location_Logic[Location.lens];} else{Logic.lens = false;}
-	if(Known.hookshot == true) {Logic.hookshot = Location_Logic[Location.hookshot];} else{Logic.hookshot = false;}
-	if(Known.magic_bean == true) {Logic.magic_bean = Location_Logic[Location.magic_bean];} else{Logic.magic_bean = false;}
-	if(Known.great_fairy_sword == true) {Logic.great_fairy_sword = Location_Logic[Location.great_fairy_sword];} else{Logic.great_fairy_sword = false;}
+	if(Known.fire_arrow == true) {Logic.fire_arrow = Location_Logic[ItemLocation.fire_arrow];} else{Logic.fire_arrow = false;}
+	if(Known.ice_arrow == true) {Logic.ice_arrow = Location_Logic[ItemLocation.ice_arrow];} else{Logic.ice_arrow = false;}
+	if(Known.light_arrow == true) {Logic.light_arrow = Location_Logic[ItemLocation.light_arrow];} else{Logic.light_arrow = false;}
+	if(Known.powder_keg == true) {Logic.powder_keg = Location_Logic[ItemLocation.powder_keg];} else{Logic.powder_keg = false;}
+	if(Known.pictobox == true) {Logic.pictobox = Location_Logic[ItemLocation.pictobox];} else{Logic.pictobox = false;}
+	if(Known.lens == true) {Logic.lens = Location_Logic[ItemLocation.lens];} else{Logic.lens = false;}
+	if(Known.hookshot == true) {Logic.hookshot = Location_Logic[ItemLocation.hookshot];} else{Logic.hookshot = false;}
+	if(Known.great_fairy_sword == true) {Logic.great_fairy_sword = Location_Logic[ItemLocation.great_fairy_sword];} else{Logic.great_fairy_sword = false;}
 	
-	if(Known.postmans_hat == true) {Logic.postmans_hat = Location_Logic[Location.postmans_hat];} else{Logic.postmans_hat = false;}
-	if(Known.allnight_mask == true) {Logic.allnight_mask = Location_Logic[Location.allnight_mask];} else{Logic.allnight_mask = false;}
-	if(Known.blast_mask == true) {Logic.blast_mask = Location_Logic[Location.blast_mask];} else{Logic.blast_mask = false;}
-	if(Known.stone_mask == true) {Logic.stone_mask = Location_Logic[Location.stone_mask];} else{Logic.stone_mask = false;} // logically useless
-	if(Known.greatfairy_mask == true) {Logic.greatfairy_mask = Location_Logic[Location.greatfairy_mask];} else{Logic.greatfairy_mask = false;} // logically useless
-	if(Known.deku_mask == true) {Logic.deku_mask = Location_Logic[Location.deku_mask];} else{Logic.deku_mask = false;}
-	if(Known.keaton_mask == true) {Logic.keaton_mask = Location_Logic[Location.keaton_mask];} else{Logic.keaton_mask = false;}
-	if(Known.bremen_mask == true) {Logic.bremen_mask = Location_Logic[Location.bremen_mask];} else{Logic.bremen_mask = false;}
-	if(Known.bunny_hood == true) {Logic.bunny_hood = Location_Logic[Location.bunny_hood];} else{Logic.bunny_hood = false;}
-	if(Known.dongero_mask == true) {Logic.dongero_mask = Location_Logic[Location.dongero_mask];} else{Logic.dongero_mask = false;}
-	if(Known.mask_of_scents == true) {Logic.mask_of_scents = Location_Logic[Location.mask_of_scents];} else{Logic.mask_of_scents = false;} // logically useless
-	if(Known.goron_mask == true) {Logic.goron_mask = Location_Logic[Location.goron_mask];} else{Logic.goron_mask = false;}
-	if(Known.romani_mask == true) {Logic.romani_mask = Location_Logic[Location.romani_mask];} else{Logic.romani_mask = false;}
-	if(Known.circusleaders_mask == true) {Logic.circusleaders_mask = Location_Logic[Location.circusleaders_mask];} else{Logic.circusleaders_mask = false;} // logically useless
-	if(Known.kafei_mask == true) {Logic.kafei_mask = Location_Logic[Location.kafei_mask];} else{Logic.kafei_mask = false;}
-	if(Known.couples_mask == true) {Logic.couples_mask = Location_Logic[Location.couples_mask];} else{Logic.couples_mask = false;}
-	if(Known.mask_of_truth == true) {Logic.mask_of_truth = Location_Logic[Location.mask_of_truth];} else{Logic.mask_of_truth = false;}
-	if(Known.zora_mask == true) {Logic.zora_mask = Location_Logic[Location.zora_mask];} else{Logic.zora_mask = false;}
-	if(Known.kamaro_mask == true) {Logic.kamaro_mask = Location_Logic[Location.kamaro_mask];} else{Logic.kamaro_mask = false;}
-	if(Known.gibdo_mask == true) {Logic.gibdo_mask = Location_Logic[Location.gibdo_mask];} else{Logic.gibdo_mask = false;}
-	if(Known.garo_mask == true) {Logic.garo_mask = Location_Logic[Location.garo_mask];} else{Logic.garo_mask = false;}
-	if(Known.captains_hat == true) {Logic.captains_hat = Location_Logic[Location.captains_hat];} else{Logic.captains_hat = false;}
-	if(Known.giants_mask == true) {Logic.giants_mask = Location_Logic[Location.giants_mask];} else{Logic.giants_mask = false;}
-	if(Known.fiercedeity_mask == true) {Logic.fiercedeity_mask = Location_Logic[Location.fiercedeity_mask];} else{Logic.fiercedeity_mask = false;} // logically useless
+	if(Known.postmans_hat == true) {Logic.postmans_hat = Location_Logic[ItemLocation.postmans_hat];} else{Logic.postmans_hat = false;}
+	if(Known.allnight_mask == true) {Logic.allnight_mask = Location_Logic[ItemLocation.allnight_mask];} else{Logic.allnight_mask = false;}
+	if(Known.blast_mask == true) {Logic.blast_mask = Location_Logic[ItemLocation.blast_mask];} else{Logic.blast_mask = false;}
+	if(Known.stone_mask == true) {Logic.stone_mask = Location_Logic[ItemLocation.stone_mask];} else{Logic.stone_mask = false;} // logically useless
+	if(Known.greatfairy_mask == true) {Logic.greatfairy_mask = Location_Logic[ItemLocation.greatfairy_mask];} else{Logic.greatfairy_mask = false;} // logically useless
+	if(Known.deku_mask == true) {Logic.deku_mask = Location_Logic[ItemLocation.deku_mask];} else{Logic.deku_mask = false;}
+	if(Known.keaton_mask == true) {Logic.keaton_mask = Location_Logic[ItemLocation.keaton_mask];} else{Logic.keaton_mask = false;}
+	if(Known.bremen_mask == true) {Logic.bremen_mask = Location_Logic[ItemLocation.bremen_mask];} else{Logic.bremen_mask = false;}
+	if(Known.bunny_hood == true) {Logic.bunny_hood = Location_Logic[ItemLocation.bunny_hood];} else{Logic.bunny_hood = false;}
+	if(Known.dongero_mask == true) {Logic.dongero_mask = Location_Logic[ItemLocation.dongero_mask];} else{Logic.dongero_mask = false;}
+	if(Known.mask_of_scents == true) {Logic.mask_of_scents = Location_Logic[ItemLocation.mask_of_scents];} else{Logic.mask_of_scents = false;} // logically useless
+	if(Known.goron_mask == true) {Logic.goron_mask = Location_Logic[ItemLocation.goron_mask];} else{Logic.goron_mask = false;}
+	if(Known.romani_mask == true) {Logic.romani_mask = Location_Logic[ItemLocation.romani_mask];} else{Logic.romani_mask = false;}
+	if(Known.circusleaders_mask == true) {Logic.circusleaders_mask = Location_Logic[ItemLocation.circusleaders_mask];} else{Logic.circusleaders_mask = false;} // logically useless
+	if(Known.kafei_mask == true) {Logic.kafei_mask = Location_Logic[ItemLocation.kafei_mask];} else{Logic.kafei_mask = false;}
+	if(Known.couples_mask == true) {Logic.couples_mask = Location_Logic[ItemLocation.couples_mask];} else{Logic.couples_mask = false;}
+	if(Known.mask_of_truth == true) {Logic.mask_of_truth = Location_Logic[ItemLocation.mask_of_truth];} else{Logic.mask_of_truth = false;}
+	if(Known.zora_mask == true) {Logic.zora_mask = Location_Logic[ItemLocation.zora_mask];} else{Logic.zora_mask = false;}
+	if(Known.kamaro_mask == true) {Logic.kamaro_mask = Location_Logic[ItemLocation.kamaro_mask];} else{Logic.kamaro_mask = false;}
+	if(Known.gibdo_mask == true) {Logic.gibdo_mask = Location_Logic[ItemLocation.gibdo_mask];} else{Logic.gibdo_mask = false;}
+	if(Known.garo_mask == true) {Logic.garo_mask = Location_Logic[ItemLocation.garo_mask];} else{Logic.garo_mask = false;}
+	if(Known.captains_hat == true) {Logic.captains_hat = Location_Logic[ItemLocation.captains_hat];} else{Logic.captains_hat = false;}
+	if(Known.giants_mask == true) {Logic.giants_mask = Location_Logic[ItemLocation.giants_mask];} else{Logic.giants_mask = false;}
+	if(Known.fiercedeity_mask == true) {Logic.fiercedeity_mask = Location_Logic[ItemLocation.fiercedeity_mask];} else{Logic.fiercedeity_mask = false;} // logically useless
 	
-	if(Known.moons_tear == true) {Logic.moons_tear = Location_Logic[Location.moons_tear];} else{Logic.moons_tear = false;}
-	if(Known.land_title_deed == true) {Logic.land_title_deed = Location_Logic[Location.land_title_deed];} else{Logic.land_title_deed = false;}
-	if(Known.swamp_title_deed == true) {Logic.swamp_title_deed = Location_Logic[Location.swamp_title_deed];} else{Logic.swamp_title_deed = false;}
-	if(Known.mountain_title_deed == true) {Logic.mountain_title_deed = Location_Logic[Location.mountain_title_deed];} else{Logic.mountain_title_deed = false;}
-	if(Known.ocean_title_deed == true) {Logic.ocean_title_deed = Location_Logic[Location.ocean_title_deed];} else{Logic.ocean_title_deed = false;}
+	if(Known.moons_tear == true) {Logic.moons_tear = Location_Logic[ItemLocation.moons_tear];} else{Logic.moons_tear = false;}
+	if(Known.land_title_deed == true) {Logic.land_title_deed = Location_Logic[ItemLocation.land_title_deed];} else{Logic.land_title_deed = false;}
+	if(Known.swamp_title_deed == true) {Logic.swamp_title_deed = Location_Logic[ItemLocation.swamp_title_deed];} else{Logic.swamp_title_deed = false;}
+	if(Known.mountain_title_deed == true) {Logic.mountain_title_deed = Location_Logic[ItemLocation.mountain_title_deed];} else{Logic.mountain_title_deed = false;}
+	if(Known.ocean_title_deed == true) {Logic.ocean_title_deed = Location_Logic[ItemLocation.ocean_title_deed];} else{Logic.ocean_title_deed = false;}
 	
-	if(Known.room_key == true) {Logic.room_key = Location_Logic[Location.room_key];} else{Logic.room_key = false;}
-	if(Known.special_delivery == true) {Logic.special_delivery = Location_Logic[Location.special_delivery];} else{Logic.special_delivery = false;}
-	if(Known.letter_to_kafei == true) {Logic.letter_to_kafei = Location_Logic[Location.letter_to_kafei];} else{Logic.letter_to_kafei = false;}
-	if(Known.pendant_of_memories == true) {Logic.pendant_of_memories = Location_Logic[Location.pendant_of_memories];} else{Logic.pendant_of_memories = false;}
+	if(Known.room_key == true) {Logic.room_key = Location_Logic[ItemLocation.room_key];} else{Logic.room_key = false;}
+	if(Known.special_delivery == true) {Logic.special_delivery = Location_Logic[ItemLocation.special_delivery];} else{Logic.special_delivery = false;}
+	if(Known.letter_to_kafei == true) {Logic.letter_to_kafei = Location_Logic[ItemLocation.letter_to_kafei];} else{Logic.letter_to_kafei = false;}
+	if(Known.pendant_of_memories == true) {Logic.pendant_of_memories = Location_Logic[ItemLocation.pendant_of_memories];} else{Logic.pendant_of_memories = false;}
 	
-	if(Known.eponas_song == true) {Logic.eponas_song = Location_Logic[Location.eponas_song];} else{Logic.eponas_song = false;}
-	if(Known.song_of_storms == true) {Logic.song_of_storms = Location_Logic[Location.song_of_storms];} else{Logic.song_of_storms = false;}
-	if(Known.song_of_healing == true) {Logic.song_of_healing = Location_Logic[Location.song_of_healing];} else{Logic.song_of_healing = false;}
-	if(Known.sonata == true) {Logic.sonata = Location_Logic[Location.sonata];} else{Logic.sonata = false;}
-	if(Known.lullaby == true) {Logic.lullaby = Location_Logic[Location.lullaby];} else{Logic.lullaby = false;}
-	if(Known.nwbn == true) {Logic.nwbn = Location_Logic[Location.nwbn];} else{Logic.nwbn = false;}
-	if(Known.elegy == true) {Logic.elegy = Location_Logic[Location.elegy];} else{Logic.elegy = false;}
-	if(Known.oath == true) {Logic.oath = Location_Logic[Location.oath];} else{Logic.oath = false;}
+	if(Known.eponas_song == true) {Logic.eponas_song = Location_Logic[ItemLocation.eponas_song];} else{Logic.eponas_song = false;}
+	if(Known.song_of_storms == true) {Logic.song_of_storms = Location_Logic[ItemLocation.song_of_storms];} else{Logic.song_of_storms = false;}
+	if(Known.song_of_healing == true) {Logic.song_of_healing = Location_Logic[ItemLocation.song_of_healing];} else{Logic.song_of_healing = false;}
+	if(Known.sonata == true) {Logic.sonata = Location_Logic[ItemLocation.sonata];} else{Logic.sonata = false;}
+	if(Known.lullaby == true) {Logic.lullaby = Location_Logic[ItemLocation.lullaby];} else{Logic.lullaby = false;}
+	if(Known.nwbn == true) {Logic.nwbn = Location_Logic[ItemLocation.nwbn];} else{Logic.nwbn = false;}
+	if(Known.elegy == true) {Logic.elegy = Location_Logic[ItemLocation.elegy];} else{Logic.elegy = false;}
+	if(Known.oath == true) {Logic.oath = Location_Logic[ItemLocation.oath];} else{Logic.oath = false;}
 	
-	if(Known.mirror_shield == true) {Logic.mirror_shield = Location_Logic[Location.mirror_shield];} else{Logic.mirror_shield = false;}
+	if(Known.mirror_shield == true) {Logic.mirror_shield = Location_Logic[ItemLocation.mirror_shield];} else{Logic.mirror_shield = false;}
 	
 	Game.razor_sword = Game.sword1 || Game.sword2;
 	Game.gilded_sword = Game.sword1 && Game.sword2;
@@ -108,10 +112,9 @@ function update_item_logic() {
 	Game.magic = Game.magic1 || Game.magic2;
 	Game.double_magic = Game.magic1 && Game.magic2;
 	
-	Game.bow = Game.bow1 || Game.bow2 || Game.bow2;
-	
-	Game.bomb = Game.bomb1 || Game.bomb2 || Game.bomb2;
-	
+	Game.bow = Game.bow1 || Game.bow2 || Game.bow3;
+	Game.bomb = Game.bomb1 || Game.bomb2 || Game.bomb3;
+	Game.magic_bean = Game.magic_bean1 || Game.magic_bean2;
 	Game.any_bottle = Game.bottle1 || Game.bottle2 || Game.bottle3 || Game.bottle4 || Game.bottle5 || Game.bottle_gold_dust;
 	
 	
@@ -223,7 +226,7 @@ function update_item_logic() {
 	Logic.zora_egg = Logic.any_bottle && Logic.pirates_fortress_access && Logic.hookshot && Logic.pinnacle_rock_access && ((Logic.deku_mask && Logic.magic) || Logic.bow);
 	Logic.big_poe = Logic.zora_egg && Logic.any_bottle && Logic.ikana_canyon_access && Logic.gibdo_mask && Logic.bomb && ((Logic.light_arrow && Logic.magic && (Logic.bow || Logic.zora_mask)) || (Logic.limitless_magic_beans && (Logic.bow || Logic.zora_mask)));
 	
-	Logic.any_magic_bean = (Logic.poison_swamp_access && Logic.deku_mask) || Logic.deku_mask || (Logic.moons_tear && Logic.land_title_deed); 
+	Logic.any_magic_bean = Logic.deku_mask || (Logic.moons_tear && Logic.land_title_deed) || Logic.magic_bean; 
 	
 	
 	// Misc Shortcuts
@@ -300,15 +303,15 @@ function update_item_logic() {
 	Game.seahorse = Game.pictobox && Game.west_access && Game.pirates_fortress_access;
 	Game.great_bay_temple_access = Game.pirates_fortress_access && Game.nwbn && Game.hookshot;
 	Game.great_bay_key_1 = Game.great_bay_temple_access && Game.zora_mask && Game.hookshot;
-	Game.great_bay_boss_key = Game.great_bay_temple_access && Game.zora_mask && Game.hookshot && Game.fire_arrow && Game.ice_arrow && Game.bow && Game.magic;
+	Game.great_bay_boss_key = Game.great_bay_temple_access && Game.zora_mask && Game.hookshot;
 	Game.great_bay_clear = Game.great_bay_temple_access && Game.zora_mask && Game.hookshot && Game.bow && Game.magic && Game.great_bay_boss_key && Game.ice_arrow; 
 
 	// Ikana area shortcuts
 	Game.ikana_graveyard_access = Game.eponas_song;
 	Game.east_access = Game.hookshot && Game.ikana_graveyard_access && (Game.garo_mask || Game.gibdo_mask);
-	Game.ikana_canyon_access = Game.east_access && Game.ice_arrow && Game.bow && Game.magic;
+	Game.ikana_canyon_access = Game.east_access;
 	
-	Game.stone_tower_temple_access = Game.ikana_canyon_access && Game.hookshot && Game.elegy && Game.goron_mask && Game.zora_mask;
+	Game.stone_tower_temple_access = Game.ikana_canyon_access && Game.hookshot && Game.elegy && (Game.goron_mask || Game.zora_mask);
 	
 	Game.inverted_stone_tower_temple_access = Game.stone_tower_temple_access && Game.bow && Game.light_arrow && Game.magic;
 	
@@ -334,7 +337,20 @@ function update_item_logic() {
 	Game.zora_egg = Game.any_bottle && Game.pirates_fortress_access && Game.hookshot && Game.pinnacle_rock_access && ((Game.deku_mask && Game.magic) || Game.bow);
 	Game.big_poe = Game.zora_egg && Game.any_bottle && Game.ikana_canyon_access && Game.gibdo_mask && Game.bomb && ((Game.light_arrow && Game.magic && (Game.bow || Game.zora_mask)) || (Game.limitless_magic_beans && (Game.bow || Game.zora_mask)));
 	
-	Game.any_magic_bean = (Game.poison_swamp_access && Game.deku_mask) || Game.deku_mask || (Game.moons_tear && Game.land_title_deed); 
+	Game.any_magic_bean = Game.deku_mask || (Game.moons_tear && Game.land_title_deed) || Game.magic_bean; 
+	
+	if(document.getElementById("small_keys_option").value == "KEYSY") {
+		Logic.one_snowhead_key = true;
+		Logic.two_snowhead_keys = true;
+		Logic.one_stone_tower_key = true;
+		Logic.two_stone_tower_keys = true;
+		Logic.three_stone_tower_keys = true;
+		Game.one_snowhead_key = true;
+		Game.two_snowhead_keys = true;
+		Game.one_stone_tower_key = true;
+		Game.two_stone_tower_keys = true;
+		Game.three_stone_tower_keys = true;
+	}
 }
 
 function update_location_logic() {
@@ -352,20 +368,20 @@ function update_location_logic() {
 	Location_Logic["Deku Playground Any Day"] = Logic.deku_mask;
 	Location_Logic["Keaton Quiz"] = Logic.keaton_mask;
 	Location_Logic["North Clock Town Tree"] = true;
-	Location_Logic["Old Lady"] = Logic.pendant_of_memories && Logic.letter_to_kafei;
+	Location_Logic["Old Lady"] = true;
 	Location_Logic["Town Great Fairy"] = true;
 	Location_Logic["Town Great Fairy Non-Human"] = Logic.deku_mask || Logic.goron_mask || Logic.zora_mask;
 		
 	// West Clock Town
 	Location_Logic["Bomb Bag Purchase"] = true;
-	Location_Logic["Big Bomb Bag Purchase"] = Logic.pendant_of_memories && Logic.letter_to_kafei;
+	Location_Logic["Big Bomb Bag Purchase"] = true;
 	Location_Logic["Bank Reward #1 (Adult's Wallet)"] = true;
 	Location_Logic["Postman's Game"] = Logic.bunny_hood;
 	Location_Logic["Rosa Sisters"] = Logic.kamaro_mask;
 	Location_Logic["Swordsman's School"] = true;
 	Location_Logic["All Night Mask Purchase"] = Logic.giants_wallet;
-	Location_Logic["Bank Reward #3 (Piece of Heart)"] = Logic.adults_wallet;
-	Location_Logic["Bank Reward #2 (Blue Rupee)"] = true;
+	Location_Logic["Bank Reward #3 (Piece of Heart)"] = Logic.giants_wallet;
+	Location_Logic["Bank Reward #2 (Blue Rupee)"] = Logic.adults_wallet;
 		
 	// Laundry Pool
 	Location_Logic["Guru Guru"] = true;
@@ -556,9 +572,9 @@ function update_location_logic() {
 	Location_Logic["Secret Shrine Garo Master Chest"] = Logic.bow && Logic.light_arrow && Logic.east_access && Logic.magic;
 		
 	// Beneath the Well 
-	Location_Logic["Mirror Shield Chest"] = Logic.ikana_canyon_access && ((Logic.fire_arrow && Logic.light_arrow && Logic.bow && Logic.magic) || (Logic.light_arrow && Logic.letter_to_kafei && Logic.pendant_of_memories && Logic.gibdo_mask && Logic.bow && Logic.magic && Logic.any_milk && Logic.big_poe) || (Logic.letter_to_kafei && Logic.pendant_of_memories && Logic.gibdo_mask && Logic.big_poe && Logic.any_milk && Logic.limitless_magic_beans));
-	Location_Logic["Well Right Path Chest"] =  Logic.ikana_canyon_access && Logic.gibdo_mask && Logic.any_bottle && ((Logic.light_arrow && Logic.bow && Logic.magic) || (Logic.any_bottle && Logic.limitless_magic_beans));
-	Location_Logic["Well Left Path Chest"] = Logic.ikana_canyon_access && Logic.gibdo_mask && Logic.any_bottle && Logic.any_blue_potion;
+	Location_Logic["Mirror Shield Chest"] = Logic.ikana_canyon_access && ((Logic.fire_arrow && Logic.light_arrow && Logic.bow && Logic.magic) || (Logic.light_arrow && Logic.gibdo_mask && Logic.bow && Logic.magic && Logic.any_milk && Logic.big_poe) || (Logic.gibdo_mask && Logic.big_poe && Logic.any_milk && Logic.limitless_magic_beans));
+	Location_Logic["Well Right Path Chest"] =  Logic.ikana_canyon_access && Logic.gibdo_mask && Logic.any_bottle && ((Logic.light_arrow && Logic.bow && Logic.magic) || Logic.limitless_magic_beans);
+	Location_Logic["Well Left Path Chest"] = Logic.ikana_canyon_access && Logic.gibdo_mask && Logic.any_blue_potion;
 		
 	// Ikana Castle
 	Location_Logic["Ikana Castle Pillar"] = Logic.ikana_canyon_access && Logic.bow && Logic.deku_mask && Logic.fire_arrow && Logic.magic && Logic.lens && (Logic.light_arrow || Logic.mirror_shield);
@@ -571,11 +587,15 @@ function update_location_logic() {
 	// Woodfall Temple
 	Location_Logic["WFT_Bow"] = Logic.woodfall_temple_access;
 	Location_Logic["WFT_Map"] = Logic.woodfall_temple_access && (Logic.deku_mask || (Logic.hookshot && (Logic.explosive || Logic.goron_mask)));
+	Location_Logic["key_WFT"] = Logic.woodfall_temple_access;
 	Location_Logic["WFT_Compass"] = Logic.woodfall_temple_access;
 	Location_Logic["WFT_Odolwa_Heart"] = Logic.woodfall_temple_access && Logic.bow && Logic.deku_mask;
 		
 	// Snowhead Temple
 	Location_Logic["SHT_Fire_Arrow"] = Logic.snowhead_temple_access && Logic.enter_snowhead_temple && ((Logic.fire_arrow && Logic.bow && Logic.magic) || Logic.hookshot || (Logic.goron_mask && Logic.explosive && Logic.magic && Logic.two_snowhead_keys) || (Logic.goron_mask && Logic.explosive && Logic.magic && Logic.one_snowhead_key && Logic.zora_mask));
+	Location_Logic["key_SHT1"] = Logic.snowhead_key_1_block_room;
+	Location_Logic["key_SHT2"] = Logic.snowhead_key_2_icicle_room;
+	Location_Logic["key_SHT3"] = Logic.snowhead_key_3_bridge_room;
 	Location_Logic["SHT_Map"] = Logic.snowhead_temple_access && Logic.enter_snowhead_temple && ((Logic.goron_mask && Logic.magic) || Logic.hookshot || (Logic.explosive && Logic.two_snowhead_keys));
 	Location_Logic["SHT_Compass"] = Logic.snowhead_temple_access && Logic.enter_snowhead_temple && (Logic.hookshot || Logic.one_snowhead_key);
 	Location_Logic["SHT_Goht_Heart"] = Logic.snowhead_temple_access && Logic.enter_snowhead_temple && Logic.bow && Logic.fire_arrow && Logic.goron_mask && Logic.magic && Logic.snowhead_boss_key;
@@ -584,10 +604,15 @@ function update_location_logic() {
 	Location_Logic["GBT_Ice_Arrow"] = Logic.great_bay_temple_access && Logic.zora_mask && Logic.hookshot && Logic.great_bay_key_1;
 	Location_Logic["GBT_Map"] = Logic.great_bay_temple_access && Logic.zora_mask && Logic.hookshot;
 	Location_Logic["GBT_Compass"] = Logic.great_bay_temple_access && Logic.zora_mask && Logic.hookshot;
+	Location_Logic["key_GBT"] = Logic.great_bay_key_1;
 	Location_Logic["GBT_Gyorg_Heart"] = Logic.great_bay_temple_access && Logic.zora_mask && Logic.hookshot && Logic.great_bay_boss_key && Logic.bow && Logic.magic && Logic.ice_arrow && Logic.fire_arrow;
 		
 	// Stone Tower Temple
 	Location_Logic["STT_Light_Arrow"] = Logic.stone_tower_temple_access && ((Logic.light_arrow && Logic.bow && Logic.magic && Logic.one_stone_tower_key) || (Logic.deku_mask && Logic.mirror_shield && Logic.goron_mask && Logic.zora_mask && Logic.explosive && Logic.two_stone_tower_keys));
+	Location_Logic["key_STT1"] = Logic.stone_tower_key_1_armos;
+	Location_Logic["key_STT2"] = Logic.stone_tower_key_2_eyegore;
+	Location_Logic["key_STT3"] = Logic.stone_tower_key_3_updaft;
+	Location_Logic["key_STT4"] = Logic.stone_tower_key_4_death_armos;
 	Location_Logic["STT_Giants"] = Logic.inverted_stone_tower_temple_access && Logic.hookshot && Logic.light_arrow && Logic.bow && Logic.magic && Logic.istt_eyegore_access;
 	Location_Logic["STT_Map"] = Logic.stone_tower_temple_access && ((Logic.mirror_shield && Logic.explosive && Logic.goron_mask) || (Logic.explosive && Logic.bow && Logic.light_arrow && Logic.magic && Logic.goron_mask) || (Logic.light_arrow && Logic.bow && Logic.magic && Logic.one_stone_tower_key && Logic.zora_mask));
 	Location_Logic["STT_Compass"] = Logic.stone_tower_temple_access && ((Logic.light_arrow && Logic.bow && Logic.magic) || (Logic.mirror_shield && Logic.goron_mask && Logic.zora_mask && Logic.one_stone_tower_key));;
@@ -596,7 +621,7 @@ function update_location_logic() {
 	// Songs
 	Location_Logic["Song_Starting"] = true;
 	Location_Logic["Song_BlueWarp"] = Logic.woodfall_clear || Logic.snowhead_clear || Logic.great_bay_clear || Logic.ikana_clear;
-	Location_Logic["Song_Malon"] = Logic.epona_access;
+	Location_Logic["Song_Ranch"] = Logic.epona_access;
 	Location_Logic["Song_Graveyard"] = Logic.captains_hat && Logic.ikana_graveyard_access;
 	Location_Logic["Song_Swamp"] = Logic.poison_swamp_access && Logic.deku_mask && Logic.water_for_magic_bean;
 	Location_Logic["Song_Goron"] = Logic.north_access && Logic.goron_mask;
@@ -671,8 +696,8 @@ function update_location_logic() {
 	Location_Access["Termina Field Grass Grotto"] = true;
 	Location_Access["Termina Field Underwater Chest"] = Game.zora_mask;
 	Location_Access["Termina Field Grass Chest"] = true;
-	Location_Access["Termina Field Stump Chest"] = Game.hookshot || (Game.any_magic_bean && Game.water_for_magic_bean); 
-	Location_Access["Bio Baba Grotto"] = Game.zora_mask && (Game.explosive || Game.goron_mask);
+	Location_Access["Termina Field Stump Chest"] = Game.hookshot || Game.any_magic_bean; 
+	Location_Access["Bio Baba Grotto"] = (Game.zora_mask || Game.hookshot || Game.bow || (Game.deku_mask && Game.magic)) && (Game.explosive || Game.goron_mask);
 		
 	// Road to Southern Swamp
 	Location_Access["Swamp Archery #1"] = Game.bow;
@@ -736,20 +761,20 @@ function update_location_logic() {
 	// Goron Village
 	Location_Access["Powder Keg Challenge"] = Game.north_access && Game.goron_mask && ((Game.magic && Game.fire_arrow && Game.bow) || Game.snowhead_clear);
 	Location_Access["Lens of Truth Chest"] = Game.north_access;
-	Location_Access["Biggest Bomb Bag Purchase"] = Game.north_access;
+	Location_Access["Biggest Bomb Bag Purchase"] = Game.north_access && Game.goron_mask;
 	Location_Access["Mountain Scrub Trade"] = Game.north_access && Game.deku_mask && Game.swamp_title_deed;
 	Location_Access["Lens Cave Invisible Chest"] = Game.north_access;
 	Location_Access["Lens Cave Rock Chest"] = Game.north_access && Game.explosive;
-	Location_Access["Goron Village Ledge"] = Game.north_access && Game.deku_mask && Game.swamp_title_deed;
+	Location_Access["Goron Village Ledge"] = Game.north_access;
 		
 	// Path to Snowhead
 	Location_Access["Path to Snowhead Grotto"] = Game.north_access && Game.explosive && Game.goron_mask && Game.magic;
-	Location_Access["Path to Snowhead Pillar"] = Game.north_access && Game.hookshot && Game.goron_mask && Game.magic && Game.lens;
+	Location_Access["Path to Snowhead Pillar"] = Game.north_access && Game.goron_mask && Game.magic;
 		
 	// Great Bay Coast
 	Location_Access["Ocean Spider House Day 1 Reward"] = Game.ocean_skulltulas && Game.bow && Game.fire_arrow && Game.magic;;
 	Location_Access["Fisherman Game"] = Game.great_bay_clear && Game.hookshot;
-	Location_Access["Ocean Spider House Chest"] = Game.bow && Game.ocean_skulltulas && Game.captains_hat;
+	Location_Access["Ocean Spider House Chest"] = Game.bow && Game.ocean_skulltulas;
 	Location_Access["Mikau"] = Game.west_access && Game.song_of_healing;
 	Location_Access["Great Bay Coast Grotto"] = Game.west_access;
 	Location_Access["Lab Fish"] = Game.west_access && Game.any_bottle;
@@ -822,9 +847,9 @@ function update_location_logic() {
 	Location_Access["Secret Shrine Garo Master Chest"] = Game.bow && Game.light_arrow && Game.east_access && Game.magic;
 		
 	// Beneath the Well 
-	Location_Access["Mirror Shield Chest"] = Game.ikana_canyon_access && ((Game.fire_arrow && Game.light_arrow && Game.bow && Game.magic) || (Game.light_arrow && Game.letter_to_kafei && Game.pendant_of_memories && Game.gibdo_mask && Game.bow && Game.magic && Game.any_milk && Game.big_poe) || (Game.letter_to_kafei && Game.pendant_of_memories && Game.gibdo_mask && Game.big_poe && Game.any_milk && Game.limitless_magic_beans));
-	Location_Access["Well Right Path Chest"] =  Game.ikana_canyon_access && Game.gibdo_mask && Game.any_bottle && ((Game.light_arrow && Game.bow && Game.magic) || (Game.any_bottle && Game.limitless_magic_beans));
-	Location_Access["Well Left Path Chest"] = Game.ikana_canyon_access && Game.gibdo_mask && Game.any_bottle && Game.any_blue_potion;
+	Location_Access["Mirror Shield Chest"] = Game.ikana_canyon_access && ((Game.fire_arrow && Game.light_arrow && Game.bow && Game.magic) || (Game.light_arrow && Game.gibdo_mask && Game.bow && Game.magic && Game.any_milk && Game.big_poe) || (Game.gibdo_mask && Game.big_poe && Game.any_milk && Game.limitless_magic_beans));
+	Location_Access["Well Right Path Chest"] =  Game.ikana_canyon_access && Game.gibdo_mask && Game.any_bottle && ((Game.light_arrow && Game.bow && Game.magic) || Game.limitless_magic_beans);
+	Location_Access["Well Left Path Chest"] = Game.ikana_canyon_access && Game.gibdo_mask && Game.any_blue_potion;
 		
 	// Ikana Castle
 	Location_Access["Ikana Castle Pillar"] = Game.ikana_canyon_access && Game.bow && Game.deku_mask && Game.fire_arrow && Game.magic && Game.lens && (Game.light_arrow || Game.mirror_shield);
@@ -837,6 +862,7 @@ function update_location_logic() {
 	// Woodfall Temple
 	Location_Access["WFT_Bow"] = Game.woodfall_temple_access;
 	Location_Access["WFT_Map"] = Game.woodfall_temple_access && (Game.deku_mask || (Game.hookshot && (Game.explosive || Game.goron_mask)));
+	Location_Access["key_WFT"] = Game.woodfall_temple_access;
 	Location_Access["WFT_Compass"] = Game.woodfall_temple_access;
 	Location_Access["WFT_Odolwa_Heart"] = Game.woodfall_temple_access && Game.bow && Game.deku_mask;
 		
@@ -844,25 +870,33 @@ function update_location_logic() {
 	Location_Access["SHT_Fire_Arrow"] = Game.snowhead_temple_access && Game.enter_snowhead_temple && ((Game.fire_arrow && Game.bow && Game.magic) || Game.hookshot || (Game.goron_mask && Game.explosive && Game.magic && Game.two_snowhead_keys) || (Game.goron_mask && Game.explosive && Game.magic && Game.one_snowhead_key && Game.zora_mask));
 	Location_Access["SHT_Map"] = Game.snowhead_temple_access && Game.enter_snowhead_temple && ((Game.goron_mask && Game.magic) || Game.hookshot || (Game.explosive && Game.two_snowhead_keys));
 	Location_Access["SHT_Compass"] = Game.snowhead_temple_access && Game.enter_snowhead_temple && (Game.hookshot || Game.one_snowhead_key);
+	Location_Access["key_SHT1"] = Game.snowhead_key_1_block_room;
+	Location_Access["key_SHT2"] = Game.snowhead_key_2_icicle_room;
+	Location_Access["key_SHT3"] = Game.snowhead_key_3_bridge_room;
 	Location_Access["SHT_Goht_Heart"] = Game.snowhead_temple_access && Game.enter_snowhead_temple && Game.bow && Game.fire_arrow && Game.goron_mask && Game.magic && Game.snowhead_boss_key;
 		
 	// Great Bay Temple
 	Location_Access["GBT_Ice_Arrow"] = Game.great_bay_temple_access && Game.zora_mask && Game.hookshot && Game.great_bay_key_1;
+	Location_Access["key_GBT"] = Game.great_bay_key_1;
 	Location_Access["GBT_Map"] = Game.great_bay_temple_access && Game.zora_mask && Game.hookshot;
 	Location_Access["GBT_Compass"] = Game.great_bay_temple_access && Game.zora_mask && Game.hookshot;
-	Location_Access["GBT_Gyorg_Heart"] = Game.great_bay_temple_access && Game.zora_mask && Game.hookshot && Game.great_bay_boss_key && Game.bow && Game.magic && Game.ice_arrow && Game.fire_arrow;
+	Location_Access["GBT_Gyorg_Heart"] = Game.great_bay_temple_access && Game.zora_mask && Game.hookshot && Game.great_bay_boss_key && Game.bow && Game.magic && Game.ice_arrow;
 		
 	// Stone Tower Temple
 	Location_Access["STT_Light_Arrow"] = Game.stone_tower_temple_access && ((Game.light_arrow && Game.bow && Game.magic && Game.one_stone_tower_key) || (Game.deku_mask && Game.mirror_shield && Game.goron_mask && Game.zora_mask && Game.explosive && Game.two_stone_tower_keys));
+	Location_Access["key_STT1"] = Game.stone_tower_key_1_armos;
+	Location_Access["key_STT2"] = Game.stone_tower_key_2_eyegore;
+	Location_Access["key_STT3"] = Game.stone_tower_key_3_updaft;
+	Location_Access["key_STT4"] = Game.stone_tower_key_4_death_armos;
 	Location_Access["STT_Giants"] = Game.inverted_stone_tower_temple_access && Game.hookshot && Game.light_arrow && Game.bow && Game.magic && Game.istt_eyegore_access;
 	Location_Access["STT_Map"] = Game.stone_tower_temple_access && ((Game.mirror_shield && Game.explosive && Game.goron_mask) || (Game.explosive && Game.bow && Game.light_arrow && Game.magic && Game.goron_mask) || (Game.light_arrow && Game.bow && Game.magic && Game.one_stone_tower_key && Game.zora_mask));
 	Location_Access["STT_Compass"] = Game.stone_tower_temple_access && ((Game.light_arrow && Game.bow && Game.magic) || (Game.mirror_shield && Game.goron_mask && Game.zora_mask && Game.one_stone_tower_key));;
-	Location_Access["STT_Twinmold_Heart"] = Game.inverted_stone_tower_temple_access && Game.hookshot && Game.bow && Game.light_arrow && Game.stone_tower_boss_key && Game.magic && Game.istt_eyegore_access && Game.giants_mask;
+	Location_Access["STT_Twinmold_Heart"] = Game.inverted_stone_tower_temple_access && Game.hookshot && Game.bow && Game.light_arrow && Game.stone_tower_boss_key && Game.magic && Game.istt_eyegore_access;
 		
 	// Songs
 	Location_Access["Song_Starting"] = true;
 	Location_Access["Song_BlueWarp"] = Game.woodfall_clear || Game.snowhead_clear || Game.great_bay_clear || Game.ikana_clear;
-	Location_Access["Song_Malon"] = Game.epona_access;
+	Location_Access["Song_Ranch"] = Game.epona_access;
 	Location_Access["Song_Graveyard"] = Game.captains_hat && Game.ikana_graveyard_access;
 	Location_Access["Song_Swamp"] = Game.poison_swamp_access && Game.deku_mask && Game.water_for_magic_bean;
 	Location_Access["Song_Goron"] = Game.north_access && Game.goron_mask;

@@ -81,6 +81,35 @@ overflow: hidden;
 	font-weight: bold;	
 	letter-spacing: 0px;
 	color: chartreuse;
+	opacity: 1;
+}
+.checked_text_summary_not_have {
+	font-size: 14px;
+	font-weight: bold;	
+	letter-spacing: 0px;
+	color: chartreuse;
+	opacity: .5;
+}
+.checked_text_summary_have_ool {
+	font-size: 14px;
+	font-weight: normal;	
+	letter-spacing: 0px;
+	color: orange;
+	opacity: 1;
+}
+.checked_text_summary_ool {
+	font-size: 14px;
+	font-weight: normal;	
+	letter-spacing: 0px;
+	color: black;
+	opacity: 1;
+}
+.checkSummaryText {
+	font-size: 14px;
+	font-weight: normal;	
+	letter-spacing: 0px;
+	color: black;
+	opacity: 1;
 }
 .row:after {
   content: "";

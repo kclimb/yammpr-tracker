@@ -1,7 +1,7 @@
 var AreaIndexes = [
 	0,5,13,22,26,36,43,55,60,69,73,76,79,84,91,96,
 	103,105,114,121,125,128,132,137,140,143,148,153,158,161,162,165,
-	169,173,177,182
+	170,177,182,191
 ];
 
 var AreaNames = [
@@ -10,7 +10,7 @@ var AreaNames = [
 	"Milk Road", "Ranch", 
 	"Mtn Village", "Twin Islands", "Gor Village", "Path Snow",
 	"Great Bay", "Zora Cape", "Zora Hall", "PF Exterior", "PF Sewers", "PF Interior", "Pinnacle",
-	"Path Ikana", "Graveyard", "Canyon", "Shrine", "Well", "Castle", "Stone Tower", 
+	"Road Ikana", "Graveyard", "Canyon", "Shrine", "Well", "Castle", "Stone Tower", 
 	"WFT", "SHT", "GBT", "STT",
 	"Songs"
 ];
@@ -20,7 +20,7 @@ var AreaNamesShort = [
 	"Milk Road", "Ranch", 
 	"MtnVil", "TwinIsle", "GorVil", "PSnow",
 	"GreBay", "ZorCape", "ZorHall", "PirExt", "PirSew", "PirInt", "Pin",
-	"PIkana", "Grave", "Canyon", "Shrine", "Well", "Castle", "StoTower", 
+	"RIkana", "Grave", "Canyon", "Shrine", "Well", "Castle", "StoTower", 
 	"WFT", "SHT", "GBT", "STT",
 	"Songs"
 ];
@@ -46,7 +46,7 @@ var Locations = [
 	"Guru Guru", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2",
 	
 	// East Clock Town
-	"Madame Aroma in Office", "East Clock Town Chest", "Bombers' Hideout Chest", "Honey and Darling Any Day", "Town Archery #1", "Mayor", "Treasure Chest Game Goron", "Madame Aroma in Bar", "Postman's Freedom Reward", "Gorman", 
+	"Madame Aroma in Office", "East Clock Town Chest", "Bombers' Hideout Chest", "Honey and Darling Any Day", "Town Archery #1", "Treasure Chest Game Goron", "Mayor", "Madame Aroma in Bar", "Postman's Freedom Reward", "Gorman", 
 	
 	// Stock Pot Inn
 	"Inn Reservation", "Midnight Meeting", "Toilet Hand", "Inn Staff Room Chest", "Inn Guest Room Chest", "Grandma Short Story", "Grandma Long Story", 
@@ -86,7 +86,7 @@ var Locations = [
 	"Path to Snowhead Grotto", "Path to Snowhead Pillar", 
 	
 	// Great Bay Coast
-	"Great Bay Coast Grotto", "Mikau", "Ocean Spider House Chest", "Stone Tower Map Purchase", "Lab Fish", "Great Bay Coast Ledge", "Fisherman Pictograph", "Fisherman Game", "Ocean Spider House Day 1 Reward", 
+	"Great Bay Coast Grotto", "Ocean Spider House Chest", "Stone Tower Map Purchase", "Lab Fish", "Mikau", "Great Bay Coast Ledge", "Fisherman Pictograph", "Fisherman Game", "Ocean Spider House Day 1 Reward", 
 	
 	// Zora Cape
 	"Zora Cape Ledge Without Tree Chest", "Zora Cape Ledge With Tree Chest", "Zora Cape Like-Like", "Zora Cape Grotto", "Zora Cape Underwater Chest", "Beaver Race #1", "Beaver Race #2", 
@@ -98,7 +98,7 @@ var Locations = [
 	"Pirates' Fortress Exterior Log Chest", "Pirates' Fortress Exterior Sand Chest", "Pirates' Fortress Exterior Corner Chest",
 	
 	// Pirates' Fortress Sewer
-	"Pirates' Fortress Maze Chest", "Pirates' Fortress Cage Room Shallow Chest", "Pirates' Fortress Cage Room Deep Chest", "Pirates' Fortress Cage",
+	"Pirates' Fortress Maze Chest", "Pirates' Fortress Cage Room Shallow Chest", "Pirates' Fortress Cage", "Pirates' Fortress Cage Room Deep Chest", 
 	
 	// Pirates' Fortress Interior
 	"Pirates' Fortress Interior Upper Chest", "Pirates' Fortress Interior Lower Chest", "Pirates' Fortress Interior Tank Chest", "Hookshot Chest", "Pirates' Fortress Interior Guard Room Chest", 
@@ -128,19 +128,19 @@ var Locations = [
 	"Inverted Stone Tower Left Chest", "Inverted Stone Tower Middle Chest", "Inverted Stone Tower Right Chest",
 	
 	// Woodfall Temple
-	"WFT_Map", "WFT_Bow", "WFT_Compass", "WFT_Odolwa_Heart",  
+	"WFT_Map", "WFT_Bow", "key_WFT", "WFT_Compass", "WFT_Odolwa_Heart",  
 	
 	// Snowhead Temple
-	"SHT_Map", "SHT_Compass", "SHT_Fire_Arrow", "SHT_Goht_Heart", 
+	"key_SHT3", "SHT_Map", "key_SHT1", "SHT_Compass", "key_SHT2", "SHT_Fire_Arrow", "SHT_Goht_Heart", 
 	
 	// Great Bay Temple
-	"GBT_Map", "GBT_Compass", "GBT_Ice_Arrow", "GBT_Gyorg_Heart", 
+	"GBT_Map", "GBT_Compass", "key_GBT", "GBT_Ice_Arrow", "GBT_Gyorg_Heart", 
 	
 	// Stone Tower Temple
-	"STT_Map", "STT_Compass", "STT_Light_Arrow", "STT_Giants", "STT_Twinmold_Heart", 
+	"STT_Compass", "key_STT2", "STT_Map", "key_STT1", "STT_Light_Arrow", "key_STT3", "key_STT4", "STT_Giants", "STT_Twinmold_Heart", 
 	
 	// Songs
-	"Song_Starting", "Song_Swamp", "Song_BlueWarp", "Song_Malon", "Song_Goron", "Song_Eggs", "Song_Graveyard", "Song_Castle"
+	"Song_Starting", "Song_Swamp", "Song_BlueWarp", "Song_Ranch", "Song_Goron", "Song_Eggs", "Song_Graveyard", "Song_Castle"
 ];
 	
 var Names = [
@@ -157,13 +157,13 @@ var Names = [
 	"Guru", "Kafei", "Curios1", "Curios2",
 	
 	// East Clock Town
-	"Aroma", "Chest", "Sewer", "HoneyDar", "Archery", "Mayor", "ChestGor", "AromaBar", "Postman", "Gorman", 
+	"Aroma", "Chest", "Sewer", "HoneyDar", "Archery", "ChestGor", "Mayor", "AromaBar", "Postman", "Gorman", 
 	
 	// Stock Pot Inn
 	"Room Key", "Midnight", "Hand", "Staff", "Guest", "Granny1", "Granny2", 
 	
 	// Termina Field
-	"Telescope", "Dodong", "Pillar", "Scrub Gr", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Gossips", "Kamaro", 
+	"Telescope", "Dodongos", "Pillar", "Scrub Gr", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Gossips", "Kamaro", 
 	
 	// Road to Southern Swamp
 	"Grotto", "Tree", "Map Wood", "Map Snow", "Archery1", 
@@ -196,19 +196,19 @@ var Names = [
 	"Grotto", "Pillar", 
 	
 	// Great Bay Coast
-	"Grotto", "Mikau", "SpidChest", "Map Ikana", "Lab Fish", "Ledge", "Picto", "Jumping", "OceanSpid", 
+	"Grotto", "SpidChest", "Map Ikana", "Lab Fish", "Mikau", "Ledge", "Picto", "Jumping", "OceSpid1", 
 	
 	// Zora Cape
 	"Ledge 1", "Ledge 2", "Like Like", "Grotto", "Water", "Beaver 1", "Beaver 2", 
 	
 	// Zora Hall
-	"Deed", "Ledge", "Stage", "Evan",  
+	"Deed", "Ledge", "Torches", "Evan",  
 	
 	// Pirates' Fortress Exterior
 	"Log", "Sand", "Corner",
 	
 	// Pirates' Fortress Sewer
-	"Maze", "Shallow", "Deep", "Cage",
+	"Maze", "Shallow", "Cage", "Deep", 
 	
 	// Pirates' Fortress Interior
 	"Upper", "Lower", "Tank", "Hookshot", "Guards", 
@@ -238,43 +238,43 @@ var Names = [
 	"Left", "Middle", "Right",
 	
 	// Woodfall Temple
-	"Map", "Bow", "Compass", "Odolwa",
+	"Snappers", "Dino", "Near BK", "Dragonfly", "Odolwa",
 	
 	// Snowhead Temple
-	"Map", "Compass", "Fire Arrow", "Goht",
+	"Freezards", "Elevator", "Block small", "Block big", "Icicles", "Wizzrobe", "Goht",
 	
 	// Great Bay Temple
-	"Map", "Compass", "Ice Arrow", "Gyorg",
+	"First", "Near BK", "Underwater", "Wart", "Gyorg",
 	
 	// Stone Tower Temeple
-	"Map", "Compass", "Light Arr", "Giants", "Twinmold",
+	"Right Sun", "Water", "Left Sun", "Kill Armos", "Garo Mast", "Updraft", "DeathArm", "Eyegore", "Twinmold",
 	
 	// Songs
 	"Start", "Palace", "Blue Warp", "Ranch", "Goron", "Eggs", "Grave", "Castle"
-	
 ];
 
 var Known = [];
 var Check = {};
 var ItemLocations = {};
+var ItemLocation = {};
 var Items = [
-	"junk", "bow1", "bow2", "bow3", "fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "bomb1", "bomb2", "bomb3", "magic_bean", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "letter_to_kafei", "pendant_of_memories", "bottle1", "bottle2", "bottle3", "bottle4", "bottle5", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "sword1", "sword2", "mirror_shield", "magic1", "magic2", "wallet1", "wallet2", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath" 
+	"junk", "bow1", "bow2", "bow3", "fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "bomb1", "bomb2", "bomb3", "magic_bean1", "magic_bean2", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "letter_to_kafei", "pendant_of_memories", "bottle1", "bottle2", "bottle3", "bottle4", "bottle5", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "sword1", "sword2", "mirror_shield", "magic1", "magic2", "wallet1", "wallet2", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath" 
 ];
 var ItemNames = [
-	"junk", "Bow", "Bow", "Bow", "Fire Arrow", "Ice Arrow", "Light Arrow", "Moon's Tear", "Land Deed", "Swamp Deed", "Mtn Deed", "Ocean Deed", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Bean", "Room Key", "Spec Delivery", "Powder Keg", "Pictobox", "Lens", "Hookshot", "GFS", "Letter Kafei", "Pendant", "Bottle", "Bottle", "Bottle", "Bottle", "Bottle", "Bottle Gold", "Postmans", "All-Night", "Blast", "Stone", "Great Fairy", "Deku", "Keaton", "Bremen", "Bunny", "Don Gero", "Scents", "Goron", "Romani", "Circus", "Kafei", "Couples", "Truth", "Zora", "Kamaro", "Gibdo", "Garo", "Captains", "Giants", "Fierce Deity", "Sword", "Sword", "Mirror", "Magic", "Magic", "Wallet", "Wallet", "Healing", "Epona's", "Storms", "Sonata", "Lullaby", "NWBN", "Elegy", "Oath"
+	"junk", "Bow", "Bow", "Bow", "Fire Arrow", "Ice Arrow", "Light Arrow", "Moon's Tear", "Land Deed", "Swamp Deed", "Mtn Deed", "Ocean Deed", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Bean", "Bean", "Room Key", "Spec Delivery", "Powder Keg", "Pictobox", "Lens", "Hookshot", "GFS", "Letter Kafei", "Pendant", "Bottle", "Bottle", "Bottle", "Bottle", "Bottle", "Bottle Gold", "Postmans", "All-Night", "Blast", "Stone", "Great Fairy", "Deku", "Keaton", "Bremen", "Bunny", "Don Gero", "Scents", "Goron", "Romani", "Circus", "Kafei", "Couples", "Truth", "Zora", "Kamaro", "Gibdo", "Garo", "Captains", "Giants", "Fierce Deity", "Sword", "Sword", "Mirror", "Magic", "Magic", "Wallet", "Wallet", "Healing", "Epona's", "Storms", "Sonata", "Lullaby", "NWBN", "Elegy", "Oath"
 ];
 
 var Items2 = [
 	"junk", "bow", "fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "bomb", "magic_bean", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "letter_to_kafei", "pendant_of_memories", "bottle", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "sword", "mirror_shield", "magic", "wallet", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath"
 ];
 var checkSummaryText = [
-	"junk", "bow1", "bow2", "bow3", "fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "bomb1", "bomb2", "bomb3", "magic_bean", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "letter_to_kafei", "pendant_of_memories", "bottle1", "bottle2", "bottle3", "bottle4", "bottle5", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "sword1", "sword2", "mirror_shield", "magic1", "magic2", "wallet1", "wallet2"
+	"junk", "bow1", "bow2", "bow3", "fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "bomb1", "bomb2", "bomb3", "magic_bean1", "magic_bean2", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "letter_to_kafei", "pendant_of_memories", "bottle1", "bottle2", "bottle3", "bottle4", "bottle5", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "sword1", "sword2", "mirror_shield", "magic1", "magic2", "wallet1", "wallet2"
 ];
 var SingletonItems = [
-	"fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "magic_bean", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "letter_to_kafei", "pendant_of_memories", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath"
+	"fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "letter_to_kafei", "pendant_of_memories", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath"
 ];
 var SongItems = [
-	"Song_Starting", "Song_BlueWarp", "Song_Malon", "Song_Graveyard", "Song_Swamp", "Song_Goron", "Song_Eggs", "Song_Castle"
+	"Song_Starting", "Song_BlueWarp", "Song_Ranch", "Song_Graveyard", "Song_Swamp", "Song_Goron", "Song_Eggs", "Song_Castle"
 ];
 var SongNames = {
 	"song_of_healing": "Healing", 
@@ -362,6 +362,26 @@ for (var i = 0; i < Locations.length; i++) {
 	parent.appendChild(elem);
 }
 
+// hide logically useless items from check summary list
+document.getElementById("pendant_of_memories_location").style.display = "none";
+document.getElementById("pendant_of_memories_location_br").style.display = "none";
+document.getElementById("great_fairy_sword_location").style.display = "none";
+document.getElementById("great_fairy_sword_location_br").style.display = "none";
+document.getElementById("sword1_location").style.display = "none";
+document.getElementById("sword1_location_br").style.display = "none";
+document.getElementById("sword2_location").style.display = "none";
+document.getElementById("sword2_location_br").style.display = "none";
+document.getElementById("circusleaders_mask_location").style.display = "none";
+document.getElementById("circusleaders_mask_location_br").style.display = "none";
+document.getElementById("dongero_mask_location").style.display = "none";
+document.getElementById("dongero_mask_location_br").style.display = "none";
+document.getElementById("fiercedeity_mask_location").style.display = "none";
+document.getElementById("fiercedeity_mask_location_br").style.display = "none";
+document.getElementById("greatfairy_mask_location").style.display = "none";
+document.getElementById("greatfairy_mask_location_br").style.display = "none";
+document.getElementById("stone_mask_location").style.display = "none";
+document.getElementById("stone_mask_location_br").style.display = "none";
+
 var Logic = {};
 var Game = {};
 var Location_Logic = {};
@@ -374,9 +394,13 @@ for (var i = 0; i < Items.length; i++) {
 	Known[Items[i]] = false;
 }
 
-for(var i = 0; i < Location.length; i++) {
-	Location_Logic[i] = false;
-	Location_Access[i] = false;
+var backUp = [];
+
+for (var i = 0; i < Locations.length; i++) {
+	Location_Logic[Locations[i]] = false;
+	Location_Access[Locations[i]] = false;
+	Check[Locations[i]] = "unknown";
+	backUp.push(document.getElementById("text_" + Locations[i]).innerHTML);
 }
 
 Game.sword1_img = "./images/Kokiri Sword.png";
@@ -389,29 +413,18 @@ Game.wallet2_img = "./images/Giant's Wallet.png";
 Game.magic1_img = "./images/Magic.png";
 Game.magic2_img = "./images/Magic2.png";
 
-Game.checks_remaining=193;
-Game.logically_accessible=0;
-
-var backUp = [];
-
-for (var i = 0; i < Locations.length; i++) {
-	Check[Locations[i]] = "unknown";
-	backUp.push(document.getElementById("text_" + Locations[i]).innerHTML);
-}
+Game.checks_remaining = 0;
+Game.logically_accessible = 0;
 
 var modal = document.getElementById("myModal");
 
-var elem = document.createElement("br"); 
-parent.appendChild(elem);
-parent.appendChild(elem);
-
 var btn = document.createElement("button");
 btn.id = "myBtn";
-btn.innerHTML = "Help";
+btn.innerHTML = "Help/Options";
 btn.onclick = function() {
 	modal.style.display = "block";
 }
-parent.appendChild(btn);
+document.getElementById("itemColumn").appendChild(btn);
 
 var span = document.getElementsByClassName("close")[0];
 
