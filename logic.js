@@ -221,10 +221,10 @@ function update_item_logic() {
 	
 	Logic.ikana_clear = Logic.inverted_stone_tower_temple_access && Logic.hookshot && Logic.bow && Logic.light_arrow && Logic.stone_tower_boss_key && Logic.magic && Logic.istt_eyegore_access && Logic.giants_mask;
 	
-	Logic.any_blue_potion = Logic.any_bottle && (Logic.mask_of_scents || (Logic.east_access && Logic.adults_wallet));
+	Logic.any_blue_potion = Logic.any_bottle;
 	Logic.any_milk = Logic.any_bottle; // gorman bros purchase requires nothing but bottle
 	Logic.zora_egg = Logic.any_bottle && Logic.pirates_fortress_access && Logic.hookshot && Logic.pinnacle_rock_access && ((Logic.deku_mask && Logic.magic) || Logic.bow);
-	Logic.big_poe = Logic.zora_egg && Logic.any_bottle && Logic.ikana_canyon_access && Logic.gibdo_mask && Logic.bomb && ((Logic.light_arrow && Logic.magic && (Logic.bow || Logic.zora_mask)) || (Logic.limitless_magic_beans && (Logic.bow || Logic.zora_mask)));
+	Logic.big_poe = Logic.any_bottle && Logic.ikana_canyon_access && Logic.gibdo_mask && Logic.bomb && ((Logic.light_arrow && Logic.magic && Logic.bow) || (Logic.limitless_magic_beans && (Logic.bow || Logic.zora_mask)));
 	
 	Logic.any_magic_bean = Logic.deku_mask || (Logic.moons_tear && Logic.land_title_deed) || Logic.magic_bean; 
 	
@@ -266,7 +266,7 @@ function update_item_logic() {
 	Game.swamp_skulltula_tree_room_tree_1 = Game.poison_swamp_access;
 	Game.swamp_skulltula_pot_room_wall = Game.poison_swamp_access;
 	Game.swamp_skulltula_pot_room_hive_1 = Game.poison_swamp_access && (Game.hookshot || Game.zora_mask || Game.bow || (Game.deku_mask && Game.magic));
-	Game.swamp_skulltula_tree_room_tree_2 = Game.poison_swamp_accesse;
+	Game.swamp_skulltula_tree_room_tree_2 = Game.poison_swamp_access;
 	Game.swamp_skulltula_gold_room_wall = Game.poison_swamp_access;
 	Game.swamp_skulltula_tree_room_hive = Game.poison_swamp_access && (Game.hookshot || Game.zora_mask || Game.bow || (Game.deku_mask && Game.magic));
 	Game.swamp_skulltula_monument_room_crate_2 = Game.poison_swamp_access;
@@ -332,10 +332,10 @@ function update_item_logic() {
 	
 	Game.ikana_clear = Game.inverted_stone_tower_temple_access && Game.hookshot && Game.bow && Game.light_arrow && Game.stone_tower_boss_key && Game.magic && Game.istt_eyegore_access && Game.giants_mask;
 	
-	Game.any_blue_potion = Game.any_bottle && (Game.mask_of_scents || (Game.east_access && Game.adults_wallet));
+	Game.any_blue_potion = Game.any_bottle;
 	Game.any_milk = Game.any_bottle; // gorman bros purchase requires nothing but bottle
 	Game.zora_egg = Game.any_bottle && Game.pirates_fortress_access && Game.hookshot && Game.pinnacle_rock_access && ((Game.deku_mask && Game.magic) || Game.bow);
-	Game.big_poe = Game.zora_egg && Game.any_bottle && Game.ikana_canyon_access && Game.gibdo_mask && Game.bomb && ((Game.light_arrow && Game.magic && (Game.bow || Game.zora_mask)) || (Game.limitless_magic_beans && (Game.bow || Game.zora_mask)));
+	Game.big_poe = Game.any_bottle && Game.ikana_canyon_access && Game.gibdo_mask && Game.bomb && ((Game.light_arrow && Game.magic && Game.bow) || (Game.limitless_magic_beans && (Game.bow || Game.zora_mask)));
 	
 	Game.any_magic_bean = Game.deku_mask || (Game.moons_tear && Game.land_title_deed) || Game.magic_bean; 
 	
@@ -736,7 +736,7 @@ function update_location_logic() {
 	Location_Access["Great Bay Map Purchase"] = (Game.deku_mask && Game.magic) || Game.zora_mask || Game.bow || Game.hookshot;
 		
 	// Romani Ranch
-	Location_Access["Aliens Defense"] = Game.eponas_access && Game.bow;
+	Location_Access["Aliens Defense"] = Game.epona_access && Game.bow;
 	Location_Access["Dog Race"] = true;
 	Location_Access["Grog"] = Game.bremen_mask;
 	Location_Access["Cremia"] = Game.epona_access && Game.bow;
