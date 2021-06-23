@@ -426,6 +426,31 @@ btn.onclick = function() {
 }
 document.getElementById("itemColumn").appendChild(btn);
 
+document.getElementById("itemColumn").appendChild(document.createElement("br"));
+
+var btn = document.createElement("button");
+btn.id = "resetCycleButton";
+btn.innerHTML = "Reset Cycle";
+btn.onclick = function() {
+	Game.magic_bean1 = false;
+	Game.magic_bean2 = false;
+	Game.letter_to_kafei = false;
+	Game.pendant_of_memories = false;
+	Game.room_key = false;
+	Game.special_delivery = false;
+	Game.moons_tear = false;
+	Game.land_title_deed = false;
+	Game.swamp_title_deed = false;
+	Game.mountain_title_deed = false;
+	Game.ocean_title_deed = false;
+	if(Game.bottle_gold_dust) {
+		Game.bottle_gold_dust = false;
+		Game.bottle1 = true;
+	}
+}
+document.getElementById("itemColumn").appendChild(btn);
+
+
 var span = document.getElementsByClassName("close")[0];
 
 span.onclick = function() {
