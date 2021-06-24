@@ -381,6 +381,8 @@ document.getElementById("greatfairy_mask_location").style.display = "none";
 document.getElementById("greatfairy_mask_location_br").style.display = "none";
 document.getElementById("stone_mask_location").style.display = "none";
 document.getElementById("stone_mask_location_br").style.display = "none";
+document.getElementById("mask_of_scents_location").style.display = "none";
+document.getElementById("scents_mask_location_br").style.display = "none";
 
 var Logic = {};
 var Game = {};

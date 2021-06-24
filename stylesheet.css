@@ -47,6 +47,21 @@ overflow: hidden;
 	margin-top:2px;
 	opacity: 0.2;
 }
+.requirements_hidden {
+	height:30px;
+	width: 30px;
+	margin-left:0px;
+	margin-right:0px;
+	margin-top:2px;
+	opacity: 0.2;
+	display: none;
+}
+.track_text {
+	font-size:30px;
+	margin-left:3px;
+	margin-right:3px;
+	vertical-align:top;
+}
 .area_titles {
 	font-size: 20px;
 	font-weight: 3000;
