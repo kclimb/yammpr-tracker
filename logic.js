@@ -696,7 +696,7 @@ function update_location_logic() {
 	Location_Access["Termina Field Grass Grotto"] = true;
 	Location_Access["Termina Field Underwater Chest"] = Game.zora_mask;
 	Location_Access["Termina Field Grass Chest"] = true;
-	Location_Access["Termina Field Stump Chest"] = Game.hookshot || Game.any_magic_bean; 
+	Location_Access["Termina Field Stump Chest"] = Game.hookshot || (Game.any_magic_bean && Game.water_for_magic_bean); 
 	Location_Access["Bio Baba Grotto"] = (Game.zora_mask || Game.hookshot || Game.bow || (Game.deku_mask && Game.magic)) && (Game.explosive || Game.goron_mask);
 		
 	// Road to Southern Swamp
@@ -789,7 +789,7 @@ function update_location_logic() {
 	Location_Access["Zora Cape Ledge With Tree Chest"] = Game.hookshot && Game.west_access;
 	Location_Access["Zora Cape Grotto"] = Game.west_access && (Game.goron_mask || Game.explosive);
 	Location_Access["Zora Cape Underwater Chest"] = Game.zora_mask && Game.west_access;
-	Location_Access["Zora Cape Like-Like"] = Game.pirates_fortress_access;
+	Location_Access["Zora Cape Like-Like"] = Game.west_access && (Game.zora_mask || Game.bow);
 		
 	// Zora Hall
 	Location_Access["Ocean Scrub Trade"] = Game.goron_mask && Game.mountain_title_deed && Game.zora_mask && Game.west_access;

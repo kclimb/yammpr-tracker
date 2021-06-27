@@ -83,7 +83,7 @@ var Locations = [
 	"Goron Village Ledge", "Mountain Scrub Trade", "Biggest Bomb Bag Purchase", "Lens of Truth Chest", "Lens Cave Rock Chest", "Lens Cave Invisible Chest", "Powder Keg Challenge", 
 	
 	// Path to Snowhead
-	"Path to Snowhead Grotto", "Path to Snowhead Pillar", 
+	"Path to Snowhead Pillar", "Path to Snowhead Grotto", 
 	
 	// Great Bay Coast
 	"Great Bay Coast Grotto", "Ocean Spider House Chest", "Stone Tower Map Purchase", "Lab Fish", "Mikau", "Great Bay Coast Ledge", "Fisherman Pictograph", "Fisherman Game", "Ocean Spider House Day 1 Reward", 
@@ -101,7 +101,7 @@ var Locations = [
 	"Pirates' Fortress Maze Chest", "Pirates' Fortress Cage Room Shallow Chest", "Pirates' Fortress Cage", "Pirates' Fortress Cage Room Deep Chest", 
 	
 	// Pirates' Fortress Interior
-	"Pirates' Fortress Interior Upper Chest", "Pirates' Fortress Interior Lower Chest", "Pirates' Fortress Interior Tank Chest", "Hookshot Chest", "Pirates' Fortress Interior Guard Room Chest", 
+	"Pirates' Fortress Interior Tank Chest", "Pirates' Fortress Interior Upper Chest", "Pirates' Fortress Interior Lower Chest", "Hookshot Chest", "Pirates' Fortress Interior Guard Room Chest", 
 	
 	// Pinnacle Rock
 	"Pinnacle Rock Lower Chest", "Pinnacle Rock Upper Chest", "Seahorses", 
@@ -137,7 +137,7 @@ var Locations = [
 	"GBT_Map", "GBT_Compass", "key_GBT", "GBT_Ice_Arrow", "GBT_Gyorg_Heart", 
 	
 	// Stone Tower Temple
-	"STT_Compass", "key_STT2", "STT_Map", "key_STT1", "STT_Light_Arrow", "key_STT3", "key_STT4", "STT_Giants", "STT_Twinmold_Heart", 
+	"STT_Compass", "key_STT2", "STT_Map", "key_STT1", "STT_Light_Arrow", "key_STT3", "STT_Giants", "key_STT4", "STT_Twinmold_Heart", 
 	
 	// Songs
 	"Song_Starting", "Song_Swamp", "Song_BlueWarp", "Song_Ranch", "Song_Goron", "Song_Eggs", "Song_Graveyard", "Song_Castle"
@@ -166,7 +166,7 @@ var Names = [
 	"Telescope", "Dodongos", "Pillar", "Scrub Gr", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Gossips", "Kamaro", 
 	
 	// Road to Southern Swamp
-	"Grotto", "Tree", "Map Wood", "Map Snow", "Archery1", 
+	"Grotto", "Tree", "Map Wood", "Map Snow", "Archery", 
 	
 	// Southern Swamp
 	"Roof", "Woods Gr", "Witch Red", "PictoBox", "Grotto", "Contest", "Deed", "BoatArchery", "SwampSpid", 
@@ -190,16 +190,16 @@ var Names = [
 	"Race Gr", "HSW Gr", "Spr Ramp", "Spr Cave", "GorRace", 
 	
 	// Goron Village
-	"Ledge", "Deed", "Scrub 200r", "Lens Ch", "Lens Rock", "Lens Inv", "Keg",  
+	"Ledge", "Deed", "Scrub 200r", "Lens Ch", "Lens Rock", "Lens Inv", "Keg", 
 	
 	// Path to Snowhead
-	"Grotto", "Pillar", 
+	"Pillar", "Grotto", 
 	
 	// Great Bay Coast
 	"Grotto", "SpidChest", "Map Ikana", "Lab Fish", "Mikau", "Ledge", "Picto", "Jumping", "OceSpid1", 
 	
 	// Zora Cape
-	"Ledge 1", "Ledge 2", "Like Like", "Grotto", "Water", "Beaver 1", "Beaver 2", 
+	"Ledge 1", "Ledge 2", "Like Like", "Grotto", "Water", "Beaver", "Beaver 2", 
 	
 	// Zora Hall
 	"Deed", "Ledge", "Torches", "Evan",  
@@ -211,7 +211,7 @@ var Names = [
 	"Maze", "Shallow", "Cage", "Deep", 
 	
 	// Pirates' Fortress Interior
-	"Upper", "Lower", "Tank", "Hookshot", "Guards", 
+	"Tank", "Upper", "Lower", "Hookshot", "Guards", 
 	
 	// Pinnacle Rock
 	"Lower", "Upper", "Seahorses", 
@@ -220,7 +220,7 @@ var Names = [
 	"Grotto", "Pillar", "Soldier", 
 	
 	// Ikana Graveyard
-	"Bats", "IronKnuck", "Grotto", "Keeta", "Dampe", 
+	"Bats", "Knuckle", "Grotto", "Keeta", "Dampe", 
 	
 	// Ikana Canyon
 	"Ledge", "Deed", "Grotto", "Poe Hut", "PamelaDad",  
@@ -247,7 +247,7 @@ var Names = [
 	"First", "Near BK", "Underwater", "Wart", "Gyorg",
 	
 	// Stone Tower Temeple
-	"Right Sun", "Water", "Left Sun", "Kill Armos", "Garo Mast", "Updraft", "DeathArm", "Eyegore", "Twinmold",
+	"Right Sun", "Water", "Left Sun", "Kill Armos", "Garo Mast", "Updraft", "Eyegore", "DeathArm", "Twinmold",
 	
 	// Songs
 	"Start", "Palace", "Blue Warp", "Ranch", "Goron", "Eggs", "Grave", "Castle"
