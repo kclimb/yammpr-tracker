@@ -164,7 +164,7 @@ function update_item_logic() {
 	Logic.swamp_skulltula_main_room_jar = Logic.poison_swamp_access;
 	
 	// Mountain area shortcuts
-	Logic.north_access = (Logic.hot_spring_water && (Logic.goron_mask || Logic.explosive)) || (Logic.bow && (Logic.explosive || (Logic.fire_arrow && Logic.magic) || Logic.goron_mask));
+	Logic.north_access = (Logic.bow && (Logic.explosive || (Logic.fire_arrow && Logic.magic) || Logic.goron_mask));
 	Logic.hot_spring_water = Logic.north_access && Logic.any_bottle && ((Logic.lens && Logic.goron_mask && Logic.magic) || (Logic.bow && Logic.fire_arrow && Logic.magic) || Logic.snowhead_clear);
 	
 	Logic.snowhead_temple_access = Logic.north_access && Logic.goron_mask && Logic.lullaby && Logic.magic;
@@ -236,9 +236,9 @@ function update_item_logic() {
 	Game.water_for_magic_bean = Game.any_bottle || Game.song_of_storms;
 	
 	// Swamp area shortcuts
-	Game.cross_poisoned_water = Game.deku_mask || Game.zora_mask;
+	Game.cross_poisoned_water = Game.deku_mask || Game.zora_mask || Game.goron_mask;
 	Game.poison_swamp_access = Game.cross_poisoned_water && (Game.hookshot || Game.bow || Game.pictobox || Game.zora_mask || Game.any_bottle);
-	Game.limitless_magic_beans = Game.poison_swamp_access && Game.deku_mask;
+	Game.limitless_magic_beans = Game.deku_mask;
 	Game.woodfall_temple_access = Game.deku_mask && Game.sonata && Game.poison_swamp_access;
 	Game.woodfall_clear = Game.woodfall_temple_access && Game.bow; 
 	
@@ -275,17 +275,17 @@ function update_item_logic() {
 	Game.swamp_skulltula_main_room_jar = Game.poison_swamp_access;
 	
 	// Mountain area shortcuts
-	Game.north_access = (Game.hot_spring_water && (Game.goron_mask || Game.explosive)) || (Game.bow && (Game.explosive || (Game.fire_arrow && Game.magic) || Game.goron_mask));
+	Game.north_access = (Game.bow && (Game.explosive || (Game.fire_arrow && Game.magic) || Game.goron_mask));
 	Game.hot_spring_water = Game.north_access && Game.any_bottle && ((Game.lens && Game.goron_mask && Game.magic) || (Game.bow && Game.fire_arrow && Game.magic) || Game.snowhead_clear);
 	
-	Game.snowhead_temple_access = Game.north_access && Game.goron_mask && Game.lullaby && Game.magic;
+	Game.snowhead_temple_access = Game.north_access && Game.goron_mask && Game.lullaby;
 	Game.enter_snowhead_temple = Game.zora_mask || Game.goron_mask;
 	
-	Game.snowhead_key_1_block_room = Game.snowhead_temple_access && Game.enter_snowhead_temple && ((Game.goron_mask && Game.magic) || (Game.fire_arrow && Game.bow && Game.magic));
+	Game.snowhead_key_1_block_room = Game.snowhead_temple_access && Game.enter_snowhead_temple && ((Game.goron_mask && Game.magic) || (Game.fire_arrow && Game.bow && Game.magic) || Game.hookshot || Game.zora_mask || Game.bomb);
 	
 	Game.snowhead_key_2_icicle_room = Game.snowhead_temple_access && Game.enter_snowhead_temple && ((Game.hookshot && Game.explosive && Game.magic) || (Game.magic && Game.hookshot && Game.goron_mask && Game.one_snowhead_key) || (Game.explosive && Game.one_snowhead_key) || (Game.fire_arrow && Game.bow && Game.magic && Game.one_snowhead_key) || (Game.explosive && Game.bow && Game.fire_arrow && Game.zora_mask && Game.magic));
 	
-	Game.snowhead_key_3_bridge_room = Game.snowhead_temple_access && Game.enter_snowhead_temple && ((Game.fire_arrow && Game.bow && Game.magic) || (Game.hookshot && Game.goron_mask));
+	Game.snowhead_key_3_bridge_room = Game.snowhead_temple_access && Game.enter_snowhead_temple && ((Game.fire_arrow && Game.bow && Game.magic) || (Game.hookshot && Game.goron_mask) || Game.bomb);
 	
 	Game.one_snowhead_key = Game.snowhead_key_1_block_room || Game.snowhead_key_2_icicle_room || Game.snowhead_key_3_bridge_room;
 	
@@ -319,9 +319,9 @@ function update_item_logic() {
 	
 	Game.stone_tower_key_2_eyegore = Game.stone_tower_temple_access && ((Game.light_arrow && Game.bow && Game.magic && Game.zora_mask) || (Game.one_stone_tower_key && Game.explosive && Game.goron_mask));
 	
-	Game.stone_tower_key_3_updaft = Game.inverted_stone_tower_temple_access && Game.bow && Game.light_arrow && Game.magic && Game.deku_mask;
+	Game.stone_tower_key_3_updaft = Game.inverted_stone_tower_temple_access && Game.bow && Game.light_arrow && Game.magic;
 	
-	Game.stone_tower_key_4_death_armos = Game.inverted_stone_tower_temple_access && Game.bow && Game.light_arrow && Game.magic && Game.deku_mask && Game.one_stone_tower_key && Game.hookshot;
+	Game.stone_tower_key_4_death_armos = Game.inverted_stone_tower_temple_access && Game.bow && Game.light_arrow && Game.magic && (Game.deku_mask || Game.bomb) && Game.one_stone_tower_key && Game.hookshot;
 	
 	Game.one_stone_tower_key = Game.stone_tower_key_1_armos || Game.stone_tower_key_2_eyegore || Game.stone_tower_key_3_updaft || Game.stone_tower_key_4_death_armos;
 	
@@ -761,15 +761,15 @@ function update_location_logic() {
 	// Goron Village
 	Location_Access["Powder Keg Challenge"] = Game.north_access && Game.goron_mask && ((Game.magic && Game.fire_arrow && Game.bow) || Game.snowhead_clear);
 	Location_Access["Lens of Truth Chest"] = Game.north_access;
-	Location_Access["Biggest Bomb Bag Purchase"] = Game.north_access && Game.goron_mask;
+	Location_Access["Biggest Bomb Bag Purchase"] = Game.north_access && (Game.goron_mask || (Game.deku_mask && Game.moons_tear && Game.land_title_deed && Game.swamp_title_deed));
 	Location_Access["Mountain Scrub Trade"] = Game.north_access && Game.deku_mask && Game.swamp_title_deed;
 	Location_Access["Lens Cave Invisible Chest"] = Game.north_access;
 	Location_Access["Lens Cave Rock Chest"] = Game.north_access && Game.explosive;
 	Location_Access["Goron Village Ledge"] = Game.north_access;
 		
 	// Path to Snowhead
-	Location_Access["Path to Snowhead Grotto"] = Game.north_access && Game.explosive && Game.goron_mask && Game.magic;
-	Location_Access["Path to Snowhead Pillar"] = Game.north_access && Game.goron_mask && Game.magic;
+	Location_Access["Path to Snowhead Grotto"] = Game.north_access && Game.explosive && Game.goron_mask;
+	Location_Access["Path to Snowhead Pillar"] = Game.north_access && Game.goron_mask;
 		
 	// Great Bay Coast
 	Location_Access["Ocean Spider House Day 1 Reward"] = Game.ocean_skulltulas && Game.bow && Game.fire_arrow && Game.magic;;
@@ -795,7 +795,7 @@ function update_location_logic() {
 	Location_Access["Ocean Scrub Trade"] = Game.goron_mask && Game.mountain_title_deed && Game.zora_mask && Game.west_access;
 	Location_Access["Evan"] = Game.zora_mask && Game.west_access;
 	Location_Access["Lulu's Room Ledge"] = Game.pirates_fortress_access;
-	Location_Access["Zora Hall Stage Lights"] = Game.fire_arrow && Game.bow && Game.magic && Game.west_access && Game.zora_mask;
+	Location_Access["Zora Hall Stage Lights"] = Game.fire_arrow && Game.bow && Game.magic && Game.west_access;
 		
 	// Pirates' Fortress Exterior
 	Location_Access["Pirates' Fortress Exterior Log Chest"] = Game.pirates_fortress_access;
@@ -828,12 +828,12 @@ function update_location_logic() {
 	// Ikana Graveyard
 	Location_Access["Dampe Digging"] = Game.captains_hat && Game.ikana_graveyard_access && (Game.zora_mask || Game.bow);
 	Location_Access["Iron Knuckle Chest"] = Game.captains_hat && Game.ikana_graveyard_access && Game.explosive;
-	Location_Access["Captain Keeta's Chest"] = Game.sonata && Game.ikana_graveyard_access && Game.bow;
+	Location_Access["Captain Keeta's Chest"] = Game.sonata && Game.ikana_graveyard_access && (Game.bow || Game.bomb);
 	Location_Access["Day 1 Grave Bats"] = Game.captains_hat && Game.ikana_graveyard_access;
 	Location_Access["Ikana Graveyard Grotto"] = Game.ikana_graveyard_access && Game.explosive;
 		
 	// Ikana Canyon
-	Location_Access["Poe Hut"] = Game.ikana_canyon_access && Game.bow;
+	Location_Access["Poe Hut"] = Game.ikana_canyon_access && (Game.bow || Game.bomb);
 	Location_Access["Pamela's Father"] = Game.song_of_healing && Game.ikana_canyon_access && Game.song_of_storms;
 	Location_Access["Secret Shrine Grotto"] = Game.east_access;
 	Location_Access["Ikana Canyon Ledge"] = Game.east_access;
@@ -852,7 +852,7 @@ function update_location_logic() {
 	Location_Access["Well Left Path Chest"] = Game.ikana_canyon_access && Game.gibdo_mask && Game.any_blue_potion;
 		
 	// Ikana Castle
-	Location_Access["Ikana Castle Pillar"] = Game.ikana_canyon_access && Game.bow && Game.deku_mask && Game.fire_arrow && Game.magic && Game.lens && (Game.light_arrow || Game.mirror_shield);
+	Location_Access["Ikana Castle Pillar"] = Game.ikana_canyon_access && ((Game.bow && Game.magic && Game.light_arrow) || Game.mirror_shield || Game.zora_mask);
 		
 	// Stone Tower
 	Location_Access["Inverted Stone Tower Left Chest"] = Game.stone_tower_temple_access && Game.bow && Game.light_arrow && Game.magic && Game.any_magic_bean && Game.water_for_magic_bean;
@@ -867,7 +867,7 @@ function update_location_logic() {
 	Location_Access["WFT_Odolwa_Heart"] = Game.woodfall_temple_access && Game.bow && Game.deku_mask;
 		
 	// Snowhead Temple
-	Location_Access["SHT_Fire_Arrow"] = Game.snowhead_temple_access && Game.enter_snowhead_temple && ((Game.fire_arrow && Game.bow && Game.magic) || Game.hookshot || (Game.goron_mask && Game.explosive && Game.magic && Game.two_snowhead_keys) || (Game.goron_mask && Game.explosive && Game.magic && Game.one_snowhead_key && Game.zora_mask));
+	Location_Access["SHT_Fire_Arrow"] = Game.snowhead_temple_access && Game.enter_snowhead_temple && ((Game.fire_arrow && Game.bow && Game.magic) || (Game.hookshot && (Game.bomb || (Game.goron_mask && Game.magic))) || (Game.goron_mask && Game.explosive && Game.magic && Game.two_snowhead_keys) || (Game.goron_mask && Game.explosive && Game.magic && Game.one_snowhead_key && Game.zora_mask) || Game.bomb);
 	Location_Access["SHT_Map"] = Game.snowhead_temple_access && Game.enter_snowhead_temple && ((Game.goron_mask && Game.magic) || Game.hookshot || (Game.explosive && Game.two_snowhead_keys));
 	Location_Access["SHT_Compass"] = Game.snowhead_temple_access && Game.enter_snowhead_temple && (Game.hookshot || Game.one_snowhead_key);
 	Location_Access["key_SHT1"] = Game.snowhead_key_1_block_room;
@@ -901,6 +901,6 @@ function update_location_logic() {
 	Location_Access["Song_Swamp"] = Game.poison_swamp_access && Game.deku_mask && Game.water_for_magic_bean;
 	Location_Access["Song_Goron"] = Game.north_access && Game.goron_mask;
 	Location_Access["Song_Eggs"] = Game.zora_egg && Game.zora_mask && Game.west_access;
-	Location_Access["Song_Castle"] = Game.ikana_canyon_access && Game.bow && Game.fire_arrow && Game.mirror_shield && Game.magic && (Game.light_arrow || (Game.deku_mask && Game.powder_keg && Game.goron_mask && Game.lens));
+	Location_Access["Song_Castle"] = Game.ikana_canyon_access && Game.bow && Game.fire_arrow && Game.mirror_shield && Game.magic && (Game.light_arrow || ((Game.deku_mask || Game.zora_mask) && Game.powder_keg && Game.goron_mask));
 	
 }

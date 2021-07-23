@@ -35,8 +35,7 @@ var Locations = [
 	"Clock Tower Entrance", "South Clock Town Straw Roof Chest", "Clock Town Scrub Trade", "Postbox", "South Clock Town Final Day Chest", 
 	
 	// North Clock Town
-	"North Clock Town Tree", "Clock Town Map Purchase", "Old Lady", "Town Great Fairy", 
-	"Town Great Fairy Non-Human", "Bombers' Hide and Seek", 
+	"North Clock Town Tree", "Clock Town Map Purchase", "Bombers' Hide and Seek", "Old Lady", "Town Great Fairy", "Town Great Fairy Non-Human", 
 	"Deku Playground Any Day", "Keaton Quiz", 
 
 	// West Clock Town
@@ -55,13 +54,13 @@ var Locations = [
 	"Astronomy Telescope", "Dodongo Grotto", "Termina Field Pillar Grotto", "Business Scrub Purchase", "Termina Field Grass Chest", "Termina Field Grass Grotto", "Termina Field Stump Chest", "Peahat Grotto", "Termina Field Underwater Chest", "Bio Baba Grotto", "Gossip Stones", "Kamaro", 
 	
 	// Road to Southern Swamp
-	"Path to Swamp Grotto", "Path to Swamp Tree", "Woodfall Map Purchase", "Snowhead Map Purchase", "Swamp Archery #1", 
+	"Woodfall Map Purchase", "Path to Swamp Grotto", "Path to Swamp Tree", "Snowhead Map Purchase", "Swamp Archery #1", 
 	
 	// Southern Swamp 
 	"Swamp Tourist Center Roof", "Mystery Woods Grotto", "Kotake Red Potion", "Koume Pictobox", "Near Swamp Spider House Grotto",  "Pictograph Contest Winner", "Swamp Scrub Trade", "Boat Archery", "Swamp Spider House Reward", 
 	
 	// Deku Palace
-	"Bean Man", "Bean Grotto", "Deku Palace West Garden", "Butler", 
+	"Deku Palace West Garden", "Bean Man", "Bean Grotto", "Butler", 
 	
 	// Woodfall
 	"Entrance to Woodfall Chest", "Woodfall Bridge Chest", "Behind Woodfall Owl Chest", 
@@ -73,8 +72,8 @@ var Locations = [
 	"Doggy Racetrack Roof Chest", "Dog Race", "Grog", "Aliens Defense", "Cremia", 
 	
 	// Mountain Village
-	"Darmani", "Mountain Smithy Day 1", "Mountain Smithy Day 2", "Hungry Goron",  
-	"Mountain Waterfall Chest", "Mountain Spring Grotto", "Frog Choir", 
+	"Mountain Smithy Day 1", "Mountain Smithy Day 2", "Hungry Goron",  
+	"Mountain Waterfall Chest", "Mountain Spring Grotto", "Darmani", "Frog Choir", 
 	
 	// Twin Islands
 	"Goron Racetrack Grotto", "Hot Spring Water Grotto", "Twin Islands Underwater Ramp Chest", "Twin Islands Cave Chest", "Goron Race", 
@@ -92,7 +91,7 @@ var Locations = [
 	"Zora Cape Ledge Without Tree Chest", "Zora Cape Ledge With Tree Chest", "Zora Cape Like-Like", "Zora Cape Grotto", "Zora Cape Underwater Chest", "Beaver Race #1", "Beaver Race #2", 
 	
 	// Zora Hall
-	"Ocean Scrub Trade", "Lulu's Room Ledge", "Zora Hall Stage Lights", "Evan", 
+	"Lulu's Room Ledge", "Ocean Scrub Trade", "Evan", "Zora Hall Stage Lights", 
 	
 	// Pirates' Fortress Exterior
 	"Pirates' Fortress Exterior Log Chest", "Pirates' Fortress Exterior Sand Chest", "Pirates' Fortress Exterior Corner Chest",
@@ -104,10 +103,10 @@ var Locations = [
 	"Pirates' Fortress Interior Tank Chest", "Pirates' Fortress Interior Upper Chest", "Pirates' Fortress Interior Lower Chest", "Hookshot Chest", "Pirates' Fortress Interior Guard Room Chest", 
 	
 	// Pinnacle Rock
-	"Pinnacle Rock Lower Chest", "Pinnacle Rock Upper Chest", "Seahorses", 
+	"Pinnacle Rock Upper Chest", "Pinnacle Rock Lower Chest", "Seahorses", 
 	
 	// Path to Ikana Canyon
-	"Path to Ikana Grotto", "Path to Ikana Pillar Chest", "Invisible Soldier", 
+	"Path to Ikana Pillar Chest", "Path to Ikana Grotto", "Invisible Soldier", 
 	
 	// Ikana Graveyard
 	"Day 1 Grave Bats", "Iron Knuckle Chest", "Ikana Graveyard Grotto", "Captain Keeta's Chest", "Dampe Digging", 
@@ -116,7 +115,7 @@ var Locations = [
 	"Ikana Canyon Ledge", "Canyon Scrub Trade", "Secret Shrine Grotto", "Poe Hut", "Pamela's Father", 
 	
 	// Secret Shrine
-	"Secret Shrine Dinolfos Chest", "Secret Shrine Wizzrobe Chest", "Secret Shrine Wart Chest", "Secret Shrine Garo Master Chest", "Secret Shrine Final Chest", 
+	"Secret Shrine Dinolfos Chest", "Secret Shrine Garo Master Chest", "Secret Shrine Wizzrobe Chest", "Secret Shrine Wart Chest", "Secret Shrine Final Chest", 
 	
 	// Beneath the Well 
 	"Well Left Path Chest", "Well Right Path Chest", "Mirror Shield Chest", 
@@ -128,7 +127,7 @@ var Locations = [
 	"Inverted Stone Tower Left Chest", "Inverted Stone Tower Middle Chest", "Inverted Stone Tower Right Chest",
 	
 	// Woodfall Temple
-	"WFT_Map", "WFT_Bow", "key_WFT", "WFT_Compass", "WFT_Odolwa_Heart",  
+	"WFT_Compass", "key_WFT", "WFT_Map", "WFT_Bow", "WFT_Odolwa_Heart",  
 	
 	// Snowhead Temple
 	"key_SHT3", "SHT_Map", "key_SHT1", "SHT_Compass", "key_SHT2", "SHT_Fire_Arrow", "SHT_Goht_Heart", 
@@ -148,7 +147,7 @@ var Names = [
 	"Ledge", "Straw", "Deed", "Mailbox", "Tower", 
 	
 	// North Clock Town
-	"Tree", "Map Town", "Old Lady", "GF Human", "GF Transf", "Bombers", "Playgro", "Keaton",  
+	"Tree", "Map Town", "Bombers", "Old Lady", "GF Human", "GF Transf", "Playgro", "Keaton",  
 	
 	// West Clock Town
 	"Bomb Bag", "Postman", "Swords", "Big Bomb", "Bank 200", "Bank 500", "Bank 1000", "All-Night", "Rosa", 
@@ -166,13 +165,13 @@ var Names = [
 	"Telescope", "Dodongos", "Pillar", "Scrub Gr", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Gossips", "Kamaro", 
 	
 	// Road to Southern Swamp
-	"Grotto", "Tree", "Map Wood", "Map Snow", "Archery", 
+	"Map Wood", "Grotto", "Tree", "Map Snow", "Archery", 
 	
 	// Southern Swamp
 	"Roof", "Woods Gr", "Witch Red", "PictoBox", "Grotto", "Contest", "Deed", "BoatArchery", "SwampSpid", 
 	
 	// Deku Palace
-	"Bean", "Bean Ch", "West Gard", "Butler", 
+	"West Gard", "Bean", "Bean Ch", "Butler", 
 	
 	// Woodfall
 	"Entrance", "Bridge", "Owl", 
@@ -184,7 +183,7 @@ var Names = [
 	"Dog Chest", "Dog Race", "Chicks", "Aliens", "Cremia", 
 	
 	// Mountain 
-	"Darmani", "Smithy1", "Smithy2", "Sirloin", "Waterfall", "Grotto", "Frogs", 
+	"Smithy1", "Smithy2", "Sirloin", "Waterfall", "Grotto", "Darmani", "Frogs", 
 	
 	// Twin Islands
 	"Race Gr", "HSW Gr", "Spr Ramp", "Spr Cave", "GorRace", 
@@ -202,7 +201,7 @@ var Names = [
 	"Ledge 1", "Ledge 2", "Like Like", "Grotto", "Water", "Beaver", "Beaver 2", 
 	
 	// Zora Hall
-	"Deed", "Ledge", "Torches", "Evan",  
+	"Ledge", "Deed", "Evan", "Torches",  
 	
 	// Pirates' Fortress Exterior
 	"Log", "Sand", "Corner",
@@ -214,10 +213,10 @@ var Names = [
 	"Tank", "Upper", "Lower", "Hookshot", "Guards", 
 	
 	// Pinnacle Rock
-	"Lower", "Upper", "Seahorses", 
+	"Upper", "Lower", "Seahorses", 
 	
 	// Path to Ikana Canyon
-	"Grotto", "Pillar", "Soldier", 
+	"Pillar", "Grotto", "Soldier", 
 	
 	// Ikana Graveyard
 	"Bats", "Knuckle", "Grotto", "Keeta", "Dampe", 
@@ -226,7 +225,7 @@ var Names = [
 	"Ledge", "Deed", "Grotto", "Poe Hut", "PamelaDad",  
 	
 	// Secret Shrine
-	"Dinolfos", "Wizzrobe", "Wart", "Garo Master", "Final", 
+	"Dinolfos", "Garo Master", "Wizzrobe", "Wart", "Final", 
 	
 	// Beneath the Well 
 	"Left", "Right", "Mirror", 
@@ -238,7 +237,7 @@ var Names = [
 	"Left", "Middle", "Right",
 	
 	// Woodfall Temple
-	"Snappers", "Dino", "Near BK", "Dragonfly", "Odolwa",
+	"Dragonfly", "Near BK", "Snappers", "Dino", "Odolwa",
 	
 	// Snowhead Temple
 	"Freezards", "Elevator", "Block small", "Block big", "Icicles", "Wizzrobe", "Goht",
@@ -447,7 +446,7 @@ btn.onclick = function() {
 	Game.ocean_title_deed = false;
 	if(Game.bottle_gold_dust) {
 		Game.bottle_gold_dust = false;
-		Game.bottle1 = true;
+		Game.bottle5 = true;
 	}
 }
 document.getElementById("itemColumn").appendChild(btn);
