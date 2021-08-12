@@ -327,8 +327,8 @@ function update_item_logic() {
 	
 	Game.two_stone_tower_keys = (Game.stone_tower_key_1_armos && Game.stone_tower_key_2_eyegore) || (Game.stone_tower_key_1_armos && Game.stone_tower_key_3_updaft) || (Game.stone_tower_key_1_armos && Game.stone_tower_key_4_death_armos) || (Game.stone_tower_key_2_eyegore && Game.stone_tower_key_3_updaft) || (Game.stone_tower_key_2_eyegore && Game.stone_tower_key_4_death_armos) || (Game.stone_tower_key_3_updaft && Game.stone_tower_key_4_death_armos);
 	
-	Game.istt_eyegore_access = Game.deku_mask && Game.two_stone_tower_keys;
-	Game.stone_tower_boss_key = Game.inverted_stone_tower_temple_access && Game.light_arrow && Game.bow && Game.magic && Game.deku_mask && Game.one_stone_tower_key && Game.hookshot;
+	Game.istt_eyegore_access = (Game.deku_mask && Game.two_stone_tower_keys) || Game.bomb;
+	Game.stone_tower_boss_key = Game.inverted_stone_tower_temple_access && Game.light_arrow && Game.bow && Game.magic && (Game.deku_mask || Game.bomb) && Game.one_stone_tower_key && Game.hookshot;
 	
 	Game.ikana_clear = Game.inverted_stone_tower_temple_access && Game.hookshot && Game.bow && Game.light_arrow && Game.stone_tower_boss_key && Game.magic && Game.istt_eyegore_access && Game.giants_mask;
 	
@@ -678,7 +678,7 @@ function update_location_logic() {
 		
 	// Stock Pot Inn
 	Location_Access["Inn Reservation"] = true;
-	Location_Access["Midnight Meeting"] = Game.kafei_mask && Game.night_inn_access;
+	Location_Access["Midnight Meeting"] = Game.kafei_mask;
 	Location_Access["Toilet Hand"] = true && (Game.land_title_deed || Game.swamp_title_deed || Game.mountain_title_deed || Game.ocean_title_deed || Game.letter_to_kafei || Game.special_delivery);
 	Location_Access["Grandma Short Story"] = Game.allnight_mask;
 	Location_Access["Grandma Long Story"] = Game.allnight_mask;
@@ -761,7 +761,7 @@ function update_location_logic() {
 	// Goron Village
 	Location_Access["Powder Keg Challenge"] = Game.north_access && Game.goron_mask && ((Game.magic && Game.fire_arrow && Game.bow) || Game.snowhead_clear);
 	Location_Access["Lens of Truth Chest"] = Game.north_access;
-	Location_Access["Biggest Bomb Bag Purchase"] = Game.north_access && (Game.goron_mask || (Game.deku_mask && Game.moons_tear && Game.land_title_deed && Game.swamp_title_deed));
+	Location_Access["Biggest Bomb Bag Purchase"] = Game.north_access && (Game.goron_mask || Game.deku_mask);
 	Location_Access["Mountain Scrub Trade"] = Game.north_access && Game.deku_mask && Game.swamp_title_deed;
 	Location_Access["Lens Cave Invisible Chest"] = Game.north_access;
 	Location_Access["Lens Cave Rock Chest"] = Game.north_access && Game.explosive;
@@ -772,7 +772,7 @@ function update_location_logic() {
 	Location_Access["Path to Snowhead Pillar"] = Game.north_access && Game.goron_mask;
 		
 	// Great Bay Coast
-	Location_Access["Ocean Spider House Day 1 Reward"] = Game.ocean_skulltulas && Game.bow && Game.fire_arrow && Game.magic;;
+	Location_Access["Ocean Spider House Day 1 Reward"] = Game.ocean_skulltulas;
 	Location_Access["Fisherman Game"] = Game.great_bay_clear && Game.hookshot;
 	Location_Access["Ocean Spider House Chest"] = Game.bow && Game.ocean_skulltulas;
 	Location_Access["Mikau"] = Game.west_access && Game.song_of_healing;
@@ -868,7 +868,7 @@ function update_location_logic() {
 		
 	// Snowhead Temple
 	Location_Access["SHT_Fire_Arrow"] = Game.snowhead_temple_access && Game.enter_snowhead_temple && ((Game.fire_arrow && Game.bow && Game.magic) || (Game.hookshot && (Game.bomb || (Game.goron_mask && Game.magic))) || (Game.goron_mask && Game.explosive && Game.magic && Game.two_snowhead_keys) || (Game.goron_mask && Game.explosive && Game.magic && Game.one_snowhead_key && Game.zora_mask) || Game.bomb);
-	Location_Access["SHT_Map"] = Game.snowhead_temple_access && Game.enter_snowhead_temple && ((Game.goron_mask && Game.magic) || Game.hookshot || (Game.explosive && Game.two_snowhead_keys));
+	Location_Access["SHT_Map"] = Game.snowhead_temple_access && Game.enter_snowhead_temple && ((Game.goron_mask && Game.magic) || Game.hookshot || Game.zora_mask || (Game.explosive && Game.two_snowhead_keys) || Game.bomb);
 	Location_Access["SHT_Compass"] = Game.snowhead_temple_access && Game.enter_snowhead_temple && (Game.hookshot || Game.one_snowhead_key);
 	Location_Access["key_SHT1"] = Game.snowhead_key_1_block_room;
 	Location_Access["key_SHT2"] = Game.snowhead_key_2_icicle_room;
