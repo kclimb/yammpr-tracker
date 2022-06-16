@@ -64,7 +64,7 @@ function update_logic_info() {
 			document.getElementById("br_" + Locations[i]).style.display = "none";
 		}
 		
-		if (document.getElementById("small_keys_option").value != "KEYSY" && Locations[i].startsWith("key_")) {continue;}
+		//if (document.getElementById("small_keys_option").value != "KEYSY" && Locations[i].startsWith("key_")) {continue;}
 		if (Locations[i] == "Fisherman Pictograph") {continue;}
 		if (Locations[i] == "Beaver Race #2") {continue;}
 		if (Locations[i] == "Frog Choir") {continue;}
@@ -313,25 +313,25 @@ var temp_img = document.getElementById("bomb1_img");
 	
 	// boss remains
 	var temp_img = document.getElementById("odolwasremains_img");
-	if(Check["WFT_Odolwa_Heart"] != "unknown")
+	if(Check["Odolwa Heart Container"] != "unknown")
 		temp_img.style.opacity =1;
 	else
 		temp_img.style.opacity =.2;
 	
 	var temp_img = document.getElementById("gohtsremains_img");
-	if(Check["SHT_Goht_Heart"] != "unknown")
+	if(Check["Goht Heart Container"] != "unknown")
 		temp_img.style.opacity =1;
 	else
 		temp_img.style.opacity =.2;
 	
 	var temp_img = document.getElementById("gyorgsremains_img");
-	if(Check["GBT_Gyorg_Heart"] != "unknown")
+	if(Check["Gyorg Heart Container"] != "unknown")
 		temp_img.style.opacity =1;
 	else
 		temp_img.style.opacity =.2;
 	
 	var temp_img = document.getElementById("twinmoldsremains_img");
-	if(Check["STT_Twinmold_Heart"] != "unknown")
+	if(Check["Twinmold Heart Container"] != "unknown")
 		temp_img.style.opacity =1;
 	else
 		temp_img.style.opacity =.2;
@@ -349,7 +349,7 @@ function update_summary_text() {
 	for (var i = 1; i < checkSummaryText.length; i++) {
 		var summary_text_elem = document.getElementById(Items[i]+"_location");
 		if(Logic[Items[i]]) {
-			summary_text_elem.innerHTML = ItemNames[i]+" -> "+ItemLocations[Items[i]];
+			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
 
 			if (!Game[Items[i]])
 				summary_text_elem.className = "checked_text_summary_not_have";
@@ -357,13 +357,21 @@ function update_summary_text() {
 				summary_text_elem.className = "checked_text_summary";
 
 		}
-		else if(Known[Items[i]] && ItemLocations[Items[i]] != undefined) {
+		else if(ItemLocations[Items[i]] != undefined) {
+			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
+			
 			if (!Game[Items[i]])
 				summary_text_elem.className = "checked_text_summary_ool";
 			else
 				summary_text_elem.className = "checked_text_summary_have_ool";
+		}
+		else {
+			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; ";
 			
-			summary_text_elem.innerHTML = ItemNames[i]+" -> "+ItemLocations[Items[i]];
+			if (!Game[Items[i]])
+				summary_text_elem.className = "checked_text_summary_ool";
+			else
+				summary_text_elem.className = "checked_text_summary_have_ool";
 		}
 	}
 }
@@ -398,5 +406,13 @@ document.onkeydown = function(e) {
 	if (e.ctrlKey && e.which == 90) {
 		e.preventDefault();
 		Undo();
+	}
+}
+
+function toggleSummary(loc) {
+	var item = loc.id.slice(0, -9);
+	
+	if(event.which == 3) { // right click, toggle if you have it or not
+		Game[item] = !Game[item];
 	}
 }

@@ -1,7 +1,7 @@
 var AreaIndexes = [
-	0,5,13,22,26,36,43,55,60,69,73,76,79,84,91,96,
-	103,105,114,121,125,128,132,137,140,143,148,153,158,161,162,165,
-	170,177,182,191
+	0,5,13,22,26,38,45,57,62,71,75,78,82,87,94,99,
+	109,111,120,127,134,137,141,146,149,152,157,162,167,170,171,174,
+	182,196,207,231
 ];
 
 var AreaNames = [
@@ -24,233 +24,12 @@ var AreaNamesShort = [
 	"WFT", "SHT", "GBT", "STT",
 	"Songs"
 ];
+
 var AreaImages = [
 	"sct.png", "nct.png", "wct.png", "laun.png", "ect.png", "stockpot.png", "field3.png", 
 	"roadtosouthern.png", "swamp.png", "palace.png", "woodfall.png",
 	"milkroad2.png", "ranch.jpg", "mountainvillage.png", "twinislands.png", "goronvillage.png",
 	"pathsnow.png", "gbc.png", "zoracape.png", "zoracape.png", "pirate2.png", "pirate2.png", "pirate2.png", "gbc.png", "ikana.png", "graveyard.jpg", "ikana.png", "shrine.png", "well.png", "castle.png", "stonetower.png"];
-
-var Locations = [
-	// South Clock Town
-	"Clock Tower Entrance", "South Clock Town Straw Roof Chest", "Clock Town Scrub Trade", "Postbox", "South Clock Town Final Day Chest", 
-	
-	// North Clock Town
-	"North Clock Town Tree", "Clock Town Map Purchase", "Bombers' Hide and Seek", "Old Lady", "Town Great Fairy", "Town Great Fairy Non-Human", 
-	"Deku Playground Any Day", "Keaton Quiz", 
-
-	// West Clock Town
-	"Bomb Bag Purchase", "Postman's Game", "Swordsman's School", "Big Bomb Bag Purchase", "Bank Reward #1 (Adult's Wallet)", "Bank Reward #2 (Blue Rupee)", "Bank Reward #3 (Piece of Heart)", "All Night Mask Purchase", "Rosa Sisters", 
-	
-	// Laundry Pool
-	"Guru Guru", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2",
-	
-	// East Clock Town
-	"Madame Aroma in Office", "East Clock Town Chest", "Bombers' Hideout Chest", "Honey and Darling Any Day", "Town Archery #1", "Treasure Chest Game Goron", "Mayor", "Madame Aroma in Bar", "Postman's Freedom Reward", "Gorman", 
-	
-	// Stock Pot Inn
-	"Inn Reservation", "Midnight Meeting", "Toilet Hand", "Inn Staff Room Chest", "Inn Guest Room Chest", "Grandma Short Story", "Grandma Long Story", 
-	
-	// Termina Field
-	"Astronomy Telescope", "Dodongo Grotto", "Termina Field Pillar Grotto", "Business Scrub Purchase", "Termina Field Grass Chest", "Termina Field Grass Grotto", "Termina Field Stump Chest", "Peahat Grotto", "Termina Field Underwater Chest", "Bio Baba Grotto", "Gossip Stones", "Kamaro", 
-	
-	// Road to Southern Swamp
-	"Woodfall Map Purchase", "Path to Swamp Grotto", "Path to Swamp Tree", "Snowhead Map Purchase", "Swamp Archery #1", 
-	
-	// Southern Swamp 
-	"Swamp Tourist Center Roof", "Mystery Woods Grotto", "Kotake Red Potion", "Koume Pictobox", "Near Swamp Spider House Grotto",  "Pictograph Contest Winner", "Swamp Scrub Trade", "Boat Archery", "Swamp Spider House Reward", 
-	
-	// Deku Palace
-	"Deku Palace West Garden", "Bean Man", "Bean Grotto", "Butler", 
-	
-	// Woodfall
-	"Entrance to Woodfall Chest", "Woodfall Bridge Chest", "Behind Woodfall Owl Chest", 
-	
-	// Milk Road
-	"Romani Ranch Map Purchase", "Great Bay Map Purchase", "Gorman Bros Race", 
-	
-	// Romani Ranch
-	"Doggy Racetrack Roof Chest", "Dog Race", "Grog", "Aliens Defense", "Cremia", 
-	
-	// Mountain Village
-	"Mountain Smithy Day 1", "Mountain Smithy Day 2", "Hungry Goron",  
-	"Mountain Waterfall Chest", "Mountain Spring Grotto", "Darmani", "Frog Choir", 
-	
-	// Twin Islands
-	"Goron Racetrack Grotto", "Hot Spring Water Grotto", "Twin Islands Underwater Ramp Chest", "Twin Islands Cave Chest", "Goron Race", 
-	
-	// Goron Village
-	"Goron Village Ledge", "Mountain Scrub Trade", "Biggest Bomb Bag Purchase", "Lens of Truth Chest", "Lens Cave Rock Chest", "Lens Cave Invisible Chest", "Powder Keg Challenge", 
-	
-	// Path to Snowhead
-	"Path to Snowhead Pillar", "Path to Snowhead Grotto", 
-	
-	// Great Bay Coast
-	"Great Bay Coast Grotto", "Ocean Spider House Chest", "Stone Tower Map Purchase", "Lab Fish", "Mikau", "Great Bay Coast Ledge", "Fisherman Pictograph", "Fisherman Game", "Ocean Spider House Day 1 Reward", 
-	
-	// Zora Cape
-	"Zora Cape Ledge Without Tree Chest", "Zora Cape Ledge With Tree Chest", "Zora Cape Like-Like", "Zora Cape Grotto", "Zora Cape Underwater Chest", "Beaver Race #1", "Beaver Race #2", 
-	
-	// Zora Hall
-	"Lulu's Room Ledge", "Ocean Scrub Trade", "Evan", "Zora Hall Stage Lights", 
-	
-	// Pirates' Fortress Exterior
-	"Pirates' Fortress Exterior Log Chest", "Pirates' Fortress Exterior Sand Chest", "Pirates' Fortress Exterior Corner Chest",
-	
-	// Pirates' Fortress Sewer
-	"Pirates' Fortress Maze Chest", "Pirates' Fortress Cage Room Shallow Chest", "Pirates' Fortress Cage", "Pirates' Fortress Cage Room Deep Chest", 
-	
-	// Pirates' Fortress Interior
-	"Pirates' Fortress Interior Tank Chest", "Pirates' Fortress Interior Upper Chest", "Pirates' Fortress Interior Lower Chest", "Hookshot Chest", "Pirates' Fortress Interior Guard Room Chest", 
-	
-	// Pinnacle Rock
-	"Pinnacle Rock Upper Chest", "Pinnacle Rock Lower Chest", "Seahorses", 
-	
-	// Path to Ikana Canyon
-	"Path to Ikana Pillar Chest", "Path to Ikana Grotto", "Invisible Soldier", 
-	
-	// Ikana Graveyard
-	"Day 1 Grave Bats", "Iron Knuckle Chest", "Ikana Graveyard Grotto", "Captain Keeta's Chest", "Dampe Digging", 
-	
-	// Ikana Canyon
-	"Ikana Canyon Ledge", "Canyon Scrub Trade", "Secret Shrine Grotto", "Poe Hut", "Pamela's Father", 
-	
-	// Secret Shrine
-	"Secret Shrine Dinolfos Chest", "Secret Shrine Garo Master Chest", "Secret Shrine Wizzrobe Chest", "Secret Shrine Wart Chest", "Secret Shrine Final Chest", 
-	
-	// Beneath the Well 
-	"Well Left Path Chest", "Well Right Path Chest", "Mirror Shield Chest", 
-	
-	// Ikana Castle
-	"Ikana Castle Pillar", 
-	
-	// Stone Tower
-	"Inverted Stone Tower Left Chest", "Inverted Stone Tower Middle Chest", "Inverted Stone Tower Right Chest",
-	
-	// Woodfall Temple
-	"WFT_Compass", "key_WFT", "WFT_Map", "WFT_Bow", "WFT_Odolwa_Heart",  
-	
-	// Snowhead Temple
-	"key_SHT3", "SHT_Map", "key_SHT1", "SHT_Compass", "key_SHT2", "SHT_Fire_Arrow", "SHT_Goht_Heart", 
-	
-	// Great Bay Temple
-	"GBT_Map", "GBT_Compass", "key_GBT", "GBT_Ice_Arrow", "GBT_Gyorg_Heart", 
-	
-	// Stone Tower Temple
-	"STT_Compass", "key_STT2", "STT_Map", "key_STT1", "STT_Light_Arrow", "key_STT3", "STT_Giants", "key_STT4", "STT_Twinmold_Heart", 
-	
-	// Songs
-	"Song_Starting", "Song_Swamp", "Song_BlueWarp", "Song_Ranch", "Song_Goron", "Song_Eggs", "Song_Graveyard", "Song_Castle"
-];
-	
-var Names = [
-	// South Clock Town
-	"Ledge", "Straw", "Deed", "Mailbox", "Tower", 
-	
-	// North Clock Town
-	"Tree", "Map Town", "Bombers", "Old Lady", "GF Human", "GF Transf", "Playgro", "Keaton",  
-	
-	// West Clock Town
-	"Bomb Bag", "Postman", "Swords", "Big Bomb", "Bank 200", "Bank 500", "Bank 1000", "All-Night", "Rosa", 
-	
-	// Laundry Pool
-	"Guru", "Kafei", "Curios1", "Curios2",
-	
-	// East Clock Town
-	"Aroma", "Chest", "Sewer", "HoneyDar", "Archery", "ChestGor", "Mayor", "AromaBar", "Postman", "Gorman", 
-	
-	// Stock Pot Inn
-	"Room Key", "Midnight", "Hand", "Staff", "Guest", "Granny1", "Granny2", 
-	
-	// Termina Field
-	"Telescope", "Dodongos", "Pillar", "Scrub Gr", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Gossips", "Kamaro", 
-	
-	// Road to Southern Swamp
-	"Map Wood", "Grotto", "Tree", "Map Snow", "Archery", 
-	
-	// Southern Swamp
-	"Roof", "Woods Gr", "Witch Red", "PictoBox", "Grotto", "Contest", "Deed", "BoatArchery", "SwampSpid", 
-	
-	// Deku Palace
-	"West Gard", "Bean", "Bean Ch", "Butler", 
-	
-	// Woodfall
-	"Entrance", "Bridge", "Owl", 
-	
-	// Milk Road
-	"Map Ranch", "Map Bay", "Race", 
-	
-	// Romani Ranch
-	"Dog Chest", "Dog Race", "Chicks", "Aliens", "Cremia", 
-	
-	// Mountain 
-	"Smithy1", "Smithy2", "Sirloin", "Waterfall", "Grotto", "Darmani", "Frogs", 
-	
-	// Twin Islands
-	"Race Gr", "HSW Gr", "Spr Ramp", "Spr Cave", "GorRace", 
-	
-	// Goron Village
-	"Ledge", "Deed", "Scrub 200r", "Lens Ch", "Lens Rock", "Lens Inv", "Keg", 
-	
-	// Path to Snowhead
-	"Pillar", "Grotto", 
-	
-	// Great Bay Coast
-	"Grotto", "SpidChest", "Map Ikana", "Lab Fish", "Mikau", "Ledge", "Picto", "Jumping", "OceSpid1", 
-	
-	// Zora Cape
-	"Ledge 1", "Ledge 2", "Like Like", "Grotto", "Water", "Beaver", "Beaver 2", 
-	
-	// Zora Hall
-	"Ledge", "Deed", "Evan", "Torches",  
-	
-	// Pirates' Fortress Exterior
-	"Log", "Sand", "Corner",
-	
-	// Pirates' Fortress Sewer
-	"Maze", "Shallow", "Cage", "Deep", 
-	
-	// Pirates' Fortress Interior
-	"Tank", "Upper", "Lower", "Hookshot", "Guards", 
-	
-	// Pinnacle Rock
-	"Upper", "Lower", "Seahorses", 
-	
-	// Path to Ikana Canyon
-	"Pillar", "Grotto", "Soldier", 
-	
-	// Ikana Graveyard
-	"Bats", "Knuckle", "Grotto", "Keeta", "Dampe", 
-	
-	// Ikana Canyon
-	"Ledge", "Deed", "Grotto", "Poe Hut", "PamelaDad",  
-	
-	// Secret Shrine
-	"Dinolfos", "Garo Master", "Wizzrobe", "Wart", "Final", 
-	
-	// Beneath the Well 
-	"Left", "Right", "Mirror", 
-	
-	// Ikana Castle
-	"Pillar",
-	
-	// Stone Tower
-	"Left", "Middle", "Right",
-	
-	// Woodfall Temple
-	"Dragonfly", "Near BK", "Snappers", "Dino", "Odolwa",
-	
-	// Snowhead Temple
-	"Freezards", "Elevator", "Block small", "Block big", "Icicles", "Wizzrobe", "Goht",
-	
-	// Great Bay Temple
-	"First", "Near BK", "Underwater", "Wart", "Gyorg",
-	
-	// Stone Tower Temeple
-	"Right Sun", "Water", "Left Sun", "Kill Armos", "Garo Mast", "Updraft", "Eyegore", "DeathArm", "Twinmold",
-	
-	// Songs
-	"Start", "Palace", "Blue Warp", "Ranch", "Goron", "Eggs", "Grave", "Castle"
-];
 
 var Known = [];
 var Check = {};
@@ -273,7 +52,7 @@ var SingletonItems = [
 	"fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "letter_to_kafei", "pendant_of_memories", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath"
 ];
 var SongItems = [
-	"Song_Starting", "Song_BlueWarp", "Song_Ranch", "Song_Graveyard", "Song_Swamp", "Song_Goron", "Song_Eggs", "Song_Castle"
+	"Starting Song", "Boss Blue Warp", "Romani's Game", "Day 1 Grave Tablet", "Imprisoned Monkey", "Baby Goron", "Baby Zoras", "Ikana King"
 ];
 var SongNames = {
 	"song_of_healing": "Healing", 
@@ -300,6 +79,7 @@ for (var i = 0; i < Locations.length; i++) {
 	else if (i == AreaIndexes[18]) { parent = document.getElementById("normalColumn5"); }
 	else if (i == AreaIndexes[24]) { parent = document.getElementById("normalColumn6"); }
 	else if (i == AreaIndexes[31]) { parent = document.getElementById("normalColumn7"); }
+	else if (i == AreaIndexes[34]) { parent = document.getElementById("normalColumn8"); }
 	
 	for(var j = 0; j < AreaIndexes.length; j++) {
 		if(i == AreaIndexes[j]) {
@@ -333,10 +113,22 @@ for (var i = 0; i < Locations.length; i++) {
 				background = "";
 			
 			parent.appendChild(elem); 
-			
 			parent.appendChild(document.createElement("br")); 
 			break;
 		}
+	}
+	
+	if(i == AreaIndexes[34]+16) {
+		var elem = document.createElement("small"); 
+			elem.innerHTML = "ISTT"; 
+			elem.className = "area_name";
+			elem.id = "title_stt";
+			elem.className = "area_titles";
+			
+			background = "";
+			
+			parent.appendChild(elem); 
+			parent.appendChild(document.createElement("br")); 
 	}
 	
 	var elem = document.createElement("input"); 
@@ -364,8 +156,6 @@ for (var i = 0; i < Locations.length; i++) {
 // hide logically useless items from check summary list
 document.getElementById("pendant_of_memories_location").style.display = "none";
 document.getElementById("pendant_of_memories_location_br").style.display = "none";
-document.getElementById("great_fairy_sword_location").style.display = "none";
-document.getElementById("great_fairy_sword_location_br").style.display = "none";
 document.getElementById("sword1_location").style.display = "none";
 document.getElementById("sword1_location_br").style.display = "none";
 document.getElementById("sword2_location").style.display = "none";
@@ -374,14 +164,10 @@ document.getElementById("circusleaders_mask_location").style.display = "none";
 document.getElementById("circusleaders_mask_location_br").style.display = "none";
 document.getElementById("dongero_mask_location").style.display = "none";
 document.getElementById("dongero_mask_location_br").style.display = "none";
-document.getElementById("fiercedeity_mask_location").style.display = "none";
-document.getElementById("fiercedeity_mask_location_br").style.display = "none";
 document.getElementById("greatfairy_mask_location").style.display = "none";
 document.getElementById("greatfairy_mask_location_br").style.display = "none";
 document.getElementById("stone_mask_location").style.display = "none";
 document.getElementById("stone_mask_location_br").style.display = "none";
-document.getElementById("mask_of_scents_location").style.display = "none";
-document.getElementById("scents_mask_location_br").style.display = "none";
 
 var Logic = {};
 var Game = {};
@@ -421,7 +207,7 @@ var modal = document.getElementById("myModal");
 
 var btn = document.createElement("button");
 btn.id = "myBtn";
-btn.innerHTML = "Help/Options";
+btn.innerHTML = "Help";
 btn.onclick = function() {
 	modal.style.display = "block";
 }
@@ -451,6 +237,7 @@ btn.onclick = function() {
 }
 document.getElementById("itemColumn").appendChild(btn);
 
+document.getElementById("Starting Song").value = "epo";
 
 var span = document.getElementsByClassName("close")[0];
 
