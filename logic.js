@@ -860,4 +860,20 @@ function update_location_logic() {
 	Location_Access["Baby Goron"] = Game.north_access && Game.goron_mask;
 	Location_Access["Baby Zoras"] = Game.zora_egg && Game.zora_mask && Game.west_access;
 	Location_Access["Ikana King"] = Game.ikana_canyon_access && Game.shoot_fire_arrow && Game.mirror_shield && (Game.shoot_light_arrow || ((Game.deku_mask || Game.zora_mask) && Game.powder_keg && Game.goron_mask));
+	
+	// CSMC changes
+	Location_Access["South Clock Town Final Day Chest"] = true;
+	Location_Access["Bombers' Hideout Chest"] = true;
+	Location_Access["Termina Field Underwater Chest"] = true;
+	Location_Access["Termina Field Stump Chest"] = true; 
+	Location_Access["Bean Grotto"] = Game.poison_swamp_access && Game.deku_mask; 
+	Location_Access["Twin Islands Underwater Ramp Chest"] = Game.north_access;
+	Location_Access["Twin Islands Cave Chest"] = Game.snowhead_clear;
+	Location_Access["Zora Cape Ledge Without Tree Chest"] = Game.west_access;
+	Location_Access["Zora Cape Underwater Chest"] = Game.west_access;
+	Location_Access["Pirates' Fortress Interior Upper Chest"] = Game.pirates_fortress_access && (Game.hookshot || Game.goron_mask);
+	Location_Access["Path to Ikana Pillar Chest"] = true;
+	Location_Access["Captain Keeta's Chest"] = Game.ikana_graveyard_access;
+	Location_Access["Stone Tower Compass Chest"] = Game.stt_access;
+	Location_Access["Stone Tower Map Chest"] = Game.stt_access && ((Game.explosive && Game.goron_mask) || (Game.zora_mask && Game.shoot_light_arrow));
 }

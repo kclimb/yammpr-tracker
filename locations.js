@@ -217,10 +217,10 @@ var Names = [
 	"Torches", "Green", "Map", "BioBabas", "Compass", "Underwater", "Wart", "Wheel 1", "Wheel 2", "Seesaw", "Gyorg",
 	
 	// Stone Tower Temeple
-	"Statue Eye", "Compass", "Underwater", "Dexihand", "Crystal", "Ledge", "Map", "Kill Armos", "Mirror Sun", "Mirror Block", "Lava Ring", "Lava Ledge", "GaroMaster", "Thin Bridge", "Eyegore 1", "Return STT",
+	"StatueEye", "Compass", "Underwater", "Dexihand", "Crystal", "Ledge", "Map", "KillArmos", "Mirror Sun", "MirrorBlock", "LavaRing", "LavaLedge", "GaroMast", "Thin Bridge", "Eyegore 1", "Return STT",
 	
 	// Inverted Stone Tower Temple
-	"Entrance Sun", "Frozen Eye", "Fire Ring", "Updraft", "Eyegore 2", "Death Armos", "Wizzrobe", "Twinmold",
+	"Ent Sun", "Frozen Eye", "Fire Ring", "Updraft", "Eyegore 2", "DeathArm", "Wizzrobe", "Twinmold",
 	
 	// Songs
 	"Start", "Palace", "Giants", "Ranch", "Goron", "Eggs", "Grave", "Castle"
