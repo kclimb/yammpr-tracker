@@ -52,7 +52,7 @@ var SingletonItems = [
 	"fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "letter_to_kafei", "pendant_of_memories", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath"
 ];
 var SongItems = [
-	"Starting Song", "Boss Blue Warp", "Romani's Game", "Day 1 Grave Tablet", "Imprisoned Monkey", "Baby Goron", "Baby Zoras", "Ikana King"
+	"Starting Song", "Boss Blue Warp", "Romani's Game", "Day 1 Grave Tablet", "Imprisoned Monkey", "Baby Goron", "Baby Zoras", "Ikana King", "Swamp Music Statue"
 ];
 var SongNames = {
 	"song_of_healing": "Healing", 
@@ -133,7 +133,7 @@ for (var i = 0; i < Locations.length; i++) {
 	
 	var elem = document.createElement("input"); 
 	elem.id = Locations[i]; 
-	if(parent != document.getElementById("normalColumn7"))
+	if(parent != document.getElementById("normalColumn7") && parent != document.getElementById("normalColumn8"))
 		elem.className = "picture_input"; 
 	else
 		elem.className = "other_input"; 
@@ -156,18 +156,12 @@ for (var i = 0; i < Locations.length; i++) {
 // hide logically useless items from check summary list
 document.getElementById("pendant_of_memories_location").style.display = "none";
 document.getElementById("pendant_of_memories_location_br").style.display = "none";
-document.getElementById("sword1_location").style.display = "none";
-document.getElementById("sword1_location_br").style.display = "none";
-document.getElementById("sword2_location").style.display = "none";
-document.getElementById("sword2_location_br").style.display = "none";
 document.getElementById("circusleaders_mask_location").style.display = "none";
 document.getElementById("circusleaders_mask_location_br").style.display = "none";
 document.getElementById("dongero_mask_location").style.display = "none";
 document.getElementById("dongero_mask_location_br").style.display = "none";
 document.getElementById("greatfairy_mask_location").style.display = "none";
 document.getElementById("greatfairy_mask_location_br").style.display = "none";
-document.getElementById("stone_mask_location").style.display = "none";
-document.getElementById("stone_mask_location_br").style.display = "none";
 
 var Logic = {};
 var Game = {};
@@ -236,8 +230,28 @@ btn.onclick = function() {
 	}
 }
 document.getElementById("itemColumn").appendChild(btn);
+document.getElementById("itemColumn").appendChild(document.createElement("br"));
 
-document.getElementById("Starting Song").value = "epo";
+var settingsLabel = document.createElement("label");
+settingsLabel.for = "settings_option";
+settingsLabel.innerHTML = "SETTINGS"
+
+var settingsDropdown = document.createElement("select");
+settingsDropdown.id = "settings_option";
+settingsDropdown.className = "settingsOptions";
+
+var option1 = document.createElement("option");
+option1.value = "S3";
+option1.innerHTML = "S3";
+settingsDropdown.appendChild(option1);
+
+var option2 = document.createElement("option");
+option2.value = "BLITZ";
+option2.innerHTML = "BLITZ";
+settingsDropdown.appendChild(option2);
+
+document.getElementById("itemColumn").appendChild(settingsLabel);
+document.getElementById("itemColumn").appendChild(settingsDropdown);
 
 var span = document.getElementsByClassName("close")[0];
 

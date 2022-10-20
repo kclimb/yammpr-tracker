@@ -56,9 +56,11 @@ function update_logic_info() {
 	
 	Game.logically_accessible = 0;
 	Game.checks_remaining = 0;
+	
 	for (var i = 0; i < Locations.length; i++) {
 		
-		if (i < AreaIndexes[AreaIndexes.length-1]) {
+		if (i < AreaIndexes[AreaIndexes.length-1] || (Locations[i] == "Baby Zoras" && document.getElementById("settings_option").value == "BLITZ") 
+			|| (Locations[i] == "Swamp Music Statue" && document.getElementById("settings_option").value != "BLITZ")) {
 			document.getElementById(Locations[i]).style.display = "none";
 			document.getElementById("text_" + Locations[i]).style.display = "none";
 			document.getElementById("br_" + Locations[i]).style.display = "none";
@@ -68,6 +70,9 @@ function update_logic_info() {
 		if (Locations[i] == "Fisherman Pictograph") {continue;}
 		if (Locations[i] == "Beaver Race #2") {continue;}
 		if (Locations[i] == "Frog Choir") {continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && blitz_skip_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "S3" && s3_skip_checks.includes(Locations[i])) {continue;}
+		
 		
 		var key = Locations[i];
 		

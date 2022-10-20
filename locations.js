@@ -13,7 +13,7 @@ var Locations = [
 	"Guru Guru", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2",
 	
 	// East Clock Town
-	"Madame Aroma in Office", "East Clock Town Chest", "Bombers' Hideout Chest", "Honey and Darling Any Day", "Town Archery #1", "Treasure Chest Game Goron", "Mayor", "Milk Bar Milk", "Milk Bar Chateau", "Madame Aroma in Bar", "Postman's Freedom Reward", "Gorman", 
+	"Bombers' Hideout Chest", "Madame Aroma in Office", "East Clock Town Chest", "Honey and Darling Any Day", "Town Archery #1", "Treasure Chest Game Goron", "Mayor", "Milk Bar Milk", "Milk Bar Chateau", "Madame Aroma in Bar", "Postman's Freedom Reward", "Gorman", 
 	
 	// Stock Pot Inn
 	"Inn Reservation", "Midnight Meeting", "Toilet Hand", "Inn Staff Room Chest", "Inn Guest Room Chest", "Grandma Short Story", "Grandma Long Story", 
@@ -47,19 +47,19 @@ var Locations = [
 	"Goron Racetrack Grotto", "Hot Spring Water Grotto", "Twin Islands Underwater Ramp Chest", "Twin Islands Cave Chest", "Goron Race", 
 	
 	// Goron Village
-	"Goron Village Ledge", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Mountain Scrub Trade", "Biggest Bomb Bag Purchase", "Lens of Truth Chest", "Lens Cave Rock Chest", "Lens Cave Invisible Chest", "Powder Keg Challenge", 
+	"Goron Village Ledge", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Mountain Scrub Trade", "Biggest Bomb Bag Purchase", "Powder Keg Challenge", "Lens of Truth Chest", "Lens Cave Rock Chest", "Lens Cave Invisible Chest", 
 	
 	// Path to Snowhead
 	"Path to Snowhead Pillar", "Path to Snowhead Grotto", 
 	
 	// Great Bay Coast
-	"Great Bay Coast Grotto", "Ocean Spider House Chest", "Stone Tower Map Purchase", "Lab Fish", "Mikau", "Great Bay Coast Ledge", "Fisherman Pictograph", "Fisherman Game", "Ocean Spider House Day 1 Reward", 
+	"Great Bay Coast Grotto", "Stone Tower Map Purchase", "Lab Fish", "Great Bay Coast Ledge", "Mikau", "Fisherman Pictograph", "Ocean Spider House Chest", "Fisherman Game", "Ocean Spider House Day 1 Reward", 
 	
 	// Zora Cape
-	"Zora Cape Ledge Without Tree Chest", "Zora Cape Ledge With Tree Chest", "Zora Cape Like-Like", "Zora Cape Grotto", "Zora Cape Underwater Chest", "Beaver Race #1", "Beaver Race #2", 
+	"Zora Cape Ledge Without Tree Chest", "Zora Cape Ledge With Tree Chest", "Beaver Race #1", "Beaver Race #2", "Zora Cape Like-Like", "Zora Cape Grotto", "Zora Cape Underwater Chest", 
 	
 	// Zora Hall
-	"Lulu's Room Ledge", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Ocean Scrub Trade", "Evan", "Zora Hall Stage Lights", 
+	"Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Zora Hall Stage Lights", "Evan", "Lulu's Room Ledge", "Ocean Scrub Trade", 
 	
 	// Pirates' Fortress Exterior
 	"Pirates' Fortress Exterior Log Chest", "Pirates' Fortress Exterior Sand Chest", "Pirates' Fortress Exterior Corner Chest",
@@ -77,7 +77,7 @@ var Locations = [
 	"Path to Ikana Pillar Chest", "Path to Ikana Grotto", "Invisible Soldier", 
 	
 	// Ikana Graveyard
-	"Day 1 Grave Bats", "Iron Knuckle Chest", "Ikana Graveyard Grotto", "Captain Keeta's Chest", "Dampe Digging", 
+	"Day 1 Grave Bats", "Ikana Graveyard Grotto", "Captain Keeta's Chest", "Iron Knuckle Chest", "Dampe Digging", 
 	
 	// Ikana Canyon
 	"Ikana Canyon Ledge", "Canyon Scrub Trade", "Secret Shrine Grotto", "Poe Hut", "Pamela's Father", 
@@ -98,7 +98,7 @@ var Locations = [
 	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Map Chest", "Hero's Bow Chest", "Woodfall Compass Chest", "Woodfall Main Room Switch", "Woodfall Dark Room", "Odolwa Heart Container",  
 	
 	// Snowhead Temple
-	"Snowhead Bridge Room Chest", "Snowhead Pillar Freezards", "Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", "Snowhead Icicle Room Wall", "Snowhead Map Room Ledge", "Snowhead Map Chest", "Fire Arrow Chest", "Snowhead Main Room Wall", "Snowhead Basement", "Goht Heart Container",
+	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Fire Arrow Chest", "Snowhead Pillar Freezards", "Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement", "Goht Heart Container",
 	
 	// Great Bay Temple
 	"Great Bay Entrance Torches", "Great Bay Green Valve","Great Bay Map Chest", "Great Bay Bio Babas", "Great Bay Compass Chest", "Great Bay Small Key Chest", "Ice Arrow Chest", "Great Bay Waterwheel Room Upper", "Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Gyorg Heart Container", 
@@ -110,7 +110,7 @@ var Locations = [
 	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Updraft Room Chest", "Giant's Mask Chest", "Stone Tower Death Armos", "Stone Tower Wizzrobe", "Twinmold Heart Container", 
 	
 	// Songs
-	"Starting Song", "Imprisoned Monkey", "Boss Blue Warp", "Romani's Game", "Baby Goron", "Baby Zoras", "Day 1 Grave Tablet", "Ikana King"
+	"Starting Song", "Imprisoned Monkey", "Swamp Music Statue", "Boss Blue Warp", "Romani's Game", "Baby Goron", "Baby Zoras", "Day 1 Grave Tablet", "Ikana King"
 ];
 	
 var Names = [
@@ -118,16 +118,16 @@ var Names = [
 	"Ledge", "Straw", "Deed", "Mailbox", "Tower", 
 	
 	// North Clock Town
-	"Tree", "Map Town", "Bombers", "Old Lady", "GF Human", "GF Transf", "Playgro", "Keaton",  
+	"Tree", "Map Clock", "Bombers", "Old Lady", "GF Human", "GF Transf", "Playgro 10r", "Keaton",  
 	
 	// West Clock Town
-	"Bomb Bag", "Postman", "Swords", "Big Bomb", "Bank 200", "Bank 500", "Bank 1000", "All-Night", "Rosa", 
+	"Bomb 50r", "Postman 10r", "Swords 2r", "Bomb 90r", "Bank 200r", "Bank 500r", "Bank 1000r", "All-Night", "Rosa", 
 	
 	// Laundry Pool
 	"Guru", "Kafei", "Curios1", "Curios2",
 	
 	// East Clock Town
-	"Aroma", "Chest", "Sewer", "HoneyDar", "Archery", "ChestGor", "Mayor", "Milk", "Chateau", "AromaBar", "Postman", "Gorman", 
+	"Sewer", "Aroma", "Chest", "Honey 10r", "Archery 20r", "Chest 30r", "Mayor", "Milk", "Chateau", "Aroma Bar", "Postman", "Gorman", 
 	
 	// Stock Pot Inn
 	"Room Key", "Midnight", "Hand", "Staff", "Guest", "Granny1", "Granny2", 
@@ -139,7 +139,7 @@ var Names = [
 	"Map Wood", "Grotto", "Tree", "Map Snow", "Archery", 
 	
 	// Southern Swamp
-	"Roof", "Woods Gr", "Witch Red", "PictoBox", "Grotto", "Contest", "Deed", "BoatArchery", "SwampSpid", 
+	"Roof", "Woods Gr", "Witch Red", "PictoBox", "Grotto", "Contest", "Deed", "BoatArchery", "Swamp Spid", 
 	
 	// Deku Palace
 	"West Gard", "Bean", "Bean Ch", "Butler", 
@@ -148,31 +148,31 @@ var Names = [
 	"Entrance", "Bridge", "Owl", 
 	
 	// Milk Road
-	"Map Ranch", "Map Bay", "Milk", "Race", 
+	"Map Ranch", "Map Bay", "Milk 50r", "Race 10r", 
 	
 	// Romani Ranch
-	"Dog Chest", "Dog Race", "Chicks", "Aliens", "Cremia", 
+	"Dog Chest", "Dog 50r", "Chicks", "Aliens", "Cremia", 
 	
 	// Mountain 
-	"Smithy1", "Smithy2", "Sirloin", "Waterfall", "Grotto", "Darmani", "Frogs", 
+	"Smithy 100r", "Smithy Gold", "Sirloin", "Waterfall", "Grotto", "Darmani", "Frogs", 
 	
 	// Twin Islands
 	"Race Gr", "HSW Gr", "Spr Ramp", "Spr Cave", "GorRace", 
 	
 	// Goron Village
-	"Ledge", "Shop1", "Shop2", "Shop3", "Deed", "Scrub 200r", "Lens Ch", "Lens Rock", "Lens Inv", "Keg", 
+	"Ledge", "Shop 40r", "Shop 40r", "Shop 80r", "Deed", "Scrub 200r", "Keg Trial", "Lens Chest", "Lens Rock", "Lens Invis", 
 	
 	// Path to Snowhead
 	"Pillar", "Grotto", 
 	
 	// Great Bay Coast
-	"Grotto", "SpidChest", "Map Ikana", "Lab Fish", "Mikau", "Ledge", "Picto", "Jumping", "OceSpid1", 
+	"Grotto", "Map Ikana", "Lab Fish", "Ledge", "Mikau", "Picto", "SpidChest", "Jump 20r", "OceSpid1", 
 	
 	// Zora Cape
-	"Ledge 1", "Ledge 2", "Like Like", "Grotto", "Water", "Beaver", "Beaver 2", 
+	"Ledge 1", "Ledge 2", "Beaver", "Beaver 2", "Like Like", "Grotto", "Water", 
 	
 	// Zora Hall
-	"Ledge", "Shop1", "Shop2", "Shop3", "Deed", "Evan", "Torches",  
+	"Shop 90r", "Shop 20r", "Shop 60r", "Torches", "Evan", "Ledge", "Deed", 
 	
 	// Pirates' Fortress Exterior
 	"Log", "Sand", "Corner",
@@ -190,10 +190,10 @@ var Names = [
 	"Pillar", "Grotto", "Soldier", 
 	
 	// Ikana Graveyard
-	"Bats", "Knuckle", "Grotto", "Keeta", "Dampe", 
+	"Bats1", "Grotto", "Keeta", "Knuckle2", "Dampe3", 
 	
 	// Ikana Canyon
-	"Ledge", "Deed", "Grotto", "Poe Hut", "PamelaDad",  
+	"Ledge", "Deed", "Grotto", "Poe 30r", "PamelaDad",  
 	
 	// Secret Shrine
 	"Dinolfos", "Garo Master", "Wizzrobe", "Wart", "Final", 
@@ -211,17 +211,31 @@ var Names = [
 	"Entrance", "Near BK", "Snappers", "Dinolfos", "Switch", "Dragonfly", "Dark", "Odolwa",
 	
 	// Snowhead Temple
-	"Bridge", "Pillars", "Twin Lower", "Twin Upper", "Compass", "Puzzle", "Icicle", "Icicle Wall", "Map Ledge", "Map", "Wizzrobe", "Pillar Wall", "Basement", "Goht",
+	"Bridge", "Map", "Map Ledge", "Wizzrobe", "Pillars", "Twin Lower", "Twin Upper", "Compass", "Puzzle", "Icicle", "Icicle Wall", "Alcove", "Basement", "Goht",
 	
 	// Great Bay Temple
 	"Torches", "Green", "Map", "BioBabas", "Compass", "Underwater", "Wart", "Wheel 1", "Wheel 2", "Seesaw", "Gyorg",
 	
 	// Stone Tower Temeple
-	"StatueEye", "Compass", "Underwater", "Dexihand", "Crystal", "Ledge", "Map", "KillArmos", "Mirror Sun", "MirrorBlock", "LavaRing", "LavaLedge", "GaroMast", "Thin Bridge", "Eyegore 1", "Return STT",
+	"*StatueEye", "*Compass", "*Underwater", "*Dexihand", "Crystal", "*Map Ledge", "*Map", "KillArmos", "Mirror Sun", "MirrorBlock", "LavaRing", "LavaLedge", "GaroMast", "*Thin Bridge", "Eyegore 1", "*Return STT",
 	
 	// Inverted Stone Tower Temple
-	"Ent Sun", "Frozen Eye", "Fire Ring", "Updraft", "Eyegore 2", "DeathArm", "Wizzrobe", "Twinmold",
+	"Ent Sun", "Frozen Eye", "*Fire Ring", "Updraft", "Eyegore 2", "DeathArm", "Wizzrobe", "Twinmold",
 	
 	// Songs
-	"Start", "Palace", "Giants", "Ranch", "Goron", "Eggs", "Grave", "Castle"
+	"Start", "Palace", "Swamp", "Warp", "Ranch", "Goron", "Eggs", "Grave1", "Castle"
+];
+
+var blitz_skip_checks = [
+	"Powder Keg Challenge", "Goron Race", "Fisherman Game", "Boat Archery", "Aliens Defense", "Cremia", "Gossip Stones", "Seahorses", 
+	"Bank Reward #2", "Bank Reward #3", "Midnight Meeting", "Postman's Freedom Reward", "Swamp Spider House Reward", 
+	"Ocean Spider House Day 1 Reward", "Ocean Spider House Chest", "Kamaro", "Beaver Race #1", "Beaver Race #2", 
+	"Old Lady", "Big Bomb Bag Purchase", "All-Night Mask Purchase", "Hungry Goron", "Butler", "Dampe Digging", 
+	"Toilet Hand", "Stone Tower Death Armos", "Stone Tower Updraft Fire Ring", "Mirror Shield Chest", "Goron Shop 10 Arrows", 
+	"Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", 
+	"Gorman Bros Milk Purchase", "Baby Zoras"
+];
+
+var s3_skip_checks = [
+	"Swamp Music Statue"
 ];
