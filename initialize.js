@@ -165,13 +165,17 @@ document.getElementById("greatfairy_mask_location_br").style.display = "none";
 
 var Logic = {};
 var Game = {};
+var CouldHave={};
 var Location_Logic = {};
 var Location_Access = {};
+var Location_Could_Access={};
+var Location_Could_Peek={};
 var lastCheck = ["start"];
 
 for (var i = 0; i < Items.length; i++) {
 	Logic[Items[i]] = false;
 	Game[Items[i]] = false;
+	CouldHave[Items[i]] = false;
 	Known[Items[i]] = false;
 }
 

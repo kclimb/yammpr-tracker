@@ -112,11 +112,25 @@ overflow: hidden;
 	color: orange;
 	opacity: 1;
 }
+.checked_text_summary_could_have {
+	font-size: 14px;
+	font-weight: normal;	
+	letter-spacing: 0px;
+	color: orange;
+	opacity: 0.5;
+}
 .checked_text_summary_ool {
 	font-size: 14px;
 	font-weight: normal;	
 	letter-spacing: 0px;
 	color: black;
+	opacity: 1;
+}
+.checked_text_summary_known {
+	font-size: 14px;
+	font-weight: normal;	
+	letter-spacing: 0px;
+	color: white;
 	opacity: 1;
 }
 .checkSummaryText {
@@ -187,12 +201,23 @@ overflow: hidden;
 .access_check_text{
 	vertical-align: top;
 	font-size: 16px;
-	color: 						yellow;
+	color: yellow;
 	font-weight:normal;
 	margin-top:2px;
 	margin-bottom:1px;
 	display: inline-block;
 	opacity: .5;
+	letter-spacing: -1px;
+}
+.could_access_check_text{
+	vertical-align: top;
+	font-size: 16px;
+	color: orange;
+	font-weight:normal;
+	margin-top:2px;
+	margin-bottom:1px;
+	display: inline-block;
+	opacity: .2;
 	letter-spacing: -1px;
 }
 .ool_check_text{

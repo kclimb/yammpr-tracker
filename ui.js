@@ -38,8 +38,10 @@ function process_inputs() {
 						ItemLocation[Items2[j] + duplicate] = document.getElementById(key).id;
 						Known[Items2[j] + duplicate] = true; 
 						
-						if(!peeked)
+						if(!peeked) {
 							Game[Items2[j] + duplicate] = true;
+							CouldHave[Items2[j] + duplicate] = true;
+						}
 						ItemLocations[Items2[j] + duplicate] = AreaNamesShort[AreaNamesIndex] + ": " + Names[i];
 						lastCheck.push(key);
 						if(SongItems.indexOf(key) >= 0)
@@ -115,6 +117,12 @@ function update_logic_info() {
 			else if (Location_Access[key] == true) {
 				document.getElementById(str).className= "access_check_text";
 				document.getElementById(str).style.opacity = .5;
+				document.getElementById(str).style.fontWeight = "normal";
+				document.getElementById(str).style.color = "yellow";
+			}
+			else if (Location_Could_Access[key] == true || Location_Could_Peek[key] == true) {
+				document.getElementById(str).className= "could_access_check_text";
+				document.getElementById(str).style.opacity = .2;
 				document.getElementById(str).style.fontWeight = "normal";
 				document.getElementById(str).style.color = "yellow";
 			}
@@ -362,21 +370,24 @@ function update_summary_text() {
 				summary_text_elem.className = "checked_text_summary";
 
 		}
-		else if(ItemLocations[Items[i]] != undefined) {
-			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
-			
-			if (!Game[Items[i]])
-				summary_text_elem.className = "checked_text_summary_ool";
+		else if(Game[Items[i]]) {
+			summary_text_elem.className = "checked_text_summary_have_ool";
+			if(Known[Items[i]])
+				summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
 			else
-				summary_text_elem.className = "checked_text_summary_have_ool";
+				summary_text_elem.innerHTML = ItemNames[i]+" &#8594; ";
+		}
+		else if(CouldHave[Items[i]]) {
+			summary_text_elem.className = "checked_text_summary_could_have";
+			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
+		}
+		else if(Known[Items[i]]) {
+			summary_text_elem.className = "checked_text_summary_known";
+			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
 		}
 		else {
+			summary_text_elem.className = "checked_text_summary_ool";
 			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; ";
-			
-			if (!Game[Items[i]])
-				summary_text_elem.className = "checked_text_summary_ool";
-			else
-				summary_text_elem.className = "checked_text_summary_have_ool";
 		}
 	}
 }
@@ -399,7 +410,9 @@ function Undo() {
 		document.getElementById(lastCheck[lastCheck.length-1]).value = "";
 	}
 	ItemLocations[Check[lastCheck[lastCheck.length-1]]] = "unknown";
+	ItemLocation[Check[lastCheck[lastCheck.length-1]]] = "";
 	Game[Check[lastCheck[lastCheck.length-1]]] = false;
+	CouldHave[Check[lastCheck[lastCheck.length-1]]] = false;
 	Known[Check[lastCheck[lastCheck.length-1]]] = false;
 	Logic[Check[lastCheck[lastCheck.length-1]]] = false;
 	Check[lastCheck[lastCheck.length-1]] = "unknown";
