@@ -7,7 +7,7 @@ var Locations = [
 	"Deku Playground Any Day", "Keaton Quiz", 
 
 	// West Clock Town
-	"Bomb Bag Purchase", "Postman's Game", "Swordsman's School", "Big Bomb Bag Purchase", "Bank Reward #1 (Adult's Wallet)", "Bank Reward #2 (Blue Rupee)", "Bank Reward #3 (Piece of Heart)", "All Night Mask Purchase", "Rosa Sisters", 
+	"Bomb Bag Purchase", "Postman's Game", "Swordsman's School", "Big Bomb Bag Purchase", "Bank Reward #1 (Adult's Wallet)", "Bank Reward #2 (Blue Rupee)", "Bank Reward #3 (Piece of Heart)", "All-Night Mask Purchase", "Rosa Sisters", 
 	
 	// Laundry Pool
 	"Guru Guru", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2",
@@ -104,10 +104,10 @@ var Locations = [
 	"Great Bay Entrance Torches", "Great Bay Green Valve","Great Bay Map Chest", "Great Bay Bio Babas", "Great Bay Compass Chest", "Great Bay Small Key Chest", "Ice Arrow Chest", "Great Bay Waterwheel Room Upper", "Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Gyorg Heart Container", 
 	
 	// Stone Tower Temple
-	"Stone Tower Statue Eye", "Stone Tower Compass Chest", "Stone Tower Underwater", "Stone Tower Eyegore Room Chest", "Stone Tower Bridge Crystal", "Stone Tower Basement Ledge", "Stone Tower Map Chest", "Stone Tower Armos Room Chest", "Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", "Light Arrow Chest", "Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos Maze Chest", 
+	"Stone Tower Statue Eye", "Stone Tower Compass Chest", "Stone Tower Underwater", "Stone Tower Eyegore Room Chest", "Stone Tower Bridge Crystal", "Stone Tower Basement Ledge", "Stone Tower Map Chest", "Stone Tower Armos Room Chest", "Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", "Light Arrow Chest", "Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", 
 	
 	// Inverted Stone Tower Temple
-	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Updraft Room Chest", "Giant's Mask Chest", "Stone Tower Death Armos", "Stone Tower Wizzrobe", "Twinmold Heart Container", 
+	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Updraft Room Chest", "Giant's Mask Chest", "Stone Tower Death Armos Maze Chest", "Stone Tower Wizzrobe", "Twinmold Heart Container", 
 	
 	// Songs
 	"Starting Song", "Imprisoned Monkey", "Swamp Music Statue", "Boss Blue Warp", "Romani's Game", "Baby Goron", "Baby Zoras", "Day 1 Grave Tablet", "Ikana King"
@@ -228,12 +228,12 @@ var Names = [
 
 var blitz_skip_checks = [
 	"Powder Keg Challenge", "Goron Race", "Fisherman Game", "Boat Archery", "Aliens Defense", "Cremia", "Gossip Stones", "Seahorses", 
-	"Bank Reward #2", "Bank Reward #3", "Midnight Meeting", "Postman's Freedom Reward", "Swamp Spider House Reward", 
+	"Bank Reward #2 (Blue Rupee)", "Bank Reward #3 (Piece of Heart)", "Midnight Meeting", "Postman's Freedom Reward", "Swamp Spider House Reward", 
 	"Ocean Spider House Day 1 Reward", "Ocean Spider House Chest", "Kamaro", "Beaver Race #1", "Beaver Race #2", 
 	"Old Lady", "Big Bomb Bag Purchase", "All-Night Mask Purchase", "Hungry Goron", "Butler", "Dampe Digging", 
 	"Toilet Hand", "Stone Tower Death Armos", "Stone Tower Updraft Fire Ring", "Mirror Shield Chest", "Goron Shop 10 Arrows", 
 	"Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", 
-	"Gorman Bros Milk Purchase", "Baby Zoras"
+	"Gorman Bros Milk Purchase", "Baby Zoras", "Milk Bar Chateau", "Milk Bar Milk"
 ];
 
 var s3_skip_checks = [

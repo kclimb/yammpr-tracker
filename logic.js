@@ -329,7 +329,7 @@ function update_location_logic() {
 	Location_Logic["Postman's Game"] = Logic.bunny_hood;
 	Location_Logic["Rosa Sisters"] = Logic.kamaro_mask;
 	Location_Logic["Swordsman's School"] = true;
-	Location_Logic["All Night Mask Purchase"] = Logic.giants_wallet;
+	Location_Logic["All-Night Mask Purchase"] = Logic.giants_wallet;
 	Location_Logic["Bank Reward #3 (Piece of Heart)"] = Logic.giants_wallet;
 	Location_Logic["Bank Reward #2 (Blue Rupee)"] = Logic.adults_wallet;
 		
@@ -645,7 +645,7 @@ function update_location_logic() {
 	Location_Access["Postman's Game"] = true;
 	Location_Access["Rosa Sisters"] = Game.kamaro_mask;
 	Location_Access["Swordsman's School"] = true;
-	Location_Access["All Night Mask Purchase"] = true;
+	Location_Access["All-Night Mask Purchase"] = true;
 	Location_Access["Bank Reward #3 (Piece of Heart)"] = true;
 	Location_Access["Bank Reward #2 (Blue Rupee)"] = true;
 		
@@ -976,7 +976,7 @@ function update_location_logic() {
 	Location_Could_Access["Postman's CouldHave"] = true;
 	Location_Could_Access["Rosa Sisters"] = CouldHave.kamaro_mask;
 	Location_Could_Access["Swordsman's School"] = true;
-	Location_Could_Access["All Night Mask Purchase"] = true;
+	Location_Could_Access["All-Night Mask Purchase"] = true;
 	Location_Could_Access["Bank Reward #3 (Piece of Heart)"] = true;
 	Location_Could_Access["Bank Reward #2 (Blue Rupee)"] = true;
 		
@@ -1291,7 +1291,7 @@ function update_location_logic() {
 	Location_Could_Peek["Postman's CouldHave"] = true;
 	Location_Could_Peek["Rosa Sisters"] = CouldHave.kamaro_mask;
 	Location_Could_Peek["Swordsman's School"] = true;
-	Location_Could_Peek["All Night Mask Purchase"] = true;
+	Location_Could_Peek["All-Night Mask Purchase"] = true;
 	Location_Could_Peek["Bank Reward #3 (Piece of Heart)"] = true;
 	Location_Could_Peek["Bank Reward #2 (Blue Rupee)"] = true;
 		
