@@ -55,7 +55,7 @@ function process_inputs() {
 	}
 }
 
-function update_logic_info() {
+function update_checks() {
 	
 	Game.logically_accessible = 0;
 	Game.checks_remaining = 0;
@@ -305,7 +305,6 @@ function junk() {
 			document.getElementById("br_" + str).style.display = "none";
 			lastCheck.push(str);
 		}
-		Update(); 
 	}
 }	
 
@@ -539,5 +538,16 @@ function resetCycle() {
 	if(Game.bottle_gold_dust) {
 		Game.bottle_gold_dust = false;
 		Game.bottle5 = true;
+	}
+}
+
+function update_settings() {
+	if(document.getElementById("settings_option").value == "BLITZ") {
+		document.getElementById("woth_input4").style.display = "inline";
+		document.getElementById("woth_input5").style.display = "inline";
+	}
+	else {
+		document.getElementById("woth_input4").style.display = "none";
+		document.getElementById("woth_input5").style.display = "none";
 	}
 }

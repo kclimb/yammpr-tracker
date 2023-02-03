@@ -16,6 +16,30 @@
 			<div id="normalColumn6" class="column"></div>
 			<div id="normalColumn7" class="column"></div>
 			<div id="normalColumn8" class="column"></div>
+			<div id="songColumn" class="column">
+				<div id="songdiv"></div><br>
+				<textarea spellcheck="false" rows="12" cols="13" id="hintInput"></textarea><br><br>
+				
+				<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br>
+				<button id='resetCycleButton' onclick="resetCycle()">Reset Cycle</button><br>
+				<button id="simControl"onclick="document.getElementById('fileInput').click();" >Play the Sim</button> 
+				<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" /><br><br>
+				<label class="settingsLabels" for="settings_option">MODE</label>
+				<select class="settingsOptions" id="settings_option">
+					<option value="BLITZ">BLITZ</option>
+					<option value="S3">S3</option>
+				</select><br><br class="half_break">
+				<label class="settingsLabels" for="gossips_option">GOSSIPS</label>
+				<select class="settingsOptions" id="gossips_option">
+					<option value="OFF">OFF</option>
+					<option value="ON">ON</option>
+				</select><br>
+				<!--<label class="settingsLabels" for="small_keys_option">SMALL KEYS</label>
+				<select class="settingsOptions" id="small_keys_option">
+				  <option value="KEYSY">KEYSY</option>
+				  <option value="VANILLA">VANILLA</option>
+				</select><br><br class="half_break">-->
+			</div>
 			<div id="itemColumn" class="itemColumn">
 				<small id="checks_remaining" class="check_text" style="color:lightblue">Remaining:</small>
 				<small id="logically_accessible" class="check_text" style="color:chartreuse">In Logic:</small><br><br>
@@ -105,27 +129,25 @@
 				<img src = "./images/Mask of Scents.png" id="mask_of_scents_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
 				<img src = "./images/Circus Leader's Mask.png" id="circusleaders_mask_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
 				<img src = "./images/songs/time.png" id="song_of_time_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
-				<img src = "./images/songs/soaring.png" id="song_of_soaring_img" class="requirements_hidden" onmousedown="highlight(this)"></img>
+				<img src = "./images/songs/soaring.png" id="song_of_soaring_img" class="requirements_hidden" onmousedown="highlight(this)"></img><br><br>
 				
-				<br><br>
+				<small class="hint_text" id="barren_text">Foolish</small><br>
+				<input spellcheck="false" id = "barren_input1" class = "hint_input"></input><input spellcheck="false" id = "barren_input2" class = "hint_input"></input><input spellcheck="false" id = "barren_input3" class = "hint_input"></input><br>
 				
-				<textarea spellcheck="false" rows="12" cols="20" id = "notes" style="font-size:16"></textarea><br><br>
+				<small class="hint_text" id="woth_text" >WOTH</small><br>
+				<input spellcheck="false" id="woth_input1" class = "hint_input"></input><input spellcheck="false" id="woth_input2" class = "hint_input"></input><input spellcheck="false" id="woth_input3" class = "hint_input"></input><input spellcheck="false" id="woth_input4" class = "hint_input"></input><input spellcheck="false" id="woth_input5" class = "hint_input"></input><br>
 				
-				<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br>
-				<button id='resetCycleButton' onclick="resetCycle()">Reset Cycle</button><br>
-				<button id="simControl"onclick="document.getElementById('fileInput').click();" >Play the Sim</button> 
-				<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" /><br>
-				<label class="settingsLabels" for="settings_option">SETTINGS</label>
-				<select class="settingsOptions" id="settings_option">
-					<option value="BLITZ">BLITZ</option>
-					<option value="S3">S3</option>
-				</select><br>
-				<label class="settingsLabels" for="gossips_option">GOSSIPS</label>
-				<select class="settingsOptions" id="gossips_option">
-					<option value="OFF">OFF</option>
-					<option value="ON">ON</option>
-				</select><br>
-				
+				<div id = "woth_info">
+					<small id="woth1_title" class="woth_info_title" onmousedown="disableWoth1()"></small><br /><small id="woth1_text1" class="woth_info_text"></small><small id="woth1_text2" class="woth_info_text"></small><small id="woth1_text3" class="woth_info_text"></small><small id="woth1_text4" class="woth_info_text"></small><small id="woth1_text5" class="woth_info_text"></small><small id="woth1_text6" class="woth_info_text"></small><small id="woth1_text7" class="woth_info_text"></small>
+
+					<small id="woth2_title" class="woth_info_title" onmousedown="disableWoth2()"></small><br /><small id="woth2_text1" class="woth_info_text" ></small><small id="woth2_text2" class="woth_info_text"></small><small id="woth2_text3" class="woth_info_text"></small><small id="woth2_text4" class="woth_info_text"></small><small id="woth2_text5" class="woth_info_text"></small><small id="woth2_text6" class="woth_info_text"></small><small id="woth2_text7" class="woth_info_text"></small>
+
+					<small id="woth3_title" class="woth_info_title" onmousedown="disableWoth3()"></small><br /><small id="woth3_text1" class="woth_info_text"></small><small id="woth3_text2" class="woth_info_text"></small><small id="woth3_text3" class="woth_info_text"></small><small id="woth3_text4" class="woth_info_text"></small><small id="woth3_text5" class="woth_info_text"></small><small id="woth3_text6" class="woth_info_text"></small><small id="woth3_text7" class="woth_info_text"></small>
+
+					<small id="woth4_title" class="woth_info_title" onmousedown="disableWoth4()"></small><br /><small id="woth4_text1" class="woth_info_text" ></small><small id="woth4_text2" class="woth_info_text"></small><small id="woth4_text3" class="woth_info_text"></small><small id="woth4_text4" class="woth_info_text"></small><small id="woth4_text5" class="woth_info_text"></small><small id="woth4_text6" class="woth_info_text"></small><small id="woth4_text7" class="woth_info_text"></small>
+
+					<small id="woth5_title" class="woth_info_title" onmousedown="disableWoth5()"></small><br /><small id="woth5_text1" class="woth_info_text"></small><small id="woth5_text2" class="woth_info_text"></small><small id="woth5_text3" class="woth_info_text"></small><small id="woth5_text4" class="woth_info_text"></small><small id="woth5_text5" class="woth_info_text"></small><small id="woth5_text6" class="woth_info_text"></small><small id="woth5_text7" class="woth_info_text"></small>
+				</div>
 			</div>
 		</div>
 		<div id="checkSummaryColumn1" class="checkSummaryColumn">
@@ -142,16 +164,16 @@
 			<small id="bomb1_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bomb Bag &#8594; </small><br>
 			<small id="bomb2_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bomb Bag &#8594; </small><br>
 			<small id="bomb3_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bomb Bag &#8594; </small><br>
-			<small id="bottle_gold_dust_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bottle Gold Dust &#8594; </small><br><br>
-			<img src="./images/evansong.png" class="evansong"></img><br><br>
-			<textarea spellcheck="false" rows="30" cols="80" id = "simLog" class = "simLog"></textarea><br>
-		</div>
-		<div id="checkSummaryColumn2" class="checkSummaryColumn">
+			<small id="bottle_gold_dust_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bottle Gold Dust &#8594; </small><br>
 			<small id="bottle1_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bottle &#8594; </small><br>
 			<small id="bottle2_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bottle &#8594; </small><br>
 			<small id="bottle3_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bottle &#8594; </small><br>
 			<small id="bottle4_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bottle &#8594; </small><br>
-			<small id="bottle5_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bottle &#8594; </small><br>
+			<small id="bottle5_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bottle &#8594; </small><br><br>
+			<img src="./images/evansong.png" class="evansong"></img><br><br>
+			<textarea spellcheck="false" rows="30" cols="80" id = "simLog" class = "simLog"></textarea><br>
+		</div>
+		<div id="checkSummaryColumn2" class="checkSummaryColumn">
 			<small id="bow1_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bow &#8594; </small><br>
 			<small id="bow2_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bow &#8594; </small><br>
 			<small id="bow3_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bow &#8594; </small><br>
@@ -161,9 +183,6 @@
 			<small id="ice_arrow_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Ice Arrow &#8594; </small><br>
 			<small id="lens_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Lens &#8594; </small><br>
 			<small id="light_arrow_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Light Arrow &#8594; </small><br>
-		</div>
-		<div id="checkSummaryColumn3" class="checkSummaryColumn">
-			
 			<small id="magic1_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Magic &#8594; </small><br>
 			<small id="magic2_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Magic -></small><br>
 			<small id="mirror_shield_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Mirror Shield &#8594; </small><br>
@@ -175,14 +194,14 @@
 			<small id="wallet1_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Wallet &#8594; </small><br>
 			<small id="wallet2_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Wallet &#8594; </small><br>
 			<small id="allnight_mask_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">All-Night Mask &#8594; </small><br>
+		</div>
+		<div id="checkSummaryColumn3" class="checkSummaryColumn">
 			<small id="blast_mask_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Blast Mask &#8594; </small><br>
 			<small id="bremen_mask_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bremen Mask &#8594; </small><br>
 			<small id="bunny_hood_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Bunny Hood &#8594; </small><br>
 			<small id="captains_hat_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Captain's Hat &#8594; </small><br>
 			<small id="circusleaders_mask_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Circus Mask &#8594; </small><br id="circusleaders_mask_location_br"/>
 			<small id="couples_mask_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Couple's Mask &#8594; </small><br>
-		</div>
-		<div id="checkSummaryColumn4" class="checkSummaryColumn">
 			<small id="deku_mask_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Deku Mask &#8594; </small><br>
 			<small id="dongero_mask_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Don Gero Mask &#8594; </small><br id="dongero_mask_location_br"/>
 			<small id="fiercedeity_mask_location" class="checkSummaryText" onmousedown = "toggleSummary(this)">Fierce Deity Mask &#8594; </small><br>
@@ -204,13 +223,6 @@
 		
 		<div id="myModal" class="modal">
 			<div class="modal-content">
-				<!--<div id = "settingsColumn">
-					<label class="settingsLabels" for="small_keys_option">SMALL KEYS</label>
-					<select class="settingsOptions" id="small_keys_option">
-					  <option value="KEYSY">KEYSY</option>
-					  <option value="VANILLA">VANILLA</option>
-					</select><br><br class="half_break">
-				</div>-->
 				<span class="close">&times;</span>
 				<p>-Input the code for an item/song in the picture text box next to a check. You can also left click on the text to mark it as junk. 
 				<br>-Capitalize the third letter of the code to "peek" or "hint" it. It will not be counted as obtained until you click an item icon or right-click the item text at the top-right.

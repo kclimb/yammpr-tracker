@@ -19,7 +19,7 @@ var Locations = [
 	"Inn Reservation", "Midnight Meeting", "Toilet Hand", "Inn Staff Room Chest", "Inn Guest Room Chest", "Grandma Short Story", "Grandma Long Story", 
 	
 	// Termina Field
-	"Astronomy Telescope", "Dodongo Grotto", "Termina Field Pillar Grotto", "Business Scrub Purchase", "Termina Field Grass Chest", "Termina Field Grass Grotto", "Termina Field Stump Chest", "Peahat Grotto", "Termina Field Underwater Chest", "Bio Baba Grotto", "Gossip Stones", "Kamaro", "h_TerminaEast", "h_TerminaGossipDrums", "h_TerminaGossipGuitar", "h_TerminaGossipLarge", "h_TerminaGossipPipes", "h_TerminaMilk", "h_TerminaNorth", "h_TerminaObservatory", "h_TerminaSouth", "h_TerminaWest",
+	"Astronomy Telescope", "Dodongo Grotto", "Termina Field Pillar Grotto", "Business Scrub Purchase", "Termina Field Grass Chest", "Termina Field Grass Grotto", "Termina Field Stump Chest", "Peahat Grotto", "Termina Field Underwater Chest", "Bio Baba Grotto", "Gossip Stones", "Kamaro", "h_TerminaObservatory", "h_TerminaWest", "h_TerminaNorth", "h_TerminaEast", "h_TerminaGossipLarge", "h_TerminaGossipPipes", "h_TerminaGossipDrums", "h_TerminaGossipGuitar", "h_TerminaSouth", "h_TerminaMilk", 
 	
 	// Road to Southern Swamp
 	"Woodfall Map Purchase", "Path to Swamp Grotto", "Path to Swamp Tree", "Snowhead Map Purchase", "Swamp Archery #1", "h_SwampRoad", 
@@ -37,7 +37,7 @@ var Locations = [
 	"Romani Ranch Map Purchase", "Great Bay Map Purchase", "Gorman Bros Milk Purchase", "Gorman Bros Race", "h_MilkRoad", 
 	
 	// Romani Ranch
-	"Doggy Racetrack Roof Chest", "Dog Race", "Grog", "Aliens Defense", "Cremia", "h_RanchBarn", "h_RanchCuccoShack", "h_RanchEntrance", "h_RanchRacetrack", "h_RanchTree", 
+	"Doggy Racetrack Roof Chest", "Dog Race", "Grog", "Aliens Defense", "Cremia", "h_RanchEntrance", "h_RanchBarn", "h_RanchTree", "h_RanchRacetrack", "h_RanchCuccoShack",
 	
 	// Mountain Village
 	"Mountain Smithy Day 1", "Mountain Smithy Day 2", "Hungry Goron",  
@@ -133,7 +133,7 @@ var Names = [
 	"Room Key", "Midnight", "Hand", "Staff", "Guest", "Granny1", "Granny2", 
 	
 	// Termina Field
-	"Telescope", "Dodongos", "Pillar", "Scrub Gr", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Gossips", "Kamaro", "East", "Drums", "Guitar", "Large", "Pipes", "Milk", "North", "Observ", "South", "West",
+	"Telescope", "Dodongos", "Pillar", "Scrub Gr", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Gossips", "Kamaro", "Observ", "West", "North", "East", "Left", "Mid-left", "Mid-right", "Right", "South", "Milk", 
 	
 	// Road to Southern Swamp
 	"Map Wood", "Grotto", "Tree", "Map Snow", "Archery", "Hint", 
@@ -151,7 +151,7 @@ var Names = [
 	"Map Ranch", "Map Bay", "Milk 50r", "Race 10r", "Hint", 
 	
 	// Romani Ranch
-	"Dog Chest", "Dog 50r", "Chicks", "Aliens", "Cremia", "Barn", "Cucco", "Entrance", "Race", "Tree", 
+	"Dog Chest", "Dog 50r", "Chicks", "Aliens", "Cremia", "Entrance", "Barn", "Tree", "Race", "Cucco", 
 	
 	// Mountain 
 	"Smithy 100r", "Smithy Gold", "Sirloin", "Waterfall", "Grotto", "Darmani", "Frogs", "Path", "Frog", "SpringPath", 

@@ -80,6 +80,7 @@ for (var i = 0; i < Locations.length; i++) {
 	else if (i == AreaIndexes[24]) { parent = document.getElementById("normalColumn6"); }
 	else if (i == AreaIndexes[31]) { parent = document.getElementById("normalColumn7"); }
 	else if (i == AreaIndexes[34]) { parent = document.getElementById("normalColumn8"); }
+	else if (i == AreaIndexes[35]) { parent = document.getElementById("songdiv"); }
 	
 	for(var j = 0; j < AreaIndexes.length; j++) {
 		if(i == AreaIndexes[j]) {
@@ -133,7 +134,7 @@ for (var i = 0; i < Locations.length; i++) {
 	
 	var elem = document.createElement("input"); 
 	elem.id = Locations[i]; 
-	if(parent != document.getElementById("normalColumn7") && parent != document.getElementById("normalColumn8"))
+	if(parent != document.getElementById("normalColumn7") && parent != document.getElementById("normalColumn8") && parent != document.getElementById("songdiv"))
 		elem.className = "picture_input"; 
 	else
 		elem.className = "other_input"; 
@@ -162,6 +163,10 @@ document.getElementById("dongero_mask_location").style.display = "none";
 document.getElementById("dongero_mask_location_br").style.display = "none";
 document.getElementById("greatfairy_mask_location").style.display = "none";
 document.getElementById("greatfairy_mask_location_br").style.display = "none";
+
+var hintbox = document.getElementById("hintInput");
+if (document.getElementById("settings_option").value != "BLITZ")
+	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \n";
 
 var Logic = {};
 var Game = {};
