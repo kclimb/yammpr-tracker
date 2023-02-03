@@ -42,6 +42,7 @@ function process_inputs() {
 							Game[Items2[j] + duplicate] = true;
 							CouldHave[Items2[j] + duplicate] = true;
 						}
+						if (!Game[Items2[j] + duplicate]) {forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase()}
 						ItemLocations[Items2[j] + duplicate] = AreaNamesShort[AreaNamesIndex] + ": " + Names[i];
 						lastCheck.push(key);
 						if(SongItems.indexOf(key) >= 0)
@@ -74,14 +75,30 @@ function update_logic_info() {
 		if (Locations[i] == "Frog Choir") {continue;}
 		if (document.getElementById("settings_option").value == "BLITZ" && blitz_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S3" && s3_skip_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("gossips_option").value != "ON" && Locations[i].startsWith("h_")) {continue;}
 		
 		
 		var key = Locations[i];
+		str = "text_" + key;
+		str2 = "br_" + key;
 		
-		if(Check[key] == "unknown" || SongItems.indexOf(key) >= 0) {
+		if(key.startsWith("h_")) {
+            document.getElementById(str).className = "gossip_text";
+            if (/*Location_Access[key] && */Check[key] != "junk") {
+                document.getElementById(str).style.display = "inline-block";
+                document.getElementById(str2).style.display = "inline-block";
+                document.getElementById(key).style.display = "inline-block";
+            }
+			else {
+                document.getElementById(str).style.display = "none"
+                document.getElementById(str2).style.display = "none";
+                document.getElementById(key).style.display = "none";
+            }
+			continue;
+		}
 		
-			str = "text_" + key;
-			str2 = "br_" + key;
+		if(Check[key] == "unknown" || SongItems.indexOf(key) >= 0 || forcedDisplay[i]) {
+		
 			if (document.getElementById(key).style.display != "inline-block") {
 				document.getElementById(str).style.display = "inline-block";
 				document.getElementById(key).style.display = "inline-block";
@@ -134,7 +151,7 @@ function update_logic_info() {
 			}
 		}
 		
-		if(Check[key] != "unknown" && document.getElementById(key) != null) {
+		if(Check[key] != "unknown" && !forcedDisplay[i] && document.getElementById(key) != null) {
 			
 			if(SongItems.indexOf(key) >= 0) {
 				document.getElementById(key).style.display = "none";
@@ -182,44 +199,114 @@ function junk() {
 	var type = event.button;
 	var str = event.target.id;
 	var str = str.substring('text_'.length);
-	if (Check[str] != "unknown") {return;}
 	var temp = Locations.indexOf(str);
+	//if (Check[str] != "unknown" && !forcedDisplay[temp]) {return;}
 	
-	if(type == 0 && !event.altKey) {
-		Check[str]="junk";
-	}
+	if(!simActive) {
+		if(SongItems.indexOf(str) != -1)
+			return;
 	
-	else if(type == 1 || (type == 0 && event.altKey)) {
-		return;
-	}
-	
-	else if ((type == 2 && !event.altKey)) {
-		return;
-	}
-	else if (type == 2 && event.altKey) {
-		if (x.style.color == "orange") {x.style.color = "pink";}
-		else {x.style.color = "orange";}
-		return;
+		if(type == 0 && !event.altKey) {
+			if(Check[str] == "unknown")
+				Check[str]="junk";
+		}
+		
+		else if(type == 1 || (type == 0 && event.altKey)) {
+			return;
+		}
+		
+		else if ((type == 2 && !event.altKey)) {
+			return;
+		}
+		else if (type == 2 && event.altKey) {
+			if (x.style.color == "orange") {x.style.color = "pink";}
+			else {x.style.color = "orange";}
+			return;
+		}
+		else {
+			if(Check[str] == "unknown")
+				Check[str]="junk";
+		}
+		
+		if (document.getElementById(str).style.display != "none") {
+			document.getElementById(str).style.display = "none";
+		}
+		
+		
+		if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); }
+		
+		if (type == 0){
+			if (document.getElementById("text_" + str).style.display != "none") {
+				document.getElementById("text_" + str).style.display = "none";
+			}
+			if (document.getElementById("br_" + str).style.display != "none") {
+				document.getElementById("br_" + str).style.display = "none";
+			}
+		}
+		lastCheck.push(str);
+		
+		Update();Update();Update();
 	}
 	else {
-		Check[str]="junk";
-	}
-	
-	if (document.getElementById(str).style.display != "none") {
-		document.getElementById(str).style.display = "none";
-	}
-	
-	if (type == 0){
-		if (document.getElementById("text_" + str).style.display != "none") {
+		// Sim active
+		
+		if(Locations.indexOf(str) == -1)
+			console.log(str + " is not a known location in the sim");
+		
+		if(!str.startsWith("h_")) { 
+			// clicked an item check, not a gossip hint
+		
+			var input = SpoilerItemToInput[SpoilerLocToItem[str]];
+			
+			if(input == undefined) {
+				Check[str]="junk";
+				
+				document.getElementById(str).style.display = "none";
+				document.getElementById("text_" + str).style.display = "none";
+				document.getElementById("br_" + str).style.display = "none";
+				
+				if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); }
+				
+				lastCheck.push(str);
+			}
+			else if(type == 0 && Check[str] == "unknown") {
+				document.getElementById(str).value = input;
+				document.getElementById("simLog").value = str + " -> " + SpoilerLocToItem[str] + "\n" + document.getElementById("simLog").value;
+			}
+			else if(type == 2 && Check[str] == "unknown" && document.getElementById(str).value != "???") {
+				// right click, peek the item
+				if(SongItems.indexOf(str) != -1)
+					return;
+				
+				if (PeekableItemLocations.indexOf(str) != -1) {
+					item = SpoilerLocToItem[str]
+					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
+				}
+				else {
+					item = "unknown gilded chest";
+					document.getElementById(str).value = "???";
+				}
+				document.getElementById("simLog").value = str + " -> " + item + " (peeked)\n" + document.getElementById("simLog").value;
+			}
+			else if (Check[str] != "unknown" && Check[str] != "junk" && forcedDisplay[temp]) {
+				forcedDisplay[temp] = false; 
+				Game[Check[str]] = true; 
+			}
+			
+		}
+		else {
+			// clicked a gossip hint
+			hint = SpoilerHintDict[str];
+			//simProcessHint(hint, str);
+			document.getElementById("simLog").value = hint + "\n" + document.getElementById("simLog").value;
+			Check[str] = "junk";
+			document.getElementById(str).style.display = "none";
 			document.getElementById("text_" + str).style.display = "none";
-		}
-		if (document.getElementById("br_" + str).style.display != "none") {
 			document.getElementById("br_" + str).style.display = "none";
+			lastCheck.push(str);
 		}
+		Update(); 
 	}
-	lastCheck.push(str);
-	
-	Update();Update();Update();
 }	
 
 function handle_item_highlights() {
@@ -409,6 +496,8 @@ function Undo() {
 		}
 		document.getElementById(lastCheck[lastCheck.length-1]).value = "";
 	}
+	
+	forcedDisplay[Check[lastCheck[lastCheck.length-1]]] = false;
 	ItemLocations[Check[lastCheck[lastCheck.length-1]]] = "unknown";
 	ItemLocation[Check[lastCheck[lastCheck.length-1]]] = "";
 	Game[Check[lastCheck[lastCheck.length-1]]] = false;
@@ -432,5 +521,23 @@ function toggleSummary(loc) {
 	
 	if(event.which == 3) { // right click, toggle if you have it or not
 		Game[item] = !Game[item];
+	}
+}
+
+function resetCycle() {
+	Game.magic_bean1 = false;
+	Game.magic_bean2 = false;
+	Game.letter_to_kafei = false;
+	Game.pendant_of_memories = false;
+	Game.room_key = false;
+	Game.special_delivery = false;
+	Game.moons_tear = false;
+	Game.land_title_deed = false;
+	Game.swamp_title_deed = false;
+	Game.mountain_title_deed = false;
+	Game.ocean_title_deed = false;
+	if(Game.bottle_gold_dust) {
+		Game.bottle_gold_dust = false;
+		Game.bottle5 = true;
 	}
 }

@@ -325,13 +325,13 @@ function update_location_logic() {
 	// West Clock Town
 	Location_Logic["Bomb Bag Purchase"] = true;
 	Location_Logic["Big Bomb Bag Purchase"] = true;
-	Location_Logic["Bank Reward #1 (Adult's Wallet)"] = true;
+	Location_Logic["Bank Reward #1"] = true;
 	Location_Logic["Postman's Game"] = Logic.bunny_hood;
 	Location_Logic["Rosa Sisters"] = Logic.kamaro_mask;
 	Location_Logic["Swordsman's School"] = true;
 	Location_Logic["All-Night Mask Purchase"] = Logic.giants_wallet;
-	Location_Logic["Bank Reward #3 (Piece of Heart)"] = Logic.giants_wallet;
-	Location_Logic["Bank Reward #2 (Blue Rupee)"] = Logic.adults_wallet;
+	Location_Logic["Bank Reward #3"] = Logic.giants_wallet;
+	Location_Logic["Bank Reward #2"] = Logic.adults_wallet;
 		
 	// Laundry Pool
 	Location_Logic["Guru Guru"] = true;
@@ -384,8 +384,8 @@ function update_location_logic() {
 	Location_Logic["Snowhead Map Purchase"] = (Logic.deku_mask && Logic.magic) || Logic.zora_mask || Logic.bow || Logic.hookshot;
 		
 	// Southern Swamp
-	Location_Logic["Koume Pictobox"] = Logic.any_bottle;
-	Location_Logic["Kotake Red Potion"] = true;
+	Location_Logic["Koume"] = Logic.any_bottle;
+	Location_Logic["Kotake"] = true;
 	Location_Logic["Swamp Scrub Trade"] = Logic.land_title_deed;
 	Location_Logic["Pictograph Contest Winner"] = Logic.pictobox;
 	Location_Logic["Boat Archery"] = Logic.woodfall_clear && Logic.any_bottle; 
@@ -641,13 +641,13 @@ function update_location_logic() {
 	// West Clock Town
 	Location_Access["Bomb Bag Purchase"] = true;
 	Location_Access["Big Bomb Bag Purchase"] = true;
-	Location_Access["Bank Reward #1 (Adult's Wallet)"] = true;
+	Location_Access["Bank Reward #1"] = true;
 	Location_Access["Postman's Game"] = true;
 	Location_Access["Rosa Sisters"] = Game.kamaro_mask;
 	Location_Access["Swordsman's School"] = true;
 	Location_Access["All-Night Mask Purchase"] = true;
-	Location_Access["Bank Reward #3 (Piece of Heart)"] = true;
-	Location_Access["Bank Reward #2 (Blue Rupee)"] = true;
+	Location_Access["Bank Reward #3"] = true;
+	Location_Access["Bank Reward #2"] = true;
 		
 	// Laundry Pool
 	Location_Access["Guru Guru"] = true;
@@ -700,8 +700,8 @@ function update_location_logic() {
 	Location_Access["Snowhead Map Purchase"] = (Game.deku_mask && Game.magic) || Game.zora_mask || Game.bow || Game.hookshot;
 		
 	// Southern Swamp
-	Location_Access["Koume Pictobox"] = Game.any_bottle;
-	Location_Access["Kotake Red Potion"] = true;
+	Location_Access["Koume"] = Game.any_bottle;
+	Location_Access["Kotake"] = true;
 	Location_Access["Swamp Scrub Trade"] = Game.land_title_deed;
 	Location_Access["Pictograph Contest Winner"] = Game.pictobox;
 	Location_Access["Boat Archery"] = Game.woodfall_clear && Game.any_bottle; 
@@ -972,13 +972,13 @@ function update_location_logic() {
 	// West Clock Town
 	Location_Could_Access["Bomb Bag Purchase"] = true;
 	Location_Could_Access["Big Bomb Bag Purchase"] = true;
-	Location_Could_Access["Bank Reward #1 (Adult's Wallet)"] = true;
+	Location_Could_Access["Bank Reward #1"] = true;
 	Location_Could_Access["Postman's CouldHave"] = true;
 	Location_Could_Access["Rosa Sisters"] = CouldHave.kamaro_mask;
 	Location_Could_Access["Swordsman's School"] = true;
 	Location_Could_Access["All-Night Mask Purchase"] = true;
-	Location_Could_Access["Bank Reward #3 (Piece of Heart)"] = true;
-	Location_Could_Access["Bank Reward #2 (Blue Rupee)"] = true;
+	Location_Could_Access["Bank Reward #3"] = true;
+	Location_Could_Access["Bank Reward #2"] = true;
 		
 	// Laundry Pool
 	Location_Could_Access["Guru Guru"] = true;
@@ -1031,8 +1031,8 @@ function update_location_logic() {
 	Location_Could_Access["Snowhead Map Purchase"] = (CouldHave.deku_mask && CouldHave.magic) || CouldHave.zora_mask || CouldHave.bow || CouldHave.hookshot;
 		
 	// Southern Swamp
-	Location_Could_Access["Koume Pictobox"] = CouldHave.any_bottle;
-	Location_Could_Access["Kotake Red Potion"] = true;
+	Location_Could_Access["Koume"] = CouldHave.any_bottle;
+	Location_Could_Access["Kotake"] = true;
 	Location_Could_Access["Swamp Scrub Trade"] = CouldHave.land_title_deed;
 	Location_Could_Access["Pictograph Contest Winner"] = CouldHave.pictobox;
 	Location_Could_Access["Boat Archery"] = CouldHave.woodfall_clear && CouldHave.any_bottle; 
@@ -1287,13 +1287,13 @@ function update_location_logic() {
 	// West Clock Town
 	Location_Could_Peek["Bomb Bag Purchase"] = true;
 	Location_Could_Peek["Big Bomb Bag Purchase"] = true;
-	Location_Could_Peek["Bank Reward #1 (Adult's Wallet)"] = true;
+	Location_Could_Peek["Bank Reward #1"] = true;
 	Location_Could_Peek["Postman's CouldHave"] = true;
 	Location_Could_Peek["Rosa Sisters"] = CouldHave.kamaro_mask;
 	Location_Could_Peek["Swordsman's School"] = true;
 	Location_Could_Peek["All-Night Mask Purchase"] = true;
-	Location_Could_Peek["Bank Reward #3 (Piece of Heart)"] = true;
-	Location_Could_Peek["Bank Reward #2 (Blue Rupee)"] = true;
+	Location_Could_Peek["Bank Reward #3"] = true;
+	Location_Could_Peek["Bank Reward #2"] = true;
 		
 	// Laundry Pool
 	Location_Could_Peek["Guru Guru"] = true;
@@ -1346,8 +1346,8 @@ function update_location_logic() {
 	Location_Could_Peek["Snowhead Map Purchase"] = (CouldHave.deku_mask && CouldHave.magic) || CouldHave.zora_mask || CouldHave.bow || CouldHave.hookshot;
 		
 	// Southern Swamp
-	Location_Could_Peek["Koume Pictobox"] = CouldHave.any_bottle;
-	Location_Could_Peek["Kotake Red Potion"] = true;
+	Location_Could_Peek["Koume"] = CouldHave.any_bottle;
+	Location_Could_Peek["Kotake"] = true;
 	Location_Could_Peek["Swamp Scrub Trade"] = CouldHave.land_title_deed;
 	Location_Could_Peek["Pictograph Contest Winner"] = CouldHave.pictobox;
 	Location_Could_Peek["Boat Archery"] = CouldHave.woodfall_clear && CouldHave.any_bottle; 

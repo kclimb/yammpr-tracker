@@ -154,7 +154,8 @@ overflow: hidden;
 	padding-left: 3px;
 	border: none;
 	display:inline-block;
-	color: lime;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: magenta;
 }
 .other_input {
 	width: 30px;
@@ -231,6 +232,17 @@ overflow: hidden;
 	opacity: .5;
 	letter-spacing: -1px;
 }
+.gossip_text {
+	font-size: 16px;
+	color: pink;
+	font-weight:bold;
+	display: inline-block;
+	opacity: 1;
+	margin-top:2px;
+	margin-bottom:1px;
+	vertical-align: top;
+	letter-spacing: -1px;
+}
 
 .modal {
   display: none;
@@ -294,9 +306,9 @@ color:rgb(54, 130, 250);
 #title_stt {
 color:rgb(155,161,0);
 }
-
-.evansong {
-	position: absolute;
-	left:  10px;
-	top: 900px;
+.simLog {
+	overflow-y: scroll;
+	background-color : #181818; 
+    color:white;
+	display:none;
 }

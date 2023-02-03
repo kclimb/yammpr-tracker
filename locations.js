@@ -7,7 +7,7 @@ var Locations = [
 	"Deku Playground Any Day", "Keaton Quiz", 
 
 	// West Clock Town
-	"Bomb Bag Purchase", "Postman's Game", "Swordsman's School", "Big Bomb Bag Purchase", "Bank Reward #1 (Adult's Wallet)", "Bank Reward #2 (Blue Rupee)", "Bank Reward #3 (Piece of Heart)", "All-Night Mask Purchase", "Rosa Sisters", 
+	"Bomb Bag Purchase", "Postman's Game", "Swordsman's School", "Big Bomb Bag Purchase", "Bank Reward #1", "Bank Reward #2", "Bank Reward #3", "All-Night Mask Purchase", "Rosa Sisters", 
 	
 	// Laundry Pool
 	"Guru Guru", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2",
@@ -19,13 +19,13 @@ var Locations = [
 	"Inn Reservation", "Midnight Meeting", "Toilet Hand", "Inn Staff Room Chest", "Inn Guest Room Chest", "Grandma Short Story", "Grandma Long Story", 
 	
 	// Termina Field
-	"Astronomy Telescope", "Dodongo Grotto", "Termina Field Pillar Grotto", "Business Scrub Purchase", "Termina Field Grass Chest", "Termina Field Grass Grotto", "Termina Field Stump Chest", "Peahat Grotto", "Termina Field Underwater Chest", "Bio Baba Grotto", "Gossip Stones", "Kamaro", 
+	"Astronomy Telescope", "Dodongo Grotto", "Termina Field Pillar Grotto", "Business Scrub Purchase", "Termina Field Grass Chest", "Termina Field Grass Grotto", "Termina Field Stump Chest", "Peahat Grotto", "Termina Field Underwater Chest", "Bio Baba Grotto", "Gossip Stones", "Kamaro", "h_TerminaEast", "h_TerminaGossipDrums", "h_TerminaGossipGuitar", "h_TerminaGossipLarge", "h_TerminaGossipPipes", "h_TerminaMilk", "h_TerminaNorth", "h_TerminaObservatory", "h_TerminaSouth", "h_TerminaWest",
 	
 	// Road to Southern Swamp
-	"Woodfall Map Purchase", "Path to Swamp Grotto", "Path to Swamp Tree", "Snowhead Map Purchase", "Swamp Archery #1", 
+	"Woodfall Map Purchase", "Path to Swamp Grotto", "Path to Swamp Tree", "Snowhead Map Purchase", "Swamp Archery #1", "h_SwampRoad", 
 	
 	// Southern Swamp 
-	"Swamp Tourist Center Roof", "Mystery Woods Grotto", "Kotake Red Potion", "Koume Pictobox", "Near Swamp Spider House Grotto",  "Pictograph Contest Winner", "Swamp Scrub Trade", "Boat Archery", "Swamp Spider House Reward", 
+	"Swamp Tourist Center Roof", "Mystery Woods Grotto", "Kotake", "Koume", "Near Swamp Spider House Grotto",  "Pictograph Contest Winner", "Swamp Scrub Trade", "Boat Archery", "Swamp Spider House Reward", "h_SwampPotionShop", "h_SwampSpiderHouse", 
 	
 	// Deku Palace
 	"Deku Palace West Garden", "Bean Man", "Bean Grotto", "Butler", 
@@ -34,14 +34,14 @@ var Locations = [
 	"Entrance to Woodfall Chest", "Woodfall Bridge Chest", "Behind Woodfall Owl Chest", 
 	
 	// Milk Road
-	"Romani Ranch Map Purchase", "Great Bay Map Purchase", "Gorman Bros Milk Purchase", "Gorman Bros Race", 
+	"Romani Ranch Map Purchase", "Great Bay Map Purchase", "Gorman Bros Milk Purchase", "Gorman Bros Race", "h_MilkRoad", 
 	
 	// Romani Ranch
-	"Doggy Racetrack Roof Chest", "Dog Race", "Grog", "Aliens Defense", "Cremia", 
+	"Doggy Racetrack Roof Chest", "Dog Race", "Grog", "Aliens Defense", "Cremia", "h_RanchBarn", "h_RanchCuccoShack", "h_RanchEntrance", "h_RanchRacetrack", "h_RanchTree", 
 	
 	// Mountain Village
 	"Mountain Smithy Day 1", "Mountain Smithy Day 2", "Hungry Goron",  
-	"Mountain Waterfall Chest", "Mountain Spring Grotto", "Darmani", "Frog Choir", 
+	"Mountain Waterfall Chest", "Mountain Spring Grotto", "Darmani", "Frog Choir", "h_MountainPath", "h_MountainSpringFrog", "h_MountainSpringPath", 
 	
 	// Twin Islands
 	"Goron Racetrack Grotto", "Hot Spring Water Grotto", "Twin Islands Underwater Ramp Chest", "Twin Islands Cave Chest", "Goron Race", 
@@ -53,10 +53,10 @@ var Locations = [
 	"Path to Snowhead Pillar", "Path to Snowhead Grotto", 
 	
 	// Great Bay Coast
-	"Great Bay Coast Grotto", "Stone Tower Map Purchase", "Lab Fish", "Great Bay Coast Ledge", "Mikau", "Fisherman Pictograph", "Ocean Spider House Chest", "Fisherman Game", "Ocean Spider House Day 1 Reward", 
+	"Great Bay Coast Grotto", "Stone Tower Map Purchase", "Lab Fish", "Great Bay Coast Ledge", "Mikau", "Fisherman Pictograph", "Ocean Spider House Chest", "Fisherman Game", "Ocean Spider House Day 1 Reward", "h_OceanFortress", 
 	
 	// Zora Cape
-	"Zora Cape Ledge Without Tree Chest", "Zora Cape Ledge With Tree Chest", "Beaver Race #1", "Beaver Race #2", "Zora Cape Like-Like", "Zora Cape Grotto", "Zora Cape Underwater Chest", 
+	"Zora Cape Ledge Without Tree Chest", "Zora Cape Ledge With Tree Chest", "Beaver Race #1", "Beaver Race #2", "Zora Cape Like-Like", "Zora Cape Grotto", "Zora Cape Underwater Chest", "h_OceanZoraGame", 
 	
 	// Zora Hall
 	"Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Zora Hall Stage Lights", "Evan", "Lulu's Room Ledge", "Ocean Scrub Trade", 
@@ -74,13 +74,13 @@ var Locations = [
 	"Pinnacle Rock Upper Chest", "Pinnacle Rock Lower Chest", "Seahorses", 
 	
 	// Path to Ikana Canyon
-	"Path to Ikana Pillar Chest", "Path to Ikana Grotto", "Invisible Soldier", 
+	"Path to Ikana Pillar Chest", "Path to Ikana Grotto", "Invisible Soldier", "h_CanyonRoad", 
 	
 	// Ikana Graveyard
 	"Day 1 Grave Bats", "Ikana Graveyard Grotto", "Captain Keeta's Chest", "Iron Knuckle Chest", "Dampe Digging", 
 	
 	// Ikana Canyon
-	"Ikana Canyon Ledge", "Canyon Scrub Trade", "Secret Shrine Grotto", "Poe Hut", "Pamela's Father", 
+	"Ikana Canyon Ledge", "Canyon Scrub Trade", "Secret Shrine Grotto", "Poe Hut", "Pamela's Father", "h_CanyonDock", "h_CanyonRavine", "h_CanyonSpiritHouse", 
 	
 	// Secret Shrine
 	"Secret Shrine Dinolfos Chest", "Secret Shrine Garo Master Chest", "Secret Shrine Wizzrobe Chest", "Secret Shrine Wart Chest", "Secret Shrine Final Chest", 
@@ -121,7 +121,7 @@ var Names = [
 	"Tree", "Map Clock", "Bombers", "Old Lady", "GF Human", "GF Transf", "Playgro 10r", "Keaton",  
 	
 	// West Clock Town
-	"Bomb 50r", "Postman 10r", "Swords 2r", "Bomb 90r", "Bank 200r", "Bank 500r", "Bank 1000r", "All-Night", "Rosa", 
+	"Bomb 50r", "Postman 2r", "Swords 10r", "Bomb 90r", "Bank 200r", "Bank 500r", "Bank 1000r", "All-Night", "Rosa", 
 	
 	// Laundry Pool
 	"Guru", "Kafei", "Curios1", "Curios2",
@@ -133,13 +133,13 @@ var Names = [
 	"Room Key", "Midnight", "Hand", "Staff", "Guest", "Granny1", "Granny2", 
 	
 	// Termina Field
-	"Telescope", "Dodongos", "Pillar", "Scrub Gr", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Gossips", "Kamaro", 
+	"Telescope", "Dodongos", "Pillar", "Scrub Gr", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Gossips", "Kamaro", "East", "Drums", "Guitar", "Large", "Pipes", "Milk", "North", "Observ", "South", "West",
 	
 	// Road to Southern Swamp
-	"Map Wood", "Grotto", "Tree", "Map Snow", "Archery", 
+	"Map Wood", "Grotto", "Tree", "Map Snow", "Archery", "Hint", 
 	
 	// Southern Swamp
-	"Roof", "Woods Gr", "Witch Red", "PictoBox", "Grotto", "Contest", "Deed", "BoatArchery", "Swamp Spid", 
+	"Roof", "Woods Gr", "Witch Red", "PictoBox", "Grotto", "Contest", "Deed", "BoatArchery", "Swamp Spid", "Witches", "Spider", 
 	
 	// Deku Palace
 	"West Gard", "Bean", "Bean Ch", "Butler", 
@@ -148,13 +148,13 @@ var Names = [
 	"Entrance", "Bridge", "Owl", 
 	
 	// Milk Road
-	"Map Ranch", "Map Bay", "Milk 50r", "Race 10r", 
+	"Map Ranch", "Map Bay", "Milk 50r", "Race 10r", "Hint", 
 	
 	// Romani Ranch
-	"Dog Chest", "Dog 50r", "Chicks", "Aliens", "Cremia", 
+	"Dog Chest", "Dog 50r", "Chicks", "Aliens", "Cremia", "Barn", "Cucco", "Entrance", "Race", "Tree", 
 	
 	// Mountain 
-	"Smithy 100r", "Smithy Gold", "Sirloin", "Waterfall", "Grotto", "Darmani", "Frogs", 
+	"Smithy 100r", "Smithy Gold", "Sirloin", "Waterfall", "Grotto", "Darmani", "Frogs", "Path", "Frog", "SpringPath", 
 	
 	// Twin Islands
 	"Race Gr", "HSW Gr", "Spr Ramp", "Spr Cave", "GorRace", 
@@ -166,10 +166,10 @@ var Names = [
 	"Pillar", "Grotto", 
 	
 	// Great Bay Coast
-	"Grotto", "Map Ikana", "Lab Fish", "Ledge", "Mikau", "Picto", "SpidChest", "Jump 20r", "OceSpid1", 
+	"Grotto", "Map Ikana", "Lab Fish", "Ledge", "Mikau", "Picto", "SpidChest", "Jump 20r", "OceSpid1", "Hint", 
 	
 	// Zora Cape
-	"Ledge 1", "Ledge 2", "Beaver", "Beaver 2", "Like Like", "Grotto", "Water", 
+	"Ledge 1", "Ledge 2", "Beaver", "Beaver 2", "Like Like", "Grotto", "Water", "Hint", 
 	
 	// Zora Hall
 	"Shop 90r", "Shop 20r", "Shop 60r", "Torches", "Evan", "Ledge", "Deed", 
@@ -187,13 +187,13 @@ var Names = [
 	"Upper", "Lower", "Seahorses", 
 	
 	// Path to Ikana Canyon
-	"Pillar", "Grotto", "Soldier", 
+	"Pillar", "Grotto", "Soldier", "Hint", 
 	
 	// Ikana Graveyard
 	"Bats1", "Grotto", "Keeta", "Knuckle2", "Dampe3", 
 	
 	// Ikana Canyon
-	"Ledge", "Deed", "Grotto", "Poe 30r", "PamelaDad",  
+	"Ledge", "Deed", "Grotto", "Poe 30r", "PamelaDad", "Dock", "Ledge", "Upper", 
 	
 	// Secret Shrine
 	"Dinolfos", "Garo Master", "Wizzrobe", "Wart", "Final", 
@@ -228,7 +228,7 @@ var Names = [
 
 var blitz_skip_checks = [
 	"Powder Keg Challenge", "Goron Race", "Fisherman Game", "Boat Archery", "Aliens Defense", "Cremia", "Gossip Stones", "Seahorses", 
-	"Bank Reward #2 (Blue Rupee)", "Bank Reward #3 (Piece of Heart)", "Midnight Meeting", "Postman's Freedom Reward", "Swamp Spider House Reward", 
+	"Bank Reward #2", "Bank Reward #3", "Midnight Meeting", "Postman's Freedom Reward", "Swamp Spider House Reward", 
 	"Ocean Spider House Day 1 Reward", "Ocean Spider House Chest", "Kamaro", "Beaver Race #1", "Beaver Race #2", 
 	"Old Lady", "Big Bomb Bag Purchase", "All-Night Mask Purchase", "Hungry Goron", "Butler", "Dampe Digging", 
 	"Toilet Hand", "Stone Tower Death Armos", "Stone Tower Updraft Fire Ring", "Mirror Shield Chest", "Goron Shop 10 Arrows", 
@@ -239,3 +239,7 @@ var blitz_skip_checks = [
 var s3_skip_checks = [
 	"Swamp Music Statue"
 ];
+
+var PeekableItemLocations = [
+	"Clock Tower Entrance", "North Clock Town Tree", "Clock Town Map Purchase", "Bomb Bag Purchase", "Big Bomb Bag Purchase", "All-Night Mask Purchase", "Milk Bar Milk", "Milk Bar Chateau", "Astronomy Telescope", "Business Scrub Purchase", "Bio Baba Grotto", "Woodfall Map Purchase", "Path to Swamp Tree", "Snowhead Map Purchase", "Swamp Tourist Center Roof", "Deku Palace West Garden", "Romani Ranch Map Purchase", "Great Bay Map Purchase", "Goron Village Ledge", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Biggest Bomb Bag Purchase", "Powder Keg Challenge", "Path to Snowhead Pillar", "Stone Tower Map Purchase", "Great Bay Coast Ledge", "Zora Cape Like-Like", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Lulu's Room Ledge", "Pirates' Fortress Cage", "Ikana Canyon Ledge", "Ikana Castle Pillar"
+]

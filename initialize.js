@@ -1,7 +1,7 @@
 var AreaIndexes = [
-	0,5,13,22,26,38,45,57,62,71,75,78,82,87,94,99,
-	109,111,120,127,134,137,141,146,149,152,157,162,167,170,171,174,
-	182,196,207,231
+	0,5,13,22,26,38,45,67,73,84,88,91,96,106,116,121,
+	131,133,143,151,158,161,165,170,173,177,182,190,195,198,199,202,
+	210,224,235,259
 ];
 
 var AreaNames = [
@@ -143,8 +143,8 @@ for (var i = 0; i < Locations.length; i++) {
 	var elem = document.createElement("small"); 
 	elem.id = "text_" + Locations[i]; 
 	elem.className = "check_text"; 
-	if(SongItems.indexOf(Locations[i]) < 0)
-		elem.onmousedown = junk; 
+	//if(SongItems.indexOf(Locations[i]) < 0)
+	elem.onmousedown = junk; 
 	elem.innerHTML = Names[i]; 
 	parent.appendChild(elem);
 	
@@ -171,6 +171,7 @@ var Location_Access = {};
 var Location_Could_Access={};
 var Location_Could_Peek={};
 var lastCheck = ["start"];
+var forcedDisplay = new Array(1024).fill(false);
 
 for (var i = 0; i < Items.length; i++) {
 	Logic[Items[i]] = false;
@@ -180,6 +181,11 @@ for (var i = 0; i < Items.length; i++) {
 }
 
 var backUp = [];
+
+var simActive = false;
+var SpoilerLines = [];
+var SpoilerLocToItem = {};
+var SpoilerHintDict = {};
 
 for (var i = 0; i < Locations.length; i++) {
 	Location_Logic[Locations[i]] = false;
@@ -202,61 +208,6 @@ Game.checks_remaining = 0;
 Game.logically_accessible = 0;
 
 var modal = document.getElementById("myModal");
-
-var btn = document.createElement("button");
-btn.id = "myBtn";
-btn.innerHTML = "Help";
-btn.onclick = function() {
-	modal.style.display = "block";
-}
-document.getElementById("itemColumn").appendChild(btn);
-
-document.getElementById("itemColumn").appendChild(document.createElement("br"));
-
-var btn = document.createElement("button");
-btn.id = "resetCycleButton";
-btn.innerHTML = "Reset Cycle";
-btn.onclick = function() {
-	Game.magic_bean1 = false;
-	Game.magic_bean2 = false;
-	Game.letter_to_kafei = false;
-	Game.pendant_of_memories = false;
-	Game.room_key = false;
-	Game.special_delivery = false;
-	Game.moons_tear = false;
-	Game.land_title_deed = false;
-	Game.swamp_title_deed = false;
-	Game.mountain_title_deed = false;
-	Game.ocean_title_deed = false;
-	if(Game.bottle_gold_dust) {
-		Game.bottle_gold_dust = false;
-		Game.bottle5 = true;
-	}
-}
-document.getElementById("itemColumn").appendChild(btn);
-document.getElementById("itemColumn").appendChild(document.createElement("br"));
-
-var settingsLabel = document.createElement("label");
-settingsLabel.for = "settings_option";
-settingsLabel.innerHTML = "SETTINGS"
-
-var settingsDropdown = document.createElement("select");
-settingsDropdown.id = "settings_option";
-settingsDropdown.className = "settingsOptions";
-
-var option1 = document.createElement("option");
-option1.value = "S3";
-option1.innerHTML = "S3";
-settingsDropdown.appendChild(option1);
-
-var option2 = document.createElement("option");
-option2.value = "BLITZ";
-option2.innerHTML = "BLITZ";
-settingsDropdown.appendChild(option2);
-
-document.getElementById("itemColumn").appendChild(settingsLabel);
-document.getElementById("itemColumn").appendChild(settingsDropdown);
-
 var span = document.getElementsByClassName("close")[0];
 
 span.onclick = function() {
