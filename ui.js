@@ -354,9 +354,11 @@ function junk() {
 		}
 		else {
 			// clicked a gossip hint
-			hint = SpoilerHintDict[str];
-			//simProcessHint(hint, str);
-			document.getElementById("simLog").value = hint + "\n" + document.getElementById("simLog").value;
+			temp_hint = SpoilerHintDict[str];
+			for(var i = 0; i < hintStrings1.length; i++)
+				temp_hint = temp_hint.replace(hintStrings1[i], "");
+			document.getElementById("simLog").value = temp_hint + "\n" + document.getElementById("simLog").value;
+			simProcessHint(str);
 			Check[str] = "junk";
 			document.getElementById(str).style.display = "none";
 			document.getElementById("text_" + str).style.display = "none";

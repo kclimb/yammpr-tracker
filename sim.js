@@ -7,9 +7,11 @@ function readLog() {
 	simActive = true;
 	document.getElementById("simLog").style.display = "inline-block";
 	document.getElementById("gossips_option").value = "ON";
-	document.getElementById("Starting Song").value = "epo";
-	if(document.getElementById("settings_option").value == "BLITZ")
+	
+	if(document.getElementById("settings_option").value == "BLITZ") {
+		document.getElementById("Starting Song").value = "epo";
 		document.getElementById("Boss Blue Warp").value = "oat";
+	}
 	
 	for(i = 0; i < SpoilerLines.length; i++) {
 		if(SpoilerLines[i].indexOf("->") >= 0) {
@@ -24,9 +26,10 @@ function readLog() {
 		}
 	}
 	
-	SpoilerLocToItem["Starting Song"] = "Epona's Song";
-	if(document.getElementById("settings_option").value == "BLITZ")
+	if(document.getElementById("settings_option").value == "BLITZ") {
+		SpoilerLocToItem["Starting Song"] = "Epona's Song";
 		SpoilerLocToItem["Boss Blue Warp"] = "Oath to Order";
+	}
 }
 function onChooseFile(event, onLoadFileHandler) {
 	if (typeof window.FileReader !== 'function')
@@ -42,6 +45,78 @@ function onChooseFile(event, onLoadFileHandler) {
 	let fr = new FileReader();
 	fr.onload = onLoadFileHandler;
 	fr.readAsText(file);
+}
+
+function simProcessHint(gossip) {
+	hint = SpoilerHintDict[gossip];
+	for(var i = 0; i < hintStrings1.length; i++)
+		hint = hint.replace(hintStrings1[i], "");
+	
+	if(hint.includes("Way of the Hero")) {
+		hint = hint.replace(" is on the Way of the Hero...", "");
+		
+		if(simWothCounter <= 5) {
+			
+			if(simWothsEntered[hint] == undefined)
+				simWothsEntered[hint] = 1;
+			else
+				simWothsEntered[hint] += 1;
+			
+			if(simWothsEntered[hint] == 1) {
+				document.getElementById("woth_input" + simWothCounter).value = SpoilerAreaToInput[hint];
+				simWothCounter += 1;
+			}
+		}
+	}
+	else if(hint.includes("foolish choice")) {
+		hint = hint.replace(" is a foolish choice...", "");
+		
+		if(simBarrenCounter <= 5) {
+			
+			if(simBarrensEntered[hint] == undefined)
+				simBarrensEntered[hint] = 1;
+			else
+				simBarrensEntered[hint] += 1;
+			
+			if(simBarrensEntered[hint] == 1) {
+				document.getElementById("barren_input" + simBarrenCounter).value = SpoilerAreaToInput[hint];
+				simBarrenCounter += 1;
+			}
+		}
+	}
+	else { // always or sometimes hint
+		
+		for(var i = 0; i < hintStrings2.length; i++)
+			hint = hint.replace(hintStrings2[i], ":");
+		hint = hint.replace("...", "");
+		hint = hint.replace("Town Archery 1", "Town Archery #1");
+		hint = hint.replace("Swamp Archery 1", "Swamp Archery #1");
+		
+		loc = hint.split(":")[0];
+		item = hint.split(":")[1];
+		if(item.startsWith("a "))
+			item = item.replace("a ", "");
+		
+		if(Locations.indexOf(loc) < 0) {
+			console.log("Could not fill in the hint. " + loc + " is not a known location.");
+			return;
+		}
+		if(hintIndexes.indexOf(loc) == -1) {
+			console.log("Could not fill in the hint. " + loc + " is not in the list of hinted locations.");
+			return;
+		}
+		
+		loc_input = hintInputs[hintIndexes.indexOf(loc)];
+		
+		var item_input = "x";
+		if(SpoilerItemToInput[item] != undefined)
+			item_input = SpoilerItemToInput[item];
+		
+		if(document.getElementById("hintInput").value.includes(loc_input + " \n"))
+			document.getElementById("hintInput").value = document.getElementById("hintInput").value.replace(loc_input + " \n", loc_input + " " + item_input + "\n");
+		else if(!document.getElementById("hintInput").value.includes(loc_input + " " + item_input + "\n"))
+			document.getElementById("hintInput").value += loc_input + " " + item_input + "\n";
+	}
 }
 
 var SpoilerItemToInput = {
@@ -106,4 +181,42 @@ var SpoilerItemToInput = {
 	"New Wave Bossa Nova" : "nov",
 	"Elegy of Emptiness" : "ele",
 	"Oath to Order" : "oat"
+}
+
+var SpoilerAreaToInput = {
+	"South Clock Town" : "sct",
+	"North Clock Town" : "nct",
+	"West Clock Town" : "wct",
+	"Laundry Pool" : "lau",
+	"East Clock Town" : "ect",
+	"Stock Pot Inn" : "inn",
+	"Termina Field" : "fie",
+	"Road to Southern Swamp" : "rsw",
+	"Southern Swamp" : "swa",
+	"Deku Palace" : "pal",
+	"Woodfall" : "woo",
+	"Milk Road" : "mil",
+	"Romani Ranch" : "ran",
+	"Mountain Village" : "mou",
+	"Twin Islands" : "twi",
+	"Goron Village" : "gor",
+	"Path to Snowhead" : "psn",
+	"Great Bay Coast" : "gre",
+	"Zora Cape" : "cap",
+	"Zora Hall" : "hal",
+	"Pirates' Fortress Exterior" : "ext",
+	"Pirates' Fortress Sewer" : "sew",
+	"Pirates' Fortress Interior" : "int",
+	"Pinnacle Rock" : "pin",
+	"Road to Ikana" : "rik",
+	"Ikana Graveyard" : "gra",
+	"Ikana Canyon" : "can",
+	"Secret Shrine" : "shr",
+	"Beneath the Well" : "wel",
+	"Ikana Castle" : "cas",
+	"Stone Tower" : "sto",
+	"Woodfall Temple" : "wft",
+	"Snowhead Temple" : "sht",
+	"Great Bay Temple" : "gbt",
+	"Stone Tower Temple" : "stt"
 }

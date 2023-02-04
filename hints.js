@@ -1,9 +1,9 @@
 function handleAlternateHintInput() {
 	var lines = document.getElementById("hintInput").value.split('\n');
 	var str = "";
-	for (var i= 0; i < hintNames.length; i++) {
+	for (var i= 0; i < hintInputs.length; i++) {
 		for (var j=0; j < lines.length; j++) {
-			if (lines[j].startsWith(hintNames[i]+" ")) {
+			if (lines[j].startsWith(hintInputs[i]+" ")) {
 				for (var k = 0; k < inputs.length; k++) {
 					str = inputs[k];
 					if (i < 6) {
