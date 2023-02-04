@@ -25,6 +25,10 @@ var AreaNamesShort = [
 	"Songs"
 ];
 
+var areaInputs = [
+	"", "sct", "nct", "wct", "lau", "ect", "inn", "fie", "rsw", "swa", "pal", "woo", "mil", "ran", "mou", "twi", "gor", "psn", "gre", "cap", "hal", "ext", "sew", "int", "pin", "rik", "gra", "can", "shr", "wel", "cas", "sto", "wft", "sht", "gbt", "stt"
+];
+
 var AreaImages = [
 	"sct.png", "nct.png", "wct.png", "laun.png", "ect.png", "stockpot.png", "field3.png", 
 	"roadtosouthern.png", "swamp.png", "palace.png", "woodfall.png",
@@ -69,6 +73,17 @@ var inputs = [
 	"x", "bow", "fir", "ice", "lig", "moo", "lan", "swa", "mou", "oce", "bom", "bea", "roo", "spe", "pow", "pic", "len", "hoo", "gfs", "let", "pen", "bot", "gol", "pos", "all", "bla", "sto", "gre", "dek", "kea", "bre", "bun", "don", "sce", "gor", "rom", "cir", "kaf", "cou", "tru", "zor", "kam", "gib", "gar", "cap", "gia", "fie", "swo", "mir", "mag", "wal", "soh", "epo", "sos", "son", "lul", "nov", "ele", "oat"
 ];
 
+var hintNames = ["swa", "oce", "ali", "cre", "but", "boa", "dam", "rac", "fis", "ban", "bea", "gos", "sea", "sm2", "mid", "pos", "ka1", "ka2", "ka3", "poe", "hun", "lef", "pam", "gor", "gro", "dog", "iro", "tar", "sar", "bom", "hon", "pla", "mil", "dar", "lig", "ice", "fir", "hoo"];
+
+var hintIndexes = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Bank Reward #3", "Beaver Race #1", "Gossip Stones", "Seahorses", "Mountain Smithy Day 2", "Midnight Meeting", "Postman's Freedom Reward", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2", "Poe Hut", "Hungry Goron", "Well Left Path Chest", "Pamela's Father", "Gorman", "Grog", "Dog Race", "Iron Knuckle Chest", "Town Archery #1", "Swamp Archery #1", "Bombers' Hide and Seek", "Honey and Darling Any Day", "Deku Playground Any Day", "Gorman Bros Race", "Woodfall Dark Room", "Light Arrow Chest", "Ice Arrow Chest", "Fire Arrow Chest", "Hookshot Chest"];
+
+var Hinted = {};
+var hintedInput = "";
+var thisIsHinted = false;
+
+var backUp = [];
+var toFocus = null;
+var overrideFocus = false;
 
 var parent = document.getElementById("normalColumn1");
 for (var i = 0; i < Locations.length; i++) {
@@ -185,8 +200,6 @@ for (var i = 0; i < Items.length; i++) {
 	Known[Items[i]] = false;
 }
 
-var backUp = [];
-
 var simActive = false;
 var SpoilerLines = [];
 var SpoilerLocToItem = {};
@@ -220,7 +233,7 @@ span.onclick = function() {
 }
 window.onclick = function(event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+	modal.style.display = "none";
   }
 }
 

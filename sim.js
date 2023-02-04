@@ -1,10 +1,10 @@
 function onFileLoad(elementId, event) {
-    //SpoilerJSON = JSON.parse(event.target.result);
+	//SpoilerJSON = JSON.parse(event.target.result);
 	SpoilerLines = event.target.result.split('\n');
 	readLog();
 }
 function readLog() {
-    simActive = true;
+	simActive = true;
 	document.getElementById("simLog").style.display = "inline-block";
 	document.getElementById("gossips_option").value = "ON";
 	document.getElementById("Starting Song").value = "epo";

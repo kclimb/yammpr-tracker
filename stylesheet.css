@@ -12,8 +12,8 @@ color:black;
 font-family:sans-sarif;
 }
 ::-webkit-scrollbar {
-    width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+	width: 0px;  /* Remove scrollbar space */
+	background: transparent;  /* Optional: just make scrollbar invisible */
 }
 body {
 margin: 0;
@@ -69,7 +69,7 @@ overflow: hidden;
 		1px 1px 0 #000;
 }
 .column {
-	margin-top:0px;
+  margin-top:0px;
   float: left;
   width: 115px;
   
@@ -148,7 +148,7 @@ overflow: hidden;
 	margin-bottom:2px;
 	margin-right:2px;
 	vertical-align: top;
-	padding-left: 3px;
+	padding-left: 0px;
 	border: none;
 	display:inline-block;
 	-webkit-text-stroke-width: 1px;
@@ -160,10 +160,10 @@ overflow: hidden;
 	margin-bottom:2px;
 	margin-right:2px;
 	vertical-align: top;
-	padding-left: 3px;
+	padding-left: 0px;
 	display:inline-block;
 	background-color:#404040;
-    color: white;
+	color: white;
 }
 .area_name {
 	font-size:20px;
@@ -292,7 +292,7 @@ button{
 	margin-bottom: 5px;
 	outline:none;
 	background-color:#404040;
-    color: white;
+	color: white;
 }
 #title_wft {
 color:#88FA4E;
@@ -308,7 +308,8 @@ color:rgb(155,161,0);
 }
 .simLog {
 	overflow-y: scroll;
-	background-color : #cccccc; 
+	background-color:#404040;
+	color: white;
 	display:none;
 }
 .hint_input {
@@ -316,12 +317,12 @@ color:rgb(155,161,0);
 	vertical-align: top;
 	margin-bottom: 0px;
 	background-color:#404040;
-    color: white;
+	color: white;
 	display: inline;
 }
 #hintInput {
 	background-color:#404040;
-    color: white;
+	color: white;
 	resize: none;
 }
 #woth_text {
@@ -340,8 +341,8 @@ color:rgb(155,161,0);
 	margin-right:2px;
 }
 .settingsOptions {
-    background-color:#404040;
-    color: white;
+	background-color:#404040;
+	color: white;
 }
 .settingsLabels{
 	color: white;
@@ -354,6 +355,11 @@ color:rgb(155,161,0);
 	margin-top:0px;
 	padding-top: 0px;
 	text-align:top;
-    overflow-y: auto;
+	overflow-y: auto;
 	height: 370px;
+}
+.modal_column {
+	display: inline-block;
+	margin-right: 100px;
+	vertical-align: top;
 }

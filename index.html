@@ -1,6 +1,6 @@
 <!DOCTYPE>
   <html>
-    <head>
+	<head>
 		<link rel="shortcut icon" href="./images/Majora.png" /> 
 		<link style="text/css" rel="stylesheet" href="stylesheet.css"/>
 		<title>MM Tracker</title>
@@ -19,11 +19,10 @@
 			<div id="songColumn" class="column">
 				<div id="songdiv"></div><br>
 				<textarea spellcheck="false" rows="12" cols="13" id="hintInput"></textarea><br><br>
-				
-				<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br>
 				<button id='resetCycleButton' onclick="resetCycle()">Reset Cycle</button><br>
 				<button id="simControl"onclick="document.getElementById('fileInput').click();" >Play the Sim</button> 
-				<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" /><br><br>
+				<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" /><br>
+				<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br><br>
 				<label class="settingsLabels" for="settings_option">MODE</label>
 				<select class="settingsOptions" id="settings_option">
 					<option value="BLITZ">BLITZ</option>
@@ -224,17 +223,19 @@
 		<div id="myModal" class="modal">
 			<div class="modal-content">
 				<span class="close">&times;</span>
-				<p>-Input the code for an item/song in the picture text box next to a check. You can also left click on the text to mark it as junk. 
-				<br>-Capitalize the third letter of the code to "peek" or "hint" it. It will not be counted as obtained until you click an item icon or right-click the item text at the top-right.
-				<br>-Press Ctrl+Z to undo the last item input.
-				<br>-Click the "Reset Cycle" button to unmark items you lose when you play Song of Time.
-				<br><br>Simulator:
-				<br>To start the simulator click the "Play the Sim" button and select a spoiler log (only Blitz tested).
-				<br>Left click a check to get it. Right click a check to peek it. You can then left or right click the peeked check again to obtain it.
-				<br>If you peek a check which is not freestanding, it will tell you that you found an unknown gilded chest, labeled by "???". You can left click the check again to obtain the item there.
-				<br>Click a Gossip Stone check (colored pink) to get a hint.
-				<br><br>
-				Item codes: <br>
+				<p>This tracker is based on <a href="https://soilflux.github.io/tracker">soli's OoT tracker.</a><br><br>
+				-Input the code for an item/song in the picture text box next to a check. You can also left click on the text to mark it as junk.<br> 
+				-Capitalize the third letter of the code to "peek" it, or capitalize the first letter of the code to "hint" it. Peeked or hinted checks will not be counted as obtained until you click the check text.<br>
+				-Input abbreviations for hint areas in the Foolish and WOTH boxes to track those.<br>
+				-An alternate way of inputting always/sometimes hints is by putting a location code and the three letter item code (or x for nothing) into the text area on their own line.<br>
+				-Press Ctrl+Z to undo the last item input.<br>
+				-Click the "Reset Cycle" button to unmark items you lose when you play Song of Time.<br><br>
+				Simulator:<br>
+				-To start the simulator click the "Play the Sim" button and select a spoiler log (only Blitz tested).<br>
+				-Left click a check to get it. Right click a check to peek it. You can then left or right click the peeked check again to obtain it.<br>
+				-If you peek a check which is not freestanding, it will tell you that you found an unknown gilded chest, labeled by "???". You can left click the check again to obtain the item there.<br>
+				-Click a Gossip Stone check (colored pink) to get a hint.<br></p>
+				<div class="modal_column">Item codes:<br>
 				x - Junk<br>
 				bow - Bow<br>
 				fir - Fire Arrow<br>
@@ -293,8 +294,82 @@
 				lul - Goron Lullaby<br>
 				nov - New Wave Bossa Nova<br>
 				ele - Elegy of Emptiness<br>
-				oat - Oath to Order
-				</p>
+				oat - Oath to Order<br><br></div>
+				<div class="modal_column">Location codes:<br>
+				swa - Swamp Spider House Reward<br>
+				oce - Ocean Spider House Day 1 Reward<br>
+				ali - Aliens Defense<br>
+				cre - Cremia<br>
+				but - Butler<br>
+				boa - Boat Archery<br>
+				dam - Dampe Digging<br>
+				rac - Goron Race<br>
+				fis - Fisherman Game<br>
+				ban - Bank Reward #3<br>
+				bea - Beaver Race #1<br>
+				gos - Gossip Stones<br>
+				sea - Seahorses<br>
+				sm2 - Mountain Smithy Day 2<br>
+				mid - Midnight Meeting<br>
+				pos - Postman's Freedom Reward<br>
+				ka1 - Kafei<br>
+				ka2 - Curiosity Shop Man #1<br>
+				ka3 - Curiosity Shop Man #2<br>
+				poe - Poe Hut<br>
+				hun - Hungry Goron<br>
+				lef - Well Left Path Chest<br>
+				pam - Pamela's Father<br>
+				gor - Gorman<br>
+				gro - Grog<br>
+				dog - Dog Race<br>
+				iro - Iron Knuckle Chest<br>
+				tar - Town Archery #1<br>
+				sar - Swamp Archery #1<br>
+				bom - Bombers' Hide and Seek<br>
+				hon - Honey and Darling Any Day<br>
+				pla - Deku Playground Any Day<br>
+				mil - Gorman Bros Race<br>
+				dar - Woodfall Dark Room<br>
+				lig - Light Arrow Chest<br>
+				ice - Ice Arrow Chest<br>
+				fir - Fire Arrow Chest<br>
+				hoo - Hookshot Chest<br><br></div>
+				<div class="modal_column">Area codes:<br>
+				sct - South Clock Town<br>
+				nct - North Clock Town<br>
+				wct - West Clock Town<br>
+				lau - Laundry Pool<br>
+				ect - East Clock Town<br>
+				inn - Stock Pot Inn<br>
+				fie - Termina Field<br>
+				rsw - Road to Southern Swamp<br>
+				swa - Southern Swamp<br>
+				pal - Deku Palace<br>
+				woo - Woodfall<br>
+				mil - Milk Road<br>
+				ran - Romani Ranch<br>
+				mou - Mountain Village<br>
+				twi - Twin Islands<br>
+				gor - Goron Village<br>
+				psn - Path to Snowhead<br>
+				gre - Great Bay Coast<br>
+				cap - Zora Cape<br>
+				hal - Zora Hall<br>
+				ext - Pirates' Fortress Exterior<br>
+				sew - Pirates' Fortress Sewer<br>
+				int - Pirates' Fortress Interior<br>
+				pin - Pinnacle Rock<br>
+				rik - Road to Ikana<br>
+				gra - Ikana Graveyard<br>
+				can - Ikana Canyon<br>
+				shr - Secret Shrine<br>
+				wel - Beneath the Well<br>
+				cas - Ikana Castle<br>
+				sto - Stone Tower<br>
+				wft - Woodfall Temple<br>
+				sht - Snowhead Temple<br>
+				gbt - Great Bay Temple<br>
+				stt - Stone Tower Temple<br></div>
 			</div>
 		</div>
 		
@@ -302,6 +377,7 @@
 	<script type="text/javascript"  src="sim.js"></script>
 	<script type="text/javascript"  src="locations.js"></script>
 	<script type="text/javascript"  src="logic.js"></script>
+	<script type="text/javascript"  src="hints.js"></script>
 	<script type="text/javascript"  src="ui.js"></script>
 	<script type="text/javascript"  src="main.js"></script>
 	<script type="text/javascript"  src="initialize.js"></script>

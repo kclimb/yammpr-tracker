@@ -1,9 +1,18 @@
 function isUpperCase(str) {
-    return str === str.toUpperCase();
+	return str === str.toUpperCase();
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function capitalizeThirdLetter(string) {
+    return string.charAt(0) + string.charAt(1) + string.charAt(2).toUpperCase();
 }
 
 function process_inputs() {
 	var peeked = false;
+	var hinted = false;
 	
 	for (var i = 0; i < Locations.length; i++) {
 		var key = Locations[i];
@@ -17,6 +26,10 @@ function process_inputs() {
 		if(Check[key] != "unknown") {continue;}
 		if (isUpperCase(document.getElementById(key).value.charAt(2)) && document.getElementById(key).value.length == 3) {
 			peeked = true;
+			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
+		}
+		else if (isUpperCase(document.getElementById(key).value.charAt(0)) && document.getElementById(key).value.length == 3){
+			hinted = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
 		}
 		
@@ -38,15 +51,38 @@ function process_inputs() {
 						ItemLocation[Items2[j] + duplicate] = document.getElementById(key).id;
 						Known[Items2[j] + duplicate] = true; 
 						
-						if(!peeked) {
+						if(!hinted && !peeked) {
 							Game[Items2[j] + duplicate] = true;
 							CouldHave[Items2[j] + duplicate] = true;
 						}
+						if (hinted) {
+							Hinted[key] = true;
+						} 
+						if(hintedInput == inputs[j])
+							thisIsHinted = true;
 						if (!Game[Items2[j] + duplicate]) {forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase()}
 						ItemLocations[Items2[j] + duplicate] = AreaNamesShort[AreaNamesIndex] + ": " + Names[i];
 						lastCheck.push(key);
 						if(SongItems.indexOf(key) >= 0)
 							document.getElementById("text_"+key).innerHTML = document.getElementById("text_"+key).innerHTML + ": " + SongNames[Check[key]];
+						
+						if(!thisIsHinted && !overrideFocus) {
+							for(var j = 0; j < AreaIndexes.length; j++) {
+								if(Locations.indexOf(key) < AreaIndexes[j])
+									break;
+							}
+
+							for (var i = Locations.indexOf(key) + 1; i < Locations.length; i++) {
+								if(i >= AreaIndexes[j])
+									break;
+								
+								if (document.getElementById(Locations[i]).style.display != "none" && Location_Access[Locations[i]]) {
+									document.getElementById(Locations[i]).focus();
+									break;
+								}
+							}
+						}
+						
 						break;
 					}
 				}
@@ -56,6 +92,11 @@ function process_inputs() {
 }
 
 function update_checks() {
+	
+	if(toFocus != null) {
+		toFocus.focus();
+		toFocus = null;
+	}
 	
 	Game.logically_accessible = 0;
 	Game.checks_remaining = 0;
@@ -83,17 +124,17 @@ function update_checks() {
 		str2 = "br_" + key;
 		
 		if(key.startsWith("h_")) {
-            document.getElementById(str).className = "gossip_text";
-            if (/*Location_Access[key] && */Check[key] != "junk") {
-                document.getElementById(str).style.display = "inline-block";
-                document.getElementById(str2).style.display = "inline-block";
-                document.getElementById(key).style.display = "inline-block";
-            }
+			document.getElementById(str).className = "gossip_text";
+			if (/*Location_Access[key] && */Check[key] != "junk") {
+				document.getElementById(str).style.display = "inline-block";
+				document.getElementById(str2).style.display = "inline-block";
+				document.getElementById(key).style.display = "inline-block";
+			}
 			else {
-                document.getElementById(str).style.display = "none"
-                document.getElementById(str2).style.display = "none";
-                document.getElementById(key).style.display = "none";
-            }
+				document.getElementById(str).style.display = "none"
+				document.getElementById(str2).style.display = "none";
+				document.getElementById(key).style.display = "none";
+			}
 			continue;
 		}
 		
@@ -245,7 +286,24 @@ function junk() {
 		}
 		lastCheck.push(str);
 		
-		Update();Update();Update();
+		//Update();Update();Update();
+		
+		if(!thisIsHinted && !overrideFocus) {
+			for(var j = 0; j < AreaIndexes.length; j++) {
+				if(Locations.indexOf(str) < AreaIndexes[j])
+					break;
+			}
+
+			for (var i = Locations.indexOf(str) + 1; i < Locations.length; i++) {
+				if(i >= AreaIndexes[j])
+					break;
+				
+				if (document.getElementById(Locations[i]).style.display != "none" && Location_Access[Locations[i]]) {
+					toFocus = document.getElementById(Locations[i]);
+					break;
+				}
+			}
+		}
 	}
 	else {
 		// Sim active
@@ -494,6 +552,15 @@ function Undo() {
 			document.getElementById(Check[lastCheck[lastCheck.length-1]] + "_location").className = "checkSummaryText";
 		}
 		document.getElementById(lastCheck[lastCheck.length-1]).value = "";
+	}
+	
+	for(var j = 0; j < AreaIndexes.length; j++) {
+		if(Locations.indexOf(lastCheck[lastCheck.length-1]) >= AreaIndexes[j] && Locations.indexOf(lastCheck[lastCheck.length-1]) < AreaIndexes[j+1]) {
+			if(j < 31)
+				document.getElementById(lastCheck[lastCheck.length-1]).style.backgroundImage = "url('./images/areas/"+AreaImages[j]+"')";
+			else
+				document.getElementById(lastCheck[lastCheck.length-1]).style.backgroundImage = "";
+		}
 	}
 	
 	forcedDisplay[Check[lastCheck[lastCheck.length-1]]] = false;

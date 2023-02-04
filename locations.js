@@ -133,7 +133,7 @@ var Names = [
 	"Room Key", "Midnight", "Hand", "Staff", "Guest", "Granny1", "Granny2", 
 	
 	// Termina Field
-	"Telescope", "Dodongos", "Pillar", "Scrub Gr", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Gossips", "Kamaro", "Observ", "West", "North", "East", "Left", "Mid-left", "Mid-right", "Right", "South", "Milk", 
+	"Telescope", "Dodongos", "Pillar", "Scrub 100r", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Gossips", "Kamaro", "Observ", "West", "North", "East", "Left", "Mid-left", "Mid-right", "Right", "South", "Milk", 
 	
 	// Road to Southern Swamp
 	"Map Wood", "Grotto", "Tree", "Map Snow", "Archery", "Hint", 
