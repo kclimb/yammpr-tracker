@@ -67,13 +67,13 @@ function process_inputs() {
 							document.getElementById("text_"+key).innerHTML = document.getElementById("text_"+key).innerHTML + ": " + SongNames[Check[key]];
 						
 						if(!thisIsHinted && !overrideFocus) {
-							for(var j = 0; j < AreaIndexes.length; j++) {
-								if(Locations.indexOf(key) < AreaIndexes[j])
+							for(var k = 0; k < AreaIndexes.length; k++) {
+								if(Locations.indexOf(key) < AreaIndexes[k])
 									break;
 							}
 
 							for (var i = Locations.indexOf(key) + 1; i < Locations.length; i++) {
-								if(i >= AreaIndexes[j])
+								if(i >= AreaIndexes[k])
 									break;
 								
 								if (document.getElementById(Locations[i]).style.display != "none" && Location_Access[Locations[i]]) {
@@ -286,7 +286,7 @@ function junk() {
 		}
 		lastCheck.push(str);
 		
-		//Update();Update();Update();
+		Update();Update();Update();
 		
 		if(!thisIsHinted && !overrideFocus) {
 			for(var j = 0; j < AreaIndexes.length; j++) {
