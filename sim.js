@@ -86,36 +86,125 @@ function simProcessHint(gossip) {
 	}
 	else { // always or sometimes hint
 		
-		for(var i = 0; i < hintStrings2.length; i++)
-			hint = hint.replace(hintStrings2[i], ":");
-		hint = hint.replace("...", "");
-		hint = hint.replace("Town Archery 1", "Town Archery #1");
-		hint = hint.replace("Swamp Archery 1", "Swamp Archery #1");
-		
-		loc = hint.split(":")[0];
-		item = hint.split(":")[1];
-		if(item.startsWith("a "))
-			item = item.replace("a ", "");
-		
-		if(Locations.indexOf(loc) < 0) {
-			console.log("Could not fill in the hint. " + loc + " is not a known location.");
-			return;
+		hint = hint.replaceAll(" not required", "");
+		hint = hint.replaceAll(" required", "");
+	
+		if(hint.includes("Letter to Kafei Delivery")) {
+			for(var i = 0; i < hintStrings2.length; i++)
+				hint = hint.replace(hintStrings2[i], ":");
+			hint = hint.replace("...", "");
+			hint = hint.replaceAll(" then ", ":");
+			hint = hint.replaceAll(" then the ", ":");
+			
+			let loc = hint.split(":")[0];
+			
+			if(Locations.indexOf("Kafei") < 0) {
+				console.log("Could not fill in the hint. Kafei is not a known location.");
+				return;
+			}
+			if(hintIndexes.indexOf("Kafei") == -1) {
+				console.log("Could not fill in the hint. Kafei is not in the list of hinted locations.");
+				return;
+			}
+			
+			for(var j = 1; j <=3; j++) {
+				let item = hint.split(":")[j];
+				if(item.startsWith("a "))
+					item = item.replace("a ", "");
+				if(item.startsWith("an "))
+					item = item.replace("an ", "");
+				if(item.startsWith("the "))
+					item = item.replace("the ", "");
+				
+				let loc_input = "ka"+j;
+				let item_input = "x";
+				if(SpoilerItemToInput[item] != undefined)
+					item_input = SpoilerItemToInput[item];
+				
+				if(document.getElementById("hintInput").value.includes(loc_input + " \n"))
+					document.getElementById("hintInput").value = document.getElementById("hintInput").value.replace(loc_input + " \n", loc_input + " " + item_input + "\n");
+				else if(!document.getElementById("hintInput").value.includes(loc_input + " " + item_input + "\n"))
+					document.getElementById("hintInput").value += loc_input + " " + item_input + "\n";
+			}
 		}
-		if(hintIndexes.indexOf(loc) == -1) {
-			console.log("Could not fill in the hint. " + loc + " is not in the list of hinted locations.");
-			return;
+		else if(hint.includes("Ranch Sisters Defense")) {
+			for(var i = 0; i < hintStrings2.length; i++)
+				hint = hint.replace(hintStrings2[i], ":");
+			hint = hint.replace("...", "");
+			hint = hint.replaceAll(" then ", ":");
+			hint = hint.replaceAll(" then the ", ":");
+			
+			let loc = hint.split(":")[0];
+			
+			if(Locations.indexOf("Aliens Defense") < 0) {
+				console.log("Could not fill in the hint. Aliens Defense is not a known location.");
+				return;
+			}
+			if(hintIndexes.indexOf("Aliens Defense") == -1) {
+				console.log("Could not fill in the hint. Aliens Defense is not in the list of hinted locations.");
+				return;
+			}
+			
+			let loc_inputs = ["", "ali", "cre"]
+			
+			for(var j = 1; j <=2; j++) {
+				let item = hint.split(":")[j];
+				if(item.startsWith("a "))
+					item = item.replace("a ", "");
+				if(item.startsWith("an "))
+					item = item.replace("an ", "");
+				if(item.startsWith("the "))
+					item = item.replace("the ", "");
+				
+				let loc_input = loc_inputs[j];
+				let item_input = "x";
+				if(SpoilerItemToInput[item] != undefined)
+					item_input = SpoilerItemToInput[item];
+				
+				if(document.getElementById("hintInput").value.includes(loc_input + " \n"))
+					document.getElementById("hintInput").value = document.getElementById("hintInput").value.replace(loc_input + " \n", loc_input + " " + item_input + "\n");
+				else if(!document.getElementById("hintInput").value.includes(loc_input + " " + item_input + "\n"))
+					document.getElementById("hintInput").value += loc_input + " " + item_input + "\n";
+			}
 		}
-		
-		loc_input = hintInputs[hintIndexes.indexOf(loc)];
-		
-		var item_input = "x";
-		if(SpoilerItemToInput[item] != undefined)
-			item_input = SpoilerItemToInput[item];
-		
-		if(document.getElementById("hintInput").value.includes(loc_input + " \n"))
-			document.getElementById("hintInput").value = document.getElementById("hintInput").value.replace(loc_input + " \n", loc_input + " " + item_input + "\n");
-		else if(!document.getElementById("hintInput").value.includes(loc_input + " " + item_input + "\n"))
-			document.getElementById("hintInput").value += loc_input + " " + item_input + "\n";
+		else {
+			for(var i = 0; i < hintStrings2.length; i++)
+				hint = hint.replace(hintStrings2[i], ":");
+			hint = hint.replace("...", "");
+			hint = hint.replace("Town Archery 1", "Town Archery #1");
+			hint = hint.replace("Swamp Archery 1", "Swamp Archery #1");
+			hint = hint.replace("Bank Reward 3", "Bank Reward #3");
+			hint = hint.replace("Beaver Race 1", "Beaver Race #1");
+			
+			let loc = hint.split(":")[0];
+			let item = hint.split(":")[1];
+			if(item.startsWith("a "))
+				item = item.replace("a ", "");
+			if(item.startsWith("an "))
+				item = item.replace("an ", "");
+			if(item.startsWith("the "))
+				item = item.replace("the ", "");
+			
+			if(Locations.indexOf(loc) < 0) {
+				console.log("Could not fill in the hint. " + loc + " is not a known location.");
+				return;
+			}
+			if(hintIndexes.indexOf(loc) == -1) {
+				console.log("Could not fill in the hint. " + loc + " is not in the list of hinted locations.");
+				return;
+			}
+			
+			let loc_input = hintInputs[hintIndexes.indexOf(loc)];
+			
+			let item_input = "x";
+			if(SpoilerItemToInput[item] != undefined)
+				item_input = SpoilerItemToInput[item];
+			
+			if(document.getElementById("hintInput").value.includes(loc_input + " \n"))
+				document.getElementById("hintInput").value = document.getElementById("hintInput").value.replace(loc_input + " \n", loc_input + " " + item_input + "\n");
+			else if(!document.getElementById("hintInput").value.includes(loc_input + " " + item_input + "\n"))
+				document.getElementById("hintInput").value += loc_input + " " + item_input + "\n";
+		}
 	}
 }
 
