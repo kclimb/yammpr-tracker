@@ -164,12 +164,12 @@ function update_item_logic() {
 	Logic.shoot_fire_arrow = Logic.bow && Logic.fire_arrow && Logic.magic;
 	Logic.shoot_ice_arrow = Logic.bow && Logic.ice_arrow && Logic.magic;
 	Logic.shoot_light_arrow = Logic.bow && Logic.light_arrow && Logic.magic;
-	Logic.any_magic_bean = Logic.deku_mask || (Logic.moons_tear && Logic.land_title_deed) || Logic.magic_bean; 
 	
 	// Swamp area shortcuts
 	Logic.cross_poisoned_water = Logic.deku_mask || Logic.zora_mask;
 	Logic.poison_swamp_access = Logic.cross_poisoned_water && (Logic.hookshot || Logic.bow || Logic.pictobox || Logic.zora_mask || Logic.any_bottle);
 	Logic.limitless_magic_beans = Logic.poison_swamp_access && Logic.deku_mask;
+	Logic.any_magic_bean = (Logic.poison_swamp_access && Logic.deku_mask) || Logic.magic_bean; 
 	
 	Logic.wft_access = Logic.deku_mask && Logic.sonata && Logic.poison_swamp_access;
 	Logic.woodfall_clear = Logic.wft_access && Logic.bow; 
@@ -213,12 +213,12 @@ function update_item_logic() {
 	Game.shoot_fire_arrow = Game.bow && Game.fire_arrow && Game.magic;
 	Game.shoot_ice_arrow = Game.bow && Game.ice_arrow && Game.magic;
 	Game.shoot_light_arrow = Game.bow && Game.light_arrow && Game.magic;
-	Game.any_magic_bean = Game.deku_mask || (Game.moons_tear && Game.land_title_deed) || Game.magic_bean; 
 	
 	// Swamp area shortcuts
 	Game.cross_poisoned_water = Game.deku_mask || Game.zora_mask || Game.goron_mask;
 	Game.poison_swamp_access = Game.cross_poisoned_water && (Game.hookshot || Game.bow || Game.pictobox || Game.zora_mask || Game.any_bottle);
-	Game.limitless_magic_beans = Game.deku_mask;
+	Game.limitless_magic_beans = Game.poison_swamp_access && Game.deku_mask;
+	Game.any_magic_bean = (Game.poison_swamp_access && Game.deku_mask) || Game.magic_bean; 
 	
 	Game.wft_access = Game.deku_mask && Game.sonata && Game.poison_swamp_access;
 	Game.woodfall_clear = Game.wft_access && Game.bow; 
@@ -262,12 +262,12 @@ function update_item_logic() {
 	CouldHave.shoot_fire_arrow = CouldHave.bow && CouldHave.fire_arrow && CouldHave.magic;
 	CouldHave.shoot_ice_arrow = CouldHave.bow && CouldHave.ice_arrow && CouldHave.magic;
 	CouldHave.shoot_light_arrow = CouldHave.bow && CouldHave.light_arrow && CouldHave.magic;
-	CouldHave.any_magic_bean = CouldHave.deku_mask || (CouldHave.moons_tear && CouldHave.land_title_deed) || CouldHave.magic_bean; 
 	
 	// Swamp area shortcuts
 	CouldHave.cross_poisoned_water = CouldHave.deku_mask || CouldHave.zora_mask || CouldHave.goron_mask;
 	CouldHave.poison_swamp_access = CouldHave.cross_poisoned_water && (CouldHave.hookshot || CouldHave.bow || CouldHave.pictobox || CouldHave.zora_mask || CouldHave.any_bottle);
-	CouldHave.limitless_magic_beans = CouldHave.deku_mask;
+	CouldHave.limitless_magic_beans = CouldHave.poison_swamp_access && CouldHave.deku_mask;
+	CouldHave.any_magic_bean = (CouldHave.poison_swamp_access && CouldHave.deku_mask) || CouldHave.magic_bean; 
 	
 	CouldHave.wft_access = CouldHave.deku_mask && CouldHave.sonata && CouldHave.poison_swamp_access;
 	CouldHave.woodfall_clear = CouldHave.wft_access && CouldHave.bow; 

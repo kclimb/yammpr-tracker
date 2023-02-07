@@ -6,12 +6,7 @@ function handleAlternateHintInput() {
 			if (lines[j].startsWith(hintInputs[i]+" ")) {
 				for (var k = 0; k < inputs.length; k++) {
 					str = inputs[k];
-					if (i < 6) {
-						str = capitalizeThirdLetter(str);
-					}
-					else {
-						str = capitalizeFirstLetter(str);
-					}
+					str = capitalizeFirstLetter(str);
 					
 					if (k == 0) {
 						if (lines[j].endsWith(" " + inputs[k]) && Check[hintIndexes[i]] == "unknown") {
