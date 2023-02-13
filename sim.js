@@ -83,6 +83,22 @@ function simProcessHint(gossip) {
 			}
 		}
 	}
+	else if(hint.includes("foolish except for its song")) {
+		hint = hint.replace(" is foolish except for its song...", "");
+		
+		if(simBarrenCounter <= 5) {
+			
+			if(simBarrensEntered[hint] == undefined)
+				simBarrensEntered[hint] = 1;
+			else
+				simBarrensEntered[hint] += 1;
+			
+			if(simBarrensEntered[hint] == 1) {
+				document.getElementById("barren_input" + simBarrenCounter).value = "*"+SpoilerAreaToInput[hint];
+				simBarrenCounter += 1;
+			}
+		}
+	}
 	else { // always or sometimes hint
 		
 		hint = hint.replaceAll(" not required", "");
