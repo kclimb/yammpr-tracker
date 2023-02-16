@@ -3,6 +3,12 @@ var AreaIndexes = [
 	131,133,143,151,158,161,165,170,173,177,182,190,195,198,199,202,
 	210,224,235,259
 ];
+var SongIndexes = [
+	1000,1000,1000,1000,1000,1000,1000,1000,261/*swamp statue*/,260/*monkey song*/,
+	1000,1000,263/*eponas*/,1000,1000,264/*goron*/,1000,265/*eggs*/,
+	1000,1000,1000,1000,1000,1000,1000,266/*grave*/,1000,1000,1000,
+	267/*castle*/,1000,1000,1000,1000,1000
+];
 
 var AreaNames = [
 	"", "SCT", "NCT", "WCT", "Laundry", "ECT", "Stock Pot", "Field",
@@ -45,6 +51,9 @@ var Items = [
 var ItemNames = [
 	"junk", "Bow", "Bow", "Bow", "Fire Arrow", "Ice Arrow", "Light Arrow", "Moon's Tear", "Land Deed", "Swamp Deed", "Mtn Deed", "Ocean Deed", "Bomb Bag", "Bomb Bag", "Bomb Bag", "Bean", "Bean", "Room Key", "Spec Delivery", "Powder Keg", "Pictobox", "Lens", "Hookshot", "GFS", "Letter Kafei", "Pendant", "Bottle", "Bottle", "Bottle", "Bottle", "Bottle", "Bottle Gold", "Postmans", "All-Night", "Blast", "Stone", "Great Fairy", "Deku", "Keaton", "Bremen", "Bunny", "Don Gero", "Scents", "Goron", "Romani", "Circus", "Kafei", "Couples", "Truth", "Zora", "Kamaro", "Gibdo", "Garo", "Captains", "Giants", "Fierce Deity", "Sword", "Sword", "Mirror", "Magic", "Magic", "Wallet", "Wallet", "Healing", "Epona's", "Storms", "Sonata", "Lullaby", "NWBN", "Elegy", "Oath"
 ];
+var ItemImages = [
+	"", "./images/Hero's%20Bow.png", "./images/Hero's%20Bow.png", "./images/Hero's%20Bow.png", "./images/Fire%20Arrow.png", "./images/Ice%20Arrow.png", "./images/Light%20Arrow.png", "./images/Moon's%20Tear.png", "./images/Land%20Title%20Deed.png", "./images/Swamp%20Title%20Deed.png", "./images/Mountain%20Title%20Deed.png", "./images/Ocean%20Title%20Deed.png", "./images/Bomb.png", "./images/Bomb.png", "./images/Bomb.png", "./images/Magic%20Beans.png", "./images/Magic%20Beans.png", "./images/Room%20Key.png", "./images/Special%20Delivery%20to%20Mama.png", "./images/Powder%20Keg.png", "./images/Pictograph%20Box.png", "./images/Lens%20of%20Truth.png", "./images/Hookshot.png", "./images/Great%20Fairy's%20Sword.png", "./images/Letter%20to%20Kafei.png", "./images/Pendant%20of%20Memories.png", "./images/Empty%20Bottle.png", "./images/Empty%20Bottle.png", "./images/Empty%20Bottle.png", "./images/Empty%20Bottle.png", "./images/Empty%20Bottle.png", "./images/Gold%20Dust.png", "./images/Postman's%20Hat.png", "./images/All-Night%20Mask.png", "./images/Blast%20Mask.png", "./images/Stone%20Mask.png", "./images/Great%20Fairy's%20Mask.png", "./images/Deku%20Mask.png", "./images/Keaton%20Mask.png", "./images/Bremen%20Mask.png", "./images/Bunny%20Hood.png", "./images/Don%20Gero's%20Mask.png", "./images/Mask%20of%20Scents.png", "./images/Goron%20Mask.png", "./images/Romani's%20Mask.png", "./images/Circus%20Leader's%20Mask.png", "./images/Kafei's%20Mask.png", "./images/Couple's%20Mask.png", "./images/Mask%20of%20Truth.png", "./images/Zora%20Mask.png", "./images/Kamaro's%20Mask.png", "./images/Gibdo%20Mask.png", "./images/Garo's%20Mask.png", "./images/Captain's%20Hat.png", "./images/Giant's%20Mask.png", "./images/Fierce%20Deity's%20Mask.png", "./images/Razor%20Sword.png", "./images/Gilded%20Sword.png", "./images/Mirror%20Shield.png", "./images/Magic.png", "./images/Magic.png", "./images/Adult's%20Wallet.png", "./images/Giant's%20Wallet.png", "./images/songs/healing2.png", "./images/songs/eponas.png", "./images/songs/storms.png", "./images/songs/sonata.png", "./images/songs/lullaby.png", "./images/songs/nwbn.png", "./images/songs/elegy.png", "./images/songs/oath.png" 
+];
 
 var Items2 = [
 	"junk", "bow", "fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "bomb", "magic_bean", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "letter_to_kafei", "pendant_of_memories", "bottle", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "sword", "mirror_shield", "magic", "wallet", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath"
@@ -80,9 +89,29 @@ var hintIndexes = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward
 var hintStrings1 = ["It appears ", "They say ", "Apparently ", "I hear ", "It seems "];
 var hintStrings2 = [" holds ", " brings ", " possesses ", " conceals ", " yields ", " leads to "];
 
+var alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging"];
+
 var Hinted = {};
 var hintedInput = "";
 var thisIsHinted = false;
+
+var Area = []; // used for woth/barrens
+var woth1 = "unknown";
+var woth2 = "unknown";
+var woth3 = "unknown";
+var woth4 = "unknown";
+var woth5 = "unknown";
+var AreaWotHAge = new Array(35).fill(0);
+var WotHColors = ["", "9cc4d9", "white", "b19cd9", "d09cd9", "cyan"];
+
+var MarkedWotHItemArrow = null;
+var ManualWotHItems = {};
+var ManualInLogicItems = {};
+var ManualOutOfLogicItems = {};
+var ManualNotWotHItems = {};
+var ManualWotHMinorItems = {};
+var ManualWotHItemLocked = {};
+var ManualWotHItemPutInLogic = {};
 
 var backUp = [];
 var toFocus = null;
@@ -162,8 +191,10 @@ for (var i = 0; i < Locations.length; i++) {
 	var elem = document.createElement("small"); 
 	elem.id = "text_" + Locations[i]; 
 	elem.className = "check_text"; 
-	//if(SongItems.indexOf(Locations[i]) < 0)
-	elem.onmousedown = junk; 
+	if(SongItems.indexOf(Locations[i]) < 0)
+		elem.onmousedown = junk; 
+	else
+		elem.onmousedown = function() {clickSummary(this);};
 	elem.innerHTML = Names[i]; 
 	parent.appendChild(elem);
 	

@@ -916,7 +916,7 @@ function update_location_logic() {
 	
 	// Inverted Stone Tower Temple
 	Location_Access["Stone Tower Entrance Sun Switch"] = Game.istt_access;
-	Location_Access["Stone Tower Updraft Frozen Eye"] = Game.istt_access && Game.deku_mask && Game.shoot_fire_arrow;
+	Location_Access["Stone Tower Updraft Frozen Eye"] = Game.istt_access && Game.shoot_fire_arrow;
 	Location_Access["Stone Tower Updraft Fire Ring"] = Game.istt_access && Game.zora_mask && Game.deku_mask;
 	Location_Access["Stone Tower Updraft Room Chest"] = Game.istt_access;
 	Location_Access["Giant's Mask Chest"] = Game.istt_access && (Game.deku_mask || Game.bomb);
@@ -1247,7 +1247,7 @@ function update_location_logic() {
 	
 	// Inverted Stone Tower Temple
 	Location_Could_Access["Stone Tower Entrance Sun Switch"] = CouldHave.istt_access;
-	Location_Could_Access["Stone Tower Updraft Frozen Eye"] = CouldHave.istt_access && CouldHave.deku_mask && CouldHave.shoot_fire_arrow;
+	Location_Could_Access["Stone Tower Updraft Frozen Eye"] = CouldHave.istt_access && CouldHave.shoot_fire_arrow;
 	Location_Could_Access["Stone Tower Updraft Fire Ring"] = CouldHave.istt_access && CouldHave.zora_mask && CouldHave.deku_mask;
 	Location_Could_Access["Stone Tower Updraft Room Chest"] = CouldHave.istt_access;
 	Location_Could_Access["Giant's Mask Chest"] = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.bomb);
@@ -1562,7 +1562,7 @@ function update_location_logic() {
 	
 	// Inverted Stone Tower Temple
 	Location_Could_Peek["Stone Tower Entrance Sun Switch"] = CouldHave.istt_access;
-	Location_Could_Peek["Stone Tower Updraft Frozen Eye"] = CouldHave.istt_access && CouldHave.deku_mask && CouldHave.shoot_fire_arrow;
+	Location_Could_Peek["Stone Tower Updraft Frozen Eye"] = CouldHave.istt_access && CouldHave.shoot_fire_arrow;
 	Location_Could_Peek["Stone Tower Updraft Fire Ring"] = CouldHave.istt_access && CouldHave.zora_mask && CouldHave.deku_mask;
 	Location_Could_Peek["Stone Tower Updraft Room Chest"] = CouldHave.istt_access;
 	Location_Could_Peek["Giant's Mask Chest"] = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.bomb);
