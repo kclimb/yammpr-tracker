@@ -607,6 +607,9 @@ function clickSummary(loc) {
 		clickedSong = true;
 		str = event.target.id.substring('text_'.length);
 		temp = Locations.indexOf(str);
+		if(Check[str] != "unknown") {
+			item = Check[str];
+		}
 	}
 	else {
 		item = loc.id.slice(0, -9);
@@ -691,6 +694,10 @@ function clickSummary(loc) {
 						ManualWotHItemLocked[Items[j]] = [];
 					if(ManualWotHItemPutInLogic[Items[j]] == undefined)
 						ManualWotHItemPutInLogic[Items[j]] = [];
+					
+					if(item == "")
+						continue;
+					
 					if(item != itemToAdd) {
 						if(ManualWotHItemPutInLogic[Items[j]].includes(item))
 							ManualWotHItemPutInLogic[Items[j]].splice(ManualWotHItemPutInLogic[Items[j]].indexOf(item), 1);
@@ -709,6 +716,10 @@ function clickSummary(loc) {
 						ManualWotHItemPutInLogic[Items[j]] = [];
 					if(ManualWotHItemLocked[Items[j]] == undefined)
 						ManualWotHItemLocked[Items[j]] = [];
+					
+					if(item == "")
+						continue;
+					
 					if(item != itemToAdd) {
 						if(ManualWotHItemLocked[Items[j]].includes(item))
 							ManualWotHItemLocked[Items[j]].splice(ManualWotHItemLocked[Items[j]].indexOf(item), 1);
