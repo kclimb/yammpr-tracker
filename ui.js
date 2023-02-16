@@ -82,8 +82,8 @@ function process_inputs() {
 						if(SongItems.indexOf(key) >= 0)
 							document.getElementById("text_"+key).innerHTML = document.getElementById("text_"+key).innerHTML + ": " + SongNames[Check[key]];
 						
-						if(!thisIsHinted && !overrideFocus) {
-							for(var k = 0; k < AreaIndexes.length; k++) {
+						if(!thisIsHinted && !overrideFocus && !simActive) {
+							for(var k = 0; k < AreaIndexes.length-1; k++) {
 								if(Locations.indexOf(key) < AreaIndexes[k])
 									break;
 							}
@@ -301,8 +301,8 @@ function junk() {
 		
 		Update();Update();Update();
 		
-		if(!thisIsHinted && !overrideFocus) {
-			for(var j = 0; j < AreaIndexes.length; j++) {
+		if(!thisIsHinted && !overrideFocus && !simActive) {
+			for(var j = 0; j < AreaIndexes.length-1; j++) {
 				if(Locations.indexOf(str) < AreaIndexes[j])
 					break;
 			}
