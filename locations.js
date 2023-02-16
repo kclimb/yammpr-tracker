@@ -110,7 +110,7 @@ var Locations = [
 	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Updraft Room Chest", "Giant's Mask Chest", "Stone Tower Death Armos Maze Chest", "Stone Tower Wizzrobe", "Twinmold Heart Container", 
 	
 	// Songs
-	"Starting Song", "Imprisoned Monkey", "Swamp Music Statue", "Boss Blue Warp", "Romani's Game", "Baby Goron", "Baby Zoras", "Day 1 Grave Tablet", "Ikana King"
+	"Starting Song", "Skull Kid Song", "Imprisoned Monkey", "Swamp Music Statue", "Boss Blue Warp", "Romani's Game", "Baby Goron", "Baby Zoras", "Day 1 Grave Tablet", "Ikana King"
 ];
 	
 var Names = [
@@ -223,7 +223,7 @@ var Names = [
 	"Ent Sun", "Frozen Eye", "*Fire Ring", "Updraft", "Eyegore 2", "DeathArm", "Wizzrobe", "Twinmold",
 	
 	// Songs
-	"Start", "Palace", "Swamp", "Warp", "Ranch", "Goron", "Eggs", "Grave1", "Castle"
+	"Start", "Skull Kid", "Palace", "Swamp", "Warp", "Ranch", "Goron", "Eggs", "Grave1", "Castle"
 ];
 
 var blitz_skip_checks = [
@@ -233,11 +233,15 @@ var blitz_skip_checks = [
 	"Old Lady", "Big Bomb Bag Purchase", "All-Night Mask Purchase", "Hungry Goron", "Butler", "Dampe Digging", 
 	"Toilet Hand", "Stone Tower Death Armos", "Stone Tower Updraft Fire Ring", "Mirror Shield Chest", "Goron Shop 10 Arrows", 
 	"Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", 
-	"Gorman Bros Milk Purchase", "Baby Zoras", "Milk Bar Chateau", "Milk Bar Milk"
+	"Gorman Bros Milk Purchase", "Baby Zoras", "Milk Bar Chateau", "Milk Bar Milk", "Skull Kid Song"
 ];
 
 var s3_skip_checks = [
-	"Swamp Music Statue"
+	"Swamp Music Statue", "Skull Kid Song"
+];
+
+var s4_skip_checks = [
+	"Swamp Music Statue", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk"
 ];
 
 var PeekableItemLocations = [

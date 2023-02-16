@@ -72,7 +72,11 @@ function process_inputs() {
 						} 
 						if(hintedInput == inputs[j])
 							thisIsHinted = true;
-						if (!Game[Items2[j] + duplicate]) {forcedDisplay[i] = true; document.getElementById(key).style.backgroundImage= ""; document.getElementById(key).value = document.getElementById(key).value.toUpperCase()}
+						if (!Game[Items2[j] + duplicate] && i < lastItem) {
+							forcedDisplay[i] = true; 
+							document.getElementById(key).style.backgroundImage= ""; 
+							document.getElementById(key).value = document.getElementById(key).value.toUpperCase();
+						}
 						ItemLocations[Items2[j] + duplicate] = AreaNamesShort[AreaNamesIndex] + ": " + Names[i];
 						lastCheck.push(key);
 						if(SongItems.indexOf(key) >= 0)
@@ -115,12 +119,9 @@ function update_checks() {
 	
 	for (var i = 0; i < Locations.length; i++) {
 		
-		if (i < AreaIndexes[AreaIndexes.length-1] || (Locations[i] == "Baby Zoras" && document.getElementById("settings_option").value == "BLITZ") 
-			|| (Locations[i] == "Swamp Music Statue" && document.getElementById("settings_option").value != "BLITZ")) {
-			document.getElementById(Locations[i]).style.display = "none";
-			document.getElementById("text_" + Locations[i]).style.display = "none";
-			document.getElementById("br_" + Locations[i]).style.display = "none";
-		}
+		document.getElementById(Locations[i]).style.display = "none";
+		document.getElementById("text_" + Locations[i]).style.display = "none";
+		document.getElementById("br_" + Locations[i]).style.display = "none";
 		
 		//if (document.getElementById("small_keys_option").value != "KEYSY" && Locations[i].startsWith("key_")) {continue;}
 		if (Locations[i] == "Fisherman Pictograph") {continue;}
@@ -128,8 +129,8 @@ function update_checks() {
 		if (Locations[i] == "Frog Choir") {continue;}
 		if (document.getElementById("settings_option").value == "BLITZ" && blitz_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S3" && s3_skip_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "S4" && s4_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("gossips_option").value != "ON" && Locations[i].startsWith("h_")) {continue;}
-		
 		
 		var key = Locations[i];
 		str = "text_" + key;

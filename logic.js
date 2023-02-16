@@ -610,6 +610,7 @@ function update_location_logic() {
 	
 	// Songs
 	Location_Logic["Starting Song"] = true;
+	Location_Logic["Skull Kid Song"] = (Logic.deku_mask && Logic.magic) || Logic.bow || Logic.zora_mask || Logic.hookshot;
 	Location_Logic["Boss Blue Warp"] = Logic.woodfall_clear || Logic.snowhead_clear || Logic.great_bay_clear || Logic.ikana_clear;
 	Location_Logic["Romani's Game"] = Logic.ranch_day_1_access;
 	Location_Logic["Day 1 Grave Tablet"] = Logic.captains_hat && Logic.ikana_graveyard_access;
@@ -926,6 +927,7 @@ function update_location_logic() {
 		
 	// Songs
 	Location_Access["Starting Song"] = true;
+	Location_Access["Skull Kid Song"] = (Game.deku_mask && Game.magic) || Game.bow || Game.zora_mask || Game.hookshot || Game.bomb;
 	Location_Access["Boss Blue Warp"] = Game.woodfall_clear || Game.snowhead_clear || Game.great_bay_clear || Game.ikana_clear;
 	Location_Access["Romani's Game"] = Game.ranch_day_1_access;
 	Location_Access["Day 1 Grave Tablet"] = Game.captains_hat && Game.ikana_graveyard_access;
@@ -1257,6 +1259,7 @@ function update_location_logic() {
 		
 	// Songs
 	Location_Could_Access["Starting Song"] = true;
+	Location_Could_Access["Skull Kid Song"] = (CouldHave.deku_mask && CouldHave.magic) || CouldHave.bow || CouldHave.zora_mask || CouldHave.hookshot || CouldHave.bomb;
 	Location_Could_Access["Boss Blue Warp"] = CouldHave.woodfall_clear || CouldHave.snowhead_clear || CouldHave.great_bay_clear || CouldHave.ikana_clear;
 	Location_Could_Access["Romani's CouldHave"] = CouldHave.ranch_day_1_access;
 	Location_Could_Access["Day 1 Grave Tablet"] = CouldHave.captains_hat && CouldHave.ikana_graveyard_access;
@@ -1572,6 +1575,7 @@ function update_location_logic() {
 		
 	// Songs
 	Location_Could_Peek["Starting Song"] = true;
+	Location_Could_Peek["Skull Kid Song"] = (CouldHave.deku_mask && CouldHave.magic) || CouldHave.bow || CouldHave.zora_mask || CouldHave.hookshot || CouldHave.bomb;
 	Location_Could_Peek["Boss Blue Warp"] = CouldHave.woodfall_clear || CouldHave.snowhead_clear || CouldHave.great_bay_clear || CouldHave.ikana_clear;
 	Location_Could_Peek["Romani's CouldHave"] = CouldHave.ranch_day_1_access;
 	Location_Could_Peek["Day 1 Grave Tablet"] = CouldHave.captains_hat && CouldHave.ikana_graveyard_access;

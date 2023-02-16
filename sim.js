@@ -8,10 +8,10 @@ function readLog() {
 	document.getElementById("simLog").style.display = "inline-block";
 	document.getElementById("gossips_option").value = "ON";
 	
-	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3")
+	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4")
 		document.getElementById("Starting Song").value = "epo";
 	if(document.getElementById("settings_option").value == "BLITZ")
-		document.getElementById("Boss Blue Warp").value = "oat";
+		document.getElementById("Boss Blue Warp").value = "oaT";
 	
 	for(i = 0; i < SpoilerLines.length; i++) {
 		if(SpoilerLines[i].indexOf("->") >= 0) {
@@ -25,7 +25,7 @@ function readLog() {
 			}
 		}
 	}
-	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3")
+	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4")
 		SpoilerLocToItem["Starting Song"] = "Epona's Song";
 	if(document.getElementById("settings_option").value == "BLITZ")
 		SpoilerLocToItem["Boss Blue Warp"] = "Oath to Order";

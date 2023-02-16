@@ -374,6 +374,12 @@ function woth_and_barren_processing() {
 				}
 			}
 			
+			if(SongIndexes[i-1] != 1000) {
+				if(Check[Locations[SongIndexes[i-1]]] == "unknown") {
+					document.getElementById("text_" + Locations[SongIndexes[i-1]]).style.border = "solid 1px red";
+				}
+			}
+			
 			if(AreaNames[i] == "Milk Road" && Check["Keaton Quiz"] == "unknown") {
 				document.getElementById("text_" + "Keaton Quiz").style.border = "solid 1px red";
 			}

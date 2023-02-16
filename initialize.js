@@ -1,17 +1,18 @@
 var AreaIndexes = [
-	0,5,13,22,26,38,45,67,73,84,88,91,96,106,116,121,
+	0,0,5,13,22,26,38,45,67,73,84,88,91,96,106,116,121,
 	131,133,143,151,158,161,165,170,173,177,182,190,195,198,199,202,
 	210,224,235,259
 ];
 var SongIndexes = [
-	1000,1000,1000,1000,1000,1000,1000,1000,261/*swamp statue*/,260/*monkey song*/,
-	1000,1000,263/*eponas*/,1000,1000,264/*goron*/,1000,265/*eggs*/,
-	1000,1000,1000,1000,1000,1000,1000,266/*grave*/,1000,1000,1000,
-	267/*castle*/,1000,1000,1000,1000,1000
+	260/*skull kid*/,1000,1000,1000,1000,1000,1000,1000,1000,262/*swamp statue*/,261/*monkey song*/,
+	1000,1000,264/*eponas*/,1000,1000,265/*goron*/,1000,266/*eggs*/,
+	1000,1000,1000,1000,1000,1000,1000,267/*grave*/,1000,1000,1000,
+	268/*castle*/,1000,1000,1000,1000,1000
 ];
+var lastItem = 259;
 
 var AreaNames = [
-	"", "SCT", "NCT", "WCT", "Laundry", "ECT", "Stock Pot", "Field",
+	"", "Clock Tower", "SCT", "NCT", "WCT", "Laundry", "ECT", "Stock Pot", "Field",
 	"Road Swamp", "Swamp", "Palace", "Woodfall",
 	"Milk Road", "Ranch", 
 	"Mtn Village", "Twin Islands", "Gor Village", "Path Snow",
@@ -21,7 +22,7 @@ var AreaNames = [
 	"Songs"
 ];
 var AreaNamesShort = [
-	"", "SCT", "NCT", "WCT", "Lau", "ECT", "StoPot", "Field",
+	"", "Clock", "SCT", "NCT", "WCT", "Lau", "ECT", "StoPot", "Field",
 	"RSwamp", "Swamp", "Palace", "Woodfall",
 	"Milk Road", "Ranch", 
 	"MtnVil", "TwinIsle", "GorVil", "PSnow",
@@ -32,11 +33,11 @@ var AreaNamesShort = [
 ];
 
 var areaInputs = [
-	"", "sct", "nct", "wct", "lau", "ect", "inn", "fie", "rsw", "swa", "pal", "woo", "mil", "ran", "mou", "twi", "gor", "psn", "gre", "cap", "hal", "ext", "sew", "int", "pin", "rik", "gra", "can", "shr", "wel", "cas", "sto", "wft", "sht", "gbt", "stt"
+	"", "clo", "sct", "nct", "wct", "lau", "ect", "inn", "fie", "rsw", "swa", "pal", "woo", "mil", "ran", "mou", "twi", "gor", "psn", "gre", "cap", "hal", "ext", "sew", "int", "pin", "rik", "gra", "can", "shr", "wel", "cas", "sto", "wft", "sht", "gbt", "stt"
 ];
 
 var AreaImages = [
-	"sct.png", "nct.png", "wct.png", "laun.png", "ect.png", "stockpot.png", "field3.png", 
+	"", "sct.png", "nct.png", "wct.png", "laun.png", "ect.png", "stockpot.png", "field3.png", 
 	"roadtosouthern.png", "swamp.png", "palace.png", "woodfall.png",
 	"milkroad2.png", "ranch.jpg", "mountainvillage.png", "twinislands.png", "goronvillage.png",
 	"pathsnow.png", "gbc.png", "zoracape.png", "zoracape.png", "pirate2.png", "pirate2.png", "pirate2.png", "gbc.png", "ikana.png", "graveyard.jpg", "ikana.png", "shrine.png", "well.png", "castle.png", "stonetower.png"];
@@ -65,7 +66,7 @@ var SingletonItems = [
 	"fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "letter_to_kafei", "pendant_of_memories", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath"
 ];
 var SongItems = [
-	"Starting Song", "Boss Blue Warp", "Romani's Game", "Day 1 Grave Tablet", "Imprisoned Monkey", "Baby Goron", "Baby Zoras", "Ikana King", "Swamp Music Statue"
+	"Starting Song", "Skull Kid Song", "Boss Blue Warp", "Romani's Game", "Day 1 Grave Tablet", "Imprisoned Monkey", "Baby Goron", "Baby Zoras", "Ikana King", "Swamp Music Statue"
 ];
 var SongNames = {
 	"song_of_healing": "Healing", 
@@ -119,43 +120,42 @@ var overrideFocus = false;
 
 var parent = document.getElementById("normalColumn1");
 for (var i = 0; i < Locations.length; i++) {
-
-	if (i == AreaIndexes[4]) { parent = document.getElementById("normalColumn2"); }
-	else if (i == AreaIndexes[7]) { parent = document.getElementById("normalColumn3"); }
-	else if (i == AreaIndexes[13]) { parent = document.getElementById("normalColumn4"); }
-	else if (i == AreaIndexes[18]) { parent = document.getElementById("normalColumn5"); }
-	else if (i == AreaIndexes[24]) { parent = document.getElementById("normalColumn6"); }
-	else if (i == AreaIndexes[31]) { parent = document.getElementById("normalColumn7"); }
-	else if (i == AreaIndexes[34]) { parent = document.getElementById("normalColumn8"); }
-	else if (i == AreaIndexes[35]) { parent = document.getElementById("songdiv"); }
+	if (i == AreaIndexes[5]) { parent = document.getElementById("normalColumn2"); }
+	else if (i == AreaIndexes[8]) { parent = document.getElementById("normalColumn3"); }
+	else if (i == AreaIndexes[14]) { parent = document.getElementById("normalColumn4"); }
+	else if (i == AreaIndexes[19]) { parent = document.getElementById("normalColumn5"); }
+	else if (i == AreaIndexes[25]) { parent = document.getElementById("normalColumn6"); }
+	else if (i == AreaIndexes[32]) { parent = document.getElementById("normalColumn7"); }
+	else if (i == AreaIndexes[35]) { parent = document.getElementById("normalColumn8"); }
+	else if (i == AreaIndexes[36]) { parent = document.getElementById("songdiv"); }
 	
-	for(var j = 0; j < AreaIndexes.length; j++) {
+	for(var j = 1; j < AreaIndexes.length; j++) {
 		if(i == AreaIndexes[j]) {
 			var elem = document.createElement("small"); 
 			elem.innerHTML = AreaNames[j+1]; 
 			elem.className = "area_name"; 
-			if(j == 31) {
+			if(j == 32) {
 				elem.id = "title_wft";
 				elem.className = "area_titles";
 			}
-			else if(j == 32) {
+			else if(j == 33) {
 				elem.id = "title_sht";
 				elem.className = "area_titles";
 			}
-			else if(j == 33) {
+			else if(j == 34) {
 				elem.id = "title_gbt";
 				elem.className = "area_titles";
 			}
-			else if(j == 34) {
+			else if(j == 35) {
 				elem.id = "title_stt";
 				elem.className = "area_titles";
 			}
-			else if(j == 35) {
+			else if(j == 36) {
 				elem.id = "song_title";
 				elem.className = "area_titles";
 			}
 			
-			if(j < 31)
+			if(j < 32)
 				background = "url('./images/areas/"+AreaImages[j]+"')";
 			else
 				background = "";
@@ -166,7 +166,7 @@ for (var i = 0; i < Locations.length; i++) {
 		}
 	}
 	
-	if(i == AreaIndexes[34]+16) {
+	if(i == AreaIndexes[35]+16) {
 		var elem = document.createElement("small"); 
 			elem.innerHTML = "ISTT"; 
 			elem.className = "area_name";
@@ -214,7 +214,7 @@ document.getElementById("greatfairy_mask_location").style.display = "none";
 document.getElementById("greatfairy_mask_location_br").style.display = "none";
 
 var hintbox = document.getElementById("hintInput");
-if (document.getElementById("settings_option").value != "BLITZ")
+if (document.getElementById("settings_option").value == "S3")
 	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \n";
 
 var Logic = {};
