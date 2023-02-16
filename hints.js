@@ -365,24 +365,12 @@ function woth_and_barren_processing() {
 		
 		if (Area[i] == "barren" || Area[i] == "barren_except_song") {
 			
-			if(AreaNames[i] != "WFT" && AreaNames[i] != "SHT" && AreaNames[i] != "GBT" && AreaNames[i] != "STT") {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
-					if(Locations[j].includes("h_"))
-						continue;
-					
-					if(Check[Locations[j]] == "unknown") {
-						document.getElementById("text_" + Locations[j]).style.border = "solid 1px red";
-					}
-				}
-			}
-			else {
-				for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]-1; j++) {
-					if(Locations[j].includes("h_"))
-						continue;
-					
-					if(Check[Locations[j]] == "unknown") {
-						document.getElementById("text_" + Locations[j]).style.border = "solid 1px red";
-					}
+			for (var j = AreaIndexes[i-1]; j < AreaIndexes[i]; j++) {
+				if(Locations[j].includes("h_"))
+					continue;
+				
+				if(Check[Locations[j]] == "unknown") {
+					document.getElementById("text_" + Locations[j]).style.border = "solid 1px red";
 				}
 			}
 			
