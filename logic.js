@@ -176,7 +176,7 @@ function update_item_logic() {
 	
 	// Mountain area shortcuts
 	Logic.north_access = Logic.bow && (Logic.explosive || Logic.shoot_fire_arrow || Logic.goron_mask);
-	Logic.hot_spring_water = Logic.north_access && Logic.any_bottle && ((Logic.lens && Logic.goron_mask && Logic.magic) || Logic.shoot_fire_arrow || Logic.snowhead_clear);
+	Logic.hot_spring_water = Logic.any_bottle && ((Logic.north_access && ((Logic.lens && Logic.goron_mask && Logic.magic) || Logic.shoot_fire_arrow || Logic.snowhead_clear)) || (Logic.ikana_canyon_access && Logic.gibdo_mask && Logic.any_blue_potion && (Logic.zora_mask || Logic.explosive)));
 	
 	Logic.sht_access = Logic.north_access && Logic.goron_mask && Logic.lullaby && Logic.magic;
 	Logic.snowhead_clear = Logic.sht_access && Logic.shoot_fire_arrow;
@@ -199,7 +199,7 @@ function update_item_logic() {
 	Logic.ikana_clear = Logic.istt_access && Logic.deku_mask && Logic.giants_mask;
 	
 	// Bottle shortcuts
-	Logic.any_blue_potion = Logic.any_bottle;
+	Logic.any_blue_potion = Logic.any_bottle && (Logic.adults_wallet || Logic.mask_of_scents);
 	Logic.any_milk = Logic.any_bottle; // gorman bros purchase requires nothing but bottle
 	Logic.zora_egg = Logic.any_bottle && Logic.pirates_fortress_access && Logic.hookshot && Logic.pinnacle_rock_access && ((Logic.deku_mask && Logic.magic) || Logic.bow);
 	Logic.big_poe = Logic.any_bottle && Logic.ikana_canyon_access && Logic.gibdo_mask && Logic.bomb && (Logic.shoot_light_arrow || (Logic.limitless_magic_beans && (Logic.bow || Logic.zora_mask)));
@@ -225,7 +225,7 @@ function update_item_logic() {
 	
 	// Mountain area shortcuts
 	Game.north_access = Game.bow && (Game.explosive || Game.shoot_fire_arrow || Game.goron_mask);
-	Game.hot_spring_water = Game.north_access && Game.any_bottle && ((Game.lens && Game.goron_mask && Game.magic) || Game.shoot_fire_arrow || Game.snowhead_clear);
+	Game.hot_spring_water = Game.north_access && Game.any_bottle && (Game.goron_mask || Game.shoot_fire_arrow || Game.snowhead_clear || (Game.ikana_canyon_access && Game.gibdo_mask && Game.any_blue_potion));
 	
 	Game.sht_access = Game.north_access && Game.goron_mask && Game.lullaby;
 	Game.snowhead_clear = Game.sht_access && Game.shoot_fire_arrow;
@@ -248,7 +248,7 @@ function update_item_logic() {
 	Game.ikana_clear = Game.istt_access && (Game.deku_mask || Game.bomb);
 	
 	// Bottle shortcuts
-	Game.any_blue_potion = Game.any_bottle;
+	Game.any_blue_potion = Game.any_bottle && (Game.adults_wallet || Game.mask_of_scents);
 	Game.any_milk = Game.any_bottle; // gorman bros purchase requires nothing but bottle
 	Game.zora_egg = Game.any_bottle && Game.pirates_fortress_access && Game.hookshot && Game.pinnacle_rock_access && ((Game.deku_mask && Game.magic) || Game.bow);
 	Game.big_poe = Game.any_bottle && Game.ikana_canyon_access && Game.gibdo_mask && Game.bomb && (Game.shoot_light_arrow || (Game.limitless_magic_beans && (Game.bow || Game.zora_mask)));
@@ -274,7 +274,7 @@ function update_item_logic() {
 	
 	// Mountain area shortcuts
 	CouldHave.north_access = CouldHave.bow && (CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.goron_mask);
-	CouldHave.hot_spring_water = CouldHave.north_access && CouldHave.any_bottle && ((CouldHave.lens && CouldHave.goron_mask && CouldHave.magic) || CouldHave.shoot_fire_arrow || CouldHave.snowhead_clear);
+	CouldHave.hot_spring_water = CouldHave.north_access && CouldHave.any_bottle && (CouldHave.goron_mask || CouldHave.shoot_fire_arrow || CouldHave.snowhead_clear || (CouldHave.ikana_canyon_access && CouldHave.gibdo_mask && CouldHave.any_blue_potion));
 	
 	CouldHave.sht_access = CouldHave.north_access && CouldHave.goron_mask && CouldHave.lullaby;
 	CouldHave.snowhead_clear = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
@@ -297,7 +297,7 @@ function update_item_logic() {
 	CouldHave.ikana_clear = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.bomb);
 	
 	// Bottle shortcuts
-	CouldHave.any_blue_potion = CouldHave.any_bottle;
+	CouldHave.any_blue_potion = CouldHave.any_bottle && (CouldHave.adults_wallet || CouldHave.mask_of_scents);
 	CouldHave.any_milk = CouldHave.any_bottle; // gorman bros purchase requires nothing but bottle
 	CouldHave.zora_egg = CouldHave.any_bottle && CouldHave.pirates_fortress_access && CouldHave.hookshot && CouldHave.pinnacle_rock_access && ((CouldHave.deku_mask && CouldHave.magic) || CouldHave.bow);
 	CouldHave.big_poe = CouldHave.any_bottle && CouldHave.ikana_canyon_access && CouldHave.gibdo_mask && CouldHave.bomb && (CouldHave.shoot_light_arrow || (CouldHave.limitless_magic_beans && (CouldHave.bow || CouldHave.zora_mask)));
