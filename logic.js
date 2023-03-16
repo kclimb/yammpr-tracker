@@ -736,9 +736,9 @@ function update_location_logic() {
 	Location_Access["Doggy Racetrack Roof Chest"] = true;
 		
 	// Mountain Village
-	Location_Access["Mountain Smithy Day 1"] = Game.north_access && Game.adults_wallet && (Logic.shoot_fire_arrow || Game.hot_spring_water || Game.snowhead_clear);
-	Location_Access["Mountain Smithy Day 2"] = Game.north_access && Game.bottle_gold_dust && (Logic.shoot_fire_arrow || Game.hot_spring_water || Game.snowhead_clear);
-	Location_Access["Frog Choir"] = Game.dongero_mask && Game.snowhead_clear && Game.wft_access && Game.gbt_access && Game.hookshot && Game.deku_mask && Game.zora_mask && Logic.shoot_ice_arrow && Game.shoot_fire_arrow;
+	Location_Access["Mountain Smithy Day 1"] = Game.north_access && Game.adults_wallet && (Game.shoot_fire_arrow || Game.hot_spring_water || Game.snowhead_clear);
+	Location_Access["Mountain Smithy Day 2"] = Game.north_access && Game.bottle_gold_dust && (Game.shoot_fire_arrow || Game.hot_spring_water || Game.snowhead_clear);
+	Location_Access["Frog Choir"] = Game.dongero_mask && Game.snowhead_clear && Game.wft_access && Game.gbt_access && Game.hookshot && Game.deku_mask && Game.zora_mask && Game.shoot_ice_arrow && Game.shoot_fire_arrow;
 	Location_Access["Hungry Goron"] = Game.north_access && Game.goron_mask && Game.magic;
 	Location_Access["Darmani"] = Game.song_of_healing && Game.north_access && Game.lens && Game.magic;
 	Location_Access["Mountain Waterfall Chest"] = Game.snowhead_clear;
@@ -747,7 +747,7 @@ function update_location_logic() {
 	// Twin Islands
 	Location_Access["Goron Race"] = Game.snowhead_clear && Game.goron_mask && Game.magic;
 	Location_Access["Twin Islands Underwater Ramp Chest"] = Game.snowhead_clear && Game.zora_mask;
-	Location_Access["Hot Spring Water Grotto"] = Game.north_access && Game.explosive && (Logic.shoot_fire_arrow || Game.hot_spring_water || Game.snowhead_clear);
+	Location_Access["Hot Spring Water Grotto"] = Game.north_access && Game.explosive && (Game.shoot_fire_arrow || Game.hot_spring_water || Game.snowhead_clear);
 	Location_Access["Twin Islands Cave Chest"] = Game.snowhead_clear && Game.zora_mask;
 	Location_Access["Goron Racetrack Grotto"] = Game.north_access && Game.explosive && (Game.goron_mask || Game.hookshot); 
 		
@@ -755,7 +755,7 @@ function update_location_logic() {
 	Location_Access["Goron Shop 10 Arrows"] = Game.north_access;
 	Location_Access["Goron Shop 10 Bombs"] = Game.north_access;
 	Location_Access["Goron Shop Red Potion"] = Game.north_access;
-	Location_Access["Powder Keg Challenge"] = Game.north_access && Game.goron_mask && (Logic.shoot_fire_arrow || Game.snowhead_clear);
+	Location_Access["Powder Keg Challenge"] = Game.north_access && Game.goron_mask && (Game.shoot_fire_arrow || Game.snowhead_clear);
 	Location_Access["Lens of Truth Chest"] = Game.north_access;
 	Location_Access["Biggest Bomb Bag Purchase"] = Game.north_access && (Game.goron_mask || Game.deku_mask);
 	Location_Access["Mountain Scrub Trade"] = Game.north_access && Game.deku_mask && Game.swamp_title_deed;
@@ -1068,9 +1068,9 @@ function update_location_logic() {
 	Location_Could_Access["Doggy Racetrack Roof Chest"] = true;
 		
 	// Mountain Village
-	Location_Could_Access["Mountain Smithy Day 1"] = CouldHave.north_access && CouldHave.adults_wallet && (Logic.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
-	Location_Could_Access["Mountain Smithy Day 2"] = CouldHave.north_access && CouldHave.bottle_gold_dust && (Logic.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
-	Location_Could_Access["Frog Choir"] = CouldHave.dongero_mask && CouldHave.snowhead_clear && CouldHave.wft_access && CouldHave.gbt_access && CouldHave.hookshot && CouldHave.deku_mask && CouldHave.zora_mask && Logic.shoot_ice_arrow && CouldHave.shoot_fire_arrow;
+	Location_Could_Access["Mountain Smithy Day 1"] = CouldHave.north_access && CouldHave.adults_wallet && (CouldHave.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
+	Location_Could_Access["Mountain Smithy Day 2"] = CouldHave.north_access && CouldHave.bottle_gold_dust && (CouldHave.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
+	Location_Could_Access["Frog Choir"] = CouldHave.dongero_mask && CouldHave.snowhead_clear && CouldHave.wft_access && CouldHave.gbt_access && CouldHave.hookshot && CouldHave.deku_mask && CouldHave.zora_mask && CouldHave.shoot_ice_arrow && CouldHave.shoot_fire_arrow;
 	Location_Could_Access["Hungry Goron"] = CouldHave.north_access && CouldHave.goron_mask && CouldHave.magic;
 	Location_Could_Access["Darmani"] = CouldHave.song_of_healing && CouldHave.north_access && CouldHave.lens && CouldHave.magic;
 	Location_Could_Access["Mountain Waterfall Chest"] = CouldHave.snowhead_clear;
@@ -1079,7 +1079,7 @@ function update_location_logic() {
 	// Twin Islands
 	Location_Could_Access["Goron Race"] = CouldHave.snowhead_clear && CouldHave.goron_mask && CouldHave.magic;
 	Location_Could_Access["Twin Islands Underwater Ramp Chest"] = CouldHave.snowhead_clear && CouldHave.zora_mask;
-	Location_Could_Access["Hot Spring Water Grotto"] = CouldHave.north_access && CouldHave.explosive && (Logic.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
+	Location_Could_Access["Hot Spring Water Grotto"] = CouldHave.north_access && CouldHave.explosive && (CouldHave.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
 	Location_Could_Access["Twin Islands Cave Chest"] = CouldHave.snowhead_clear && CouldHave.zora_mask;
 	Location_Could_Access["Goron Racetrack Grotto"] = CouldHave.north_access && CouldHave.explosive && (CouldHave.goron_mask || CouldHave.hookshot); 
 		
@@ -1087,7 +1087,7 @@ function update_location_logic() {
 	Location_Could_Access["Goron Shop 10 Arrows"] = CouldHave.north_access;
 	Location_Could_Access["Goron Shop 10 Bombs"] = CouldHave.north_access;
 	Location_Could_Access["Goron Shop Red Potion"] = CouldHave.north_access;
-	Location_Could_Access["Powder Keg Challenge"] = CouldHave.north_access && CouldHave.goron_mask && (Logic.shoot_fire_arrow || CouldHave.snowhead_clear);
+	Location_Could_Access["Powder Keg Challenge"] = CouldHave.north_access && CouldHave.goron_mask && (CouldHave.shoot_fire_arrow || CouldHave.snowhead_clear);
 	Location_Could_Access["Lens of Truth Chest"] = CouldHave.north_access;
 	Location_Could_Access["Biggest Bomb Bag Purchase"] = CouldHave.north_access && (CouldHave.goron_mask || CouldHave.deku_mask);
 	Location_Could_Access["Mountain Scrub Trade"] = CouldHave.north_access && CouldHave.deku_mask && CouldHave.swamp_title_deed;
@@ -1384,9 +1384,9 @@ function update_location_logic() {
 	Location_Could_Peek["Doggy Racetrack Roof Chest"] = true;
 		
 	// Mountain Village
-	Location_Could_Peek["Mountain Smithy Day 1"] = CouldHave.north_access && CouldHave.adults_wallet && (Logic.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
-	Location_Could_Peek["Mountain Smithy Day 2"] = CouldHave.north_access && CouldHave.bottle_gold_dust && (Logic.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
-	Location_Could_Peek["Frog Choir"] = CouldHave.dongero_mask && CouldHave.snowhead_clear && CouldHave.wft_access && CouldHave.gbt_access && CouldHave.hookshot && CouldHave.deku_mask && CouldHave.zora_mask && Logic.shoot_ice_arrow && CouldHave.shoot_fire_arrow;
+	Location_Could_Peek["Mountain Smithy Day 1"] = CouldHave.north_access && CouldHave.adults_wallet && (CouldHave.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
+	Location_Could_Peek["Mountain Smithy Day 2"] = CouldHave.north_access && CouldHave.bottle_gold_dust && (CouldHave.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
+	Location_Could_Peek["Frog Choir"] = CouldHave.dongero_mask && CouldHave.snowhead_clear && CouldHave.wft_access && CouldHave.gbt_access && CouldHave.hookshot && CouldHave.deku_mask && CouldHave.zora_mask && CouldHave.shoot_ice_arrow && CouldHave.shoot_fire_arrow;
 	Location_Could_Peek["Hungry Goron"] = CouldHave.north_access && CouldHave.goron_mask && CouldHave.magic;
 	Location_Could_Peek["Darmani"] = CouldHave.song_of_healing && CouldHave.north_access && CouldHave.lens && CouldHave.magic;
 	Location_Could_Peek["Mountain Waterfall Chest"] = CouldHave.snowhead_clear;
@@ -1395,7 +1395,7 @@ function update_location_logic() {
 	// Twin Islands
 	Location_Could_Peek["Goron Race"] = CouldHave.snowhead_clear && CouldHave.goron_mask && CouldHave.magic;
 	Location_Could_Peek["Twin Islands Underwater Ramp Chest"] = CouldHave.snowhead_clear && CouldHave.zora_mask;
-	Location_Could_Peek["Hot Spring Water Grotto"] = CouldHave.north_access && CouldHave.explosive && (Logic.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
+	Location_Could_Peek["Hot Spring Water Grotto"] = CouldHave.north_access && CouldHave.explosive && (CouldHave.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
 	Location_Could_Peek["Twin Islands Cave Chest"] = CouldHave.snowhead_clear && CouldHave.zora_mask;
 	Location_Could_Peek["Goron Racetrack Grotto"] = CouldHave.north_access && CouldHave.explosive && (CouldHave.goron_mask || CouldHave.hookshot); 
 		
@@ -1403,7 +1403,7 @@ function update_location_logic() {
 	Location_Could_Peek["Goron Shop 10 Arrows"] = CouldHave.north_access;
 	Location_Could_Peek["Goron Shop 10 Bombs"] = CouldHave.north_access;
 	Location_Could_Peek["Goron Shop Red Potion"] = CouldHave.north_access;
-	Location_Could_Peek["Powder Keg Challenge"] = CouldHave.north_access && CouldHave.goron_mask && (Logic.shoot_fire_arrow || CouldHave.snowhead_clear);
+	Location_Could_Peek["Powder Keg Challenge"] = CouldHave.north_access && CouldHave.goron_mask && (CouldHave.shoot_fire_arrow || CouldHave.snowhead_clear);
 	Location_Could_Peek["Lens of Truth Chest"] = CouldHave.north_access;
 	Location_Could_Peek["Biggest Bomb Bag Purchase"] = CouldHave.north_access && (CouldHave.goron_mask || CouldHave.deku_mask);
 	Location_Could_Peek["Mountain Scrub Trade"] = CouldHave.north_access && CouldHave.deku_mask && CouldHave.swamp_title_deed;
