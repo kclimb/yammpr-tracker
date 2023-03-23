@@ -77,7 +77,7 @@ var Locations = [
 	"Path to Ikana Pillar Chest", "Path to Ikana Grotto", "Invisible Soldier", "h_CanyonRoad", 
 	
 	// Ikana Graveyard
-	"Day 1 Grave Bats", "Ikana Graveyard Grotto", "Captain Keeta's Chest", "Iron Knuckle Chest", "Dampe Digging", 
+	"Ikana Graveyard Grotto", "Captain Keeta's Chest", "Day 1 Grave Bats", "Iron Knuckle Chest", "Dampe Digging", 
 	
 	// Ikana Canyon
 	"Ikana Canyon Ledge", "Canyon Scrub Trade", "Secret Shrine Grotto", "Poe Hut", "Pamela's Father", "h_CanyonDock", "h_CanyonRavine", "h_CanyonSpiritHouse", 
@@ -127,7 +127,7 @@ var Names = [
 	"Guru", "Kafei", "Curios1", "Curios2",
 	
 	// East Clock Town
-	"Sewer", "Aroma", "Chest", "Honey 10r", "Archery 20r", "Chest 30r", "Mayor", "Milk", "Chateau", "Aroma Bar", "Postman", "Gorman", 
+	"Sewer", "Aroma", "Chest", "Honey 10r", "Archery 20r", "Chest 30r", "Mayor", "Milk 20r", "Chateau 200r", "Aroma Bar", "Postman", "Gorman", 
 	
 	// Stock Pot Inn
 	"Room Key", "Midnight", "Hand", "Staff", "Guest", "Granny1", "Granny2", 
@@ -136,7 +136,7 @@ var Names = [
 	"Telescope", "Dodongos", "Pillar", "Scrub 100r", "Grass Ch", "Grass Gr", "Stump", "Peahat", "Water", "Bio Baba", "Gossips", "Kamaro", "Observ", "West", "North", "East", "Left", "Mid-left", "Mid-right", "Right", "South", "Milk", 
 	
 	// Road to Southern Swamp
-	"Map Wood", "Grotto", "Tree", "Map Snow", "Archery", "Hint", 
+	"Map Wood", "Grotto", "Tree", "Map Snow", "Archery 20r", "Hint", 
 	
 	// Southern Swamp
 	"Roof", "Woods Gr", "Witch Red", "PictoBox", "Grotto", "Contest", "Deed", "BoatArchery", "Swamp Spid", "Witches", "Spider", 
@@ -190,7 +190,7 @@ var Names = [
 	"Pillar", "Grotto", "Soldier", "Hint", 
 	
 	// Ikana Graveyard
-	"Bats1", "Grotto", "Keeta", "Knuckle2", "Dampe3", 
+	"Grotto", "Keeta", "Bats1", "Knuckle2", "Dampe3", 
 	
 	// Ikana Canyon
 	"Ledge", "Deed", "Grotto", "Poe 30r", "PamelaDad", "Dock", "Ledge", "Upper", 
@@ -217,7 +217,7 @@ var Names = [
 	"Torches", "Green", "Map", "BioBabas", "Compass", "Underwater", "Wart", "Wheel 1", "Wheel 2", "Seesaw", "Gyorg",
 	
 	// Stone Tower Temeple
-	"*StatueEye", "*Compass", "*Underwater", "*Dexihand", "Crystal", "*Map Ledge", "*Map", "KillArmos", "Mirror Sun", "MirrorBlock", "LavaRing", "LavaLedge", "GaroMast", "*Thin Bridge", "Eyegore 1", "*Return STT",
+	"*StatueEye", "*Compass", "*Underwater", "*Dexihand", "Crystal", "*Map Ledge", "*Map", "KillArmos", "Mirror Sun", "MirrorBlock", "LavaRing", "LavaLedge", "Garo Master", "*Thin Bridge", "Eyegore 1", "*Return STT",
 	
 	// Inverted Stone Tower Temple
 	"Ent Sun", "Frozen Eye", "*Fire Ring", "Updraft", "Eyegore 2", "DeathArm", "Wizzrobe", "Twinmold",
@@ -246,4 +246,4 @@ var s4_skip_checks = [
 
 var PeekableItemLocations = [
 	"Clock Tower Entrance", "North Clock Town Tree", "Clock Town Map Purchase", "Bomb Bag Purchase", "Big Bomb Bag Purchase", "All-Night Mask Purchase", "Milk Bar Milk", "Milk Bar Chateau", "Astronomy Telescope", "Business Scrub Purchase", "Bio Baba Grotto", "Woodfall Map Purchase", "Path to Swamp Tree", "Snowhead Map Purchase", "Swamp Tourist Center Roof", "Deku Palace West Garden", "Romani Ranch Map Purchase", "Great Bay Map Purchase", "Goron Village Ledge", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Biggest Bomb Bag Purchase", "Powder Keg Challenge", "Path to Snowhead Pillar", "Stone Tower Map Purchase", "Great Bay Coast Ledge", "Zora Cape Like-Like", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Lulu's Room Ledge", "Pirates' Fortress Cage", "Ikana Canyon Ledge", "Ikana Castle Pillar"
-]
+];
