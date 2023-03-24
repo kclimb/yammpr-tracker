@@ -585,6 +585,7 @@ function Undo() {
 	CouldHave[Check[lastCheck[lastCheck.length-1]]] = false;
 	Known[Check[lastCheck[lastCheck.length-1]]] = false;
 	Logic[Check[lastCheck[lastCheck.length-1]]] = false;
+	Hinted[lastCheck[lastCheck.length-1]] = false;
 	Check[lastCheck[lastCheck.length-1]] = "unknown";
 	lastCheck.pop();
 	Update();Update();Update();
