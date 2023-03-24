@@ -959,7 +959,7 @@ function update_location_logic() {
 	Location_Could_Access["Bomb Bag Purchase"] = true;
 	Location_Could_Access["Big Bomb Bag Purchase"] = true;
 	Location_Could_Access["Bank Reward #1"] = true;
-	Location_Could_Access["Postman's CouldHave"] = true;
+	Location_Could_Access["Postman's Game"] = true;
 	Location_Could_Access["Rosa Sisters"] = CouldHave.kamaro_mask;
 	Location_Could_Access["Swordsman's School"] = true;
 	Location_Could_Access["All-Night Mask Purchase"] = true;
@@ -984,7 +984,7 @@ function update_location_logic() {
 	Location_Could_Access["Mayor"] = CouldHave.couples_mask;
 	Location_Could_Access["Postman's Freedom Reward"] = CouldHave.special_delivery;
 	Location_Could_Access["Town Archery #1"] = CouldHave.bow;
-	Location_Could_Access["Treasure Chest CouldHave Goron"] = CouldHave.goron_mask;
+	Location_Could_Access["Treasure Chest Game Goron"] = CouldHave.goron_mask;
 		
 	// Stock Pot Inn
 	Location_Could_Access["Inn Reservation"] = true;
@@ -1085,7 +1085,7 @@ function update_location_logic() {
 		
 	// Great Bay Coast
 	Location_Could_Access["Ocean Spider House Day 1 Reward"] = CouldHave.ocean_skulltulas;
-	Location_Could_Access["Fisherman CouldHave"] = CouldHave.great_bay_clear && CouldHave.hookshot;
+	Location_Could_Access["Fisherman Game"] = CouldHave.great_bay_clear && CouldHave.hookshot;
 	Location_Could_Access["Ocean Spider House Chest"] = CouldHave.bow && CouldHave.ocean_skulltulas;
 	Location_Could_Access["Mikau"] = CouldHave.west_access && CouldHave.song_of_healing;
 	Location_Could_Access["Great Bay Coast Grotto"] = CouldHave.west_access;
@@ -1244,7 +1244,7 @@ function update_location_logic() {
 	Location_Could_Access["Starting Song"] = true;
 	Location_Could_Access["Skull Kid Song"] = (CouldHave.deku_mask && CouldHave.magic) || CouldHave.bow || CouldHave.zora_mask || CouldHave.hookshot || CouldHave.bomb;
 	Location_Could_Access["Boss Blue Warp"] = CouldHave.woodfall_clear || CouldHave.snowhead_clear || CouldHave.great_bay_clear || CouldHave.ikana_clear;
-	Location_Could_Access["Romani's CouldHave"] = CouldHave.ranch_day_1_access;
+	Location_Could_Access["Romani's Game"] = CouldHave.ranch_day_1_access;
 	Location_Could_Access["Day 1 Grave Tablet"] = CouldHave.captains_hat && CouldHave.ikana_graveyard_access;
 	Location_Could_Access["Imprisoned Monkey"] = CouldHave.poison_swamp_access && CouldHave.deku_mask;
 	Location_Could_Access["Swamp Music Statue"] = CouldHave.poison_swamp_access && CouldHave.deku_mask;
@@ -1274,7 +1274,7 @@ function update_location_logic() {
 	Location_Could_Peek["Bomb Bag Purchase"] = true;
 	Location_Could_Peek["Big Bomb Bag Purchase"] = true;
 	Location_Could_Peek["Bank Reward #1"] = true;
-	Location_Could_Peek["Postman's CouldHave"] = true;
+	Location_Could_Peek["Postman's Game"] = true;
 	Location_Could_Peek["Rosa Sisters"] = CouldHave.kamaro_mask;
 	Location_Could_Peek["Swordsman's School"] = true;
 	Location_Could_Peek["All-Night Mask Purchase"] = true;
@@ -1299,7 +1299,7 @@ function update_location_logic() {
 	Location_Could_Peek["Mayor"] = CouldHave.couples_mask;
 	Location_Could_Peek["Postman's Freedom Reward"] = CouldHave.special_delivery;
 	Location_Could_Peek["Town Archery #1"] = CouldHave.bow;
-	Location_Could_Peek["Treasure Chest CouldHave Goron"] = CouldHave.goron_mask;
+	Location_Could_Peek["Treasure Chest Game Goron"] = CouldHave.goron_mask;
 		
 	// Stock Pot Inn
 	Location_Could_Peek["Inn Reservation"] = true;
@@ -1400,7 +1400,7 @@ function update_location_logic() {
 		
 	// Great Bay Coast
 	Location_Could_Peek["Ocean Spider House Day 1 Reward"] = CouldHave.ocean_skulltulas;
-	Location_Could_Peek["Fisherman CouldHave"] = CouldHave.great_bay_clear && CouldHave.hookshot;
+	Location_Could_Peek["Fisherman Game"] = CouldHave.great_bay_clear && CouldHave.hookshot;
 	Location_Could_Peek["Ocean Spider House Chest"] = CouldHave.bow && CouldHave.ocean_skulltulas;
 	Location_Could_Peek["Mikau"] = CouldHave.west_access && CouldHave.song_of_healing;
 	Location_Could_Peek["Great Bay Coast Grotto"] = CouldHave.west_access;
@@ -1560,7 +1560,7 @@ function update_location_logic() {
 	Location_Could_Peek["Starting Song"] = true;
 	Location_Could_Peek["Skull Kid Song"] = (CouldHave.deku_mask && CouldHave.magic) || CouldHave.bow || CouldHave.zora_mask || CouldHave.hookshot || CouldHave.bomb;
 	Location_Could_Peek["Boss Blue Warp"] = CouldHave.woodfall_clear || CouldHave.snowhead_clear || CouldHave.great_bay_clear || CouldHave.ikana_clear;
-	Location_Could_Peek["Romani's CouldHave"] = CouldHave.ranch_day_1_access;
+	Location_Could_Peek["Romani's Game"] = CouldHave.ranch_day_1_access;
 	Location_Could_Peek["Day 1 Grave Tablet"] = CouldHave.captains_hat && CouldHave.ikana_graveyard_access;
 	Location_Could_Peek["Imprisoned Monkey"] = CouldHave.poison_swamp_access && CouldHave.deku_mask;
 	Location_Could_Peek["Swamp Music Statue"] = CouldHave.poison_swamp_access && CouldHave.deku_mask;
