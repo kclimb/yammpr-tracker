@@ -253,16 +253,16 @@ var SpoilerItemToInput = {
 	"All-Night Mask" : "all",
 	"Blast Mask" : "bla",
 	"Stone Mask" : "sto",
-	"Great Fairy's Mask" : "gre",
+	//"Great Fairy's Mask" : "gre",
 	"Deku Mask" : "dek",
 	"Keaton Mask" : "kea",
 	"Bremen Mask" : "bre",
 	"Bunny Hood" : "bun",
-	"Don Gero's Mask" : "don",
+	//"Don Gero's Mask" : "don",
 	"Mask of Scents" : "sce",
 	"Goron Mask" : "gor",
 	"Romani's Mask" : "rom",
-	"Circus Leader's Mask" : "cir",
+	//"Circus Leader's Mask" : "cir",
 	"Kafei's Mask" : "kaf",
 	"Couple's Mask" : "cou",
 	"Mask of Truth" : "tru",
@@ -288,6 +288,7 @@ var SpoilerItemToInput = {
 }
 
 var SpoilerAreaToInput = {
+	"Clock Tower Rooftop" : "clo",
 	"South Clock Town" : "sct",
 	"North Clock Town" : "nct",
 	"West Clock Town" : "wct",

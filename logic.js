@@ -582,7 +582,7 @@ function update_location_logic() {
 		
 	// Stone Tower Temple
 	Location_Logic["Stone Tower Statue Eye"] = Logic.stt_access && Logic.bow;
-	Location_Logic["Stone Tower Compass Chest"] = Logic.stt_access && (Logic.shoot_light_arrow || (Logic.mirror_shield && Logic.goron_mask && Logic.zora_mask));
+	Location_Logic["Stone Tower Compass Chest"] = Logic.stt_access && (Logic.shoot_light_arrow || (Logic.mirror_shield && Logic.goron_mask && Logic.zora_mask && Logic.explosive));
 	Location_Logic["Stone Tower Underwater"] = Logic.istt_access && Logic.zora_mask;
 	Location_Logic["Stone Tower Eyegore Room Chest"] = Logic.stt_access && ((Logic.shoot_light_arrow && Logic.zora_mask) || (Logic.explosive && Logic.goron_mask));
 	Location_Logic["Stone Tower Bridge Crystal"] = Logic.stt_access && Logic.shoot_light_arrow && Logic.zora_mask;
@@ -1090,7 +1090,7 @@ function update_location_logic() {
 	Location_Could_Access["Mikau"] = CouldHave.west_access && CouldHave.song_of_healing;
 	Location_Could_Access["Great Bay Coast Grotto"] = CouldHave.west_access;
 	Location_Could_Access["Lab Fish"] = CouldHave.west_access && CouldHave.any_bottle;
-	Location_Could_Access["Great Bay Coast Ledge"] = CouldHave.west_access; 
+	Location_Could_Access["Great Bay Coast Ledge"] = CouldHave.west_access && CouldHave.hookshot && ((CouldHave.any_magic_bean && CouldHave.water_for_magic_bean) || CouldHave.explosive);
 	Location_Could_Access["Stone Tower Map Purchase"] = CouldHave.west_access && (CouldHave.hookshot || CouldHave.bow);
 	Location_Could_Access["Fisherman Pictograph"] = CouldHave.pictobox && CouldHave.west_access && CouldHave.pirates_fortress_access;
 		

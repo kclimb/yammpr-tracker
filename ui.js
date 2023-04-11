@@ -630,59 +630,43 @@ function clickSummary(loc) {
 			if(Locations.indexOf(str) == -1)
 				console.log(str + " is not a known location in the sim");
 			
-			if(!str.startsWith("h_")) { 
-				// clicked an item check, not a gossip hint
+			// clicked an item check, not a gossip hint
 			
-				var input = SpoilerItemToInput[SpoilerLocToItem[str]];
+			var input = SpoilerItemToInput[SpoilerLocToItem[str]];
+			
+			if(input == undefined) {
+				Check[str]="junk";
 				
-				if(input == undefined) {
-					Check[str]="junk";
-					
-					document.getElementById(str).style.display = "none";
-					document.getElementById("text_" + str).style.display = "none";
-					document.getElementById("br_" + str).style.display = "none";
-					
-					if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); }
-					
-					lastCheck.push(str);
-				}
-				else if(type == 0 && Check[str] == "unknown") {
-					document.getElementById(str).value = input;
-					document.getElementById("simLog").value = str + " -> " + SpoilerLocToItem[str] + "\n" + document.getElementById("simLog").value;
-				}
-				else if(type == 2 && Check[str] == "unknown" && document.getElementById(str).value != "???") {
-					// right click, peek the item
-					if(SongItems.indexOf(str) != -1)
-						return;
-					
-					if (PeekableItemLocations.indexOf(str) != -1) {
-						item = SpoilerLocToItem[str]
-						document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
-					}
-					else {
-						item = "unknown gilded chest";
-						document.getElementById(str).value = "???";
-					}
-					document.getElementById("simLog").value = str + " -> " + item + " (peeked)\n" + document.getElementById("simLog").value;
-				}
-				else if (Check[str] != "unknown" && Check[str] != "junk" && forcedDisplay[temp]) {
-					forcedDisplay[temp] = false; 
-					Game[Check[str]] = true; 
-				}
-				
-			}
-			else {
-				// clicked a gossip hint
-				temp_hint = SpoilerHintDict[str];
-				for(var i = 0; i < hintStrings1.length; i++)
-					temp_hint = temp_hint.replace(hintStrings1[i], "");
-				document.getElementById("simLog").value = temp_hint + "\n" + document.getElementById("simLog").value;
-				simProcessHint(str);
-				Check[str] = "junk";
 				document.getElementById(str).style.display = "none";
 				document.getElementById("text_" + str).style.display = "none";
 				document.getElementById("br_" + str).style.display = "none";
+				
+				if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); }
+				
 				lastCheck.push(str);
+			}
+			else if(type == 0 && Check[str] == "unknown") {
+				document.getElementById(str).value = input;
+				document.getElementById("simLog").value = str + " -> " + SpoilerLocToItem[str] + "\n" + document.getElementById("simLog").value;
+			}
+			else if(type == 2 && Check[str] == "unknown" && document.getElementById(str).value != "???") {
+				// right click, peek the item
+				if(SongItems.indexOf(str) != -1)
+					return;
+				
+				if (PeekableItemLocations.indexOf(str) != -1) {
+					item = SpoilerLocToItem[str]
+					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
+				}
+				else {
+					item = "unknown gilded chest";
+					document.getElementById(str).value = "???";
+				}
+				document.getElementById("simLog").value = str + " -> " + item + " (peeked)\n" + document.getElementById("simLog").value;
+			}
+			else if (Check[str] != "unknown" && Check[str] != "junk" && forcedDisplay[temp]) {
+				forcedDisplay[temp] = false; 
+				Game[Check[str]] = true; 
 			}
 		}
 	}
