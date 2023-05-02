@@ -95,19 +95,19 @@ var Locations = [
 	"Inverted Stone Tower Left Chest", "Inverted Stone Tower Middle Chest", "Inverted Stone Tower Right Chest",
 	
 	// Woodfall Temple
-	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Map Chest", "Hero's Bow Chest", "Woodfall Compass Chest", "Woodfall Main Room Switch", "Woodfall Dark Room", "Odolwa Heart Container",  
+	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Map Chest", "Woodfall Boss Key Chest", "Hero's Bow Chest", "Woodfall Compass Chest", "Woodfall Main Room Switch", "Woodfall Dark Room", "Odolwa Heart Container",  
 	
 	// Snowhead Temple
-	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Fire Arrow Chest", "Snowhead Pillar Freezards", "Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement", "Goht Heart Container",
+	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Fire Arrow Chest", "Snowhead Pillar Freezards", "Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement", "Snowhead Boss Key Chest", "Goht Heart Container",
 	
 	// Great Bay Temple
-	"Great Bay Entrance Torches", "Great Bay Green Valve","Great Bay Map Chest", "Great Bay Bio Babas", "Great Bay Compass Chest", "Great Bay Small Key Chest", "Ice Arrow Chest", "Great Bay Waterwheel Room Upper", "Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Gyorg Heart Container", 
+	"Great Bay Entrance Torches", "Great Bay Green Valve","Great Bay Map Chest", "Great Bay Bio Babas", "Great Bay Boss Key Chest", "Great Bay Compass Chest", "Great Bay Small Key Chest", "Ice Arrow Chest", "Great Bay Waterwheel Room Upper", "Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Gyorg Heart Container", 
 	
 	// Stone Tower Temple
 	"Stone Tower Statue Eye", "Stone Tower Compass Chest", "Stone Tower Underwater", "Stone Tower Eyegore Room Chest", "Stone Tower Bridge Crystal", "Stone Tower Basement Ledge", "Stone Tower Map Chest", "Stone Tower Armos Room Chest", "Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", "Light Arrow Chest", "Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", 
 	
 	// Inverted Stone Tower Temple
-	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Updraft Room Chest", "Giant's Mask Chest", "Stone Tower Death Armos Maze Chest", "Stone Tower Wizzrobe", "Twinmold Heart Container", 
+	"Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Updraft Room Chest", "Stone Tower Boss Key Chest", "Giant's Mask Chest", "Stone Tower Death Armos Maze Chest", "Stone Tower Wizzrobe", "Twinmold Heart Container", 
 	
 	// Songs
 	"Starting Song", "Skull Kid Song", "Imprisoned Monkey", "Swamp Music Statue", "Boss Blue Warp", "Romani's Game", "Baby Goron", "Baby Zoras", "Day 1 Grave Tablet", "Ikana King"
@@ -208,19 +208,19 @@ var Names = [
 	"Left", "Middle", "Right",
 	
 	// Woodfall Temple
-	"Entrance", "Near BK", "Snappers", "Dinolfos", "Switch", "Dragonfly", "Dark", "Odolwa",
+	"Entrance", "Near BK", "Snappers", "Boss Key", "Dinolfos", "Switch", "Dragonfly", "Dark", "Odolwa",
 	
 	// Snowhead Temple
-	"Bridge", "Map", "Map Ledge", "Wizzrobe", "Pillars", "Twin Lower", "Twin Upper", "Compass", "Puzzle", "Icicle", "Icicle Wall", "Alcove", "Basement", "Goht",
+	"Bridge", "Map", "Map Ledge", "Wizzrobe", "Pillars", "Twin Lower", "Twin Upper", "Compass", "Puzzle", "Icicle", "Icicle Wall", "Alcove", "Basement", "Boss Key", "Goht",
 	
 	// Great Bay Temple
-	"Torches", "Green", "Map", "BioBabas", "Compass", "Underwater", "Wart", "Wheel 1", "Wheel 2", "Seesaw", "Gyorg",
+	"Torches", "Green", "Map", "BioBabas", "Boss Key", "Compass", "Underwater", "Wart", "Wheel 1", "Wheel 2", "Seesaw", "Gyorg",
 	
 	// Stone Tower Temeple
 	"*StatueEye", "*Compass", "*Underwater", "*Dexihand", "Crystal", "*Map Ledge", "*Map", "KillArmos", "Mirror Sun", "MirrorBlock", "LavaRing", "LavaLedge", "Garo Master", "*Thin Bridge", "Eyegore 1", "*Return STT",
 	
 	// Inverted Stone Tower Temple
-	"Ent Sun", "Frozen Eye", "*Fire Ring", "Updraft", "Eyegore 2", "DeathArm", "Wizzrobe", "Twinmold",
+	"Ent Sun", "Frozen Eye", "*Fire Ring", "Updraft", "Boss Key", "Eyegore 2", "DeathArm", "Wizzrobe", "Twinmold",
 	
 	// Songs
 	"Start", "Skull Kid", "Palace", "Swamp", "Warp", "Ranch", "Goron", "Eggs", "Grave1", "Castle"
@@ -233,15 +233,20 @@ var blitz_skip_checks = [
 	"Old Lady", "Big Bomb Bag Purchase", "All-Night Mask Purchase", "Hungry Goron", "Butler", "Dampe Digging", 
 	"Toilet Hand", "Stone Tower Death Armos", "Stone Tower Updraft Fire Ring", "Mirror Shield Chest", "Goron Shop 10 Arrows", 
 	"Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", 
-	"Gorman Bros Milk Purchase", "Baby Zoras", "Milk Bar Chateau", "Milk Bar Milk", "Skull Kid Song"
+	"Gorman Bros Milk Purchase", "Baby Zoras", "Milk Bar Chateau", "Milk Bar Milk", "Skull Kid Song", 
+	"Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest"
 ];
 
 var s3_skip_checks = [
-	"Swamp Music Statue", "Skull Kid Song"
+	"Swamp Music Statue", "Skull Kid Song", "Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest"
 ];
 
 var s4_skip_checks = [
-	"Swamp Music Statue", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk"
+	"Swamp Music Statue", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", "Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest"
+];
+
+var scrubs_skip_checks = [
+	"Baby Zoras", "Skull Kid Song", "Goron Race", "Fisherman Game", "Bank Reward #3", "Seahorses", "Beaver Race #1", "Beaver Race #2", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", "Woodfall Entrance Platform", "Woodfall Main Room Switch", "Woodfall Dark Room", "Snowhead Map Room Ledge", "Snowhead Pillar Freezards", "Snowhead Twin Block", "Snowhead Ice Puzzle", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement", "Great Bay Entrance Torches", "Great Bay Green Valve", "Great Bay Bio Babas", "Great Bay Waterwheel Room Upper", "Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Stone Tower Statue Eye", "Stone Tower Underwater", "Stone Tower Bridge Crystal", "Stone Tower Basement Ledge", "Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", "Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", "Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe"
 ];
 
 var PeekableItemLocations = [

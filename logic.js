@@ -549,11 +549,13 @@ function update_location_logic() {
 	Location_Logic["Woodfall Map Chest"] = Logic.wft_access;
 	Location_Logic["Woodfall Small Key Chest"] = Logic.wft_access;
 	Location_Logic["Woodfall Compass Chest"] = Logic.wft_access;
+	Location_Logic["Woodfall Boss Key Chest"] = Logic.wft_access && Logic.bow;
 	Location_Logic["Odolwa Heart Container"] = Logic.wft_access && Logic.bow;
 		
 	// Snowhead Temple
 	Location_Logic["Fire Arrow Chest"] = Logic.sht_access && (Logic.hookshot || Logic.explosive || Logic.shoot_fire_arrow);
 	Location_Logic["Goht Heart Container"] = Logic.sht_access && Logic.shoot_fire_arrow;
+	Location_Logic["Snowhead Boss Key Chest"] = Logic.sht_access && Logic.shoot_fire_arrow;
 	Location_Logic["Snowhead Basement"] = Logic.sht_access;
 	Location_Logic["Snowhead Block Room Chest"] = Logic.sht_access;
 	Location_Logic["Snowhead Bridge Room Chest"] = Logic.sht_access && (Logic.hookshot || Logic.shoot_fire_arrow);
@@ -575,6 +577,7 @@ function update_location_logic() {
 	Location_Logic["Great Bay Waterwheel Room Lower"] = Logic.gbt_access && Logic.shoot_ice_arrow;
 	Location_Logic["Great Bay Waterwheel Room Upper"] = Logic.gbt_access && Logic.shoot_ice_arrow;
 	Location_Logic["Ice Arrow Chest"] = Logic.gbt_access;
+	Location_Logic["Great Bay Boss Key Chest"] = Logic.gbt_access;
 	Location_Logic["Great Bay Map Chest"] = Logic.gbt_access;
 	Location_Logic["Great Bay Compass Chest"] = Logic.gbt_access;
 	Location_Logic["Great Bay Small Key Chest"] = Logic.gbt_access;
@@ -606,6 +609,7 @@ function update_location_logic() {
 	Location_Logic["Giant's Mask Chest"] = Logic.istt_access && Logic.deku_mask;
 	Location_Logic["Stone Tower Death Armos Maze Chest"] = Logic.istt_access && Logic.deku_mask;
 	Location_Logic["Stone Tower Wizzrobe"] = Logic.istt_access && Logic.deku_mask;
+	Location_Logic["Stone Tower Boss Key Chest"] = Logic.istt_access && Logic.deku_mask;
 	Location_Logic["Twinmold Heart Container"] = Logic.istt_access && Logic.deku_mask && (Logic.giants_mask || Logic.fiercedeity_mask);
 	
 	// Songs
@@ -866,11 +870,13 @@ function update_location_logic() {
 	Location_Access["Woodfall Map Chest"] = Game.wft_access;
 	Location_Access["Woodfall Small Key Chest"] = Game.wft_access;
 	Location_Access["Woodfall Compass Chest"] = Game.wft_access;
+	Location_Access["Woodfall Boss Key Chest"] = Game.wft_access && Game.bow;
 	Location_Access["Odolwa Heart Container"] = Game.wft_access && Game.bow;
 		
 	// Snowhead Temple
 	Location_Access["Fire Arrow Chest"] = Game.sht_access && (Game.shoot_fire_arrow || (Game.hookshot && Game.magic) || Game.explosive);
 	Location_Access["Goht Heart Container"] = Game.sht_access && Game.shoot_fire_arrow;
+	Location_Access["Snowhead Boss Key Chest"] = Game.sht_access && Game.shoot_fire_arrow;
 	Location_Access["Snowhead Basement"] = Game.sht_access;
 	Location_Access["Snowhead Block Room Chest"] = Game.sht_access && (Game.magic || Game.hookshot || Game.explosive || Game.zora_mask);
 	Location_Access["Snowhead Bridge Room Chest"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.shoot_fire_arrow || Game.zora_mask);
@@ -892,6 +898,7 @@ function update_location_logic() {
 	Location_Access["Great Bay Waterwheel Room Lower"] = Game.gbt_access && Game.shoot_ice_arrow;
 	Location_Access["Great Bay Waterwheel Room Upper"] = Game.gbt_access && Game.shoot_ice_arrow;
 	Location_Access["Ice Arrow Chest"] = Game.gbt_access;
+	Location_Access["Great Bay Boss Key Chest"] = Game.gbt_access;
 	Location_Access["Great Bay Map Chest"] = Game.gbt_access;
 	Location_Access["Great Bay Compass Chest"] = Game.gbt_access;
 	Location_Access["Great Bay Small Key Chest"] = Game.gbt_access;
@@ -923,6 +930,7 @@ function update_location_logic() {
 	Location_Access["Giant's Mask Chest"] = Game.istt_access && (Game.deku_mask || Game.explosive);
 	Location_Access["Stone Tower Death Armos Maze Chest"] = Game.istt_access && (Game.deku_mask || Game.explosive);
 	Location_Access["Stone Tower Wizzrobe"] = Game.istt_access && Game.deku_mask;
+	Location_Access["Stone Tower Boss Key Chest"] = Game.istt_access && (Game.deku_mask || Game.explosive);
 	Location_Access["Twinmold Heart Container"] = Game.istt_access && (Game.deku_mask || Game.explosive);
 		
 	// Songs
@@ -1182,11 +1190,13 @@ function update_location_logic() {
 	Location_Could_Access["Woodfall Map Chest"] = CouldHave.wft_access;
 	Location_Could_Access["Woodfall Small Key Chest"] = CouldHave.wft_access;
 	Location_Could_Access["Woodfall Compass Chest"] = CouldHave.wft_access;
+	Location_Could_Access["Woodfall Boss Key Chest"] = CouldHave.wft_access && CouldHave.bow;
 	Location_Could_Access["Odolwa Heart Container"] = CouldHave.wft_access && CouldHave.bow;
 		
 	// Snowhead Temple
 	Location_Could_Access["Fire Arrow Chest"] = CouldHave.sht_access && (CouldHave.shoot_fire_arrow || (CouldHave.hookshot && CouldHave.magic) || CouldHave.explosive);
 	Location_Could_Access["Goht Heart Container"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
+	Location_Could_Access["Snowhead Boss Key Chest"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
 	Location_Could_Access["Snowhead Basement"] = CouldHave.sht_access;
 	Location_Could_Access["Snowhead Block Room Chest"] = CouldHave.sht_access && (CouldHave.magic || CouldHave.hookshot || CouldHave.explosive || CouldHave.zora_mask);
 	Location_Could_Access["Snowhead Bridge Room Chest"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.zora_mask);
@@ -1207,6 +1217,7 @@ function update_location_logic() {
 	Location_Could_Access["Great Bay Waterwheel Room Lower"] = CouldHave.gbt_access && CouldHave.shoot_ice_arrow;
 	Location_Could_Access["Great Bay Waterwheel Room Upper"] = CouldHave.gbt_access && CouldHave.shoot_ice_arrow;
 	Location_Could_Access["Ice Arrow Chest"] = CouldHave.gbt_access;
+	Location_Could_Access["Great Bay Boss Key Chest"] = CouldHave.gbt_access;
 	Location_Could_Access["Great Bay Map Chest"] = CouldHave.gbt_access;
 	Location_Could_Access["Great Bay Compass Chest"] = CouldHave.gbt_access;
 	Location_Could_Access["Great Bay Small Key Chest"] = CouldHave.gbt_access;
@@ -1238,6 +1249,7 @@ function update_location_logic() {
 	Location_Could_Access["Giant's Mask Chest"] = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive);
 	Location_Could_Access["Stone Tower Death Armos Maze Chest"] = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive);
 	Location_Could_Access["Stone Tower Wizzrobe"] = CouldHave.istt_access && CouldHave.deku_mask;
+	Location_Could_Access["Stone Tower Boss Key Chest"] = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive);
 	Location_Could_Access["Twinmold Heart Container"] = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive);
 		
 	// Songs
@@ -1497,11 +1509,13 @@ function update_location_logic() {
 	Location_Could_Peek["Woodfall Map Chest"] = CouldHave.wft_access;
 	Location_Could_Peek["Woodfall Small Key Chest"] = CouldHave.wft_access;
 	Location_Could_Peek["Woodfall Compass Chest"] = CouldHave.wft_access;
+	Location_Could_Peek["Woodfall Boss Key Chest"] = CouldHave.wft_access && CouldHave.bow;
 	Location_Could_Peek["Odolwa Heart Container"] = CouldHave.wft_access && CouldHave.bow;
 		
 	// Snowhead Temple
 	Location_Could_Peek["Fire Arrow Chest"] = CouldHave.sht_access && (CouldHave.shoot_fire_arrow || (CouldHave.hookshot && CouldHave.magic) || CouldHave.explosive);
 	Location_Could_Peek["Goht Heart Container"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
+	Location_Could_Peek["Snowhead Boss Key Chest"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
 	Location_Could_Peek["Snowhead Basement"] = CouldHave.sht_access;
 	Location_Could_Peek["Snowhead Block Room Chest"] = CouldHave.sht_access && (CouldHave.magic || CouldHave.hookshot || CouldHave.explosive || CouldHave.zora_mask);
 	Location_Could_Peek["Snowhead Bridge Room Chest"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.zora_mask);
@@ -1523,6 +1537,7 @@ function update_location_logic() {
 	Location_Could_Peek["Great Bay Waterwheel Room Lower"] = CouldHave.gbt_access && CouldHave.shoot_ice_arrow;
 	Location_Could_Peek["Great Bay Waterwheel Room Upper"] = CouldHave.gbt_access && CouldHave.shoot_ice_arrow;
 	Location_Could_Peek["Ice Arrow Chest"] = CouldHave.gbt_access;
+	Location_Could_Peek["Great Bay Boss Key Chest"] = CouldHave.gbt_access;
 	Location_Could_Peek["Great Bay Map Chest"] = CouldHave.gbt_access;
 	Location_Could_Peek["Great Bay Compass Chest"] = CouldHave.gbt_access;
 	Location_Could_Peek["Great Bay Small Key Chest"] = CouldHave.gbt_access;
@@ -1554,6 +1569,7 @@ function update_location_logic() {
 	Location_Could_Peek["Giant's Mask Chest"] = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive);
 	Location_Could_Peek["Stone Tower Death Armos Maze Chest"] = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive);
 	Location_Could_Peek["Stone Tower Wizzrobe"] = CouldHave.istt_access && CouldHave.deku_mask;
+	Location_Could_Peek["Stone Tower Boss Key Chest"] = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive);
 	Location_Could_Peek["Twinmold Heart Container"] = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive);
 		
 	// Songs
@@ -1570,45 +1586,47 @@ function update_location_logic() {
 	
 	
 	// CSMC changes
-	Location_Access["South Clock Town Final Day Chest"] = true;
-	Location_Access["Bombers' Hideout Chest"] = true;
-	Location_Access["Termina Field Underwater Chest"] = true;
-	Location_Access["Termina Field Stump Chest"] = true; 
-	Location_Access["Bean Grotto"] = Game.poison_swamp_access && Game.deku_mask; 
-	Location_Access["Hot Spring Water Grotto"] = Game.north_access && (Game.shoot_fire_arrow || Game.hot_spring_water || Game.snowhead_clear);
-	Location_Access["Twin Islands Underwater Ramp Chest"] = Game.north_access;
-	Location_Access["Twin Islands Cave Chest"] = Game.snowhead_clear;
-	Location_Access["Lens Cave Rock Chest"] = Game.north_access;
-	Location_Access["Zora Cape Ledge Without Tree Chest"] = Game.west_access;
-	Location_Access["Zora Cape Underwater Chest"] = Game.west_access;
-	Location_Access["Pirates' Fortress Interior Upper Chest"] = Game.pirates_fortress_access && (Game.hookshot || Game.goron_mask);
-	Location_Access["Path to Ikana Pillar Chest"] = true;
-	Location_Access["Captain Keeta's Chest"] = Game.ikana_graveyard_access;
-	Location_Access["Snowhead Main Room Wall"] = Game.sht_access && ((Game.hookshot && Game.magic) || Game.shoot_fire_arrow || Game.explosive);
-	Location_Access["Snowhead Map Room Ledge"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.shoot_fire_arrow || Game.zora_mask);
-	Location_Access["Snowhead Twin Block"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.magic || Game.zora_mask);
-	Location_Access["Snowhead Ice Puzzle"] = Game.sht_access;
-	Location_Access["Stone Tower Compass Chest"] = Game.stt_access;
-	Location_Access["Stone Tower Map Chest"] = Game.stt_access && ((Game.explosive && Game.goron_mask) || (Game.zora_mask && Game.shoot_light_arrow));
-	
-	Location_Could_Peek["South Clock Town Final Day Chest"] = true;
-	Location_Could_Peek["Bombers' Hideout Chest"] = true;
-	Location_Could_Peek["Termina Field Underwater Chest"] = true;
-	Location_Could_Peek["Termina Field Stump Chest"] = true; 
-	Location_Could_Peek["Bean Grotto"] = CouldHave.poison_swamp_access && CouldHave.deku_mask; 
-	Location_Could_Peek["Hot Spring Water Grotto"] = CouldHave.north_access && (CouldHave.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
-	Location_Could_Peek["Twin Islands Underwater Ramp Chest"] = CouldHave.north_access;
-	Location_Could_Peek["Twin Islands Cave Chest"] = CouldHave.snowhead_clear;
-	Location_Could_Peek["Lens Cave Rock Chest"] = CouldHave.north_access;
-	Location_Could_Peek["Zora Cape Ledge Without Tree Chest"] = CouldHave.west_access;
-	Location_Could_Peek["Zora Cape Underwater Chest"] = CouldHave.west_access;
-	Location_Could_Peek["Pirates' Fortress Interior Upper Chest"] = CouldHave.pirates_fortress_access && (CouldHave.hookshot || CouldHave.goron_mask);
-	Location_Could_Peek["Path to Ikana Pillar Chest"] = true;
-	Location_Could_Peek["Captain Keeta's Chest"] = CouldHave.ikana_graveyard_access;
-	Location_Could_Peek["Snowhead Main Room Wall"] = CouldHave.sht_access && ((CouldHave.hookshot && CouldHave.magic) || CouldHave.shoot_fire_arrow || CouldHave.explosive);
-	Location_Could_Peek["Snowhead Twin Block"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.magic || CouldHave.zora_mask);
-	Location_Could_Peek["Snowhead Map Room Ledge"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.zora_mask);
-	Location_Could_Peek["Snowhead Ice Puzzle"] = CouldHave.sht_access;
-	Location_Could_Peek["Stone Tower Compass Chest"] = CouldHave.stt_access;
-	Location_Could_Peek["Stone Tower Map Chest"] = CouldHave.stt_access && ((CouldHave.explosive && CouldHave.goron_mask) || (CouldHave.zora_mask && CouldHave.shoot_light_arrow));
+	if(document.getElementById("settings_option").value != "SCRUB") {
+		Location_Access["South Clock Town Final Day Chest"] = true;
+		Location_Access["Bombers' Hideout Chest"] = true;
+		Location_Access["Termina Field Underwater Chest"] = true;
+		Location_Access["Termina Field Stump Chest"] = true; 
+		Location_Access["Bean Grotto"] = Game.poison_swamp_access && Game.deku_mask; 
+		Location_Access["Hot Spring Water Grotto"] = Game.north_access && (Game.shoot_fire_arrow || Game.hot_spring_water || Game.snowhead_clear);
+		Location_Access["Twin Islands Underwater Ramp Chest"] = Game.north_access;
+		Location_Access["Twin Islands Cave Chest"] = Game.snowhead_clear;
+		Location_Access["Lens Cave Rock Chest"] = Game.north_access;
+		Location_Access["Zora Cape Ledge Without Tree Chest"] = Game.west_access;
+		Location_Access["Zora Cape Underwater Chest"] = Game.west_access;
+		Location_Access["Pirates' Fortress Interior Upper Chest"] = Game.pirates_fortress_access && (Game.hookshot || Game.goron_mask);
+		Location_Access["Path to Ikana Pillar Chest"] = true;
+		Location_Access["Captain Keeta's Chest"] = Game.ikana_graveyard_access;
+		Location_Access["Snowhead Main Room Wall"] = Game.sht_access && ((Game.hookshot && Game.magic) || Game.shoot_fire_arrow || Game.explosive);
+		Location_Access["Snowhead Map Room Ledge"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.shoot_fire_arrow || Game.zora_mask);
+		Location_Access["Snowhead Twin Block"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.magic || Game.zora_mask);
+		Location_Access["Snowhead Ice Puzzle"] = Game.sht_access;
+		Location_Access["Stone Tower Compass Chest"] = Game.stt_access;
+		Location_Access["Stone Tower Map Chest"] = Game.stt_access && ((Game.explosive && Game.goron_mask) || (Game.zora_mask && Game.shoot_light_arrow));
+		
+		Location_Could_Peek["South Clock Town Final Day Chest"] = true;
+		Location_Could_Peek["Bombers' Hideout Chest"] = true;
+		Location_Could_Peek["Termina Field Underwater Chest"] = true;
+		Location_Could_Peek["Termina Field Stump Chest"] = true; 
+		Location_Could_Peek["Bean Grotto"] = CouldHave.poison_swamp_access && CouldHave.deku_mask; 
+		Location_Could_Peek["Hot Spring Water Grotto"] = CouldHave.north_access && (CouldHave.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
+		Location_Could_Peek["Twin Islands Underwater Ramp Chest"] = CouldHave.north_access;
+		Location_Could_Peek["Twin Islands Cave Chest"] = CouldHave.snowhead_clear;
+		Location_Could_Peek["Lens Cave Rock Chest"] = CouldHave.north_access;
+		Location_Could_Peek["Zora Cape Ledge Without Tree Chest"] = CouldHave.west_access;
+		Location_Could_Peek["Zora Cape Underwater Chest"] = CouldHave.west_access;
+		Location_Could_Peek["Pirates' Fortress Interior Upper Chest"] = CouldHave.pirates_fortress_access && (CouldHave.hookshot || CouldHave.goron_mask);
+		Location_Could_Peek["Path to Ikana Pillar Chest"] = true;
+		Location_Could_Peek["Captain Keeta's Chest"] = CouldHave.ikana_graveyard_access;
+		Location_Could_Peek["Snowhead Main Room Wall"] = CouldHave.sht_access && ((CouldHave.hookshot && CouldHave.magic) || CouldHave.shoot_fire_arrow || CouldHave.explosive);
+		Location_Could_Peek["Snowhead Twin Block"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.magic || CouldHave.zora_mask);
+		Location_Could_Peek["Snowhead Map Room Ledge"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.zora_mask);
+		Location_Could_Peek["Snowhead Ice Puzzle"] = CouldHave.sht_access;
+		Location_Could_Peek["Stone Tower Compass Chest"] = CouldHave.stt_access;
+		Location_Could_Peek["Stone Tower Map Chest"] = CouldHave.stt_access && ((CouldHave.explosive && CouldHave.goron_mask) || (CouldHave.zora_mask && CouldHave.shoot_light_arrow));
+	}
 }

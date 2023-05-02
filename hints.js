@@ -54,7 +54,7 @@ function woth_and_barren_processing() {
 			}
 		}
 	}
-	for (var i = 1; i <= 3; i++) {
+	for (var i = 1; i <= 4; i++) {
 		var str2 = document.getElementById("barren_input" + i).value;
 		str2 = str2.replace("2",""); // if there's a 2, ignore it
 		

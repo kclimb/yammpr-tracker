@@ -130,6 +130,7 @@ function update_checks() {
 		if (document.getElementById("settings_option").value == "BLITZ" && blitz_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S3" && s3_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S4" && s4_skip_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "SCRUB" && scrubs_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("gossips_option").value != "ON" && Locations[i].startsWith("h_")) {continue;}
 		
 		var key = Locations[i];
@@ -407,12 +408,6 @@ var temp_img = document.getElementById("bomb1_img");
 		temp_img.src = Game.sword1_img;
 		temp_img.style.opacity =1;
 	}
-	
-	var temp_img = document.getElementById("mirror_shield_img");
-	if(Game.mirror_shield)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
 	
 	var temp_img = document.getElementById("wallet1_img");
 	if (Game.giants_wallet) {
@@ -744,9 +739,16 @@ function update_settings() {
 	if(document.getElementById("settings_option").value == "BLITZ") {
 		document.getElementById("woth_input4").style.display = "inline";
 		document.getElementById("woth_input5").style.display = "inline";
+		document.getElementById("barren_input4").style.display = "none";
+	}
+	else if(document.getElementById("settings_option").value == "SCRUB") {
+		document.getElementById("woth_input4").style.display = "none";
+		document.getElementById("woth_input5").style.display = "none";
+		document.getElementById("barren_input4").style.display = "inline";
 	}
 	else {
 		document.getElementById("woth_input4").style.display = "none";
 		document.getElementById("woth_input5").style.display = "none";
+		document.getElementById("barren_input4").style.display = "none";
 	}
 }
