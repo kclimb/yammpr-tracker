@@ -95,7 +95,7 @@ var Locations = [
 	"Inverted Stone Tower Left Chest", "Inverted Stone Tower Middle Chest", "Inverted Stone Tower Right Chest",
 	
 	// Woodfall Temple
-	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Map Chest", "Woodfall Boss Key Chest", "Hero's Bow Chest", "Woodfall Compass Chest", "Woodfall Main Room Switch", "Woodfall Dark Room", "Odolwa Heart Container",  
+	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Map Chest", "Woodfall Boss Key Chest", "Hero's Bow Chest", "Woodfall Main Room Switch", "Woodfall Compass Chest", "Woodfall Dark Room", "Odolwa Heart Container",  
 	
 	// Snowhead Temple
 	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Fire Arrow Chest", "Snowhead Pillar Freezards", "Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement", "Snowhead Boss Key Chest", "Goht Heart Container",
