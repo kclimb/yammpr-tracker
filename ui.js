@@ -130,7 +130,7 @@ function update_checks() {
 		if (document.getElementById("settings_option").value == "BLITZ" && blitz_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S3" && s3_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S4" && s4_skip_checks.includes(Locations[i])) {continue;}
-		if (document.getElementById("settings_option").value == "SCRUB" && scrubs_skip_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "SCRUBS" && scrubs_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("gossips_option").value != "ON" && Locations[i].startsWith("h_")) {continue;}
 		
 		var key = Locations[i];
@@ -741,7 +741,7 @@ function update_settings() {
 		document.getElementById("woth_input5").style.display = "inline";
 		document.getElementById("barren_input4").style.display = "none";
 	}
-	else if(document.getElementById("settings_option").value == "SCRUB") {
+	else if(document.getElementById("settings_option").value == "SCRUBS") {
 		document.getElementById("woth_input4").style.display = "none";
 		document.getElementById("woth_input5").style.display = "none";
 		document.getElementById("barren_input4").style.display = "inline";

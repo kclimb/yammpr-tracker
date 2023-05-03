@@ -23,17 +23,17 @@
 				<button id="simControl"onclick="document.getElementById('fileInput').click();" >Play the Sim</button> 
 				<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" /><br>
 				<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br><br>
-				<label class="settingsLabels" for="settings_option">MODE</label>
+				<label class="settingsLabels" for="settings_option">Mode</label>
 				<select class="settingsOptions" id="settings_option">
-					<option value="SCRUB">SCRUB</option>
-					<option value="BLITZ">BLITZ</option>
+					<option value="SCRUBS">Scrubs</option>
+					<option value="BLITZ">Blitz</option>
 					<option value="S4">S4</option>
 					<option value="S3">S3</option>
 				</select><br><br class="half_break">
-				<label class="settingsLabels" for="gossips_option">GOSSIPS</label>
+				<label class="settingsLabels" for="gossips_option">Gossips</label>
 				<select class="settingsOptions" id="gossips_option">
-					<option value="OFF">OFF</option>
-					<option value="ON">ON</option>
+					<option value="OFF">Off</option>
+					<option value="ON">On</option>
 				</select><br>
 				<!--<label class="settingsLabels" for="small_keys_option">SMALL KEYS</label>
 				<select class="settingsOptions" id="small_keys_option">

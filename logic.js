@@ -885,7 +885,7 @@ function update_location_logic() {
 	Location_Access["Snowhead Icicle Room Chest"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.shoot_fire_arrow);
 	Location_Access["Snowhead Icicle Room Wall"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.shoot_fire_arrow);
 	Location_Access["Snowhead Main Room Wall"] = Game.sht_access && ((Game.hookshot && Game.magic) || Game.shoot_fire_arrow);
-	Location_Access["Snowhead Map Chest"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.shoot_fire_arrow || Game.zora_mask);
+	Location_Access["Snowhead Map Chest"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.shoot_fire_arrow || Game.zora_mask || Game.magic);
 	Location_Access["Snowhead Map Room Ledge"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.shoot_fire_arrow);
 	Location_Access["Snowhead Pillar Freezards"] = Game.sht_access && Game.shoot_fire_arrow;
 	Location_Access["Snowhead Twin Block"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.shoot_fire_arrow || Game.zora_mask);
@@ -1204,7 +1204,7 @@ function update_location_logic() {
 	Location_Could_Access["Snowhead Icicle Room Chest"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow);
 	Location_Could_Access["Snowhead Icicle Room Wall"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow);
 	Location_Could_Access["Snowhead Main Room Wall"] = CouldHave.sht_access && ((CouldHave.hookshot && CouldHave.magic) || CouldHave.shoot_fire_arrow);
-	Location_Could_Access["Snowhead Map Chest"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.zora_mask);
+	Location_Could_Access["Snowhead Map Chest"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.zora_mask || CouldHave.magic);
 	Location_Could_Access["Snowhead Map Room Ledge"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow);
 	Location_Could_Access["Snowhead Pillar Freezards"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
 	Location_Could_Access["Snowhead Twin Block"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.zora_mask);
@@ -1524,7 +1524,7 @@ function update_location_logic() {
 	Location_Could_Peek["Snowhead Icicle Room Chest"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow);
 	Location_Could_Peek["Snowhead Icicle Room Wall"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow);
 	Location_Could_Peek["Snowhead Main Room Wall"] = CouldHave.sht_access && ((CouldHave.hookshot && CouldHave.magic) || CouldHave.shoot_fire_arrow);
-	Location_Could_Peek["Snowhead Map Chest"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.zora_mask);
+	Location_Could_Peek["Snowhead Map Chest"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.zora_mask || CouldHave.magic);
 	Location_Could_Peek["Snowhead Map Room Ledge"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow);
 	Location_Could_Peek["Snowhead Pillar Freezards"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
 	Location_Could_Peek["Snowhead Twin Block"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.zora_mask);
@@ -1586,7 +1586,7 @@ function update_location_logic() {
 	
 	
 	// CSMC changes
-	if(document.getElementById("settings_option").value != "SCRUB") {
+	if(document.getElementById("settings_option").value != "SCRUBS") {
 		Location_Access["South Clock Town Final Day Chest"] = true;
 		Location_Access["Bombers' Hideout Chest"] = true;
 		Location_Access["Termina Field Underwater Chest"] = true;
