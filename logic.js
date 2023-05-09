@@ -577,7 +577,7 @@ function update_location_logic() {
 	Location_Logic["Great Bay Waterwheel Room Lower"] = Logic.gbt_access && Logic.shoot_ice_arrow;
 	Location_Logic["Great Bay Waterwheel Room Upper"] = Logic.gbt_access && Logic.shoot_ice_arrow;
 	Location_Logic["Ice Arrow Chest"] = Logic.gbt_access;
-	Location_Logic["Great Bay Boss Key Chest"] = Logic.gbt_access;
+	Location_Logic["Great Bay Boss Key Chest"] = Logic.gbt_access && Logic.shoot_ice_arrow && Logic.shoot_fire_arrow;
 	Location_Logic["Great Bay Map Chest"] = Logic.gbt_access;
 	Location_Logic["Great Bay Compass Chest"] = Logic.gbt_access;
 	Location_Logic["Great Bay Small Key Chest"] = Logic.gbt_access;
