@@ -164,7 +164,7 @@ function update_checks() {
 				Game.checks_remaining += 1;
 			
 			if(Location_Logic[key] == true) {
-				if (Location_Access[key] == true) {
+				if (Location_Access[key] == true && Location_Obtain[key]) {
 					document.getElementById(str).className= "logic_check_text"; 
 					document.getElementById(str).style.fontWeight = "bold";
 					document.getElementById(str).style.opacity = 1;

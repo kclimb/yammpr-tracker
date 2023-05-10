@@ -222,6 +222,7 @@ var Game = {};
 var CouldHave={};
 var Location_Logic = {};
 var Location_Access = {};
+var Location_Obtain = {};
 var Location_Could_Access={};
 var Location_Could_Peek={};
 var lastCheck = ["start"];
