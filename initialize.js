@@ -168,15 +168,15 @@ for (var i = 0; i < Locations.length; i++) {
 	
 	if(i == AreaIndexes[35]+16) {
 		var elem = document.createElement("small"); 
-			elem.innerHTML = "ISTT"; 
-			elem.className = "area_name";
-			elem.id = "title_stt";
-			elem.className = "area_titles";
-			
-			background = "";
-			
-			parent.appendChild(elem); 
-			parent.appendChild(document.createElement("br")); 
+		elem.innerHTML = "ISTT"; 
+		elem.className = "area_name";
+		elem.id = "title_stt";
+		elem.className = "area_titles";
+		
+		background = "";
+		
+		parent.appendChild(elem); 
+		parent.appendChild(document.createElement("br")); 
 	}
 	
 	var elem = document.createElement("input"); 

@@ -373,7 +373,8 @@ function woth_and_barren_processing() {
 				
 				if(Check[Locations[j]] == "unknown") {
 					//document.getElementById("text_" + Locations[j]).style.border = "solid 1px red";
-					document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));
+					//document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));
+					document.getElementById(Locations[j]).value = "x";
 				}
 			}
 			
@@ -385,15 +386,18 @@ function woth_and_barren_processing() {
 			
 			if(AreaNames[i] == "Milk Road" && Check["Keaton Quiz"] == "unknown") {
 				//document.getElementById("text_" + "Keaton Quiz").style.border = "solid 1px red";
-				document.getElementById("text_" + "Keaton Quiz").dispatchEvent(new Event('mousedown'));
+				//document.getElementById("text_" + "Keaton Quiz").dispatchEvent(new Event('mousedown'));
+				document.getElementById("Keaton Quiz").value = "x";
 			}
 			if(AreaNames[i] == "NCT" && Check["Woodfall Map Purchase"] == "unknown") {
 				//document.getElementById("text_" + "Woodfall Map Purchase").style.border = "solid 1px red";
-				document.getElementById("text_" + "Woodfall Map Purchase").dispatchEvent(new Event('mousedown'));
+				//document.getElementById("text_" + "Woodfall Map Purchase").dispatchEvent(new Event('mousedown'));
+				document.getElementById("Woodfall Map Purchase").value = "x";
 			}
 			if((AreaNames[i] == "NCT" || AreaNames[i] == "ECT") && Check["Postbox"] == "unknown") {
 				//document.getElementById("text_" + "Postbox").style.border = "solid 1px red";
-				document.getElementById("text_" + "Postbox").dispatchEvent(new Event('mousedown'));
+				//document.getElementById("text_" + "Postbox").dispatchEvent(new Event('mousedown'));
+				document.getElementById("Postbox").value = "x";
 			}
 		}
 	}
