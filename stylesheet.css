@@ -7,8 +7,8 @@ overflow: scroll;
 -moz-user-select: none;
 -ms-user-select: none;
 user-select: none;
-background-color: #222324; /* #576166; */
-color:whitesmoke;
+background-color: #576166; /* #576166; */
+color:black;
 font-family:sans-sarif;
 }
 ::-webkit-scrollbar {
