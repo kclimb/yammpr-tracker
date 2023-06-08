@@ -188,6 +188,7 @@ function simProcessHint(gossip) {
 			hint = hint.replace("...", "");
 			hint = hint.replace("Town Archery 1", "Town Archery #1");
 			hint = hint.replace("Swamp Archery 1", "Swamp Archery #1");
+			hint = hint.replace("Swamp Archery 2", "Swamp Archery #2");
 			hint = hint.replace("Bank Reward 3", "Bank Reward #3");
 			hint = hint.replace("Beaver Race 1", "Beaver Race #1");
 			

@@ -378,6 +378,7 @@ function update_location_logic() {
 		
 	// Road to Southern Swamp
 	Location_Logic["Swamp Archery #1"] = Logic.bow;
+	Location_Logic["Swamp Archery #2"] = Logic.bow;
 	Location_Logic["Path to Swamp Grotto"] = true;
 	Location_Logic["Path to Swamp Tree"] = (Logic.deku_mask && Logic.magic) || Logic.bow || Logic.hookshot || Logic.zora_mask;
 	Location_Logic["Woodfall Map Purchase"] = (Logic.deku_mask && Logic.magic) || Logic.zora_mask || Logic.bow || Logic.hookshot;
@@ -699,6 +700,7 @@ function update_location_logic() {
 		
 	// Road to Southern Swamp
 	Location_Access["Swamp Archery #1"] = Game.bow;
+	Location_Access["Swamp Archery #2"] = Game.bow;
 	Location_Access["Path to Swamp Grotto"] = true;
 	Location_Access["Path to Swamp Tree"] = true;
 	Location_Access["Woodfall Map Purchase"] = true;
@@ -1019,6 +1021,7 @@ function update_location_logic() {
 		
 	// Road to Southern Swamp
 	Location_Obtain["Swamp Archery #1"] = Game.bow;
+	Location_Obtain["Swamp Archery #2"] = Game.bow;
 	Location_Obtain["Path to Swamp Grotto"] = true;
 	Location_Obtain["Path to Swamp Tree"] = true;
 	Location_Obtain["Woodfall Map Purchase"] = true;
@@ -1338,6 +1341,7 @@ function update_location_logic() {
 		
 	// Road to Southern Swamp
 	Location_Could_Access["Swamp Archery #1"] = CouldHave.bow;
+	Location_Could_Access["Swamp Archery #2"] = CouldHave.bow;
 	Location_Could_Access["Path to Swamp Grotto"] = true;
 	Location_Could_Access["Path to Swamp Tree"] = true;
 	Location_Could_Access["Woodfall Map Purchase"] = true;
@@ -1657,6 +1661,7 @@ function update_location_logic() {
 		
 	// Road to Southern Swamp
 	Location_Could_Peek["Swamp Archery #1"] = CouldHave.bow;
+	Location_Could_Peek["Swamp Archery #2"] = CouldHave.bow;
 	Location_Could_Peek["Path to Swamp Grotto"] = true;
 	Location_Could_Peek["Path to Swamp Tree"] = true;
 	Location_Could_Peek["Woodfall Map Purchase"] = true;

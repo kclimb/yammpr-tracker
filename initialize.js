@@ -1,15 +1,15 @@
 var AreaIndexes = [
-	0,0,5,13,22,26,38,45,67,73,84,88,91,96,106,116,121,
-	131,133,143,151,158,161,165,170,173,177,182,190,195,198,199,202,
-	211,226,238,263
+	0,0,5,13,22,26,38,45,67,74,85,89,92,97,107,117,122,
+	132,134,144,152,159,162,166,171,174,178,183,191,196,199,200,203,
+	212,227,239,264
 ];
 var SongIndexes = [
-	264/*skull kid*/,1000,1000,1000,1000,1000,1000,1000,1000,266/*swamp statue*/,265/*monkey song*/,
-	1000,1000,268/*eponas*/,1000,1000,269/*goron*/,1000,270/*eggs*/,
-	1000,1000,1000,1000,1000,1000,1000,271/*grave*/,1000,1000,1000,
-	272/*castle*/,1000,1000,1000,1000,1000
+	265/*skull kid*/,1000,1000,1000,1000,1000,1000,1000,1000,267/*swamp statue*/,266/*monkey song*/,
+	1000,1000,269/*eponas*/,1000,1000,270/*goron*/,1000,271/*eggs*/,
+	1000,1000,1000,1000,1000,1000,1000,272/*grave*/,1000,1000,1000,
+	273/*castle*/,1000,1000,1000,1000,1000
 ];
-var lastItem = 263;
+var lastItem = 264;
 
 var AreaNames = [
 	"", "Clock Tower", "SCT", "NCT", "WCT", "Laundry", "ECT", "Stock Pot", "Field",
@@ -83,9 +83,9 @@ var inputs = [
 	"x", "bow", "fir", "ice", "lig", "moo", "lan", "swa", "mou", "oce", "bom", "bea", "roo", "spe", "pow", "pic", "len", "hoo", "gfs", "let", "pen", "bot", "gol", "pos", "all", "bla", "sto", "gre", "dek", "kea", "bre", "bun", "don", "sce", "gor", "rom", "cir", "kaf", "cou", "tru", "zor", "kam", "gib", "gar", "cap", "gia", "fie", "swo", "mir", "mag", "wal", "soh", "epo", "sos", "son", "lul", "nov", "ele", "oat"
 ];
 
-var hintInputs = ["swa", "oce", "ali", "cre", "but", "boa", "dam", "rac", "fis", "ban", "bea", "gos", "sea", "sm2", "mid", "pos", "ka1", "ka2", "ka3", "poe", "hun", "lef", "pam", "gor", "gro", "dog", "iro", "tar", "sar", "bom", "hon", "pla", "bro", "dar", "lig", "ice", "fir", "hoo"];
+var hintInputs = ["swa", "oce", "ali", "cre", "but", "boa", "dam", "rac", "fis", "ban", "bea", "gos", "sea", "sm2", "mid", "pos", "ka1", "ka2", "ka3", "poe", "hun", "lef", "pam", "gor", "gro", "dog", "iro", "tar", "sar", "bom", "hon", "pla", "bro", "dar", "lig", "ice", "fir", "hoo", "kam", "shi", "spi"];
 
-var hintIndexes = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Bank Reward #3", "Beaver Race #1", "Gossip Stones", "Seahorses", "Mountain Smithy Day 2", "Midnight Meeting", "Postman's Freedom Reward", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2", "Poe Hut", "Hungry Goron", "Well Left Path Chest", "Pamela's Father", "Gorman", "Grog", "Dog Race", "Iron Knuckle Chest", "Town Archery #1", "Swamp Archery #1", "Bombers' Hide and Seek", "Honey and Darling Any Day", "Deku Playground Any Day", "Gorman Bros Race", "Woodfall Dark Room", "Light Arrow Chest", "Ice Arrow Chest", "Fire Arrow Chest", "Hookshot Chest"];
+var hintIndexes = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Bank Reward #3", "Beaver Race #1", "Gossip Stones", "Seahorses", "Mountain Smithy Day 2", "Midnight Meeting", "Postman's Freedom Reward", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2", "Poe Hut", "Hungry Goron", "Well Left Path Chest", "Pamela's Father", "Gorman", "Grog", "Dog Race", "Iron Knuckle Chest", "Town Archery #1", "Swamp Archery #1", "Bombers' Hide and Seek", "Honey and Darling Any Day", "Deku Playground Any Day", "Gorman Bros Race", "Woodfall Dark Room", "Light Arrow Chest", "Ice Arrow Chest", "Fire Arrow Chest", "Hookshot Chest", "Kamaro", "Invisible Soldier", "Ocean Spider House Chest"];
 
 var hintStrings1 = ["It appears ", "They say ", "Apparently ", "I hear ", "It seems "];
 var hintStrings2 = [" holds ", " brings ", " possesses ", " conceals ", " yields ", " leads to "];
@@ -274,6 +274,11 @@ window.onclick = function(event) {
   if (event.target == modal) {
 	modal.style.display = "none";
   }
+}
+
+window.onbeforeunload = popup;
+function popup() {
+  return '';
 }
 
 setInterval(Update,250); 
