@@ -246,7 +246,7 @@ var s3_skip_checks = [
 var s4_skip_checks = [
 	"Swamp Music Statue", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", "Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
 	
-	"Woodfall Main Room Switch", "Woodfall Dark Room", 
+	"Woodfall Entrance Platform", "Woodfall Main Room Switch", "Woodfall Dark Room", 
 	
 	"Snowhead Map Room Ledge", "Snowhead Pillar Freezards", "Snowhead Twin Block", "Snowhead Ice Puzzle", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement", 
 	
