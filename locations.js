@@ -98,7 +98,7 @@ var Locations = [
 	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Map Chest", "Woodfall Boss Key Chest", "Hero's Bow Chest", "Woodfall Main Room Switch", "Woodfall Compass Chest", "Woodfall Dark Room", "Odolwa Heart Container",  
 	
 	// Snowhead Temple
-	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Fire Arrow Chest", "Snowhead Pillar Freezards", "Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement", "Snowhead Boss Key Chest", "Goht Heart Container",
+	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Snowhead Pillar Freezards", "Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Fire Arrow Chest", "Snowhead Basement", "Snowhead Boss Key Chest", "Goht Heart Container",
 	
 	// Great Bay Temple
 	"Great Bay Entrance Torches", "Great Bay Green Valve","Great Bay Map Chest", "Great Bay Bio Babas", "Great Bay Boss Key Chest", "Great Bay Compass Chest", "Great Bay Small Key Chest", "Ice Arrow Chest", "Great Bay Waterwheel Room Upper", "Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Gyorg Heart Container", 
@@ -211,7 +211,7 @@ var Names = [
 	"Entrance", "Near BK", "Snappers", "Boss Key", "Dinolfos", "Switch", "Dragonfly", "Dark", "Odolwa",
 	
 	// Snowhead Temple
-	"Bridge", "Map", "Map Ledge", "Wizzrobe", "Pillars", "Twin Lower", "Twin Upper", "Compass", "Puzzle", "Icicle", "Icicle Wall", "Alcove", "Basement", "Boss Key", "Goht",
+	"Bridge", "Map", "Map Ledge", "Pillars", "Twin Lower", "Twin Upper", "Compass", "Puzzle", "Icicle", "Icicle Wall", "Wizzrobe", "Alcove", "Basement", "Boss Key", "Goht",
 	
 	// Great Bay Temple
 	"Torches", "Green", "Map", "BioBabas", "Boss Key", "Compass", "Underwater", "Wart", "Wheel 1", "Wheel 2", "Seesaw", "Gyorg",
