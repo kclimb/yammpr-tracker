@@ -160,7 +160,7 @@ function update_checks() {
 				document.getElementById(str2).style.display = "inline-block";
 			}
 			
-			if(SongItems.indexOf(key) < 0)
+			if(SongItems.indexOf(key) < 0 && Check[key] == "unknown")
 				Game.checks_remaining += 1;
 			
 			if(Location_Logic[key] == true) {
@@ -179,7 +179,7 @@ function update_checks() {
 					;
 				else {
 					document.getElementById(str).innerHTML = backUp[i];
-					if(document.getElementById(key).style.display != "none") {
+					if(Check[key] == "unknown") {
 						if(SongItems.indexOf(key) < 0)
 							Game.logically_accessible += 1;
 					}
