@@ -373,7 +373,6 @@ function woth_and_barren_processing() {
 				
 				if(Check[Locations[j]] == "unknown") {
 					if(AreaNames[i] == "Gor Village" && Locations[j] == "Biggest Bomb Bag Purchase") {
-						document.getElementById("text_" + "Biggest Bomb Bag Purchase").style.border = "solid 1px red";
 						continue;
 					}
 					
