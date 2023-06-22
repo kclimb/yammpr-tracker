@@ -372,15 +372,22 @@ function woth_and_barren_processing() {
 					continue;
 				
 				if(Check[Locations[j]] == "unknown") {
+					if(AreaNames[i] == "Gor Village" && Locations[j] == "Biggest Bomb Bag Purchase") {
+						document.getElementById("text_" + "Biggest Bomb Bag Purchase").style.border = "solid 1px red";
+						continue;
+					}
+					
 					//document.getElementById("text_" + Locations[j]).style.border = "solid 1px red";
 					//document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));
 					document.getElementById(Locations[j]).value = "x";
 				}
 			}
 			
-			if(SongIndexes[i-1] != 1000) {
-				if(Check[Locations[SongIndexes[i-1]]] == "unknown") {
-					document.getElementById("text_" + Locations[SongIndexes[i-1]]).style.border = "solid 1px red";
+			if(Area[i] == "barren") {
+				if(SongIndexes[i-1] != 1000) {
+					if(Check[Locations[SongIndexes[i-1]]] == "unknown") {
+						document.getElementById("text_" + Locations[SongIndexes[i-1]]).style.border = "solid 1px red";
+					}
 				}
 			}
 			
