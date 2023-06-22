@@ -301,8 +301,15 @@ function woth_and_barren_processing() {
 					if(ItemLocation[Items[k]] == "Boss Blue Warp" && ((AreaNames[i] == "WFT" && Items[k] != "sonata") || (AreaNames[i] == "SHT" && Items[k] != "lullaby") || (AreaNames[i] == "GBT" && Items[k] != "nwbn") || (AreaNames[i] == "STT" && Items[k] != "elegy")))
 						blue_warp_song = true;
 					
+					var biggest_bomb_bag_purchase = false;
+					if(ItemLocation[Items[k]] == "Biggest Bomb Bag Purchase" && ((AreaNames[i] == "Swamp" && Items[k] != "deku_mask" && Items[k] != "moons_tear" && Items[k] != "land_title_deed" && Items[k] != "swamp_title_deed") || (AreaNames[i] == "Gor Village" && Items[k] != "goron_mask")))
+						biggest_bomb_bag_purchase = true;
+					
+					if(ItemLocation[Items[k]] == "Biggest Bomb Bag Purchase" && ((AreaNames[i] == "Swamp" && ((Items[k] == "deku_mask") || (Items[k] == "moons_tear") || (Items[k] == "land_title_deed") || (Items[k] == "swamp_title_deed"))) || (AreaNames[i] == "Gor Village" && Items[k] == "goron_mask")))
+						continue;
+					
 					if ((Locations.indexOf(ItemLocation[Items[k]]) >= AreaIndexes[i-1] && Locations.indexOf(ItemLocation[Items[k]]) < AreaIndexes[i]) 
-					|| Locations.indexOf(ItemLocation[Items[k]]) == SongIndexes[i-1] || blue_warp_song) 
+					|| Locations.indexOf(ItemLocation[Items[k]]) == SongIndexes[i-1] || blue_warp_song || biggest_bomb_bag_purchase) 
 					{
 						document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML = "<img id = 'wothMajor" + wothNumber + "_" + k + "'" + " class = 'wothMajorImages' src=" + ItemImages[k] + " data-item = '" + Items[k] + "' onmousedown = 'markWothItem(this)'>";
 						
@@ -350,6 +357,9 @@ function woth_and_barren_processing() {
 								}
 							}
 						}
+						
+						if(biggest_bomb_bag_purchase && AreaNames[i] == "Swamp")
+							document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += " (move goron village scrub)";
 						
 						document.getElementById("woth" + wothNumber + "_text" + wothRowNumber).innerHTML += " <br>"; 
 						wothRowNumber += 1; 
