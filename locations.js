@@ -95,7 +95,7 @@ var Locations = [
 	"Inverted Stone Tower Left Chest", "Inverted Stone Tower Middle Chest", "Inverted Stone Tower Right Chest",
 	
 	// Woodfall Temple
-	"Woodfall Entrance Platform", "Woodfall Small Key Chest", "Woodfall Map Chest", "Woodfall Boss Key Chest", "Hero's Bow Chest", "Woodfall Main Room Switch", "Woodfall Compass Chest", "Woodfall Dark Room", "Odolwa Heart Container",  
+	"Woodfall Entrance Platform", "Woodfall Compass Chest", "Woodfall Small Key Chest", "Woodfall Map Chest", "Woodfall Boss Key Chest", "Hero's Bow Chest", "Woodfall Main Room Switch", "Woodfall Dark Room", "Odolwa Heart Container",  
 	
 	// Snowhead Temple
 	"Snowhead Bridge Room Chest", "Snowhead Map Chest", "Snowhead Map Room Ledge", "Snowhead Pillar Freezards", "Snowhead Block Room Chest", "Snowhead Twin Block", "Snowhead Compass Chest", "Snowhead Ice Puzzle", "Snowhead Icicle Room Chest", "Snowhead Icicle Room Wall", "Fire Arrow Chest", "Snowhead Main Room Wall", "Snowhead Basement", "Snowhead Boss Key Chest", "Goht Heart Container",
@@ -121,10 +121,10 @@ var Names = [
 	"Tree", "Map Clock", "Bombers", "Old Lady", "GF Human", "GF Transf", "Playgro 10r", "Keaton",  
 	
 	// West Clock Town
-	"Bomb 50r", "Postman 2r", "Swords 10r", "Bomb 90r", "Bank 200r", "Bank 500r", "Bank 1000r", "All-Night", "Rosa", 
+	"Bomb 50r", "Postman 2r", "Swords 10r", "Bomb 90r", "Bank 200r", "Bank 500r", "Bank 1000r", "Curios 500r", "Rosa", 
 	
 	// Laundry Pool
-	"Guru", "Kafei", "Curios1", "Curios2",
+	"Guru", "Kafei", "Curiosity 1", "Curiosity 2",
 	
 	// East Clock Town
 	"Sewer", "Aroma", "Chest", "Honey 10r", "Archery 20r", "Chest 30r", "Mayor", "Milk 20r", "Chateau 200r", "Aroma Bar", "Postman", "Gorman", 
@@ -154,7 +154,7 @@ var Names = [
 	"Dog Chest", "Dog 50r", "Chicks", "Aliens", "Cremia", "Entrance", "Barn", "Tree", "Race", "Cucco", 
 	
 	// Mountain 
-	"Smithy 100r", "Smithy Gold", "Sirloin", "Waterfall", "Grotto", "Darmani", "Frogs", "Path", "Frog", "SpringPath", 
+	"Smithy 100r", "Smithy Gold", "Sirloin", "Spr Waterfall", "Spr Grotto", "Darmani", "Frogs", "Path", "Frog", "SpringPath", 
 	
 	// Twin Islands
 	"Race Gr", "HSW Gr", "Spr Ramp", "Spr Cave", "GorRace", 
@@ -166,7 +166,7 @@ var Names = [
 	"Pillar", "Grotto", 
 	
 	// Great Bay Coast
-	"Grotto", "Map Ikana", "Lab Fish", "Ledge", "Mikau", "Picto", "SpidChest", "Jump 20r", "OceSpid1", "Hint", 
+	"Grotto", "Map Ikana", "Lab Fish", "Ledge", "Mikau", "Picto", "Spider Chest", "Jump 20r", "OceSpid1", "Hint", 
 	
 	// Zora Cape
 	"Ledge 1", "Ledge 2", "Beaver", "Beaver 2", "Like Like", "Grotto", "Water", "Hint", 
@@ -208,7 +208,7 @@ var Names = [
 	"Left", "Middle", "Right",
 	
 	// Woodfall Temple
-	"Entrance", "Near BK", "Snappers", "Boss Key", "Dinolfos", "Switch", "Dragonfly", "Dark", "Odolwa",
+	"Entrance", "Dragonfly", "Near BK", "Snappers", "Boss Key", "Dinolfos", "Switch", "Dark", "Odolwa",
 	
 	// Snowhead Temple
 	"Bridge", "Map", "Map Ledge", "Pillars", "Twin Lower", "Twin Upper", "Compass", "Puzzle", "Icicle", "Icicle Wall", "Wizzrobe", "Alcove", "Basement", "Boss Key", "Goht",

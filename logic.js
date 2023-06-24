@@ -1201,6 +1201,7 @@ function update_location_logic() {
 	Location_Obtain["Goht Heart Container"] = Game.sht_access && Game.shoot_fire_arrow;
 	Location_Obtain["Snowhead Boss Key Chest"] = Game.sht_access && Game.shoot_fire_arrow;
 	Location_Obtain["Snowhead Basement"] = Game.sht_access;
+	Location_Obtain["Snowhead Compass Chest"] = Game.sht_access;
 	Location_Obtain["Snowhead Block Room Chest"] = Game.sht_access && (Game.magic || Game.hookshot || Game.explosive || Game.zora_mask);
 	Location_Obtain["Snowhead Bridge Room Chest"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.shoot_fire_arrow || Game.zora_mask);
 	Location_Obtain["Snowhead Ice Puzzle"] = Game.sht_access && (Game.hookshot || Game.explosive || Game.zora_mask);
@@ -1521,6 +1522,7 @@ function update_location_logic() {
 	Location_Could_Access["Goht Heart Container"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
 	Location_Could_Access["Snowhead Boss Key Chest"] = CouldHave.sht_access && CouldHave.shoot_fire_arrow;
 	Location_Could_Access["Snowhead Basement"] = CouldHave.sht_access;
+	Location_Could_Access["Snowhead Compass Chest"] = CouldHave.sht_access;
 	Location_Could_Access["Snowhead Block Room Chest"] = CouldHave.sht_access && (CouldHave.magic || CouldHave.hookshot || CouldHave.explosive || CouldHave.zora_mask);
 	Location_Could_Access["Snowhead Bridge Room Chest"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.shoot_fire_arrow || CouldHave.zora_mask);
 	Location_Could_Access["Snowhead Ice Puzzle"] = CouldHave.sht_access && (CouldHave.hookshot || CouldHave.explosive || CouldHave.zora_mask);

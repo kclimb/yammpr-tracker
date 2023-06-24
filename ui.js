@@ -48,7 +48,7 @@ function process_inputs() {
 		for (var j = 0; j < inputs.length; j++) {
 			if (document.getElementById(key).value == inputs[j]) {
 				if(j == 0) {
-					Check[document.getElementById(key).id] = Items2[j];
+					document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); continue;
 				}
 				
 				for (var k = 0; k <= 5; k++) {
@@ -300,8 +300,6 @@ function junk() {
 		}
 		lastCheck.push(str);
 		
-		Update();Update();Update();
-		
 		if(!thisIsHinted && !overrideFocus && !simActive) {
 			for(var j = 0; j < AreaIndexes.length-1; j++) {
 				if(Locations.indexOf(str) < AreaIndexes[j])
@@ -318,6 +316,8 @@ function junk() {
 				}
 			}
 		}
+		
+		Update();Update();Update();
 	}
 	else {
 		// Sim active
