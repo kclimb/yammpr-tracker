@@ -154,7 +154,7 @@ var Names = [
 	"Dog Chest", "Dog 50r", "Chicks", "Aliens", "Cremia", "Entrance", "Barn", "Tree", "Race", "Cucco", 
 	
 	// Mountain 
-	"Smithy 100r", "Smithy Gold", "Sirloin", "Spr Waterfall", "Spr Grotto", "Darmani", "Frogs", "Path", "Frog", "SpringPath", 
+	"Smithy 100r", "Smithy Gold", "Sirloin", "Spr Water", "Spr Grotto", "Darmani", "Frogs", "Path", "Frog", "SpringPath", 
 	
 	// Twin Islands
 	"Race Gr", "HSW Gr", "Spr Ramp", "Spr Cave", "GorRace", 
@@ -166,7 +166,7 @@ var Names = [
 	"Pillar", "Grotto", 
 	
 	// Great Bay Coast
-	"Grotto", "Map Ikana", "Lab Fish", "Ledge", "Mikau", "Picto", "Spider Chest", "Jump 20r", "Ocean Spid1", "Hint", 
+	"Grotto", "Map Ikana", "Lab Fish", "Ledge", "Mikau", "Picto", "Spid Chest", "Jump 20r", "OceSpid1", "Hint", 
 	
 	// Zora Cape
 	"Ledge 1", "Ledge 2", "Beaver", "Beaver 2", "Like Like", "Grotto", "Water", "Hint", 
