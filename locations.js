@@ -166,7 +166,7 @@ var Names = [
 	"Pillar", "Grotto", 
 	
 	// Great Bay Coast
-	"Grotto", "Map Ikana", "Lab Fish", "Ledge", "Mikau", "Picto", "Spider Chest", "Jump 20r", "OceSpid1", "Hint", 
+	"Grotto", "Map Ikana", "Lab Fish", "Ledge", "Mikau", "Picto", "Spider Chest", "Jump 20r", "Ocean Spid1", "Hint", 
 	
 	// Zora Cape
 	"Ledge 1", "Ledge 2", "Beaver", "Beaver 2", "Like Like", "Grotto", "Water", "Hint", 
