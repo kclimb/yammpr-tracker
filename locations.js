@@ -220,7 +220,7 @@ var Names = [
 	"*StatueEye", "*Compass", "*Underwater", "*Dexihand", "Crystal", "*Map Ledge", "*Map", "KillArmos", "Mirror Sun", "MirrorBlock", "LavaRing", "LavaLedge", "Garo Master", "*Thin Bridge", "Eyegore 1", "*Return STT",
 	
 	// Inverted Stone Tower Temple
-	"Ent Sun", "Frozen Eye", "*Fire Ring", "Updraft", "Boss Key", "Eyegore 2", "DeathArm", "Wizzrobe", "Twinmold",
+	"Ent Sun", "Frozen Eye", "*Fire Ring", "Updraft", "Boss Key", "Eyegore 2", "*DeathArm", "Wizzrobe", "Twinmold",
 	
 	// Songs
 	"Start", "Skull Kid", "Palace", "Swamp", "Warp", "Ranch", "Goron", "Eggs", "Grave1", "Castle"

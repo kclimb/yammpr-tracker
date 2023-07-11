@@ -163,8 +163,8 @@ function update_checks() {
 			if(SongItems.indexOf(key) < 0 && Check[key] == "unknown")
 				Game.checks_remaining += 1;
 			
-			if(Location_Logic[key] == true) {
-				if (Location_Access[key] == true && Location_Obtain[key]) {
+			if(Location_Logic[key]) {
+				if (Location_Access[key] && Location_Obtain[key]) {
 					document.getElementById(str).className= "logic_check_text"; 
 					document.getElementById(str).style.fontWeight = "bold";
 					document.getElementById(str).style.opacity = 1;
@@ -186,17 +186,29 @@ function update_checks() {
 				}
 				
 			}
-			else if (Location_Access[key] == true) {
+			else if (Location_Obtain[key]) {
 				document.getElementById(str).className= "access_check_text";
-				document.getElementById(str).style.opacity = .5;
+				document.getElementById(str).style.opacity = .7;
 				document.getElementById(str).style.fontWeight = "normal";
 				document.getElementById(str).style.color = "yellow";
 			}
-			else if (Location_Could_Access[key] == true || Location_Could_Peek[key] == true) {
-				document.getElementById(str).className= "could_access_check_text";
-				document.getElementById(str).style.opacity = .2;
+			else if (Location_Access[key]) {
+				document.getElementById(str).className= "peek_check_text";
+				document.getElementById(str).style.opacity = 1;
 				document.getElementById(str).style.fontWeight = "normal";
+				document.getElementById(str).style.color ="orange";
+			}
+			else if (Location_Could_Obtain[key]) {
+				document.getElementById(str).className= "access_check_text";
+				document.getElementById(str).style.fontWeight = "normal";
+				document.getElementById(str).style.opacity = .3;
 				document.getElementById(str).style.color = "yellow";
+			}
+			else if (Location_Could_Peek[key]) {
+				document.getElementById(str).className= "peek_check_text";
+				document.getElementById(str).style.opacity = .3;
+				document.getElementById(str).style.fontWeight = "normal";
+				document.getElementById(str).style.color ="orange";
 			}
 			else {
 				document.getElementById(str).className= "ool_check_text";
