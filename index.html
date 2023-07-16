@@ -25,9 +25,9 @@
 				<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br><br>
 				<label class="settingsLabels" for="settings_option">Mode</label>
 				<select class="settingsOptions" id="settings_option">
+					<option value="S4">S4</option>
 					<option value="SCRUBS">Scrubs</option>
 					<option value="BLITZ">Blitz</option>
-					<option value="S4">S4</option>
 					<option value="S3">S3</option>
 				</select><br><br class="half_break">
 				<label class="settingsLabels" for="gossips_option">Gossips</label>
@@ -225,10 +225,12 @@
 			<div class="modal-content">
 				<span class="close">&times;</span>
 				<p>This tracker is based on <a href="https://soilflux.github.io/tracker">soli's OoT tracker.</a><br><br>
+				-Green checks are ones that are logically accessible. Yellow checks are accessible out of logic. Orange checks are peekable but inaccessible.<br>
 				-Input the code for an item/song in the picture text box next to a check. You can also left click on the text to mark it as junk.<br> 
 				-Capitalize the third letter of the code to "peek" it, or capitalize the first letter of the code to "hint" it. Peeked or hinted checks will not be counted as obtained until you click the check text.<br>
+				-You can right-click the text for an item in the summary area at the top-right to toggle if you have that item or not. Alternatively, you can click the image for an item.<br>
 				-Input abbreviations for hint areas in the Foolish and WOTH boxes to track those.<br>
-				-An alternate way of inputting always/sometimes hints is by putting a location code and the three letter item code (or x for nothing) into the text area on their own line.<br>
+				-An alternate way of inputting always/sometimes hints is by putting a location code and the three letter item code (or x for nothing) into the text area on their own line. For example, to hint "Swamp Spider House Reward" as Bomb Bag, type "swa bom" on its own line in the text area above the "Reset Cycle" button.<br>
 				-Press Ctrl+Z to undo the last item input.<br>
 				-Click the "Reset Cycle" button to unmark items you lose when you play Song of Time.<br><br>
 				Simulator:<br>
@@ -330,11 +332,14 @@
 				hon - Honey and Darling Any Day<br>
 				pla - Deku Playground Any Day<br>
 				bro - Gorman Bros Race<br>
+				hoo - Hookshot Chest<br>
+				kam - Kamaro<br>
+				inv - Invisible Soldier<br>
+				spi - Ocean Spider House Chest<br>
 				dar - Woodfall Dark Room<br>
-				lig - Light Arrow Chest<br>
-				ice - Ice Arrow Chest<br>
 				fir - Fire Arrow Chest<br>
-				hoo - Hookshot Chest<br><br></div>
+				ice - Ice Arrow Chest<br>
+				lig - Light Arrow Chest<br><br></div>
 				<div class="modal_column">Area codes:<br>
 				clo - Clock Tower Roof<br>
 				sct - South Clock Town<br>

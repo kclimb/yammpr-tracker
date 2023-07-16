@@ -301,6 +301,9 @@ function woth_and_barren_processing() {
 					if(ItemLocation[Items[k]] == "Boss Blue Warp" && ((AreaNames[i] == "WFT" && Items[k] != "sonata") || (AreaNames[i] == "SHT" && Items[k] != "lullaby") || (AreaNames[i] == "GBT" && Items[k] != "nwbn") || (AreaNames[i] == "STT" && Items[k] != "elegy")))
 						blue_warp_song = true;
 					
+					if(ItemLocation[Items[k]] == "Biggest Bomb Bag Purchase" && ((AreaNames[i] == "Swamp" && ((Items[k] == "deku_mask") || (Items[k] == "moons_tear") || (Items[k] == "land_title_deed") || (Items[k] == "swamp_title_deed"))) || (AreaNames[i] == "Gor Village" && Items[k] == "goron_mask")))
+						continue;
+					
 					if ((Locations.indexOf(ItemLocation[Items[k]]) >= AreaIndexes[i-1] && Locations.indexOf(ItemLocation[Items[k]]) < AreaIndexes[i]) 
 					|| Locations.indexOf(ItemLocation[Items[k]]) == SongIndexes[i-1] || blue_warp_song) 
 					{
@@ -372,15 +375,21 @@ function woth_and_barren_processing() {
 					continue;
 				
 				if(Check[Locations[j]] == "unknown") {
+					if(AreaNames[i] == "Gor Village" && Locations[j] == "Biggest Bomb Bag Purchase") {
+						continue;
+					}
+					
 					//document.getElementById("text_" + Locations[j]).style.border = "solid 1px red";
 					//document.getElementById("text_" + Locations[j]).dispatchEvent(new Event('mousedown'));
 					document.getElementById(Locations[j]).value = "x";
 				}
 			}
 			
-			if(SongIndexes[i-1] != 1000) {
-				if(Check[Locations[SongIndexes[i-1]]] == "unknown") {
-					document.getElementById("text_" + Locations[SongIndexes[i-1]]).style.border = "solid 1px red";
+			if(Area[i] == "barren") {
+				if(SongIndexes[i-1] != 1000) {
+					if(Check[Locations[SongIndexes[i-1]]] == "unknown") {
+						document.getElementById("text_" + Locations[SongIndexes[i-1]]).style.border = "solid 1px red";
+					}
 				}
 			}
 			
