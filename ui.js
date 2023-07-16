@@ -202,7 +202,7 @@ function update_checks() {
 				document.getElementById(str).className= "ool_check_text";
 				document.getElementById(str).style.opacity = .5;
 				document.getElementById(str).style.fontWeight = "normal";
-				document.getElementById(str).style.color = "black";
+				document.getElementById(str).style.color = "maroon";
 			}
 		}
 		
