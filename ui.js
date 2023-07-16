@@ -48,7 +48,7 @@ function process_inputs() {
 		for (var j = 0; j < inputs.length; j++) {
 			if (document.getElementById(key).value == inputs[j]) {
 				if(j == 0) {
-					Check[document.getElementById(key).id] = Items2[j];
+					document.getElementById("text_" + Locations[i]).dispatchEvent(new Event('mousedown')); continue;
 				}
 				
 				for (var k = 0; k <= 5; k++) {
@@ -160,11 +160,11 @@ function update_checks() {
 				document.getElementById(str2).style.display = "inline-block";
 			}
 			
-			if(SongItems.indexOf(key) < 0)
+			if(SongItems.indexOf(key) < 0 && Check[key] == "unknown")
 				Game.checks_remaining += 1;
 			
-			if(Location_Logic[key] == true) {
-				if (Location_Access[key] == true && Location_Obtain[key]) {
+			if(Location_Logic[key]) {
+				if (Location_Access[key] && Location_Obtain[key]) {
 					document.getElementById(str).className= "logic_check_text"; 
 					document.getElementById(str).style.fontWeight = "bold";
 					document.getElementById(str).style.opacity = 1;
@@ -179,24 +179,36 @@ function update_checks() {
 					;
 				else {
 					document.getElementById(str).innerHTML = backUp[i];
-					if(document.getElementById(key).style.display != "none") {
+					if(Check[key] == "unknown") {
 						if(SongItems.indexOf(key) < 0)
 							Game.logically_accessible += 1;
 					}
 				}
 				
 			}
-			else if (Location_Access[key] == true) {
+			else if (Location_Obtain[key]) {
 				document.getElementById(str).className= "access_check_text";
-				document.getElementById(str).style.opacity = .5;
+				document.getElementById(str).style.opacity = .7;
 				document.getElementById(str).style.fontWeight = "normal";
 				document.getElementById(str).style.color = "yellow";
 			}
-			else if (Location_Could_Access[key] == true || Location_Could_Peek[key] == true) {
-				document.getElementById(str).className= "could_access_check_text";
-				document.getElementById(str).style.opacity = .2;
+			else if (Location_Access[key]) {
+				document.getElementById(str).className= "peek_check_text";
+				document.getElementById(str).style.opacity = 1;
 				document.getElementById(str).style.fontWeight = "normal";
+				document.getElementById(str).style.color ="orange";
+			}
+			else if (Location_Could_Obtain[key]) {
+				document.getElementById(str).className= "access_check_text";
+				document.getElementById(str).style.fontWeight = "normal";
+				document.getElementById(str).style.opacity = .3;
 				document.getElementById(str).style.color = "yellow";
+			}
+			else if (Location_Could_Peek[key]) {
+				document.getElementById(str).className= "peek_check_text";
+				document.getElementById(str).style.opacity = .3;
+				document.getElementById(str).style.fontWeight = "normal";
+				document.getElementById(str).style.color ="orange";
 			}
 			else {
 				document.getElementById(str).className= "ool_check_text";
@@ -300,8 +312,6 @@ function junk() {
 		}
 		lastCheck.push(str);
 		
-		Update();Update();Update();
-		
 		if(!thisIsHinted && !overrideFocus && !simActive) {
 			for(var j = 0; j < AreaIndexes.length-1; j++) {
 				if(Locations.indexOf(str) < AreaIndexes[j])
@@ -318,6 +328,8 @@ function junk() {
 				}
 			}
 		}
+		
+		Update();Update();Update();
 	}
 	else {
 		// Sim active
