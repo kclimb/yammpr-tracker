@@ -196,7 +196,7 @@ function update_item_logic() {
 	Logic.ikana_canyon_access = Logic.east_access && Logic.shoot_ice_arrow;
 	Logic.stt_access = Logic.ikana_canyon_access && Logic.hookshot && Logic.elegy && (Logic.goron_mask || Logic.zora_mask);
 	Logic.istt_access = Logic.stt_access && Logic.shoot_light_arrow;
-	Logic.ikana_clear = Logic.istt_access && Logic.deku_mask && Logic.giants_mask;
+	Logic.ikana_clear = Logic.istt_access && Logic.deku_mask && (Logic.giants_mask || Logic.fiercedeity_mask);
 	
 	// Bottle shortcuts
 	Logic.any_blue_potion = Logic.any_bottle && (Logic.adults_wallet || Logic.mask_of_scents);
