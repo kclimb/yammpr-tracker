@@ -245,7 +245,7 @@ function update_item_logic() {
 	Game.ikana_canyon_access = Game.east_access;
 	Game.stt_access = Game.ikana_canyon_access && Game.hookshot && Game.elegy && (Game.goron_mask || Game.zora_mask);
 	Game.istt_access = Game.stt_access && Game.shoot_light_arrow;
-	Game.ikana_clear = Game.istt_access && (Game.deku_mask || Game.bomb);
+	Game.ikana_clear = Game.istt_access;
 	
 	// Bottle shortcuts
 	Game.any_blue_potion = Game.any_bottle && (Game.adults_wallet || Game.mask_of_scents);
@@ -294,7 +294,7 @@ function update_item_logic() {
 	CouldHave.ikana_canyon_access = CouldHave.east_access;
 	CouldHave.stt_access = CouldHave.ikana_canyon_access && CouldHave.hookshot && CouldHave.elegy && (CouldHave.goron_mask || CouldHave.zora_mask);
 	CouldHave.istt_access = CouldHave.stt_access && CouldHave.shoot_light_arrow;
-	CouldHave.ikana_clear = CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.bomb);
+	CouldHave.ikana_clear = CouldHave.istt_access;
 	
 	// Bottle shortcuts
 	CouldHave.any_blue_potion = CouldHave.any_bottle && (CouldHave.adults_wallet || CouldHave.mask_of_scents);
