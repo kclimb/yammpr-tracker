@@ -761,7 +761,7 @@ function update_location_logic() {
 	Location_Access["Twin Islands Underwater Ramp Chest"] = Game.snowhead_clear && Game.zora_mask;
 	Location_Access["Hot Spring Water Grotto"] = Game.north_access && Game.explosive && (Game.shoot_fire_arrow || Game.hot_spring_water || Game.snowhead_clear);
 	Location_Access["Twin Islands Cave Chest"] = Game.snowhead_clear && Game.zora_mask;
-	Location_Access["Goron Racetrack Grotto"] = Game.north_access && Game.explosive && (Game.goron_mask || Game.hookshot || Game.zora_mask || Game.any_bottle); // hookshot also needs scarecrow song
+	Location_Access["Goron Racetrack Grotto"] = Game.north_access && Game.explosive; // hookshot also needs scarecrow song
 		
 	// Goron Village
 	Location_Access["Goron Shop 10 Arrows"] = Game.north_access;
@@ -1093,7 +1093,7 @@ function update_location_logic() {
 	Location_Obtain["Twin Islands Underwater Ramp Chest"] = Game.snowhead_clear && Game.zora_mask;
 	Location_Obtain["Hot Spring Water Grotto"] = Game.north_access && Game.explosive && (Game.shoot_fire_arrow || Game.hot_spring_water || Game.snowhead_clear);
 	Location_Obtain["Twin Islands Cave Chest"] = Game.snowhead_clear && Game.zora_mask;
-	Location_Obtain["Goron Racetrack Grotto"] = Game.north_access && Game.explosive && (Game.goron_mask || Game.hookshot || Game.zora_mask || Game.any_bottle); // hookshot also needs scarecrow song
+	Location_Obtain["Goron Racetrack Grotto"] = Game.north_access && Game.explosive; // hookshot also needs scarecrow song
 		
 	// Goron Village
 	Location_Obtain["Goron Shop 10 Arrows"] = Game.north_access;
@@ -1265,7 +1265,7 @@ function update_location_logic() {
 	Location_Obtain["Stone Tower Eyegore Room Chest"] = Game.stt_access && ((Game.shoot_light_arrow && Game.zora_mask) || (Game.explosive && Game.goron_mask));
 	Location_Obtain["Stone Tower Bridge Crystal"] = Game.stt_access && ((Game.shoot_light_arrow && Game.zora_mask) || (Game.explosive && Game.goron_mask && (Game.zora_mask || Game.light_arrow)));
 	Location_Obtain["Stone Tower Basement Ledge"] = Game.stt_access && ((Game.mirror_shield && Game.explosive && Game.goron_mask) || (Game.explosive && Game.shoot_light_arrow && Game.goron_mask) || (Game.shoot_light_arrow && Game.zora_mask));
-	Location_Obtain["Stone Tower Map Chest"] = Game.stt_access && (((Game.mirror_shield || Game.shoot_light_arrow) && Game.explosive && Game.goron_mask) || (Game.shoot_light_arrow && Game.zora_mask));
+	Location_Obtain["Stone Tower Map Chest"] = Game.stt_access && ((Game.explosive && Game.goron_mask) || (Game.shoot_light_arrow && Game.zora_mask));
 	Location_Obtain["Stone Tower Armos Room Chest"] = Game.stt_access && ((Game.mirror_shield && Game.explosive && Game.goron_mask) || (Game.explosive && Game.shoot_light_arrow && Game.goron_mask) || (Game.shoot_light_arrow && Game.zora_mask));
 	Location_Obtain["Stone Tower Mirror Sun Switch"] = Game.stt_access && (Game.shoot_light_arrow || (Game.mirror_shield && Game.goron_mask && Game.zora_mask && Game.explosive));
 	Location_Obtain["Stone Tower Mirror Sun Block"] = Game.stt_access && (Game.shoot_light_arrow || (Game.mirror_shield && Game.goron_mask && Game.zora_mask && Game.explosive));
@@ -1430,7 +1430,7 @@ function update_location_logic() {
 	Location_Could_Obtain["Twin Islands Underwater Ramp Chest"] = CouldHave.snowhead_clear && CouldHave.zora_mask;
 	Location_Could_Obtain["Hot Spring Water Grotto"] = CouldHave.north_access && CouldHave.explosive && (CouldHave.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
 	Location_Could_Obtain["Twin Islands Cave Chest"] = CouldHave.snowhead_clear && CouldHave.zora_mask;
-	Location_Could_Obtain["Goron Racetrack Grotto"] = CouldHave.north_access && CouldHave.explosive && (CouldHave.goron_mask || CouldHave.hookshot || CouldHave.zora_mask || CouldHave.any_bottle); // hookshot also needs scarecrow song
+	Location_Could_Obtain["Goron Racetrack Grotto"] = CouldHave.north_access && CouldHave.explosive; // hookshot also needs scarecrow song
 		
 	// Goron Village
 	Location_Could_Obtain["Goron Shop 10 Arrows"] = CouldHave.north_access;
@@ -1595,7 +1595,7 @@ function update_location_logic() {
 	Location_Could_Obtain["Stone Tower Eyegore Room Chest"] = CouldHave.stt_access && ((CouldHave.shoot_light_arrow && CouldHave.zora_mask) || (CouldHave.explosive && CouldHave.goron_mask));
 	Location_Could_Obtain["Stone Tower Bridge Crystal"] = CouldHave.stt_access && ((CouldHave.shoot_light_arrow && CouldHave.zora_mask) || (CouldHave.explosive && CouldHave.goron_mask && (CouldHave.zora_mask || CouldHave.light_arrow)));
 	Location_Could_Obtain["Stone Tower Basement Ledge"] = CouldHave.stt_access && ((CouldHave.mirror_shield && CouldHave.explosive && CouldHave.goron_mask) || (CouldHave.explosive && CouldHave.shoot_light_arrow && CouldHave.goron_mask) || (CouldHave.shoot_light_arrow && CouldHave.zora_mask));
-	Location_Could_Obtain["Stone Tower Map Chest"] = CouldHave.stt_access && (((CouldHave.mirror_shield || CouldHave.shoot_light_arrow) && CouldHave.explosive && CouldHave.goron_mask) || (CouldHave.shoot_light_arrow && CouldHave.zora_mask));
+	Location_Could_Obtain["Stone Tower Map Chest"] = CouldHave.stt_access && ((CouldHave.explosive && CouldHave.goron_mask) || (CouldHave.shoot_light_arrow && CouldHave.zora_mask));
 	Location_Could_Obtain["Stone Tower Armos Room Chest"] = CouldHave.stt_access && ((CouldHave.mirror_shield && CouldHave.explosive && CouldHave.goron_mask) || (CouldHave.explosive && CouldHave.shoot_light_arrow && CouldHave.goron_mask) || (CouldHave.shoot_light_arrow && CouldHave.zora_mask));
 	Location_Could_Obtain["Stone Tower Mirror Sun Switch"] = CouldHave.stt_access && (CouldHave.shoot_light_arrow || (CouldHave.mirror_shield && CouldHave.goron_mask && CouldHave.zora_mask && CouldHave.explosive));
 	Location_Could_Obtain["Stone Tower Mirror Sun Block"] = CouldHave.stt_access && (CouldHave.shoot_light_arrow || (CouldHave.mirror_shield && CouldHave.goron_mask && CouldHave.zora_mask && CouldHave.explosive));
@@ -1759,7 +1759,7 @@ function update_location_logic() {
 	Location_Could_Peek["Twin Islands Underwater Ramp Chest"] = CouldHave.snowhead_clear && CouldHave.zora_mask;
 	Location_Could_Peek["Hot Spring Water Grotto"] = CouldHave.north_access && CouldHave.explosive && (CouldHave.shoot_fire_arrow || CouldHave.hot_spring_water || CouldHave.snowhead_clear);
 	Location_Could_Peek["Twin Islands Cave Chest"] = CouldHave.snowhead_clear && CouldHave.zora_mask;
-	Location_Could_Peek["Goron Racetrack Grotto"] = CouldHave.north_access && CouldHave.explosive && (CouldHave.goron_mask || CouldHave.hookshot || CouldHave.zora_mask || CouldHave.any_bottle); // hookshot also needs scarecrow song
+	Location_Could_Peek["Goron Racetrack Grotto"] = CouldHave.north_access && CouldHave.explosive; // hookshot also needs scarecrow song
 		
 	// Goron Village
 	Location_Could_Peek["Goron Shop 10 Arrows"] = CouldHave.north_access;
