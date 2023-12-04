@@ -196,6 +196,111 @@ for (var i = 0; i < Locations.length; i++) {
 	else
 		elem.onmousedown = function() {clickSummary(this);};
 	elem.innerHTML = Names[i]; 
+	
+	if(elem.id == "text_Inn Reservation")
+		elem.title = "Day 1: 1:50pm-4:10pm";
+	if(elem.id == "text_Honey and Darling Any Day")
+		elem.title = "Day 1-2: 6:00am-10:00pm\nDay 3: 6:00am-6:00pm\n1: Bowling, 2: Basketball, 3: Archery";
+	if(elem.id == "text_Treasure Chest Game Goron")
+		elem.title = "Day 1-2: 6:00am-10:00pm\nDay 3: 6:00am-6:00pm";
+	if(elem.id == "text_Swamp Archery #1")
+		elem.title = "Day 1-3: 6:00am-10:00pm";
+	if(elem.id == "text_Town Archery #1")
+		elem.title = "Day 1-3: 6:00am-10:00pm\nNeed 40 points";
+	
+	if(elem.id == "text_Grandma Short Story" || elem.id == "text_Grandma Long Story")
+		elem.title = "Day 1-2: 6:00am-6:00pm\nStock Pot open from 8:00am-8:30pm";
+	if(elem.id == "text_Mayor")
+		elem.title = "Day 1-2: 10:00am-8:00pm\nDay 3: 10:00am-6:00pm";
+	if(elem.id == "text_Madame Aroma in Office")
+		elem.title = "Day 1-2: 10:00am-8:00pm";
+	if(elem.id == "text_Gorman")
+		elem.title = "Night 1-2: 10:00pm-5:00am";
+	if(elem.id == "text_Midnight Meeting")
+		elem.title = "Set Meeting: Day 1: 2:20pm-9:03pm\nAttend Meeting: Night 1: 12:00am-5:59am\n\n(She walks to front door at 7:50pm-8:30pm. Kicked out at 8:30pm.\nShe walks to staff room from 8:30-9:03pm)";
+	if(elem.id == "text_Toilet Hand")
+		elem.title = "Day 1-3: 12:00am-5:59am";
+	if(elem.id == "text_Madame Aroma in Bar")
+		elem.title = "Night 3: 6:00pm-9:00pm (without Romani Mask)\nNight 3: 10:00pm-5:59am (with Romani Mask)";
+	if(elem.id == "text_Milk Bar Milk" || elem.id == "text_Milk Bar Chateau")
+		elem.title = "Night 1-2: 10:00pm-5:00am\nNight 3: 6:00pm-9:00pm, 10:00pm-5:59am";
+	if(elem.id == "text_Inn Staff Room Chest")
+		elem.title = "Night 3: 6:00pm-5:59am";
+	if(elem.id == "text_South Clock Town Final Day Chest")
+		elem.title = "Day 3: 6:00am-5:59am";
+	if(elem.id == "text_Old Lady")
+		elem.title = "Night 1: 12:20am";
+	if(elem.id == "text_Deku Playground Any Day")
+		elem.title = "Day 1-3: 6:00am-11:30pm";
+	if(elem.id == "text_Swordsman's School")
+		elem.title = "Day 1-2: any time\nDay 3: 6:00am-11:00pm";
+	if(elem.id == "text_Postman's Game")
+		elem.title = "Day 1: 3:00pm-12:00am\nDay 2: 3:00pm-12:00am (if letter to kafei delivered)";
+	if(elem.id == "text_Rosa Sisters")
+		elem.title = "Night 1-2: 6:00pm-5:59am";
+	if(elem.id == "text_Big Bomb Bag Purchase")
+		elem.title = "If saved old lady:\nAny time after 12:30 am on Night 1\n\nIf didn't save old lady:\nNight 3: 10:00pm-5:00am (costs 100r)";
+	if(elem.id == "text_All-Night Mask Purchase")
+		elem.title = "Night 3: 10:00pm-5:00am\nMust have saved old lady this cycle";
+	if(elem.id == "text_Postman's Freedom Reward")
+		elem.title = "Night 3: 6:00pm-5:00am (takes 2 hours to deliver)";
+	if(elem.id == "text_Guru Guru")
+		elem.title = "Night 1-2: 6:00pm-5:59am";
+	if(elem.id == "text_Kafei")
+		elem.title = "Day 2: 4:00pm-10:00pm (letter must be delivered before 11:20 am Day 2)\nMust not have saved old lady this cycle";
+	if(elem.id == "text_Curiosity Shop Man #1" || elem.id == "text_Curiosity Shop Man #2")
+		elem.title = "Day 3: 1:00pm-10:00pm (letter must be delivered before 11:20 am Day 2)\nMust not have saved old lady this cycle\nMust have gotten item from Kafei this cycle";
+	
+	if(elem.id == "text_Kamaro")
+		elem.title = "Night 1-3: 12:00am-5:59am";
+	
+	if(elem.id == "text_Dog Race" || elem.id == "text_Grog" || elem.id == "text_Doggy Racetrack Roof Chest")
+		elem.title = "Day 1-3: 6:00am-8:00pm";
+	if(elem.id == "text_Gorman Bros Race")
+		elem.title = "Day 1-3: 6:00am-6:00pm";
+	if(elem.id == "text_Gorman Bros Milk Purchase")
+		elem.title = "Day 1-3: 6:00am-6:00pm";
+	if(elem.id == "text_Romani's Game")
+		elem.title = "Day 1: 6:00am-6:00pm\nAliens: Night 1: 2:30am-5:10pm (3:50am lose)\nCremia: Night 2: 6:00pm-7:00pm\n(sets tod to 7:45pm)";
+	if(elem.id == "text_Aliens Defense")
+		elem.title = "Night 1: 2:30am-5:10pm (3:50am lose)";
+	if(elem.id == "text_Cremia")
+		elem.title = "Night 2: 6:00pm-7:00pm\n(sets time to 7:45pm)";
+	
+	if(elem.id == "text_Mystery Woods Grotto")
+		elem.title = "Day 2: 6:00am-5:59am";
+	
+	if(elem.id == "text_Ocean Spider House Day 1 Reward")
+		elem.title = "Day 1: 6:00am-5:59am";
+	if(elem.id == "text_Fisherman Game")
+		elem.title = "Boat ride available: 7:00am-6:00pm\nMinigame open: any time except 4-7am or 4-7pm";
+	if(elem.id == "text_Zora Hall Stage Lights" || elem.id == "text_Mikau")
+		elem.title = "Cannot do after beating GBT";
+	
+	if(elem.id == "text_Day 1 Grave Bats" || elem.id == "text_Day 1 Grave Tablet")
+		elem.title = "Night 1-2: 6:00pm-5:59am";
+	if(elem.id == "text_Iron Knuckle Chest")
+		elem.title = "Night 1-2: 6:00pm-5:59am";
+	if(elem.id == "text_Dampe Digging")
+		elem.title = "Night 3: 6:00pm-5:59am";
+	
+	if(elem.id == "text_Mountain Smithy Day 1")
+		elem.title = "Must purchase on Day 1, then receive Day 2";
+	if(elem.id == "text_Mountain Smithy Day 2")
+		elem.title = "Must give Gold Dust on Day 2, then receive Day 3";
+	
+	if(elem.id == "text_Pictograph Contest Winner" || elem.id == "text_Koume")
+		elem.title = "Cannot do after beating Woodfall";
+	
+	if(elem.id == "text_Lens Cave Rock Chest" || elem.id == "text_Lens Cave Invisible Chest" || elem.id == "text_Lens of Truth Chest")
+		elem.title = "Cannot do after beating SHT";
+	
+	if(elem.id == "text_Zora Hall Stage Lights" || elem.id == "text_Mikau" || elem.id == "text_Evan")
+		elem.title = "Cannot do after beating GBT";
+	
+	if(elem.id == "text_Poe Hut" || elem.id == "text_Pamela's Father")
+		elem.title = "Cannot do after beating STT";
+	
 	parent.appendChild(elem);
 	
 	var elem = document.createElement("br"); 
