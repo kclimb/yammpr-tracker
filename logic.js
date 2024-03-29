@@ -1960,7 +1960,7 @@ function update_location_logic() {
 	
 	
 	// CSMC changes
-	if(document.getElementById("settings_option").value != "SCRUBS") {
+	if(document.getElementById("settings_option").value != "SCRUBS S1") {
 		Location_Access["South Clock Town Final Day Chest"] = true;
 		Location_Access["Bombers' Hideout Chest"] = true;
 		Location_Access["Termina Field Underwater Chest"] = true;
