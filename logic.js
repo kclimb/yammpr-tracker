@@ -16,7 +16,7 @@ S3 Toggled tricks:
 
 function update_item_logic() {
 	// Assumes you start with Kokiri Sword, Hero's Shield, Ocarina of Time, Song of Time, Song of Soaring
-	
+
 	// Progressive Swords
 	if(Known.sword1 == true) {Logic.sword1 = Location_Logic[ItemLocation.sword1];} 
 	if(Known.sword2 == true) {Logic.sword2 = Location_Logic[ItemLocation.sword2];}
@@ -618,7 +618,10 @@ function update_location_logic() {
 	Location_Logic["Stone Tower Wizzrobe"] = Logic.istt_access && Logic.deku_mask;
 	Location_Logic["Stone Tower Boss Key Chest"] = Logic.istt_access && Logic.deku_mask;
 	Location_Logic["Twinmold Heart Container"] = Logic.istt_access && Logic.deku_mask && (Logic.giants_mask || Logic.fiercedeity_mask);
-		
+	
+	// Starting Kit
+	Location_Logic["Starting Mask"] = true;
+
 	// Songs
 	Location_Logic["Starting Song"] = true;
 	Location_Logic["Boss Blue Warp"] = Logic.woodfall_clear || Logic.snowhead_clear || Logic.great_bay_clear || Logic.ikana_clear;
@@ -948,7 +951,10 @@ function update_location_logic() {
 	Location_Access["Stone Tower Wizzrobe"] = Game.istt_access && Game.deku_mask;
 	Location_Access["Stone Tower Boss Key Chest"] = Game.istt_access;
 	Location_Access["Twinmold Heart Container"] = Game.istt_access;
-		
+	
+	// Starting Kit
+	Location_Access["Starting Mask"] = true;
+
 	// Songs
 	Location_Access["Starting Song"] = true;
 	Location_Access["Boss Blue Warp"] = Game.woodfall_clear || Game.snowhead_clear || Game.great_bay_clear || Game.ikana_clear;
@@ -1286,7 +1292,10 @@ function update_location_logic() {
 	Location_Obtain["Stone Tower Wizzrobe"] = Game.istt_access && Game.deku_mask;
 	Location_Obtain["Stone Tower Boss Key Chest"] = Game.istt_access;
 	Location_Obtain["Twinmold Heart Container"] = Game.istt_access;
-		
+	
+	// Starting Kit
+	Location_Obtain["Starting Mask"] = true;
+
 	// Songs
 	Location_Obtain["Starting Song"] = true;
 	Location_Obtain["Boss Blue Warp"] = Game.woodfall_clear || Game.snowhead_clear || Game.great_bay_clear || Game.ikana_clear;
@@ -1616,7 +1625,10 @@ function update_location_logic() {
 	Location_Could_Obtain["Stone Tower Wizzrobe"] = CouldHave.istt_access && CouldHave.deku_mask;
 	Location_Could_Obtain["Stone Tower Boss Key Chest"] = CouldHave.istt_access;
 	Location_Could_Obtain["Twinmold Heart Container"] = CouldHave.istt_access;
-		
+	
+	// Starting Kit
+	Location_Could_Obtain["Starting Mask"] = true;
+
 	// Songs
 	Location_Could_Obtain["Starting Song"] = true;
 	Location_Could_Obtain["Boss Blue Warp"] = CouldHave.woodfall_clear || CouldHave.snowhead_clear || CouldHave.great_bay_clear || CouldHave.ikana_clear;
@@ -1946,6 +1958,9 @@ function update_location_logic() {
 	Location_Could_Peek["Stone Tower Boss Key Chest"] = CouldHave.istt_access;
 	Location_Could_Peek["Twinmold Heart Container"] = CouldHave.istt_access;
 		
+	// Starting Kit
+	Location_Could_Peek["Starting Mask"] = true;
+
 	// Songs
 	Location_Could_Peek["Starting Song"] = true;
 	Location_Could_Peek["Boss Blue Warp"] = CouldHave.woodfall_clear || CouldHave.snowhead_clear || CouldHave.great_bay_clear || CouldHave.ikana_clear;
@@ -2006,5 +2021,25 @@ function update_location_logic() {
 		Location_Could_Peek["Stone Tower Map Chest"] = CouldHave.stt_access && ((CouldHave.explosive && CouldHave.goron_mask) || (CouldHave.zora_mask && CouldHave.shoot_light_arrow));
 		Location_Could_Peek["Stone Tower Eyegore Room Chest"] = CouldHave.stt_access && (CouldHave.istt_access || (CouldHave.shoot_light_arrow && CouldHave.zora_mask) || (CouldHave.explosive && CouldHave.goron_mask));
 		Location_Could_Peek["Stone Tower Death Armos Maze Chest"] = CouldHave.stt_access || (CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive));
+	}
+
+	// Version 1.16 added a toggle to make certain checks peekable by having a game model reflect a check's item
+	updatedWorldModels = document.getElementById("settings_option").value == "SCRUBS S2";
+	if (updatedWorldModels) {
+		Location_Access["Kafei"] = true;
+		Location_Access["Curiosity Shop Man #1"] = true;
+		Location_Access["Postman's Freedom Reward"] = true;
+		Location_Access["Swamp Spider House Reward"] = Game.poison_swamp_access;
+		Location_Access["Mountain Smithy Day 1"] = Game.north_access;
+		Location_Access["Mountain Smithy Day 2"] = Game.north_access;
+		Location_Access["Hungry Goron"] = Game.north_access;
+
+		Location_Could_Peek["Kafei"] = true;
+		Location_Could_Peek["Curiosity Shop Man #1"] = true;
+		Location_Could_Peek["Postman's Freedom Reward"] = true;
+		Location_Could_Peek["Swamp Spider House Reward"] = CouldHave.poison_swamp_access;
+		Location_Could_Peek["Mountain Smithy Day 1"] = CouldHave.north_access;
+		Location_Could_Peek["Mountain Smithy Day 2"] = CouldHave.north_access;
+		Location_Could_Peek["Hungry Goron"] = CouldHave.north_access;
 	}
 }

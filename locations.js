@@ -242,18 +242,18 @@ var blitz_skip_checks = [
 	"Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", 
 	"Gorman Bros Milk Purchase", "Baby Zoras", "Milk Bar Chateau", "Milk Bar Milk", "Skull Kid Song", 
 	"Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
-	"Swamp Archery #2", "Start Mask"
+	"Swamp Archery #2", "Starting Mask"
 ];
 
 var s3_skip_checks = [
 	"Swamp Music Statue", "Skull Kid Song", "Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
-	"Swamp Archery #2", "Start Mask"
+	"Swamp Archery #2", "Starting Mask"
 ];
 
 var s4_skip_checks = [
 	"Swamp Music Statue", "Baby Zoras", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", "Woodfall Boss Key Chest", "Snowhead Boss Key Chest", "Great Bay Boss Key Chest", "Stone Tower Boss Key Chest",
 	
-	"Woodfall Entrance Platform", "Woodfall Main Room Switch", "Woodfall Dark Room", "Start Mask",
+	"Woodfall Entrance Platform", "Woodfall Main Room Switch", "Woodfall Dark Room", "Starting Mask",
 	
 	"Snowhead Map Room Ledge", "Snowhead Pillar Freezards", "Snowhead Twin Block", "Snowhead Ice Puzzle", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement", 
 	
@@ -266,7 +266,7 @@ var s4_skip_checks = [
 
 var scrubs_s1_skip_checks = [
 	"Baby Zoras", "Skull Kid Song", "Goron Race", "Fisherman Game", "Bank Reward #3", "Seahorses", "Beaver Race #1", "Beaver Race #2", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk", "Woodfall Entrance Platform", "Woodfall Main Room Switch", "Woodfall Dark Room", "Snowhead Map Room Ledge", "Snowhead Pillar Freezards", "Snowhead Twin Block", "Snowhead Ice Puzzle", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement", "Great Bay Entrance Torches", "Great Bay Green Valve", "Great Bay Bio Babas", "Great Bay Waterwheel Room Upper", "Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room", "Stone Tower Statue Eye", "Stone Tower Underwater", "Stone Tower Bridge Crystal", "Stone Tower Basement Ledge", "Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", "Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", "Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe",
-	"Swamp Archery #2", "Start Mask"
+	"Swamp Archery #2", "Starting Mask"
 ];
 
 var scrubs_s2_skip_checks = [
@@ -276,9 +276,8 @@ var scrubs_s2_skip_checks = [
 ];
 
 var PeekableItemLocations = [
-	"Clock Tower Entrance", "North Clock Town Tree", "Clock Town Map Purchase", "Bomb Bag Purchase", "Big Bomb Bag Purchase", "All-Night Mask Purchase", "Milk Bar Milk", "Milk Bar Chateau", "Astronomy Telescope", "Business Scrub Purchase", "Bio Baba Grotto", "Woodfall Map Purchase", "Path to Swamp Tree", "Snowhead Map Purchase", "Swamp Tourist Center Roof", "Deku Palace West Garden", "Romani Ranch Map Purchase", "Great Bay Map Purchase", "Goron Village Ledge", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Biggest Bomb Bag Purchase", "Powder Keg Challenge", "Path to Snowhead Pillar", "Stone Tower Map Purchase", "Great Bay Coast Ledge", "Zora Cape Like-Like", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Lulu's Room Ledge", "Pirates' Fortress Cage", "Ikana Canyon Ledge", "Ikana Castle Pillar"
-];
+	"Clock Tower Entrance", "North Clock Town Tree", "Clock Town Map Purchase", "Bomb Bag Purchase", "Big Bomb Bag Purchase", "All-Night Mask Purchase", "Milk Bar Milk", "Milk Bar Chateau", "Astronomy Telescope", "Business Scrub Purchase", "Bio Baba Grotto", "Woodfall Map Purchase", "Path to Swamp Tree", "Snowhead Map Purchase", "Swamp Tourist Center Roof", "Deku Palace West Garden", "Romani Ranch Map Purchase", "Great Bay Map Purchase", "Goron Village Ledge", "Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion", "Biggest Bomb Bag Purchase", "Powder Keg Challenge", "Path to Snowhead Pillar", "Stone Tower Map Purchase", "Great Bay Coast Ledge", "Zora Cape Like-Like", "Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion", "Lulu's Room Ledge", "Pirates' Fortress Cage", "Ikana Canyon Ledge", "Ikana Castle Pillar",
 
-//var PeeakbleWorldModelLocations = [
-//	"Postman's Freedom Reward", "Swamp Spider House Reward", "Mountain Smithy Day 1", "Mountain Smithy Day 2", "Hungry Goron", 
-//]
+	// 1.16 Updated World Model Peeks
+	"Kafei", "Curiosity Shop Man #1", "Postman's Freedom Reward", "Swamp Spider House Reward", "Mountain Smithy Day 1", "Mountain Smithy Day 2", "Hungry Goron", 
+];

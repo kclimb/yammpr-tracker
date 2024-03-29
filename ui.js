@@ -78,8 +78,6 @@ function process_inputs() {
 							document.getElementById(key).value = document.getElementById(key).value.toUpperCase();
 						}
 						var area = AreaNamesShort[AreaNamesIndex];
-						//if(area == "Songs") // silly lazy workaround.
-						//	area = "Start";
 						ItemLocations[Items2[j] + duplicate] = area + ": " + Names[i];
 						lastCheck.push(key);
 						if(SongItems.indexOf(key) >= 0)
@@ -766,5 +764,12 @@ function update_settings() {
 		document.getElementById("woth_input4").style.display = "none";
 		document.getElementById("woth_input5").style.display = "none";
 		document.getElementById("barren_input4").style.display = "none";
+	}
+
+	if (document.getElementById("settings_option").value == "SCRUBS S2") {
+		document.getElementById("start_title").style.fontSize = "";
+	}
+	else {
+		document.getElementById("start_title").style.fontSize = 0;
 	}
 }
