@@ -142,7 +142,7 @@ var Names = [
 	"Roof", "Woods Gr", "Witch Red", "PictoBox", "Grotto", "Contest", "Deed", "BoatArchery", "Swamp Spid", "Witches", "Spider", 
 	
 	// Deku Palace
-	"West Gard", "Bean", "Bean Ch", "Butler", 
+	"West Garden", "Bean", "Bean Ch", "Butler", 
 	
 	// Woodfall
 	"Entrance", "Bridge", "Owl", 
@@ -166,7 +166,7 @@ var Names = [
 	"Pillar", "Grotto", 
 	
 	// Great Bay Coast
-	"Grotto", "Map Ikana", "Lab Fish", "Ledge", "Mikau", "Picto", "Spid Chest", "Jump 20r", "OceSpid1", "Hint", 
+	"Grotto", "Map Ikana", "Lab Fish", "Ledge", "Mikau", "Picto", "Spider Chest", "Jump 20r", "OceSpid1", "Hint", 
 	
 	// Zora Cape
 	"Ledge 1", "Ledge 2", "Beaver", "Beaver 2", "Like Like", "Grotto", "Water", "Hint", 
