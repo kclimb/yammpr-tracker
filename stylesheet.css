@@ -62,11 +62,6 @@ overflow: hidden;
 .area_titles {
 	font-size: 20px;
 	font-weight: 3000;
-	text-shadow:
-		-1px -1px 0 white,
-		1px -1px 0 white,
-		-1px 1px 0 white,
-		1px 1px 0 white;
 }
 .column {
   margin-top:0px;
