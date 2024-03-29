@@ -1,15 +1,9 @@
 var AreaIndexes = [
 	0,0,5,13,22,26,38,45,67,74,85,89,92,97,107,117,122,
 	132,134,144,152,159,162,166,171,174,178,183,191,196,199,200,203,
-	212,227,239,264
+	212,227,239,264,265
 ];
-var SongIndexes = [
-	265/*skull kid*/,1000,1000,1000,1000,1000,1000,1000,1000,267/*swamp statue*/,266/*monkey song*/,
-	1000,1000,269/*eponas*/,1000,1000,270/*goron*/,1000,271/*eggs*/,
-	1000,1000,1000,1000,1000,1000,1000,272/*grave*/,1000,1000,1000,
-	273/*castle*/,1000,1000,1000,1000,1000
-];
-var lastItem = 264;
+var lastItem = 265;
 
 var AreaNames = [
 	"", "Clock Tower", "SCT", "NCT", "WCT", "Laundry", "ECT", "Stock Pot", "Field",
@@ -19,7 +13,7 @@ var AreaNames = [
 	"Great Bay", "Zora Cape", "Zora Hall", "PF Exterior", "PF Sewers", "PF Interior", "Pinnacle",
 	"Road Ikana", "Graveyard", "Canyon", "Shrine", "Well", "Castle", "Stone Tower", 
 	"WFT", "SHT", "GBT", "STT",
-	"Songs"
+	"Start With", "Songs"
 ];
 var AreaNamesShort = [
 	"", "Clock", "SCT", "NCT", "WCT", "Lau", "ECT", "StoPot", "Field",
@@ -29,7 +23,7 @@ var AreaNamesShort = [
 	"GreBay", "ZorCape", "ZorHall", "PirExt", "PirSew", "PirInt", "Pin",
 	"RIkana", "Grave", "Canyon", "Shrine", "Well", "Castle", "StoTower", 
 	"WFT", "SHT", "GBT", "STT",
-	"Songs"
+	"Start", "Songs"
 ];
 
 var areaInputs = [
@@ -151,6 +145,10 @@ for (var i = 0; i < Locations.length; i++) {
 				elem.className = "area_titles";
 			}
 			else if(j == 36) {
+				elem.id = "start_title";
+				elem.className = "area_titles";
+			}
+			else if(j == 37) {
 				elem.id = "song_title";
 				elem.className = "area_titles";
 			}

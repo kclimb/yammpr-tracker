@@ -31,7 +31,7 @@ function process_inputs() {
 		
 		for (var j = AreaIndexes.length-1; j > 0; j--) {
 			if (i < AreaIndexes[j]) {
-				var AreaNamesIndex = AreaIndexes.indexOf(AreaIndexes[j]);
+				var AreaNamesIndex = AreaIndexes.indexOf(AreaIndexes[j]);				
 			};
 		}
 		
@@ -77,7 +77,10 @@ function process_inputs() {
 							document.getElementById(key).style.backgroundImage= ""; 
 							document.getElementById(key).value = document.getElementById(key).value.toUpperCase();
 						}
-						ItemLocations[Items2[j] + duplicate] = AreaNamesShort[AreaNamesIndex] + ": " + Names[i];
+						var area = AreaNamesShort[AreaNamesIndex];
+						//if(area == "Songs") // silly lazy workaround.
+						//	area = "Start";
+						ItemLocations[Items2[j] + duplicate] = area + ": " + Names[i];
 						lastCheck.push(key);
 						if(SongItems.indexOf(key) >= 0)
 							document.getElementById("text_"+key).innerHTML = document.getElementById("text_"+key).innerHTML + ": " + SongNames[Check[key]];
@@ -131,6 +134,7 @@ function update_checks() {
 		if (document.getElementById("settings_option").value == "S3" && s3_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "S4" && s4_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("settings_option").value == "SCRUBS S1" && scrubs_s1_skip_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "SCRUBS S2" && scrubs_s2_skip_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("gossips_option").value != "ON" && Locations[i].startsWith("h_")) {continue;}
 		
 		var key = Locations[i];
