@@ -77,8 +77,8 @@ function process_inputs() {
 							document.getElementById(key).style.backgroundImage= ""; 
 							document.getElementById(key).value = document.getElementById(key).value.toUpperCase();
 						}
-						var area = AreaNamesShort[AreaNamesIndex];
-						ItemLocations[Items2[j] + duplicate] = area + ": " + Names[i];
+
+						ItemLocations[Items2[j] + duplicate] = AreaNamesShort[AreaNamesIndex] + ": " + Names[i];
 						lastCheck.push(key);
 						if(SongItems.indexOf(key) >= 0)
 							document.getElementById("text_"+key).innerHTML = document.getElementById("text_"+key).innerHTML + ": " + SongNames[Check[key]];
