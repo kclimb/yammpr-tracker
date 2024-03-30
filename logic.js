@@ -2023,9 +2023,10 @@ function update_location_logic() {
 		Location_Could_Peek["Stone Tower Death Armos Maze Chest"] = CouldHave.stt_access || (CouldHave.istt_access && (CouldHave.deku_mask || CouldHave.explosive));
 	}
 
-	// Version 1.16 added a toggle to make certain checks peekable by having a game model reflect a check's item
-	updatedWorldModels = document.getElementById("settings_option").value == "SCRUBS S2";
-	if (updatedWorldModels) {
+	// Version 1.16 added some changes to logic/peekable checks:
+	v1_16plus = document.getElementById("settings_option").value == "SCRUBS S2";
+	if (v1_16plus) {
+		//Updated World Models: a setting toggle to make certain checks peekable by having a game model reflect a check's item
 		Location_Access["Kafei"] = true;
 		Location_Access["Curiosity Shop Man #1"] = true;
 		Location_Access["Postman's Freedom Reward"] = true;
@@ -2041,5 +2042,10 @@ function update_location_logic() {
 		Location_Could_Peek["Mountain Smithy Day 1"] = CouldHave.north_access;
 		Location_Could_Peek["Mountain Smithy Day 2"] = CouldHave.north_access;
 		Location_Could_Peek["Hungry Goron"] = CouldHave.north_access;
+
+		// Rando change: Goron Child only stops crying (and therefore lighting the room's torches) if you play full Goron Lullaby, impacting Hugo
+		Location_Logic["Hungry Goron"] = Logic.north_access && Logic.goron_mask && Logic.magic && (Logic.lullaby || Logic.shoot_fire_arrow);
+		Location_Obtain["Hungry Goron"] = Game.north_access && Game.goron_mask && Game.magic && (Game.lullaby || Game.shoot_fire_arrow);
+		Location_Could_Obtain["Hungry Goron"] = CouldHave.north_access && CouldHave.goron_mask && CouldHave.magic && (CouldHave.lullaby || CouldHave.shoot_fire_arrow);
 	}
 }
