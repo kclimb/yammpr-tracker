@@ -2025,27 +2025,35 @@ function update_location_logic() {
 
 	// Version 1.16 added some changes to logic/peekable checks:
 	v1_16plus = document.getElementById("settings_option").value == "SCRUBS S2";
+
 	if (v1_16plus) {
+
+		// Rando change: Goron Child only stops crying (and therefore lighting the room's torches) if you play full Goron Lullaby, impacting Hugo
+		Location_Logic["Hungry Goron"] = Logic.north_access && Logic.goron_mask && Logic.magic && (Logic.lullaby || Logic.shoot_fire_arrow);
+		Location_Obtain["Hungry Goron"] = Game.north_access && Game.goron_mask && Game.magic && (Game.lullaby || Game.shoot_fire_arrow);
+		Location_Could_Obtain["Hungry Goron"] = CouldHave.north_access && CouldHave.goron_mask && CouldHave.magic && (CouldHave.lullaby || CouldHave.shoot_fire_arrow);
+	}
+
+	updatedWorldModels = document.getElementById("settings_option").value == "SCRUBS S2";
+
+	if (updatedWorldModels) {
 		//Updated World Models: a setting toggle to make certain checks peekable by having a game model reflect a check's item
 		Location_Access["Kafei"] = true;
 		Location_Access["Curiosity Shop Man #1"] = true;
 		Location_Access["Postman's Freedom Reward"] = true;
 		Location_Access["Swamp Spider House Reward"] = Game.poison_swamp_access;
-		Location_Access["Mountain Smithy Day 1"] = Game.north_access;
-		Location_Access["Mountain Smithy Day 2"] = Game.north_access;
 		Location_Access["Hungry Goron"] = Game.north_access;
 
 		Location_Could_Peek["Kafei"] = true;
 		Location_Could_Peek["Curiosity Shop Man #1"] = true;
 		Location_Could_Peek["Postman's Freedom Reward"] = true;
 		Location_Could_Peek["Swamp Spider House Reward"] = CouldHave.poison_swamp_access;
-		Location_Could_Peek["Mountain Smithy Day 1"] = CouldHave.north_access;
-		Location_Could_Peek["Mountain Smithy Day 2"] = CouldHave.north_access;
 		Location_Could_Peek["Hungry Goron"] = CouldHave.north_access;
 
-		// Rando change: Goron Child only stops crying (and therefore lighting the room's torches) if you play full Goron Lullaby, impacting Hugo
-		Location_Logic["Hungry Goron"] = Logic.north_access && Logic.goron_mask && Logic.magic && (Logic.lullaby || Logic.shoot_fire_arrow);
-		Location_Obtain["Hungry Goron"] = Game.north_access && Game.goron_mask && Game.magic && (Game.lullaby || Game.shoot_fire_arrow);
-		Location_Could_Obtain["Hungry Goron"] = CouldHave.north_access && CouldHave.goron_mask && CouldHave.magic && (CouldHave.lullaby || CouldHave.shoot_fire_arrow);
+		//Turns out you can't peek these until you have the means to do the check anyway, so the peek logic doesn't change
+		//Location_Access["Mountain Smithy Day 1"] = Game.north_access;
+		//Location_Access["Mountain Smithy Day 2"] = Game.north_access;
+		//Location_Could_Peek["Mountain Smithy Day 1"] = CouldHave.north_access;
+		//Location_Could_Peek["Mountain Smithy Day 2"] = CouldHave.north_access;
 	}
 }

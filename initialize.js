@@ -337,6 +337,7 @@ var Location_Could_Peek={};
 var lastCheck = ["start"];
 var forcedDisplay = new Array(1024).fill(false);
 var v1_16plus = false;
+var updatedWorldModels = false;
 
 for (var i = 0; i < Items.length; i++) {
 	Logic[Items[i]] = false;
