@@ -273,7 +273,15 @@ function woth_and_barren_processing() {
 			document.getElementById("woth" + wothNumber + "_text" + 5).innerHTML="";
 			document.getElementById("woth" + wothNumber + "_text" + 6).innerHTML="";
 			document.getElementById("woth" + wothNumber + "_text" + 7).innerHTML="";
-			
+
+			// Confirm which Always hint set we're working with
+			if (document.getElementById("settings_option") == "SCRUBS S2") {
+				alwaysHints = ["Aliens Defense", "Cremia", "Mirror Shield Chest", "Gossip Stones", "Ocean Spider House Chest", "Gorman"];
+			}
+			else {
+				alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging"];
+			}
+
 			for (var k = 1; k < Items.length; k++) {
 				
 				// Cannot be hinted WotH
