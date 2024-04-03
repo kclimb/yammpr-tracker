@@ -275,7 +275,7 @@ function woth_and_barren_processing() {
 			document.getElementById("woth" + wothNumber + "_text" + 7).innerHTML="";
 
 			// Confirm which Always hint set we're working with
-			if (document.getElementById("settings_option") == "SCRUBS S2") {
+			if (document.getElementById("settings_option").value == "SCRUBS S2") {
 				alwaysHints = ["Aliens Defense", "Cremia", "Mirror Shield Chest", "Gossip Stones", "Ocean Spider House Chest", "Gorman"];
 			}
 			else {
