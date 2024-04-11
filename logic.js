@@ -826,8 +826,8 @@ function update_location_logic() {
 	Location_Access["Hookshot Chest"] = Game.pirates_fortress_access && ((Game.bow || (Game.deku_mask && Game.magic)) && (Game.goron_mask || Game.hookshot));
 	Location_Access["Pirates' Fortress Interior Lower Chest"] = Game.pirates_fortress_access && (Game.goron_mask || Game.hookshot);
 	Location_Access["Pirates' Fortress Interior Upper Chest"] = Game.pirates_fortress_access && Game.hookshot;
-	Location_Access["Pirates' Fortress Interior Tank Chest"] = Game.pirates_fortress_access && Game.hookshot;
-	Location_Access["Pirates' Fortress Interior Guard Room Chest"] = Game.pirates_fortress_access && Game.hookshot;
+	Location_Access["Pirates' Fortress Interior Tank Chest"] = Game.pirates_fortress_access && (Game.hookshot || (Game.goron_mask && Game.explosive));
+	Location_Access["Pirates' Fortress Interior Guard Room Chest"] = Game.pirates_fortress_access && (Game.hookshot || Game.goron_mask);
 		
 	// Pinnacle Rock
 	Location_Access["Seahorses"] = Game.west_access && Game.zora_mask && Game.any_bottle && Game.seahorse;
@@ -1162,7 +1162,7 @@ function update_location_logic() {
 	Location_Obtain["Pirates' Fortress Interior Lower Chest"] = Game.pirates_fortress_access && (Game.goron_mask || Game.hookshot);
 	Location_Obtain["Pirates' Fortress Interior Upper Chest"] = Game.pirates_fortress_access && Game.hookshot;
 	Location_Obtain["Pirates' Fortress Interior Tank Chest"] = Game.pirates_fortress_access && Game.hookshot;
-	Location_Obtain["Pirates' Fortress Interior Guard Room Chest"] = Game.pirates_fortress_access && Game.hookshot;
+	Location_Obtain["Pirates' Fortress Interior Guard Room Chest"] = Game.pirates_fortress_access && (Game.hookshot || (Game.goron_mask && Game.bow));
 		
 	// Pinnacle Rock
 	Location_Obtain["Seahorses"] = Game.west_access && Game.zora_mask && Game.any_bottle && Game.seahorse;
