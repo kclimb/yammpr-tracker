@@ -874,11 +874,11 @@ function update_settings_hints() {
 	}
 	else if (document.getElementById("settings_option").value == "SCRUBS S1") {
 		alwaysHints = ["Aliens Defense", "Cremia", "Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Dampe Digging", "Gossip Stones", "Butler", "Boat Archery"];
-		hintbox.innerHTML = "ali \ncre \nswa \noce \ndam \ngos \nbut \nboa \n\nsar \nhun \ngro \nlef \npos \nmid";
+		hintbox.innerHTML = "ali \ncre \nswa \noce \ndam \ngos \nbut \nboa \n\nsar \nhun \ngro \nlef \npos \nmid ";
 	}
 	else if (document.getElementById("settings_option").value == "SCRUBS S2") {
 		alwaysHints = ["Aliens Defense", "Cremia", "Mirror Shield Chest", "Gossip Stones", "Ocean Spider House Chest", "Gorman"];
-		hintbox.innerHTML = "ali \ncre \nmir \ngos \nspi \ngor \n\n"
+		hintbox.innerHTML = "ali \ncre \nmir \ngos \nspi \ngor \n\n\nbottle \ngaro \nkeg \ndust \noath ";
 	}
 	else if (document.getElementById("settings_option").value == "SCRUBS S3") {
 		alwaysHints = [];
