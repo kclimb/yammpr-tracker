@@ -365,6 +365,16 @@ var scrubs_s2_disabled_checks = [
 
 var scrubs_s3_disabled_checks = [
 	"Baby Zoras", "Skull Kid Song",
+	"All-Night Mask Purchase", "Keaton Quiz", "Bank Reward #3", "Seahorses", "Goron Race", "Swamp Archery #2", 
+
+	"Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion",
+	"Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion",
+	"Gorman Bros Milk Purchase", "Milk Bar Chateau", "Milk Bar Milk",
+
+	"Woodfall Entrance Platform", "Woodfall Main Room Switch", "Woodfall Dark Room",
+	"Snowhead Map Room Ledge", "Snowhead Pillar Freezards", "Snowhead Twin Block", "Snowhead Ice Puzzle", "Snowhead Icicle Room Wall", "Snowhead Main Room Wall", "Snowhead Basement",
+	"Great Bay Entrance Torches", "Great Bay Green Valve", "Great Bay Bio Babas", "Great Bay Waterwheel Room Upper", "Great Bay Waterwheel Room Lower", "Great Bay Seesaw Room",
+	"Stone Tower Statue Eye", "Stone Tower Underwater", "Stone Tower Bridge Crystal", "Stone Tower Basement Ledge", "Stone Tower Mirror Sun Switch", "Stone Tower Mirror Sun Block", "Stone Tower Lava Room Fire Ring", "Stone Tower Lava Room Ledge", "Stone Tower Thin Bridge", "Stone Tower Eyegore", "Stone Tower Death Armos", "Stone Tower Entrance Sun Switch", "Stone Tower Updraft Frozen Eye", "Stone Tower Updraft Fire Ring", "Stone Tower Wizzrobe"
 ]
 
 var PeekableItemLocations = [
