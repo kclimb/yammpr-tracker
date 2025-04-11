@@ -34,8 +34,13 @@ function process_inputs() {
 				var AreaNamesIndex = AreaIndexes.indexOf(AreaIndexes[j]);				
 			};
 		}
+
+		if(key.startsWith("h_")) { continue; }
 		
 		if(Check[key] != "unknown") {continue;}
+		if(!inputs.includes(document.getElementById(key).value.toLowerCase()))
+			continue;
+
 		if (isUpperCase(document.getElementById(key).value.charAt(2)) && document.getElementById(key).value.length == 3) {
 			peeked = true;
 			document.getElementById(key).value = document.getElementById(key).value.toLowerCase();
@@ -77,7 +82,6 @@ function process_inputs() {
 							document.getElementById(key).style.backgroundImage= ""; 
 							document.getElementById(key).value = document.getElementById(key).value.toUpperCase();
 						}
-
 						ItemLocations[Items2[j] + duplicate] = AreaNamesShort[AreaNamesIndex] + ": " + Names[i];
 						lastCheck.push(key);
 						if(SongItems.indexOf(key) >= 0)
@@ -93,7 +97,7 @@ function process_inputs() {
 								if(i >= AreaIndexes[k])
 									break;
 								
-								if (document.getElementById(Locations[i]).style.display != "none" && Location_Access[Locations[i]]) {
+								if (document.getElementById(Locations[i]).style.display != "none" && Location_Peek[Locations[i]]) {
 									document.getElementById(Locations[i]).focus();
 									break;
 								}
@@ -108,7 +112,7 @@ function process_inputs() {
 	}
 }
 
-function update_checks() {
+function update_check_display() {
 	
 	if(toFocus != null) {
 		toFocus.focus();
@@ -124,15 +128,21 @@ function update_checks() {
 		document.getElementById("text_" + Locations[i]).style.display = "none";
 		document.getElementById("br_" + Locations[i]).style.display = "none";
 		
-		//if (document.getElementById("small_keys_option").value != "KEYSY" && Locations[i].startsWith("key_")) {continue;}
 		if (Locations[i] == "Fisherman Pictograph") {continue;}
 		if (Locations[i] == "Beaver Race #2") {continue;}
 		if (Locations[i] == "Frog Choir") {continue;}
-		if (document.getElementById("settings_option").value == "BLITZ" && blitz_skip_checks.includes(Locations[i])) {continue;}
-		if (document.getElementById("settings_option").value == "S3" && s3_skip_checks.includes(Locations[i])) {continue;}
-		if (document.getElementById("settings_option").value == "S4" && s4_skip_checks.includes(Locations[i])) {continue;}
-		if (document.getElementById("settings_option").value == "SCRUBS S1" && scrubs_s1_skip_checks.includes(Locations[i])) {continue;}
-		if (document.getElementById("settings_option").value == "SCRUBS S2" && scrubs_s2_skip_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && blitz_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && wft_junked && blitz_disabled_checks_wft.includes(Locations[i])) {Check["Woodfall Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && sht_junked && blitz_disabled_checks_sht.includes(Locations[i])) {Check["Snowhead Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && gbt_junked && blitz_disabled_checks_gbt.includes(Locations[i])) {Check["Great Bay Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "BLITZ" && stt_junked && blitz_disabled_checks_stt.includes(Locations[i])) {Check["Stone Tower Heart Container"] = "junk"; continue;}
+		if (document.getElementById("settings_option").value == "S3" && s3_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "S4" && s4_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "S5" && s5_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "SCRUBS S1" && scrubs_s1_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "SCRUBS S2" && scrubs_s2_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "SCRUBS S3" && scrubs_s3_disabled_checks.includes(Locations[i])) {continue;}
+		if (document.getElementById("settings_option").value == "EASTER" && easter_disabled_checks.includes(Locations[i])) {continue;}
 		if (document.getElementById("gossips_option").value != "ON" && Locations[i].startsWith("h_")) {continue;}
 		
 		var key = Locations[i];
@@ -141,7 +151,7 @@ function update_checks() {
 		
 		if(key.startsWith("h_")) {
 			document.getElementById(str).className = "gossip_text";
-			if (/*Location_Access[key] && */Check[key] != "junk") {
+			if (/*Location_Peek[key] && */Check[key] != "junk") {
 				document.getElementById(str).style.display = "inline-block";
 				document.getElementById(str2).style.display = "inline-block";
 				document.getElementById(key).style.display = "inline-block";
@@ -154,6 +164,11 @@ function update_checks() {
 			continue;
 		}
 		
+		if(document.getElementById(key).value != "")
+			document.getElementById(key).style.backgroundBlendMode = "overlay";
+		else
+			document.getElementById(key).style.backgroundBlendMode = "";
+
 		if(Check[key] == "unknown" || SongItems.indexOf(key) >= 0 || forcedDisplay[i]) {
 		
 			if (document.getElementById(key).style.display != "inline-block") {
@@ -161,12 +176,20 @@ function update_checks() {
 				document.getElementById(key).style.display = "inline-block";
 				document.getElementById(str2).style.display = "inline-block";
 			}
+
+			if(i >= lastItem && Check[key] != "unknown" && !Game[Check[key]] && (Location_Logic[key] || Location_Peek[key] || Location_Could_Access[key])) {
+				document.getElementById(str).style.backgroundColor = "gray";
+			}
+			else {
+				document.getElementById(str).style.backgroundColor = "";
+			}
 			
+
 			if(SongItems.indexOf(key) < 0 && Check[key] == "unknown")
 				Game.checks_remaining += 1;
 			
 			if(Location_Logic[key]) {
-				if (Location_Access[key] && Location_Obtain[key]) {
+				if (Location_Peek[key] && Location_Access[key]) {
 					document.getElementById(str).className= "logic_check_text"; 
 					document.getElementById(str).style.fontWeight = "bold";
 					document.getElementById(str).style.opacity = 1;
@@ -180,7 +203,6 @@ function update_checks() {
 				if(SongItems.indexOf(key) >= 0 && Check[key] != "unknown")
 					;
 				else {
-					document.getElementById(str).innerHTML = backUp[i];
 					if(Check[key] == "unknown") {
 						if(SongItems.indexOf(key) < 0)
 							Game.logically_accessible += 1;
@@ -188,19 +210,19 @@ function update_checks() {
 				}
 				
 			}
-			else if (Location_Obtain[key]) {
+			else if (Location_Access[key]) {
 				document.getElementById(str).className= "access_check_text";
 				document.getElementById(str).style.opacity = .7;
 				document.getElementById(str).style.fontWeight = "normal";
 				document.getElementById(str).style.color = "yellow";
 			}
-			else if (Location_Access[key]) {
+			else if (Location_Peek[key]) {
 				document.getElementById(str).className= "peek_check_text";
 				document.getElementById(str).style.opacity = 1;
 				document.getElementById(str).style.fontWeight = "normal";
 				document.getElementById(str).style.color ="orange";
 			}
-			else if (Location_Could_Obtain[key]) {
+			else if (Location_Could_Access[key]) {
 				document.getElementById(str).className= "access_check_text";
 				document.getElementById(str).style.fontWeight = "normal";
 				document.getElementById(str).style.opacity = .3;
@@ -218,6 +240,13 @@ function update_checks() {
 				document.getElementById(str).style.fontWeight = "normal";
 				document.getElementById(str).style.color = "maroon";
 			}
+		}
+
+		if(Check[key] == "unknown" && alwaysHints.includes(key)) {
+			document.getElementById(str).style.fontStyle = "italic";
+		}
+		else {
+			document.getElementById(str).style.fontStyle = "";
 		}
 		
 		if(Check[key] != "unknown" && !forcedDisplay[i] && document.getElementById(key) != null) {
@@ -262,9 +291,30 @@ function highlight(x) {
 		x.style.opacity =1;
 	}
 	
+	Update();
 }
 
-function junk() {
+function click_remains(x) {
+	if(event.button == 2 && document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value.startsWith("SCRUBS")) {
+
+		let theRemains = x.id.slice(0, -4);
+
+		if(theRemains == "odalwasremains") {
+			wft_junked = true;
+		}
+		else if(theRemains == "gohtsremains") {
+			sht_junked = true;
+		}
+		else if(theRemains == "gyorgsremains") {
+			gbt_junked = true;
+		}
+		else if(theRemains == "twinmoldsremains") {
+			stt_junked = true;
+		}
+	}
+}
+
+function click_check() {
 	var type = event.button;
 	var str = event.target.id;
 	var str = str.substring('text_'.length);
@@ -324,7 +374,7 @@ function junk() {
 				if(i >= AreaIndexes[j])
 					break;
 				
-				if (document.getElementById(Locations[i]).style.display != "none" && Location_Access[Locations[i]]) {
+				if (document.getElementById(Locations[i]).style.display != "none" && Location_Peek[Locations[i]]) {
 					toFocus = document.getElementById(Locations[i]);
 					break;
 				}
@@ -344,7 +394,7 @@ function junk() {
 		
 			var input = SpoilerItemToInput[SpoilerLocToItem[str]];
 			
-			if(input == undefined) {
+			if(input == undefined && type != 2) {
 				Check[str]="junk";
 				
 				document.getElementById(str).style.display = "none";
@@ -353,6 +403,9 @@ function junk() {
 				
 				if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); }
 				
+				if(LargeGildedJunkItems.includes(SpoilerLocToItem[str]))
+					document.getElementById("simLog").value = str + " -> " + SpoilerLocToItem[str] + "\n" + document.getElementById("simLog").value;
+
 				lastCheck.push(str);
 			}
 			else if(type == 0 && Check[str] == "unknown") {
@@ -364,13 +417,33 @@ function junk() {
 				if(SongItems.indexOf(str) != -1)
 					return;
 				
-				if (PeekableItemLocations.indexOf(str) != -1) {
+				if (input != undefined && PeekableItemLocations.indexOf(str) != -1) {
 					item = SpoilerLocToItem[str]
 					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 				}
-				else {
-					item = "unknown gilded chest";
+				else if (LargeGildedItems.includes(SpoilerLocToItem[str])){
+					item = "large gilded chest";
 					document.getElementById(str).value = "???";
+				}
+				else if (SmallGildedItems.includes(SpoilerLocToItem[str])){
+					item = "small gilded chest";
+					document.getElementById(str).value = "?  ";
+				}
+				else {
+					Check[str]="junk";
+
+					document.getElementById(str).style.display = "none";
+					document.getElementById("text_" + str).style.display = "none";
+					document.getElementById("br_" + str).style.display = "none";
+
+					if (forcedDisplay[temp]) {forcedDisplay[temp] = false; Game[Check[str]] = true; Update(); }
+
+					if(LargeGildedJunkItems.includes(SpoilerLocToItem[str]))
+						document.getElementById("simLog").value = str + " -> " + SpoilerLocToItem[str] + "\n" + document.getElementById("simLog").value;
+
+					lastCheck.push(str);
+
+					return;
 				}
 				document.getElementById("simLog").value = str + " -> " + item + " (peeked)\n" + document.getElementById("simLog").value;
 			}
@@ -397,17 +470,6 @@ function junk() {
 }	
 
 function handle_item_highlights() {
-var temp_img = document.getElementById("bomb1_img");
-	if(Game.bomb)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
-	
-	var temp_img = document.getElementById("bow1_img");
-	if(Game.bow)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
 	
 	var temp_img = document.getElementById("sword1_img");
 	if(Game.gilded_sword) {
@@ -447,116 +509,66 @@ var temp_img = document.getElementById("bomb1_img");
 	else
 		temp_img.style.opacity =.2;
 	
-	var temp_img = document.getElementById("bottle1_img");
-	if (Game.bottle1)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
-	
-	var temp_img = document.getElementById("bottle2_img");
-	if (Game.bottle2)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
-	
-	var temp_img = document.getElementById("bottle3_img");
-	if (Game.bottle3)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
-	
-	var temp_img = document.getElementById("bottle4_img");
-	if (Game.bottle4)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
-	
-	var temp_img = document.getElementById("bottle5_img");
-	if (Game.bottle5)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
-	
-	var temp_img = document.getElementById("magic_bean1_img");
-	if(Game.magic_bean)
-		temp_img.style.opacity =1;
-	else
-		temp_img.style.opacity =.2;
-	
-	var temp_img = document.getElementById("ocarina_img");
-	temp_img.style.opacity =1;
-	
-	var temp_img = document.getElementById("song_of_time_img");
-	temp_img.style.opacity =1;
-	
-	var temp_img = document.getElementById("song_of_soaring_img");
-	temp_img.style.opacity =1;
+	for(var i = 0; i < NonprogressiveItems.length; i++) {
+		var temp_img = document.getElementById(NonprogressiveItems2[i]+"_img");
+		if(Game[NonprogressiveItems[i]])
+			temp_img.style.opacity =1;
+		else
+			temp_img.style.opacity =.2;
+	}
 	
 	// boss remains
 	var temp_img = document.getElementById("odolwasremains_img");
-	if(Check["Odolwa Heart Container"] != "unknown")
+	if(Check["Woodfall Heart Container"] != "unknown")
 		temp_img.style.opacity =1;
 	else
 		temp_img.style.opacity =.2;
 	
 	var temp_img = document.getElementById("gohtsremains_img");
-	if(Check["Goht Heart Container"] != "unknown")
+	if(Check["Snowhead Heart Container"] != "unknown")
 		temp_img.style.opacity =1;
 	else
 		temp_img.style.opacity =.2;
 	
 	var temp_img = document.getElementById("gyorgsremains_img");
-	if(Check["Gyorg Heart Container"] != "unknown")
+	if(Check["Great Bay Heart Container"] != "unknown")
 		temp_img.style.opacity =1;
 	else
 		temp_img.style.opacity =.2;
 	
 	var temp_img = document.getElementById("twinmoldsremains_img");
-	if(Check["Twinmold Heart Container"] != "unknown")
+	if(Check["Stone Tower Heart Container"] != "unknown")
 		temp_img.style.opacity =1;
 	else
 		temp_img.style.opacity =.2;
-	
-	for(var i = 0; i < SingletonItems.length; i++) {
-		var temp_img = document.getElementById(SingletonItems[i]+"_img");
-		if(Game[SingletonItems[i]])
-			temp_img.style.opacity =1;
-		else
-			temp_img.style.opacity =.2;
-	}
 }
 
 function update_summary_text() {
 	for (var i = 1; i < checkSummaryText.length; i++) {
 		var summary_text_elem = document.getElementById(Items[i]+"_location");
 		if(Logic[Items[i]]) {
-			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
-
 			if (!Game[Items[i]])
 				summary_text_elem.className = "checked_text_summary_not_have";
 			else
 				summary_text_elem.className = "checked_text_summary";
-
 		}
 		else if(Game[Items[i]]) {
 			summary_text_elem.className = "checked_text_summary_have_ool";
-			if(Known[Items[i]])
-				summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
-			else
-				summary_text_elem.innerHTML = ItemNames[i]+" &#8594; ";
 		}
 		else if(CouldHave[Items[i]]) {
 			summary_text_elem.className = "checked_text_summary_could_have";
-			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
 		}
 		else if(Known[Items[i]]) {
 			summary_text_elem.className = "checked_text_summary_known";
-			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
 		}
 		else {
 			summary_text_elem.className = "checked_text_summary_ool";
-			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; ";
 		}
+
+		if(ItemLocations[Items[i]] != undefined)
+			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; "+ItemLocations[Items[i]];
+		else
+			summary_text_elem.innerHTML = ItemNames[i]+" &#8594; ";
 	}
 }
 
@@ -588,7 +600,7 @@ function Undo() {
 	}
 	
 	forcedDisplay[Check[lastCheck[lastCheck.length-1]]] = false;
-	ItemLocations[Check[lastCheck[lastCheck.length-1]]] = "unknown";
+	ItemLocations[Check[lastCheck[lastCheck.length-1]]] = undefined;
 	ItemLocation[Check[lastCheck[lastCheck.length-1]]] = "";
 	Game[Check[lastCheck[lastCheck.length-1]]] = false;
 	CouldHave[Check[lastCheck[lastCheck.length-1]]] = false;
@@ -614,16 +626,19 @@ function clickSummary(loc) {
 	var temp = "";
 	var clickedSong = false;
 	
+	theLocation = "";
 	if(loc.id.includes("text_")) {
 		clickedSong = true;
 		str = event.target.id.substring('text_'.length);
 		temp = Locations.indexOf(str);
+		theLocation = loc.id.slice(5);
 		if(Check[str] != "unknown") {
 			item = Check[str];
 		}
 	}
 	else {
 		item = loc.id.slice(0, -9);
+		theLocation = ItemLocation[item];
 	}
 	
 	if(MarkedWotHItemArrow == null) {
@@ -663,7 +678,11 @@ function clickSummary(loc) {
 				if(SongItems.indexOf(str) != -1)
 					return;
 				
-				if (PeekableItemLocations.indexOf(str) != -1) {
+				if (document.getElementById("settings_option").value == "EASTER" && PeekableItemLocationsEaster.indexOf(str) != -1) {
+					item = SpoilerLocToItem[str]
+					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
+				}
+				else if (PeekableItemLocations.indexOf(str) != -1) {
 					item = SpoilerLocToItem[str]
 					document.getElementById(str).value = input.charAt(0) + input.charAt(1) + input.charAt(2).toUpperCase();
 				}
@@ -677,6 +696,43 @@ function clickSummary(loc) {
 				forcedDisplay[temp] = false; 
 				Game[Check[str]] = true; 
 			}
+		}
+		else if(event.ctrlKey && event.which == 1) {
+			
+			if (Check[theLocation] != "unknown")
+			{
+				if (Check[theLocation] == "song_of_healing" || Check[theLocation] == "eponas_song" || Check[theLocation] == "song_of_storms" || Check[theLocation] == "sonata" || Check[theLocation] == "lullaby" || Check[theLocation] == "nwbn" || Check[theLocation] == "elegy" || Check[theLocation] == "oath") {
+					document.getElementById("text_" + theLocation).innerHTML = document.getElementById("text_" + theLocation).innerHTML.split(': ')[0];
+					Game.checks_remaining -= 1;
+				}
+				else if (Check[theLocation] != "junk") {
+					document.getElementById(Check[theLocation] + "_location").className = "checkSummaryText";
+				}
+				document.getElementById(theLocation).value = "";
+			}
+
+			forcedDisplay[Locations.indexOf(theLocation)] = false;
+			for (var i = 0; i < AreaIndexes.length - 5; i++) {
+				if (Locations.indexOf(theLocation) >= AreaIndexes[i] && Locations.indexOf(theLocation) < AreaIndexes[i+1]) {
+					document.getElementById(theLocation).style.backgroundImage = "url('./images/areas/"+AreaImages[i]+"')";
+					break;
+				}
+			}
+
+			ItemLocation[Check[theLocation]] = "";
+			ItemLocations[Check[theLocation]] = undefined;
+			Game[Check[theLocation]] = false;
+			Known[Check[theLocation]] = false;
+			CouldHave[Check[theLocation]] = false;
+			Logic[Check[theLocation]] = false;
+			Hinted[theLocation] = false;
+			Check[theLocation] = "unknown";
+
+			var t = lastCheck.indexOf(theLocation);
+			if (t > -1) {
+				lastCheck.splice(t, 1);
+			}
+			Update();
 		}
 	}
 	else {
@@ -750,6 +806,21 @@ function resetCycle() {
 }
 
 function update_settings() {
+	localStorage.setItem("settings_option", document.getElementById("settings_option").value);
+
+	// Only show the Starting area title if using settings with a starting item
+	if (document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "SCRUBS S3" || document.getElementById("settings_option").value == "SCRUBS S2") {
+		document.getElementById("title_start").style.fontSize = "";
+	}
+	else {
+		document.getElementById("title_start").style.fontSize = 0;
+	}
+
+	update_woth_barren_panels();
+	update_settings_hints();
+}
+
+function update_woth_barren_panels() {
 	if(document.getElementById("settings_option").value == "BLITZ") {
 		document.getElementById("woth_input4").style.display = "inline";
 		document.getElementById("woth_input5").style.display = "inline";
@@ -765,11 +836,44 @@ function update_settings() {
 		document.getElementById("woth_input5").style.display = "none";
 		document.getElementById("barren_input4").style.display = "none";
 	}
+}
 
-	if (document.getElementById("settings_option").value == "SCRUBS S2") {
-		document.getElementById("start_title").style.fontSize = "";
+function update_settings_hints() {
+	var hintbox = document.getElementById("hintInput");
+	if (document.getElementById("settings_option").value == "EASTER") {
+		alwaysHints = ["Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Seahorses"];
+		hintbox.innerHTML = "oce \nali \ncre \nbut \nboa \ndam \nrac \nsea \n\nfis \nbea \ngos \nban \ngro \nspi \n";
+	}
+	else if (document.getElementById("settings_option").value == "BLITZ") {
+		alwaysHints = [];
+		hintbox.innerHTML = "";
+	}
+	else if (document.getElementById("settings_option").value == "S3") {
+		alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging"];
+		hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \n";
+	}
+	else if (document.getElementById("settings_option").value == "S4") {
+		alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones", "Seahorses"];
+		hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nfis \nbea \ngos \nsea \n";
+	}
+	else if (document.getElementById("settings_option").value == "S5") {
+		alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones"];
+		hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \n\ngro \ndog \nban \nmid \ngor \nspi \nice \nlig ";
+	}
+	else if (document.getElementById("settings_option").value == "SCRUBS S1") {
+		alwaysHints = ["Aliens Defense", "Cremia", "Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Gossip Stones"];
+		hintbox.innerHTML = "";
+	}
+	else if (document.getElementById("settings_option").value == "SCRUBS S2") {
+		alwaysHints = ["Aliens Defense", "Cremia", "Mirror Shield Chest", "Gossip Stones", "Ocean Spider House Chest", "Gorman"];
+		hintbox.innerHTML = "ali \ncre \nmir \ngos \nspi \ngor \n\n"
+	}
+	else if (document.getElementById("settings_option").value == "SCRUBS S3") {
+		alwaysHints = [];
+		hintbox.innerHTML = "";
 	}
 	else {
-		document.getElementById("start_title").style.fontSize = 0;
+		alwaysHints = [];
+		hintbox.innerHTML = "";
 	}
 }

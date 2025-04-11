@@ -17,34 +17,32 @@
 			<div id="normalColumn7" class="column"></div>
 			<div id="normalColumn8" class="column"></div>
 			<div id="songColumn" class="column">
-				<div id="songdiv"></div><br>
-				<textarea spellcheck="false" rows="12" cols="13" id="hintInput"></textarea><br><br>
+				<div id="songdiv"></div><br class="half_break">
+				<textarea spellcheck="false" rows="21" cols="13" id="hintInput"></textarea><br><br class="half_break">
 				<button id='resetCycleButton' onclick="resetCycle()">Reset Cycle</button><br>
 				<button id="simControl"onclick="document.getElementById('fileInput').click();" >Play the Sim</button> 
 				<input id="fileInput" type="file" onchange='onChooseFile(event, onFileLoad.bind(this, "contents"))' style="display:none;" /><br>
-				<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br><br>
+				<button id='helpButton' onclick="document.getElementById('myModal').style.display = 'block';">Help</button><br><br class="half_break">
 				<label class="settingsLabels" for="settings_option">Mode</label>
 				<select class="settingsOptions" id="settings_option">
+					<!--<option value="SCRUBS S3">Scrubs S3</option>-->
+					<option value="S5">S5</option>
 					<option value="S4">S4</option>
+					<option value="S3">S3</option>
+					<option value="BLITZ">Blitz</option>
+					<option value="EASTER">Easter</option>
 					<option value="SCRUBS S2">Scrubs S2</option>
 					<option value="SCRUBS S1">Scrubs S1</option>
-					<option value="BLITZ">Blitz</option>
-					<option value="S3">S3</option>
 				</select><br><br class="half_break">
 				<label class="settingsLabels" for="gossips_option">Gossips</label>
 				<select class="settingsOptions" id="gossips_option">
 					<option value="OFF">Off</option>
 					<option value="ON">On</option>
 				</select><br>
-				<!--<label class="settingsLabels" for="small_keys_option">SMALL KEYS</label>
-				<select class="settingsOptions" id="small_keys_option">
-				  <option value="KEYSY">KEYSY</option>
-				  <option value="VANILLA">VANILLA</option>
-				</select><br><br class="half_break">-->
 			</div>
 			<div id="itemColumn" class="itemColumn">
 				<small id="checks_remaining" class="check_text" style="color:lightblue">Remaining:</small>
-				<small id="logically_accessible" class="check_text" style="color:chartreuse">In Logic:</small><br><br>
+				<small id="logically_accessible" class="check_text" style="color:chartreuse">In Logic:</small><br>
 				
 				<img src="./images/Hero's Bow.png" id="bow1_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/Fire Arrow.png" id="fire_arrow_img" class="requirements" onmousedown="highlight(this)"></img>
@@ -68,10 +66,10 @@
 				<img src="./images/songs/oath.png" id="oath_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/songs/eponas.png" id="eponas_song_img" class="requirements" onmousedown="highlight(this)"></img>
 				<br>
-				<img src="./images/Odolwa's Remains.png" id="odolwasremains_img" class="requirements" onmousedown="highlight(this)"></img>
-				<img src="./images/Goht's Remains.png" id="gohtsremains_img" class="requirements" onmousedown="highlight(this)"></img>
-				<img src="./images/Gyorg's Remains.png" id="gyorgsremains_img" class="requirements" onmousedown="highlight(this)"></img>
-				<img src="./images/Twinmold's Remains.png" id="twinmoldsremains_img" class="requirements" onmousedown="highlight(this)"></img>
+				<img src="./images/Odolwa's Remains.png" id="odolwasremains_img" class="requirements" onmousedown="click_remains(this)"></img>
+				<img src="./images/Goht's Remains.png" id="gohtsremains_img" class="requirements" onmousedown="click_remains(this)"></img>
+				<img src="./images/Gyorg's Remains.png" id="gyorgsremains_img" class="requirements" onmousedown="click_remains(this)"></img>
+				<img src="./images/Twinmold's Remains.png" id="twinmoldsremains_img" class="requirements" onmousedown="click_remains(this)"></img>
 				<br><br>
 				<img src="./images/Powder Keg.png" id="powder_keg_img" class="requirements" onmousedown="highlight(this)"></img>
 				<img src="./images/Mirror Shield.png" id="mirror_shield_img" class="requirements" onmousedown="highlight(this)"></img>
@@ -234,11 +232,13 @@
 				-If an area is hinted "Foolish except song", prefix the area abbreviation with an asterisk (e.g. Ranch foolish except song = "*ran").<br>
 				-An alternate way of inputting always/sometimes hints is by putting a location code and the three letter item code (or x for nothing) into the text area on their own line. For example, to hint "Swamp Spider House Reward" as Bomb Bag, type "swa bom" on its own line in the text area above the "Reset Cycle" button.<br>
 				-Press Ctrl+Z to undo the last item input.<br>
-				-Click the "Reset Cycle" button to unmark items you lose when you play Song of Time.<br><br>
+				-Click the "Reset Cycle" button to unmark items you lose when you play Song of Time.<br>
+				-To set a dungeon as junked (for Blitz settings), right click on the corresponding Remains image. This will also remove checks locked by beating that dungeon.<br>
+				-You can also hold Ctrl and left click an item in the summary area to undo the check containing that item.<br><br>
 				Simulator:<br>
 				-To start the simulator click the "Play the Sim" button and select a spoiler log (only Blitz tested).<br>
 				-Left click a check to get it. Right click a check to peek it. You can then left or right click the peeked check again to obtain it.<br>
-				-If you peek a check which is not freestanding, it will tell you that you found an unknown gilded chest, labeled by "???". You can left click the check again to obtain the item there.<br>
+				-If you peek a check which is not freestanding, it will tell you that you found a gilded chest. Large ones are labeled by "???", and small ones are labeled by "?". You can left click the check again to obtain the item there.<br>
 				-Click a Gossip Stone check (colored pink) to get a hint.<br></p>
 				<div class="modal_column">Item codes:<br>
 				x - Junk<br>

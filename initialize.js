@@ -1,10 +1,10 @@
 var AreaIndexes = [
-	0,0,5,13,22,26,38,45,67,74,85,89,92,97,107,117,122,
-	132,134,144,152,159,162,166,171,174,178,183,191,196,199,200,203,
-	212,227,239,264,265
+	0,1,1,6,15,24,28,40,47,69,75,86,90,93,98,108,118,123,
+	133,135,145,153,160,163,167,172,175,179,184,192,197,200,201,204,
+	213,228,240,265
 ];
 var SongIndexes = [
-	266/*skull kid*/,1000,1000,1000,1000,1000,1000,1000,1000,268/*swamp statue*/,267/*monkey song*/,
+	1000,266/*skull kid*/,1000,1000,1000,1000,1000,1000,1000,1000,268/*swamp statue*/,267/*monkey song*/,
 	1000,1000,270/*eponas*/,1000,1000,271/*goron*/,1000,272/*eggs*/,
 	1000,1000,1000,1000,1000,1000,1000,273/*grave*/,1000,1000,1000,
 	274/*castle*/,1000,1000,1000,1000,1000
@@ -12,35 +12,38 @@ var SongIndexes = [
 var lastItem = 265;
 
 var AreaNames = [
-	"", "Clock Tower", "SCT", "NCT", "WCT", "Laundry", "ECT", "Stock Pot", "Field",
+	"", "Starting", "Clock Tower", "SCT", "NCT", "WCT", "Laundry", "ECT", "Stock Pot", "Field",
 	"Road Swamp", "Swamp", "Palace", "Woodfall",
 	"Milk Road", "Ranch", 
 	"Mtn Village", "Twin Islands", "Gor Village", "Path Snow",
 	"Great Bay", "Zora Cape", "Zora Hall", "PF Exterior", "PF Sewers", "PF Interior", "Pinnacle",
 	"Road Ikana", "Graveyard", "Canyon", "Shrine", "Well", "Castle", "Stone Tower", 
 	"WFT", "SHT", "GBT", "STT",
-	"Start With", "Songs"
+	"Songs"
 ];
 var AreaNamesShort = [
-	"", "Clock", "SCT", "NCT", "WCT", "Lau", "ECT", "StoPot", "Field",
+	"", "Start", "Clock", "SCT", "NCT", "WCT", "Lau", "ECT", "StoPot", "Field",
 	"RSwamp", "Swamp", "Palace", "Woodfall",
 	"Milk Road", "Ranch", 
 	"MtnVil", "TwinIsle", "GorVil", "PSnow",
 	"GreBay", "ZorCape", "ZorHall", "PirExt", "PirSew", "PirInt", "Pin",
 	"RIkana", "Grave", "Canyon", "Shrine", "Well", "Castle", "StoTower", 
 	"WFT", "SHT", "GBT", "STT",
-	"Start", "Songs"
+	"Songs"
 ];
-
 var areaInputs = [
-	"", "clo", "sct", "nct", "wct", "lau", "ect", "inn", "fie", "rsw", "swa", "pal", "woo", "mil", "ran", "mou", "twi", "gor", "psn", "gre", "cap", "hal", "ext", "sew", "int", "pin", "rik", "gra", "can", "shr", "wel", "cas", "sto", "wft", "sht", "gbt", "stt"
+	"", "", "clo", "sct", "nct", "wct", "lau", "ect", "inn", "fie", "rsw", "swa", "pal", "woo", "mil",
+	"ran", "mou", "twi", "gor", "psn", "gre", "cap", "hal", "ext", "sew", "int", "pin", "rik", "gra",
+	"can", "shr", "wel", "cas", "sto", "wft", "sht", "gbt", "stt"
 ];
-
 var AreaImages = [
-	"", "sct.png", "nct.png", "wct.png", "laun.png", "ect.png", "stockpot.png", "field3.png", 
+	"start.png", "", "sct.png", "nct.png", "wct.png", "laun.png", "ect.png", "stockpot.png", "field3.png", 
 	"roadtosouthern.png", "swamp.png", "palace.png", "woodfall.png",
 	"milkroad2.png", "ranch.jpg", "mountainvillage.png", "twinislands.png", "goronvillage.png",
-	"pathsnow.png", "gbc.png", "zoracape.png", "zoracape.png", "pirate2.png", "pirate2.png", "pirate2.png", "gbc.png", "ikana.png", "graveyard.jpg", "ikana.png", "shrine.png", "well.png", "castle.png", "stonetower.png"];
+	"pathsnow.png", "gbc.png", "zoracape.png", "zoracape.png", "pirate2.png", "pirate2.png", "pirate2.png",
+	"pinnacle.png", "roadikana.png", "graveyard.jpg", "ikana.png", "shrine.png", "well.png", "castle.png",
+	"stonetower.png"
+];
 
 var Known = [];
 var Check = {};
@@ -62,8 +65,14 @@ var Items2 = [
 var checkSummaryText = [
 	"junk", "bow1", "bow2", "bow3", "fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "bomb1", "bomb2", "bomb3", "magic_bean1", "magic_bean2", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "letter_to_kafei", "pendant_of_memories", "bottle1", "bottle2", "bottle3", "bottle4", "bottle5", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "sword1", "sword2", "mirror_shield", "magic1", "magic2", "wallet1", "wallet2"
 ];
-var SingletonItems = [
+var SingleItems = [
 	"fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "mirror_shield", "letter_to_kafei", "pendant_of_memories", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath"
+];
+var NonprogressiveItems = [
+	"bow", "fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "bomb", "magic_bean", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "mirror_shield", "letter_to_kafei", "pendant_of_memories", "bottle1", "bottle2", "bottle3", "bottle4", "bottle5", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath"
+];
+var NonprogressiveItems2 = [
+	"bow1", "fire_arrow", "ice_arrow", "light_arrow", "moons_tear", "land_title_deed", "swamp_title_deed", "mountain_title_deed", "ocean_title_deed", "bomb1", "magic_bean1", "room_key", "special_delivery", "powder_keg", "pictobox", "lens", "hookshot", "great_fairy_sword", "mirror_shield", "letter_to_kafei", "pendant_of_memories", "bottle1", "bottle2", "bottle3", "bottle4", "bottle5", "bottle_gold_dust", "postmans_hat", "allnight_mask", "blast_mask", "stone_mask", "greatfairy_mask", "deku_mask", "keaton_mask", "bremen_mask", "bunny_hood", "dongero_mask", "mask_of_scents", "goron_mask", "romani_mask", "circusleaders_mask", "kafei_mask", "couples_mask", "mask_of_truth", "zora_mask", "kamaro_mask", "gibdo_mask", "garo_mask", "captains_hat", "giants_mask", "fiercedeity_mask", "song_of_healing", "eponas_song", "song_of_storms", "sonata", "lullaby", "nwbn", "elegy", "oath"
 ];
 var SongItems = [
 	"Starting Song", "Skull Kid Song", "Boss Blue Warp", "Romani's Game", "Day 1 Grave Tablet", "Imprisoned Monkey", "Baby Goron", "Baby Zoras", "Ikana King", "Swamp Music Statue"
@@ -83,25 +92,29 @@ var inputs = [
 	"x", "bow", "fir", "ice", "lig", "moo", "lan", "swa", "mou", "oce", "bom", "bea", "roo", "spe", "pow", "pic", "len", "hoo", "gfs", "let", "pen", "bot", "gol", "pos", "all", "bla", "sto", "gre", "dek", "kea", "bre", "bun", "don", "sce", "gor", "rom", "cir", "kaf", "cou", "tru", "zor", "kam", "gib", "gar", "cap", "gia", "fie", "swo", "mir", "mag", "wal", "soh", "epo", "sos", "son", "lul", "nov", "ele", "oat"
 ];
 
-var hintInputs = ["swa", "oce", "ali", "cre", "but", "boa", "dam", "rac", "fis", "ban", "bea", "gos", "sea", "sm2", "mid", "pos", "ka1", "ka2", "ka3", "poe", "hun", "lef", "pam", "gor", "gro", "dog", "iro", "tar", "sar", "bom", "hon", "pla", "bro", "dar", "lig", "ice", "fir", "hoo", "kam", "inv", "spi"];
+var hintInputs = ["swa", "oce", "ali", "cre", "but", "boa",
+	"dam", "rac", "fis", "ban", "bea", "gos", "sea", "sm2",
+	"mid", "pos", "ka1", "ka2", "ka3", "poe", "hun",
+	"lef", "pam", "gor", "gro", "dog", "iro", "tar", "sar",
+	"sar2", "bom", "hon", "pla", "bro", "dar",
+	"lig", "ice", "fir", "hoo", "kam", "inv", "spi", "mir"];
 
-var hintIndexes = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Bank Reward #3", "Beaver Race #1", "Gossip Stones", "Seahorses", "Mountain Smithy Day 2", "Midnight Meeting", "Postman's Freedom Reward", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2", "Poe Hut", "Hungry Goron", "Well Left Path Chest", "Pamela's Father", "Gorman", "Grog", "Dog Race", "Iron Knuckle Chest", "Town Archery #1", "Swamp Archery #1", "Bombers' Hide and Seek", "Honey and Darling Any Day", "Deku Playground Any Day", "Gorman Bros Race", "Woodfall Dark Room", "Light Arrow Chest", "Ice Arrow Chest", "Fire Arrow Chest", "Hookshot Chest", "Kamaro", "Invisible Soldier", "Ocean Spider House Chest"];
+var hintIndexes = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery",
+	"Dampe Digging", "Goron Race", "Fisherman Game", "Bank Reward #3", "Beaver Race #1", "Gossip Stones", "Seahorses", "Mountain Smithy Day 2",
+	"Midnight Meeting", "Postman's Freedom Reward", "Kafei", "Curiosity Shop Man #1", "Curiosity Shop Man #2", "Poe Hut", "Hungry Goron",
+	"Well Left Path Chest", "Pamela's Father", "Gorman", "Grog", "Dog Race", "Iron Knuckle Chest", "Town Archery #1", "Swamp Archery #1",
+	"Swamp Archery #2", "Bombers' Hide and Seek", "Honey and Darling Any Day", "Deku Playground Any Day", "Gorman Bros Race", "Woodfall Dark Room",
+	"Light Arrow Chest", "Ice Arrow Chest", "Fire Arrow Chest", "Hookshot Chest", "Kamaro", "Invisible Soldier", "Ocean Spider House Chest", "Mirror Shield Chest"];
 
 var hintStrings1 = ["It appears ", "They say ", "Apparently ", "I hear ", "It seems "];
 var hintStrings2 = [" holds ", " brings ", " possesses ", " conceals ", " yields ", " leads to "];
 
-var alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging"];
-
+var alwaysHints = [];
 var Hinted = {};
 var hintedInput = "";
 var thisIsHinted = false;
 
 var Area = []; // used for woth/barrens
-var woth1 = "unknown";
-var woth2 = "unknown";
-var woth3 = "unknown";
-var woth4 = "unknown";
-var woth5 = "unknown";
 var AreaWotHAge = new Array(35).fill(0);
 var WotHColors = ["", "9cc4d9", "white", "b19cd9", "d09cd9", "cyan"];
 
@@ -114,44 +127,52 @@ var ManualWotHMinorItems = {};
 var ManualWotHItemLocked = {};
 var ManualWotHItemPutInLogic = {};
 
-var backUp = [];
 var toFocus = null;
 var overrideFocus = false;
 
+var wft_junked = false;
+var sht_junked = false;
+var gbt_junked = false;
+var stt_junked = false;
+
 var parent = document.getElementById("normalColumn1");
-for (var i = 0; i < Locations.length; i++) {
-	if (i == AreaIndexes[5]) { parent = document.getElementById("normalColumn2"); }
-	else if (i == AreaIndexes[8]) { parent = document.getElementById("normalColumn3"); }
-	else if (i == AreaIndexes[14]) { parent = document.getElementById("normalColumn4"); }
-	else if (i == AreaIndexes[19]) { parent = document.getElementById("normalColumn5"); }
-	else if (i == AreaIndexes[25]) { parent = document.getElementById("normalColumn6"); }
-	else if (i == AreaIndexes[32]) { parent = document.getElementById("normalColumn7"); }
-	else if (i == AreaIndexes[35]) { parent = document.getElementById("normalColumn8"); }
-	else if (i == AreaIndexes[36]) { parent = document.getElementById("songdiv"); }
+background = "";
+for (var i = 0; i < Locations.length; i++)
+{if (i == AreaIndexes[6]) { parent = document.getElementById("normalColumn2"); }
+	else if (i == AreaIndexes[9]) { parent = document.getElementById("normalColumn3"); }
+	else if (i == AreaIndexes[15]) { parent = document.getElementById("normalColumn4"); }
+	else if (i == AreaIndexes[20]) { parent = document.getElementById("normalColumn5"); }
+	else if (i == AreaIndexes[26]) { parent = document.getElementById("normalColumn6"); }
+	else if (i == AreaIndexes[33]) { parent = document.getElementById("normalColumn7"); }
+	else if (i == AreaIndexes[36]) { parent = document.getElementById("normalColumn8"); }
+	else if (i == AreaIndexes[37]) { parent = document.getElementById("songdiv"); }
 	
-	for(var j = 1; j < AreaIndexes.length; j++) {
-		if(i == AreaIndexes[j]) {
+	for(var j = 0; j < AreaIndexes.length; j++) {
+		if(i == AreaIndexes[j] || i == 0) {
+
+			if(j == 1)
+				continue;
+
 			var elem = document.createElement("small"); 
 			elem.innerHTML = AreaNames[j+1]; 
 			elem.className = "area_name"; 
-			if(j == 32) {
+			if(j == 0) {
+				elem.id = "title_start";
+			}
+			else if(j == 33) {
 				elem.id = "title_wft";
 				elem.className = "area_titles";
 			}
-			else if(j == 33) {
+			else if(j == 34) {
 				elem.id = "title_sht";
 				elem.className = "area_titles";
 			}
-			else if(j == 34) {
+			else if(j == 35) {
 				elem.id = "title_gbt";
 				elem.className = "area_titles";
 			}
-			else if(j == 35) {
-				elem.id = "title_stt";
-				elem.className = "area_titles";
-			}
 			else if(j == 36) {
-				elem.id = "start_title";
+				elem.id = "title_stt";
 				elem.className = "area_titles";
 			}
 			else if(j == 37) {
@@ -159,7 +180,7 @@ for (var i = 0; i < Locations.length; i++) {
 				elem.className = "area_titles";
 			}
 			
-			if(j < 32)
+			if(j < 33)
 				background = "url('./images/areas/"+AreaImages[j]+"')";
 			else
 				background = "";
@@ -170,7 +191,7 @@ for (var i = 0; i < Locations.length; i++) {
 		}
 	}
 	
-	if(i == AreaIndexes[35]+16) {
+	if(i == AreaIndexes[36]+16) {
 		var elem = document.createElement("small"); 
 		elem.innerHTML = "ISTT"; 
 		elem.className = "area_name";
@@ -196,7 +217,7 @@ for (var i = 0; i < Locations.length; i++) {
 	elem.id = "text_" + Locations[i]; 
 	elem.className = "check_text"; 
 	if(SongItems.indexOf(Locations[i]) < 0)
-		elem.onmousedown = junk; 
+		elem.onmousedown = click_check; 
 	else
 		elem.onmousedown = function() {clickSummary(this);};
 	elem.innerHTML = Names[i]; 
@@ -251,7 +272,7 @@ for (var i = 0; i < Locations.length; i++) {
 	if(elem.id == "text_Guru Guru")
 		elem.title = "Night 1-2: 6:00pm-5:59am";
 	if(elem.id == "text_Kafei")
-		elem.title = "Day 2: 4:00pm-10:00pm (letter must be delivered before 11:20 am Day 2)\nMust not have saved old lady this cycle";
+		elem.title = "Day 2: 4:00pm-10:00pm (letter must be delivered before 11:20 am Day 2)";
 	if(elem.id == "text_Curiosity Shop Man #1" || elem.id == "text_Curiosity Shop Man #2")
 		elem.title = "Day 3: 1:00pm-10:00pm (letter must be delivered before 11:20 am Day 2)\nMust not have saved old lady this cycle\nMust have gotten item from Kafei this cycle";
 	
@@ -265,11 +286,11 @@ for (var i = 0; i < Locations.length; i++) {
 	if(elem.id == "text_Gorman Bros Milk Purchase")
 		elem.title = "Day 1-3: 6:00am-6:00pm";
 	if(elem.id == "text_Romani's Game")
-		elem.title = "Day 1: 6:00am-6:00pm\nAliens: Night 1: 2:30am-5:10pm (3:50am lose)\nCremia: Night 2: 6:00pm-7:00pm\n(sets tod to 7:45pm)";
+		elem.title = "Day 1: 6:00am-6:00pm";
 	if(elem.id == "text_Aliens Defense")
-		elem.title = "Night 1: 2:30am-5:10pm (3:50am lose)";
+		elem.title = "Night 1: 2:30am-5:15am (3:50am lose)";
 	if(elem.id == "text_Cremia")
-		elem.title = "Night 2: 6:00pm-7:00pm\n(sets time to 7:45pm)";
+		elem.title = "Night 2: 6:00pm-7:00pm\n(sets time to 7:45pm) (must have done Aliens this cycle)";
 	
 	if(elem.id == "text_Mystery Woods Grotto")
 		elem.title = "Day 2: 6:00am-5:59am";
@@ -294,9 +315,9 @@ for (var i = 0; i < Locations.length; i++) {
 		elem.title = "Must give Gold Dust on Day 2, then receive Day 3";
 	
 	if(elem.id == "text_Pictograph Contest Winner" || elem.id == "text_Koume")
-		elem.title = "Cannot do after beating Woodfall";
+		elem.title = "Cannot do after beating WFT";
 	
-	if(elem.id == "text_Lens Cave Rock Chest" || elem.id == "text_Lens Cave Invisible Chest" || elem.id == "text_Lens of Truth Chest")
+	if(elem.id == "text_Lens Cave Rock Chest" || elem.id == "text_Lens Cave Invisible Chest" || elem.id == "text_Lens of Truth Chest" || elem.id == "text_Hungry Goron" || elem.id == "text_Baby Goron")
 		elem.title = "Cannot do after beating SHT";
 	
 	if(elem.id == "text_Zora Hall Stage Lights" || elem.id == "text_Mikau" || elem.id == "text_Evan")
@@ -322,28 +343,32 @@ document.getElementById("dongero_mask_location_br").style.display = "none";
 document.getElementById("greatfairy_mask_location").style.display = "none";
 document.getElementById("greatfairy_mask_location_br").style.display = "none";
 
-var hintbox = document.getElementById("hintInput");
-if (document.getElementById("settings_option").value == "S3")
-	hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \n";
+if (localStorage.getItem("settings_option")) {document.getElementById("settings_option").value = localStorage.getItem("settings_option");}
+
+update_settings_hints();
 
 var Logic = {};
 var Game = {};
 var CouldHave={};
 var Location_Logic = {};
 var Location_Access = {};
-var Location_Obtain = {};
-var Location_Could_Obtain={};
+var Location_Peek = {};
+var Location_Could_Access={};
 var Location_Could_Peek={};
 var lastCheck = ["start"];
 var forcedDisplay = new Array(1024).fill(false);
-var v1_16plus = false;
-var updatedWorldModels = false;
 
 for (var i = 0; i < Items.length; i++) {
 	Logic[Items[i]] = false;
 	Game[Items[i]] = false;
 	CouldHave[Items[i]] = false;
 	Known[Items[i]] = false;
+}
+
+for (var i = 0; i < Locations.length; i++) {
+	Location_Logic[Locations[i]] = false;
+	Location_Peek[Locations[i]] = false;
+	Check[Locations[i]] = "unknown";
 }
 
 var simActive = false;
@@ -354,13 +379,6 @@ var simWothsEntered = {};
 var simWothCounter = 1;
 var simBarrensEntered = {};
 var simBarrenCounter = 1;
-
-for (var i = 0; i < Locations.length; i++) {
-	Location_Logic[Locations[i]] = false;
-	Location_Access[Locations[i]] = false;
-	Check[Locations[i]] = "unknown";
-	backUp.push(document.getElementById("text_" + Locations[i]).innerHTML);
-}
 
 Game.sword1_img = "./images/Kokiri Sword.png";
 Game.sword2_img = "./images/Razor Sword.png";
@@ -375,8 +393,19 @@ Game.magic2_img = "./images/Magic2.png";
 Game.checks_remaining = 0;
 Game.logically_accessible = 0;
 
+if (document.getElementById("settings_option").value == "EASTER") {
+	Game.bottle1 = true; Known.bottle1 = true; Game.bottle2 = true; Known.bottle2 = true;
+	console.log("Easter bottle toggle")
+}
+if (document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER") { 
+	document.getElementById("Starting Song").value = "epo";
+	console.log("blitz epona toggle")
+}
+
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
+
+document.documentElement.spellcheck = false;
 
 span.onclick = function() {
   modal.style.display = "none";
@@ -387,6 +416,7 @@ window.onclick = function(event) {
   }
 }
 
+// Confirm leaving the page
 window.onbeforeunload = popup;
 function popup() {
   return '';

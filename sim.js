@@ -8,10 +8,7 @@ function readLog() {
 	document.getElementById("simLog").style.display = "inline-block";
 	document.getElementById("gossips_option").value = "ON";
 	
-	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4")
-		document.getElementById("Starting Song").value = "epo";
-	if(document.getElementById("settings_option").value == "BLITZ")
-		document.getElementById("Boss Blue Warp").value = "oaT";
+	var starting_mask = "";
 	
 	for(i = 0; i < SpoilerLines.length; i++) {
 		if(SpoilerLines[i].indexOf("->") >= 0) {
@@ -24,11 +21,26 @@ function readLog() {
 				SpoilerHintDict["h_"+loc] = item;
 			}
 		}
+		
+		if(SpoilerLines[i].includes("200000--dfbfc-d800000-1"))
+			starting_mask = "Deku Mask";
+		else if(SpoilerLines[i].includes("200000--dfbfc-da00000-"))
+			starting_mask = "Goron Mask";
+		else if(SpoilerLines[i].includes("200000--dfbfc-dc00000-"))
+			starting_mask = "Zora Mask";
+		else if(SpoilerLines[i].includes("200000--ffbfc-d800000-"))
+			starting_mask = "Fierce Deity's Mask";
 	}
-	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4")
+	
+	if(document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER"){
 		SpoilerLocToItem["Starting Song"] = "Epona's Song";
-	if(document.getElementById("settings_option").value == "BLITZ")
-		SpoilerLocToItem["Boss Blue Warp"] = "Oath to Order";
+		document.getElementById("Starting Song").value = SpoilerItemToInput["Epona's Song"];
+	}
+	
+	if(starting_mask != "") {
+		SpoilerLocToItem["Starting Item"] = starting_mask;
+		document.getElementById("Starting Item").value = SpoilerItemToInput[starting_mask];
+	}
 }
 function onChooseFile(event, onLoadFileHandler) {
 	if (typeof window.FileReader !== 'function')
@@ -182,6 +194,46 @@ function simProcessHint(gossip) {
 					document.getElementById("hintInput").value += loc_input + " " + item_input + "\n";
 			}
 		}
+		else if(hint.includes("Swamp Archery") && hint.includes("then")) {
+			for(var i = 0; i < hintStrings2.length; i++)
+				hint = hint.replace(hintStrings2[i], ":");
+			hint = hint.replace("...", "");
+			hint = hint.replaceAll(" then ", ":");
+			hint = hint.replaceAll(" then the ", ":");
+			
+			let loc = hint.split(":")[0];
+			
+			if(Locations.indexOf("Swamp Archery #1") < 0) {
+				console.log("Could not fill in the hint. Swamp Archery is not a known location.");
+				return;
+			}
+			if(hintIndexes.indexOf("Swamp Archery #1") == -1) {
+				console.log("Could not fill in the hint. Swamp Archery is not in the list of hinted locations.");
+				return;
+			}
+			
+			let loc_inputs = ["", "sar", "sar2"]
+			
+			for(var j = 1; j <=2; j++) {
+				let item = hint.split(":")[j];
+				if(item.startsWith("a "))
+					item = item.replace("a ", "");
+				if(item.startsWith("an "))
+					item = item.replace("an ", "");
+				if(item.startsWith("the "))
+					item = item.replace("the ", "");
+				
+				let loc_input = loc_inputs[j];
+				let item_input = "x";
+				if(SpoilerItemToInput[item] != undefined)
+					item_input = SpoilerItemToInput[item];
+				
+				if(document.getElementById("hintInput").value.includes(loc_input + " \n"))
+					document.getElementById("hintInput").value = document.getElementById("hintInput").value.replace(loc_input + " \n", loc_input + " " + item_input + "\n");
+				else if(!document.getElementById("hintInput").value.includes(loc_input + " " + item_input + "\n"))
+					document.getElementById("hintInput").value += loc_input + " " + item_input + "\n";
+			}
+		}
 		else {
 			for(var i = 0; i < hintStrings2.length; i++)
 				hint = hint.replace(hintStrings2[i], ":");
@@ -254,16 +306,16 @@ var SpoilerItemToInput = {
 	"All-Night Mask" : "all",
 	"Blast Mask" : "bla",
 	"Stone Mask" : "sto",
-	//"Great Fairy's Mask" : "gre",
+	"Great Fairy's Mask" : "gre",
 	"Deku Mask" : "dek",
 	"Keaton Mask" : "kea",
 	"Bremen Mask" : "bre",
 	"Bunny Hood" : "bun",
-	//"Don Gero's Mask" : "don",
+	"Don Gero's Mask" : "don",
 	"Mask of Scents" : "sce",
 	"Goron Mask" : "gor",
 	"Romani's Mask" : "rom",
-	//"Circus Leader's Mask" : "cir",
+	"Circus Leader's Mask" : "cir",
 	"Kafei's Mask" : "kaf",
 	"Couple's Mask" : "cou",
 	"Mask of Truth" : "tru",
@@ -283,10 +335,81 @@ var SpoilerItemToInput = {
 	"Song of Storms" : "sos",
 	"Sonata of Awakening" : "son",
 	"Goron Lullaby" : "lul",
+	"Goron Lullaby Upgrade" : "lul",
 	"New Wave Bossa Nova" : "nov",
 	"Elegy of Emptiness" : "ele",
 	"Oath to Order" : "oat"
 }
+
+var SmallGildedItems = [
+	"Moon's Tear",
+	"Land Title Deed",
+	"Swamp Title Deed",
+	"Mountain Title Deed",
+	"Ocean Title Deed",
+	"Magic Bean",
+	"Room Key",
+	"Letter to Mama",
+	"Letter to Kafei",
+	"Pendant of Memories"
+];
+
+var LargeGildedItems = [
+	"Bow Upgrade",
+	"Fire Arrow",
+	"Ice Arrow",
+	"Light Arrow",
+	"Bomb Bag Upgrade",
+	"Powder Keg",
+	"Pictograph Box",
+	"Lens of Truth",
+	"Hookshot",
+	"Great Fairy's Sword",
+	"Empty Bottle",
+	"Bottle of Red Potion",
+	"Bottle of Chateau Romani",
+	"Milk Bottle",
+	"Bottle of Gold Dust",
+	"Postman's Hat",
+	"All-Night Mask",
+	"Blast Mask",
+	"Stone Mask",
+	"Great Fairy's Mask",
+	"Deku Mask",
+	"Keaton Mask",
+	"Bremen Mask",
+	"Bunny Hood",
+	"Don Gero's Mask",
+	"Mask of Scents",
+	"Goron Mask",
+	"Romani's Mask",
+	"Circus Leader's Mask",
+	"Kafei's Mask",
+	"Couple's Mask",
+	"Mask of Truth",
+	"Zora Mask",
+	"Kamaro's Mask",
+	"Gibdo Mask",
+	"Garo's Mask",
+	"Captain's Hat",
+	"Giant's Mask",
+	"Fierce Deity's Mask",
+	"Sword Upgrade",
+	"Mirror Shield",
+	"Magic Power Upgrade",
+	"Wallet Upgrade",
+	"Heart Container",
+	"Bombers' Notebook",
+	"Spin Attack Mastery",
+	"Double Defense"
+];
+
+var LargeGildedJunkItems = [
+	"Heart Container",
+	"Bombers' Notebook",
+	"Spin Attack Mastery",
+	"Double Defense"
+];
 
 var SpoilerAreaToInput = {
 	"Clock Tower Rooftop" : "clo",
