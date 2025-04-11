@@ -819,7 +819,7 @@ function reset_starting_inventory() {
 	if (document.getElementById("settings_option").value == "EASTER") {
 		Game.bottle1 = true; Known.bottle1 = true; Game.bottle2 = true; Known.bottle2 = true;
 	}
-	if (document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER") { 
+	if (document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER" || document.getElementById("settings_option").value == "SCRUBS S3") { 
 		document.getElementById("Starting Song").value = "epo";
 	}
 
