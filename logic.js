@@ -294,7 +294,7 @@ function update_location_logic() {
 	Location_Logic["Dog Race"] = Logic.mask_of_truth;
 	Location_Logic["Grog"] = Logic.bremen_mask;
 	Location_Logic["Cremia"] = Logic.goron_mask && Logic.powder_keg && Logic.bow;
-	Location_Logic["Doggy Racetrack Roof Chest"] = Logic.zora_mask || Logic.hookshot || (Logic.any_magic_bean && Logic.water_for_magic_bean);
+	Location_Logic["Doggy Racetrack Roof Chest"] = Logic.zora_mask || Logic.hookshot || (Logic.any_magic_bean && Logic.water_for_magic_bean) || document.getElementById("settings_option").value == "SCRUBS S3";
 		
 	// Mountain Village
 	Location_Logic["Mountain Smithy Day 1"] = Logic.north_access && Logic.adults_wallet && (Logic.shoot_fire_arrow || Logic.hot_spring_water || Logic.snowhead_clear);
