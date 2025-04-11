@@ -7,5 +7,4 @@ function Update() {
 	process_hint_inputs();
 	handle_item_highlights();
 	update_summary_text();
-	update_settings();
 }

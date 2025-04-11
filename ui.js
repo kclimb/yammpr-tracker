@@ -808,6 +808,21 @@ function resetCycle() {
 function update_settings() {
 	localStorage.setItem("settings_option", document.getElementById("settings_option").value);
 
+	reset_starting_inventory();
+	update_woth_barren_panels();
+	update_settings_hints();
+}
+
+function reset_starting_inventory() {
+	// TODO: logic for resetting game-state with respect to the current setting (prob just adapt from bottom segment of initialize.js)
+	
+	if (document.getElementById("settings_option").value == "EASTER") {
+		Game.bottle1 = true; Known.bottle1 = true; Game.bottle2 = true; Known.bottle2 = true;
+	}
+	if (document.getElementById("settings_option").value == "BLITZ" || document.getElementById("settings_option").value == "S3" || document.getElementById("settings_option").value == "S4" || document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER") { 
+		document.getElementById("Starting Song").value = "epo";
+	}
+
 	// Only show the Starting area title if using settings with a starting item
 	if (document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "SCRUBS S3" || document.getElementById("settings_option").value == "SCRUBS S2") {
 		document.getElementById("title_start").style.fontSize = "";
@@ -815,9 +830,6 @@ function update_settings() {
 	else {
 		document.getElementById("title_start").style.fontSize = 0;
 	}
-
-	update_woth_barren_panels();
-	update_settings_hints();
 }
 
 function update_woth_barren_panels() {
@@ -861,8 +873,8 @@ function update_settings_hints() {
 		hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \n\ngro \ndog \nban \nmid \ngor \nspi \nice \nlig ";
 	}
 	else if (document.getElementById("settings_option").value == "SCRUBS S1") {
-		alwaysHints = ["Aliens Defense", "Cremia", "Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Gossip Stones"];
-		hintbox.innerHTML = "";
+		alwaysHints = ["Aliens Defense", "Cremia", "Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Dampe Digging", "Gossip Stones", "Butler", "Boat Archery"];
+		hintbox.innerHTML = "ali \ncre \nswa \noce \ndam \ngos \nbut \nboa \n\nsar \nhun \ngro \nlef \npos \nmid";
 	}
 	else if (document.getElementById("settings_option").value == "SCRUBS S2") {
 		alwaysHints = ["Aliens Defense", "Cremia", "Mirror Shield Chest", "Gossip Stones", "Ocean Spider House Chest", "Gorman"];
