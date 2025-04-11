@@ -847,7 +847,9 @@ function update_location_logic() {
 	Object.assign(Location_Could_Peek, Location_Could_Access);
 	
 	// World Model/NPC Text Peeks
-	updatedWorldModels = document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER" || document.getElementById("settings_option").value == "SCRUBS S2" || document.getElementById("settings_option").value == "SCRUBS S3";
+	updatedNPCText = document.getElementById("settings_option").value == "SCRUBS S2" || document.getElementById("settings_option").value == "SCRUBS S3";
+	updatedWorldModels = document.getElementById("settings_option").value == "S5" || document.getElementById("settings_option").value == "EASTER" || updatedNPCText;
+	
 	for(let i = 0, Peek = Location_Peek, Has = Game; i < 2; i++) {
 		Peek["All-Night Mask Purchase"] = true;
 		Peek["Milk Bar Chateau"] = Has.romani_mask;
@@ -868,6 +870,17 @@ function update_location_logic() {
 			Peek["Postman's Freedom Reward"] = true;
 			Peek["Swamp Spider House Reward"] = Has.poison_swamp_access || Has.goron_mask;
 			Peek["Hungry Goron"] = Has.north_access;
+		}
+
+		if (updatedNPCText) {
+			Peek["Bank Reward #1"] = true;
+			Peek["Big Bomb Bag Purchase"] = true;
+			Peek["Ocean Spider House Day 1 Reward"] = true;
+			Peek["Beaver Race #1"] = Has.west_access && Has.zora_mask;
+			Peek["Day 1 Grave Tablet"] = Has.east_access;
+			Peek["Iron Knuckle Chest"] = Has.east_access;
+			Peek["Dampe Digging"] = Has.east_access;
+			//Peek["Romani's Game"] = (Has.goron_mask && Has.powder_keg) || Has.keaton_mask; <-- this is doable but trolling
 		}
 
 		Peek = Location_Could_Peek;
