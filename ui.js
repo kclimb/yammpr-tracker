@@ -854,7 +854,7 @@ function update_settings_hints() {
 	var hintbox = document.getElementById("hintInput");
 	if (document.getElementById("settings_option").value == "EASTER") {
 		alwaysHints = ["Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Seahorses"];
-		hintbox.innerHTML = "oce \nali \ncre \nbut \nboa \ndam \nrac \nsea \n\nfis \nbea \ngos \nban \ngro \nspi \n";
+		hintbox.innerHTML = "oce \nali \ncre \nbut \nboa \ndam \nrac \nsea \n\nfis \nbea \ngos \nba3 \ngro \nspi \n";
 	}
 	else if (document.getElementById("settings_option").value == "BLITZ") {
 		alwaysHints = [];
@@ -870,7 +870,7 @@ function update_settings_hints() {
 	}
 	else if (document.getElementById("settings_option").value == "S5") {
 		alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones"];
-		hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \n\ngro \ndog \nban \nmid \ngor \nspi \nice \nlig ";
+		hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \n\ngro \ndog \nba3 \nmid \ngor \nspi \nice \nlig ";
 	}
 	else if (document.getElementById("settings_option").value == "SCRUBS S1") {
 		alwaysHints = ["Aliens Defense", "Cremia", "Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Dampe Digging", "Gossip Stones", "Butler", "Boat Archery"];
@@ -881,8 +881,8 @@ function update_settings_hints() {
 		hintbox.innerHTML = "ali \ncre \nmir \ngos \nspi \ngor \n\n\nbottle \ngaro \nkeg \ndust \noath ";
 	}
 	else if (document.getElementById("settings_option").value == "SCRUBS S3") {
-		alwaysHints = [];
-		hintbox.innerHTML = "";
+		alwaysHints = ["Aliens Defense", "Cremia", "Ocean Spider House Chest", "Gossip Stones", "Butler", "Boat Archery"];
+		hintbox.innerHTML = "ali \ncre \nspi \ngos \nbut \nboa \n\nmid \naro \ngor \nba2 \nsar \ngro \ndog \nfis \ninv \npam \nmir \n\nbottle \ngaro \nkeg \ndust \noath ";
 	}
 	else {
 		alwaysHints = [];
