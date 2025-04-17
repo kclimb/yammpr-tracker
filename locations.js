@@ -354,7 +354,7 @@ var scrubs_s1_disabled_checks = [
 
 var scrubs_s2_disabled_checks = [
 	"Baby Zoras", "Swamp Music Statue",
-	"All-Night Mask Purchase", "Keaton Quiz", "Bank Reward #3", "Seahorses", "Fisherman Game", "Goron Race", "Swamp Archery #2", "Boat Archery", "Butler", 
+	"All-Night Mask Purchase", "Keaton Quiz", "Bank Reward #3", "Seahorses", "Fisherman Game", "Goron Race", "Swamp Archery #2", "Boat Archery", "Butler", "Curiosity Shop Man #2", 
 
 	"Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion",
 	"Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion",
@@ -365,7 +365,7 @@ var scrubs_s2_disabled_checks = [
 
 var scrubs_s3_disabled_checks = [
 	"Baby Zoras", "Skull Kid Song",
-	"All-Night Mask Purchase", "Keaton Quiz", "Bank Reward #3", "Seahorses", "Goron Race", "Swamp Archery #2", 
+	"All-Night Mask Purchase", "Keaton Quiz", "Bank Reward #3", "Seahorses", "Goron Race", "Swamp Archery #2", "Curiosity Shop Man #2", 
 
 	"Goron Shop 10 Arrows", "Goron Shop 10 Bombs", "Goron Shop Red Potion",
 	"Zora Shop 10 Arrows", "Zora Shop Hero's Shield", "Zora Shop Red Potion",
