@@ -238,7 +238,7 @@ function update_check_display() {
 				document.getElementById(str).className= "ool_check_text";
 				document.getElementById(str).style.opacity = .5;
 				document.getElementById(str).style.fontWeight = "normal";
-				document.getElementById(str).style.color = "maroon";
+				document.getElementById(str).style.color = "#C0C0C0";
 			}
 		}
 
