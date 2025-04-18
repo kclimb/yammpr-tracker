@@ -882,7 +882,7 @@ function update_settings_hints() {
 	}
 	else if (document.getElementById("settings_option").value == "SCRUBS S3") {
 		alwaysHints = ["Aliens Defense", "Cremia", "Ocean Spider House Chest", "Gossip Stones", "Butler", "Boat Archery"];
-		hintbox.value = "ali \ncre \nspi \ngos \nbut \nboa \n\nmid \naro \ngor \nba2 \nsar \ngro \ndog \nfis \ninv \npam \nmir \n\nbottle \ngaro \nkeg \ndust \noath ";
+		hintbox.value = "ali \ncre \nspi \ngos \nbut \nboa \n\nmid \naro \ngor \nba2 \nsar \ngro \ndog \nfis \ninv \npam \nmir \n\nbot \ngar \nkeg \ndust \noath ";
 	}
 	else {
 		alwaysHints = [];
