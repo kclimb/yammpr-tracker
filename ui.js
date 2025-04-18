@@ -854,38 +854,38 @@ function update_settings_hints() {
 	var hintbox = document.getElementById("hintInput");
 	if (document.getElementById("settings_option").value == "EASTER") {
 		alwaysHints = ["Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Seahorses"];
-		hintbox.innerHTML = "oce \nali \ncre \nbut \nboa \ndam \nrac \nsea \n\nfis \nbea \ngos \nba3 \ngro \nspi \n";
+		hintbox.value = "oce \nali \ncre \nbut \nboa \ndam \nrac \nsea \n\nfis \nbea \ngos \nba3 \ngro \nspi \n";
 	}
 	else if (document.getElementById("settings_option").value == "BLITZ") {
 		alwaysHints = [];
-		hintbox.innerHTML = "";
+		hintbox.value = "";
 	}
 	else if (document.getElementById("settings_option").value == "S3") {
 		alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging"];
-		hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \n";
+		hintbox.value = "swa \noce \nali \ncre \nbut \nboa \ndam \n";
 	}
 	else if (document.getElementById("settings_option").value == "S4") {
 		alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones", "Seahorses"];
-		hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nfis \nbea \ngos \nsea \n";
+		hintbox.value = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nfis \nbea \ngos \nsea \n";
 	}
 	else if (document.getElementById("settings_option").value == "S5") {
 		alwaysHints = ["Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Aliens Defense", "Cremia", "Butler", "Boat Archery", "Dampe Digging", "Goron Race", "Fisherman Game", "Beaver Race #1", "Gossip Stones"];
-		hintbox.innerHTML = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \n\ngro \ndog \nba3 \nmid \ngor \nspi \nice \nlig ";
+		hintbox.value = "swa \noce \nali \ncre \nbut \nboa \ndam \nrac \nsea \nfis \nbea \ngos \n\ngro \ndog \nba3 \nmid \ngor \nspi \nice \nlig ";
 	}
 	else if (document.getElementById("settings_option").value == "SCRUBS S1") {
 		alwaysHints = ["Aliens Defense", "Cremia", "Swamp Spider House Reward", "Ocean Spider House Day 1 Reward", "Dampe Digging", "Gossip Stones", "Butler", "Boat Archery"];
-		hintbox.innerHTML = "ali \ncre \nswa \noce \ndam \ngos \nbut \nboa \n\nsar \nhun \ngro \nlef \npos \nmid ";
+		hintbox.value = "ali \ncre \nswa \noce \ndam \ngos \nbut \nboa \n\nsar \nhun \ngro \nlef \npos \nmid ";
 	}
 	else if (document.getElementById("settings_option").value == "SCRUBS S2") {
 		alwaysHints = ["Aliens Defense", "Cremia", "Mirror Shield Chest", "Gossip Stones", "Ocean Spider House Chest", "Gorman"];
-		hintbox.innerHTML = "ali \ncre \nmir \ngos \nspi \ngor \n\n\nbottle \ngaro \nkeg \ndust \noath ";
+		hintbox.value = "ali \ncre \nmir \ngos \nspi \ngor \n\n\nbottle \ngaro \nkeg \ndust \noath ";
 	}
 	else if (document.getElementById("settings_option").value == "SCRUBS S3") {
 		alwaysHints = ["Aliens Defense", "Cremia", "Ocean Spider House Chest", "Gossip Stones", "Butler", "Boat Archery"];
-		hintbox.innerHTML = "ali \ncre \nspi \ngos \nbut \nboa \n\nmid \naro \ngor \nba2 \nsar \ngro \ndog \nfis \ninv \npam \nmir \n\nbottle \ngaro \nkeg \ndust \noath ";
+		hintbox.value = "ali \ncre \nspi \ngos \nbut \nboa \n\nmid \naro \ngor \nba2 \nsar \ngro \ndog \nfis \ninv \npam \nmir \n\nbottle \ngaro \nkeg \ndust \noath ";
 	}
 	else {
 		alwaysHints = [];
-		hintbox.innerHTML = "";
+		hintbox.value = "";
 	}
 }
