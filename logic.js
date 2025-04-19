@@ -832,7 +832,7 @@ function update_location_logic() {
 		Access["Romani's Game"] = Has.goron_mask && Has.powder_keg;
 		Access["Day 1 Grave Tablet"] = Has.east_access && Has.captains_hat;
 		Access["Imprisoned Monkey"] = Has.poison_swamp_access && Has.deku_mask;
-		Access["Swamp Music Statue"] = Has.poison_swamp_access && Has.deku_mask;
+		Access["Swamp Music Statue"] = Has.poison_swamp_access && (Has.deku_mask || (Has.zora_mask && Has.bomb));
 		Access["Baby Goron"] = Has.north_access && Has.goron_mask;
 		Access["Baby Zoras"] = Has.west_access && Has.zora_mask && Has.any_bottle && Has.hookshot && (Has.shoot_deku_bubble || Has.bow);
 		Access["Ikana King"] = Has.upper_ikana_access && Has.shoot_fire_arrow && Has.mirror_shield && (Has.shoot_light_arrow || ((Has.deku_mask || Has.zora_mask) && Has.powder_keg && Has.goron_mask));
